@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.Scene1Controller">
+   <children>
+      <Label alignment="CENTER" layoutY="62.0" prefHeight="44.0" prefWidth="807.0" text="Welcome to our Libirary">
+         <font>
+            <Font name="Bookman Old Style" size="31.0" />
+         </font>
+      </Label>
+      <Button layoutX="106.0" layoutY="266.0" mnemonicParsing="false" onAction="#switchToSignInAsUserScene" prefHeight="58.0" prefWidth="133.0" text="Sign in as User">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="323.0" layoutY="267.0" mnemonicParsing="false" onAction="#switchToSignInAsAdminScene" prefHeight="57.0" prefWidth="145.0" text="Sign in as Admin">
+         <font>
+            <Font name="Bookman Old Style" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="586.0" layoutY="266.0" mnemonicParsing="false" onAction="#switchToCreateNewUserAccountScene" prefHeight="58.0" prefWidth="170.0" text="Create New User account">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
