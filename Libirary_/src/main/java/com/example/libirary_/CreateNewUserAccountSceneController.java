@@ -20,7 +20,7 @@ public class CreateNewUserAccountSceneController {
             password,
             confirmPassword;
     @FXML
-    private Label confirmpasswordLabel;
+    private Label confirmpasswordLabel,usernameLabel,enterpasswordLabel,emailLabel;
     @FXML
     private Button signupButton;
 
@@ -42,8 +42,8 @@ public class CreateNewUserAccountSceneController {
     public void ConfirmPassword(ActionEvent event){
         confirmPassword= confirmPasswordField.getText();
         System.out.println(confirmPassword);
-        if (!password.equals(confirmPassword)){
-            confirmpasswordLabel.setText("Password does not match");
+        if (password==null || !password.equals(confirmPassword)){
+            confirmpasswordLabel.setText("* Password does not match");
             confirmPasswordField.clear();
         }
         else {
@@ -61,7 +61,7 @@ public class CreateNewUserAccountSceneController {
         return true;
     }
     public boolean checkPasswordIsStrong(String password){
-     if(password.length()<10){
+     if(password.length()<8){
          return false;
      }
      boolean isFindChar =false,isFindSymbolOrNumber =false;
@@ -84,14 +84,21 @@ public class CreateNewUserAccountSceneController {
      boolean signedInSuccessfully = true;
         if(this.checkName(this.username)==false){
            System.out.println("Please Enter only characters in user name field");
+           usernameLabel.setText("* Please Enter only characters in user name field");
+           usernameTextField.clear();
            signedInSuccessfully = false;
         }
         if(this.checkPasswordIsStrong(this.password)==false){
-            System.out.println("Please Enter StrongPassword with out space ");
+            System.out.println("Please Enter Strong Password with out space ");
+            enterpasswordLabel.setText("* Please Enter Strong Password with out space");
+            enterPasswordField.clear();
+            confirmPasswordField.clear();
             signedInSuccessfully = false;
         }
         if(signedInSuccessfully) {
         // switch to libraryScene
+            usernameLabel.setText("");
+            enterpasswordLabel.setText("");
             User newuser = new User(username, email, password);
         }
     }

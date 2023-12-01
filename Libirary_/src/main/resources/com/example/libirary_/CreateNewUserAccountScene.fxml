@@ -39,6 +39,9 @@
             <Font name="Bookman Old Style" size="17.0" />
          </font>
       </Label>
-      <Label fx:id="confirmpasswordLabel" layoutX="344.0" layoutY="414.0" textFill="#d91e1e" />
+      <Label fx:id="confirmpasswordLabel" layoutX="333.0" layoutY="449.0" textFill="#d91e1e" />
+      <Label fx:id="enterpasswordLabel" layoutX="333.0" layoutY="374.0" textFill="#d91e1e" />
+      <Label fx:id="emailLabel" layoutX="333.0" layoutY="273.0" textFill="#d91e1e" />
+      <Label fx:id="usernameLabel" layoutX="333.0" layoutY="195.0" textFill="#d91e1e" />
    </children>
 </AnchorPane>
