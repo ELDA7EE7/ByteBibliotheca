@@ -50,9 +50,49 @@ public class CreateNewUserAccountSceneController {
             confirmpasswordLabel.setText("");
         }
     }
+    public boolean checkName(String username){
+        for ( char c: username.toCharArray()) {
+            if((c>='A'&&c<='Z')||(c>='a'&&c<='z'))
+            {
+                continue;
+            }
+            return false;
+        }
+        return true;
+    }
+    public boolean checkPasswordIsStrong(String password){
+     if(password.length()<10){
+         return false;
+     }
+     boolean isFindChar =false,isFindSymbolOrNumber =false;
+        for (char c:password.toCharArray()) {
+            if((c>='A'&&c<='Z')||(c>='a'&&c<='z'))
+            {
+                isFindChar=true;
+            }else if(c=='\t'){
+                return false;
+            }else {
+                isFindSymbolOrNumber =true;
+            }
+        }
+        if(isFindChar&&isFindSymbolOrNumber) {
+            return true;
+        }
+        return false;
+    }
     public void SignUp(ActionEvent event) {
-
-        User newuser = new User(username,email,password);
-
+     boolean signedInSuccessfully = true;
+        if(this.checkName(this.username)==false){
+           System.out.println("Please Enter only characters in user name field");
+           signedInSuccessfully = false;
+        }
+        if(this.checkPasswordIsStrong(this.password)==false){
+            System.out.println("Please Enter StrongPassword with out space ");
+            signedInSuccessfully = false;
+        }
+        if(signedInSuccessfully) {
+        // switch to libraryScene
+            User newuser = new User(username, email, password);
+        }
     }
 }
