@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import java.util.regex.Pattern;
+
 public class CreateNewUserAccountSceneController {
     @FXML
     private TextField
@@ -50,7 +52,7 @@ public class CreateNewUserAccountSceneController {
             confirmpasswordLabel.setText("");
         }
     }
-    public boolean checkName(String username){
+    private boolean checkName(String username){
         for ( char c: username.toCharArray()) {
             if((c>='A'&&c<='Z')||(c>='a'&&c<='z'))
             {
@@ -60,7 +62,7 @@ public class CreateNewUserAccountSceneController {
         }
         return true;
     }
-    public boolean checkPasswordIsStrong(String password){
+    private boolean checkPasswordIsStrong(String password){
      if(password.length()<8){
          return false;
      }
@@ -80,6 +82,13 @@ public class CreateNewUserAccountSceneController {
         }
         return false;
     }
+
+    private boolean isValidEmail(String email) {
+        String EMAIL_PATTERN = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+
+        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        return pattern.matcher(email).matches();
+    }
     public void SignUp(ActionEvent event) {
      boolean signedInSuccessfully = true;
         if(this.checkName(this.username)==false){
@@ -93,6 +102,10 @@ public class CreateNewUserAccountSceneController {
             enterpasswordLabel.setText("* Please Enter Strong Password with out space");
             enterPasswordField.clear();
             confirmPasswordField.clear();
+            signedInSuccessfully = false;
+        }
+        if(!this.isValidEmail(email)){
+            System.out.println("invalid email");
             signedInSuccessfully = false;
         }
         if(signedInSuccessfully) {
