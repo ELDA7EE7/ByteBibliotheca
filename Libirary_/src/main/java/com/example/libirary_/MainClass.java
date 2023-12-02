@@ -22,6 +22,9 @@ public class MainClass extends Application {
             close(stage);
         });
     }
+
+    User user = new User("youssef","youssefelsheikh506@gmail","iloveyou");
+
     public void close(Stage stage){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Logout");
