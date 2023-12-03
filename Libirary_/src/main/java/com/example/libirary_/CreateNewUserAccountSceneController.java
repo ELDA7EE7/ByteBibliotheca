@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class CreateNewUserAccountSceneController extends RegistrationSystem {
 
     @FXML
-    private Button signupButton;
+    private Button signupButton,backButton;
 
     private boolean checkName(String username){
         for ( char c: username.toCharArray()) {
@@ -89,5 +89,8 @@ public class CreateNewUserAccountSceneController extends RegistrationSystem {
             usernameTextField.clear();
             emailTextField.clear();
         }
+    }
+    public void BackToLoginPage(ActionEvent event) throws IOException{
+        switchToSignInAsUserScene(event);
     }
 }

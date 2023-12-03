@@ -43,5 +43,10 @@
       <Label fx:id="enterpasswordLabel" layoutX="333.0" layoutY="374.0" textFill="#d91e1e" />
       <Label fx:id="emailLabel" layoutX="333.0" layoutY="273.0" textFill="#d91e1e" />
       <Label fx:id="usernameLabel" layoutX="333.0" layoutY="195.0" textFill="#d91e1e" />
+      <Button fx:id="backButton" layoutX="396.0" layoutY="598.0" mnemonicParsing="false" onAction="#BackToLoginPage" prefHeight="32.0" prefWidth="76.0" text="Back">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
