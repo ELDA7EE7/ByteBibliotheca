@@ -1,0 +1,41 @@
+.logInButton{
+    -fx-display: flex;
+    -fx-width: 324px;
+    -fx-cursor : hand;
+    -fx-background-radius: 500px;
+    -fx-background-color: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+    -fx-text-fill: #191919;
+    -fx-font-family: Inter;
+    -fx-font-size: 16px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+
+}
+.logInButton:pressed{
+    -fx-display: flex;
+    -fx-width: 324px;
+    -fx-cursor : hand;
+    -fx-background-color: #e5e5e5;
+    -fx-text-fill: #191919;
+    -fx-font-family: Inter;
+    -fx-font-size: 16px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+    -fx-background-radius: 500px;
+}
+.signUpForByteBibliotheca{
+    -fx-font-family: Inter;
+    -fx-font-size: 15.25px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+}
+.dontHaveAnAccount{
+    -fx-font-family: Inter;
+    -fx-font-size: 15.25px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+}

@@ -17,6 +17,11 @@ public class MainClass extends Application {
         stage.setTitle("Library");
         stage.setScene(scene);
         stage.show();
+
+        // add default user
+        User user = new User("mazenalaa","mazen@gmail.com","12345678a");
+
+
         stage.setOnCloseRequest(event -> {
             event.consume();
             close(stage);

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class User {
     static int userCounter =0;
     UserInformation userInfo;
+    static User CurrentUser;
    static ArrayList<User> users = new ArrayList<User>();
     public User(String userName, String email, String password) {
         userCounter++;
