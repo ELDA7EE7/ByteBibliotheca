@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="449.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.SignInAsUserSceneController">
+<AnchorPane prefHeight="533.0" prefWidth="764.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.SignInAsUserSceneController">
    <children>
       <Label layoutX="322.0" layoutY="57.0" text="Login in">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField layoutX="275.0" layoutY="250.0" onAction="#getPassword" promptText="Enter To Confirm" />
+      <TextField layoutX="275.0" layoutY="234.0" onAction="#getPassword" promptText="Enter To Confirm" />
       <TextField layoutX="275.0" layoutY="176.0" onAction="#getEmail" promptText="Enter To Confirm" />
-      <Label layoutX="275.0" layoutY="139.0" text="Email">
+      <Label layoutX="275.0" layoutY="156.0" text="Email">
          <font>
             <Font size="12.9" />
          </font>
@@ -25,10 +26,12 @@
             <Font size="12.9" />
          </font>
       </Label>
-      <Button layoutX="319.0" layoutY="311.0" mnemonicParsing="false" onAction="#switchtoHomepageScene" text="Logn in">
+      <Button layoutX="318.0" layoutY="277.0" mnemonicParsing="false" onAction="#switchToCreateNewUserAccountScene" text="Logn in">
          <font>
             <Font size="12.9" />
          </font>
       </Button>
+      <Hyperlink layoutX="291.0" layoutY="318.0" onAction="#switchToCreateNewUserAccountScene" text="Create New Account" />
+      <Hyperlink layoutX="293.0" layoutY="342.0" onAction="#switchToSignInAsAdminScene" text="sign in as Admin" />
    </children>
 </AnchorPane>

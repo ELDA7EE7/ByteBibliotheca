@@ -1,4 +1,5 @@
 package com.example.libirary_;
 
-public class SignInAsAdminSceneController {
+public class SignInAsAdminSceneController extends RegistrationSystem {
+
 }

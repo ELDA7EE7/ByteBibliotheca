@@ -1,57 +1,18 @@
 package com.example.libirary_;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
+import java.io.IOException;
 import java.util.regex.Pattern;
 
-public class CreateNewUserAccountSceneController {
-    @FXML
-    private TextField
-            usernameTextField,
-            emailTextField;
-    @FXML
-    private PasswordField enterPasswordField,
-            confirmPasswordField;
-    private String username,
-            email,
-            password,
-            confirmPassword;
-    @FXML
-    private Label confirmpasswordLabel,usernameLabel,enterpasswordLabel,emailLabel;
+public class CreateNewUserAccountSceneController extends RegistrationSystem {
+
     @FXML
     private Button signupButton;
 
-    public void getUsername(ActionEvent event){
-        username= usernameTextField.getText();
-        System.out.println(username);
-    }
-    public void getPassword(ActionEvent event){
-        if(username == null)
-            usernameTextField.setText("");
-        password= enterPasswordField.getText();
-        System.out.println(password);
-
-    }
-    public void getEmail(ActionEvent event){
-        email= emailTextField.getText();
-        System.out.println(email);
-    }
-    public void ConfirmPassword(ActionEvent event){
-        confirmPassword= confirmPasswordField.getText();
-        System.out.println(confirmPassword);
-        if (password==null || !password.equals(confirmPassword)){
-            confirmpasswordLabel.setText("* Password does not match");
-            confirmPasswordField.clear();
-        }
-        else {
-            confirmpasswordLabel.setText("");
-        }
-    }
     private boolean checkName(String username){
         for ( char c: username.toCharArray()) {
             if((c>='A'&&c<='Z')||(c>='a'&&c<='z'))
@@ -89,17 +50,17 @@ public class CreateNewUserAccountSceneController {
         Pattern pattern = Pattern.compile(EMAIL_PATTERN);
         return pattern.matcher(email).matches();
     }
-    public void SignUp(ActionEvent event) {
+    public void SignUp(ActionEvent event) throws IOException {
      boolean signedInSuccessfully = true;
         if(this.checkName(this.username)==false){
            System.out.println("Please Enter only characters in user name field");
-           usernameLabel.setText("* Please Enter only characters in user name field");
+         //  usernameLabel.setText("* Please Enter only characters in user name field");
            usernameTextField.clear();
            signedInSuccessfully = false;
         }
         if(this.checkPasswordIsStrong(this.password)==false){
             System.out.println("Please Enter Strong Password with out space ");
-            enterpasswordLabel.setText("* Please Enter Strong Password with out space");
+           // enterpasswordLabel.setText("* Please Enter Strong Password with out space");
             enterPasswordField.clear();
             confirmPasswordField.clear();
             signedInSuccessfully = false;
@@ -110,9 +71,23 @@ public class CreateNewUserAccountSceneController {
         }
         if(signedInSuccessfully) {
         // switch to libraryScene
+            switchToHomePageScene(signupButton);
             usernameLabel.setText("");
             enterpasswordLabel.setText("");
             User newuser = new User(username, email, password);
+        }
+        else
+        {
+            // Alert
+            /*Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Error");
+            alert.setHeaderText("Data Failed");
+            alert.setContentText("email format must be correct and Password Must be Strong ");
+            alert.showAndWait();*/
+            enterPasswordField.clear();
+            confirmPasswordField.clear();
+            usernameTextField.clear();
+            emailTextField.clear();
         }
     }
 }
