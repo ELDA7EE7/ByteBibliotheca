@@ -16,6 +16,7 @@ public class MainClass extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Library");
         stage.setScene(scene);
+        //stage.setFullScreen(true);
         stage.show();
 
         // add default user

@@ -44,6 +44,7 @@ public abstract class RegistrationSystem {
         stage = (Stage) (node).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setFullScreen(true);
         stage.show();
     }
     @FXML
