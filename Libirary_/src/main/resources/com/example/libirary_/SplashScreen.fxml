@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.SplashScreenController">
+   <children>
+      <ImageView fitHeight="450.0" fitWidth="675.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Splash_Screen.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="450.0" fitWidth="675.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Splash_ScreenFG.png" />
+         </image>
+      </ImageView>
+      <ProgressIndicator layoutX="312.0" layoutY="238.0">
+         <effect>
+            <InnerShadow height="255.0" radius="127.0" width="255.0" />
+         </effect>
+      </ProgressIndicator>
+   </children>
+</AnchorPane>

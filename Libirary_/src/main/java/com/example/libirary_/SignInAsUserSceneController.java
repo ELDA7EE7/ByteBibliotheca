@@ -22,30 +22,25 @@ public class SignInAsUserSceneController extends RegistrationSystem
 
 @FXML
     private void checkAccount(ActionEvent event) throws IOException {
-System.out.println(this.email);
-System.out.println(this.username);
-String  password = this.username;
-String  emailOrUsername = this.email;
-        for(User user : User.users)
-        {
+    try{
+        System.out.println(this.email);
+        System.out.println(this.username);
+        String password = this.username;
+        String emailOrUsername = this.email;
+        for (User user : User.users) {
             System.out.println(user.userInfo.email);
 
             System.out.println(user.userInfo.userName);
 
             System.out.println(user.userInfo.password);
-            if(( (user.userInfo.email.equals(emailOrUsername))|| (user.userInfo.userName.equals(emailOrUsername)))&& user.userInfo.password.equals(password))
-            {
-                switchToHomePageScene(loginButton);
+            if (((user.userInfo.email.equals(emailOrUsername)) || (user.userInfo.userName.equals(emailOrUsername))) && user.userInfo.password.equals(password)) {
+                switchToHomePageScene(event);
                 return;
             }
         }
-    // Alert
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Data Not found");
-            alert.showAndWait();
-    enterPasswordField.clear();
-    emailTextField.clear();
+        this.showAlert("Data Not Found");
+    }catch (NullPointerException ex){
+        this.showAlert("please enter information then please press enter");
     }
+}
 }

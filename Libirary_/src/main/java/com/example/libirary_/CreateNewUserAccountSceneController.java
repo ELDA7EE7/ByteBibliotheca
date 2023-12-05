@@ -14,6 +14,10 @@ public class CreateNewUserAccountSceneController extends RegistrationSystem {
     private Button signupButton,backButton;
 
     private boolean checkName(String username){
+        if(username==null) {
+    //        this.usernameTextField.clear();
+            return false;
+        }
         for ( char c: username.toCharArray()) {
             if((c>='A'&&c<='Z')||(c>='a'&&c<='z'))
             {
@@ -24,6 +28,10 @@ public class CreateNewUserAccountSceneController extends RegistrationSystem {
         return true;
     }
     private boolean checkPasswordIsStrong(String password){
+        if(password==null){
+      //      this.confirmPasswordField.clear();
+            return false;
+        }
      if(password.length()<8){
          return false;
      }
@@ -45,39 +53,41 @@ public class CreateNewUserAccountSceneController extends RegistrationSystem {
     }
 
     private boolean isValidEmail(String email) {
+        if(email==null)
+        {
+        //    this.emailTextField.clear();
+            return false;
+        }
         String EMAIL_PATTERN = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
 
         Pattern pattern = Pattern.compile(EMAIL_PATTERN);
         return pattern.matcher(email).matches();
     }
     public void SignUp(ActionEvent event) throws IOException {
-     boolean signedInSuccessfully = true;
-        if(this.checkName(this.username)==false){
-           System.out.println("Please Enter only characters in user name field");
-         //  usernameLabel.setText("* Please Enter only characters in user name field");
-           usernameTextField.clear();
-           signedInSuccessfully = false;
+    try {
+        boolean signedInSuccessfully = true;
+        if (this.checkName(this.username) == false) {
+            System.out.println("Please Enter only characters in user name field");
+            //  usernameLabel.setText("* Please Enter only characters in user name field");
+            usernameTextField.clear();
+            signedInSuccessfully = false;
         }
-        if(this.checkPasswordIsStrong(this.password)==false){
+        if (this.checkPasswordIsStrong(this.password) == false) {
             System.out.println("Please Enter Strong Password with out space ");
-           // enterpasswordLabel.setText("* Please Enter Strong Password with out space");
+            // enterpasswordLabel.setText("* Please Enter Strong Password with out space");
             enterPasswordField.clear();
             confirmPasswordField.clear();
             signedInSuccessfully = false;
         }
-        if(!this.isValidEmail(email)){
+        if (!this.isValidEmail(email)) {
             System.out.println("invalid email");
             signedInSuccessfully = false;
         }
-        if(signedInSuccessfully) {
-        // switch to libraryScene
-            switchToHomePageScene(signupButton);
-            usernameLabel.setText("");
-            enterpasswordLabel.setText("");
+        if (signedInSuccessfully) {
+            // switch to libraryScene
+            switchToHomePageScene(event);
             User newuser = new User(username, email, password);
-        }
-        else
-        {
+        } else {
             // Alert
             /*Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
@@ -89,6 +99,9 @@ public class CreateNewUserAccountSceneController extends RegistrationSystem {
             usernameTextField.clear();
             emailTextField.clear();
         }
+    }catch (NullPointerException ex){
+        this.showAlert("enter information then please press enter");
+    }
     }
     public void BackToLoginPage(ActionEvent event) throws IOException{
         switchToSignInAsUserScene(event);

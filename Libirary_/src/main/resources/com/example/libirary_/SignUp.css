@@ -1,0 +1,66 @@
+.signUpButton{
+    -fx-display: flex;
+    -fx-width: 324px;
+    -fx-cursor : hand;
+    -fx-background-radius: 500px;
+    -fx-background-color: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+    -fx-text-fill: #191919;
+    -fx-font-family: Inter;
+    -fx-font-size: 16px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+}
+.signUpButton:pressed{
+    -fx-display: flex;
+    -fx-width: 324px;
+    -fx-cursor : hand;
+    -fx-background-color: #e5e5e5;
+    -fx-text-fill: #191919;
+    -fx-font-family: Inter;
+    -fx-font-size: 16px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+    -fx-background-radius: 500px;
+}
+.createAnAccount{
+    -fx-font-family: Inter;
+    -fx-font-size: 32px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+}
+.alreadyHaveAnAccount {
+    -fx-font-family: Inter;
+    -fx-font-size: 16px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+}
+.logInSwitchText{
+    -fx-font-family: Inter;
+    -fx-font-size: 16px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+}
+.signUpText{
+    -fx-font-family: Inter;
+    -fx-font-size: 15px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+}
+.signUpTextField{
+    -fx-font-family: Inter;
+    -fx-font-size: 15px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+    -fx-text-fill: #7f7f7f;
+    -fx-background-color: #191919;
+    -fx-border-width: 1;
+    -fx-border-color: #7f7f7f;
+    -fx-border-radius: 4;
+}

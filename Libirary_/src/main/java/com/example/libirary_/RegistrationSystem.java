@@ -18,37 +18,46 @@ public abstract class RegistrationSystem {
     @FXML
     protected TextField
             usernameTextField,
-            emailTextField;
+            emailTextField,
+            enterPasswordField;
     @FXML
-    protected PasswordField enterPasswordField,
+    protected PasswordField
             confirmPasswordField;
     protected String username,
             email,
             password,
             confirmPassword;
-    @FXML
-    protected Label confirmpasswordLabel,usernameLabel,enterpasswordLabel,emailLabel;
+
     private Scene scene;
     private Stage stage;
+
+ protected void showAlert(String message){
+        // Alert
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
     @FXML
     public void switchToSignInAsUserScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("SignInAsUserScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("LogInAsUserScene.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     @FXML
-    public void switchToHomePageScene(Node node) throws IOException {
+    public void switchToHomePageScene(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("HomePageScene.fxml"));
-        stage = (Stage) (node).getScene().getWindow();
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     @FXML
     public void switchToSignInAsAdminScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("SignInAsAdminScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("LogLogInAsAdminScene.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -56,7 +65,7 @@ public abstract class RegistrationSystem {
     }
     @FXML
     public void switchToCreateNewUserAccountScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("CreateNewUserAccountScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -77,19 +86,6 @@ public abstract class RegistrationSystem {
     protected void getEmail(ActionEvent event){
         email= emailTextField.getText();
         System.out.println(email);
-    }
-    @FXML
-    protected void ConfirmPassword(ActionEvent event){
-        confirmPassword= confirmPasswordField.getText();
-        System.out.println(confirmPassword);
-        if (password==null || !password.equals(confirmPassword)){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("DataFailed");
-            alert.setHeaderText(null);
-            alert.setContentText("Password Doesn`t match");
-            alert.showAndWait();
-            confirmPasswordField.clear();
-        }
     }
 
 }

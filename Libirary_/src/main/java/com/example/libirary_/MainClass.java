@@ -12,7 +12,7 @@ import java.io.IOException;
 public class MainClass extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainClass.class.getResource("SignInAsUserScene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainClass.class.getResource("SplashScreen.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Library");
         stage.setScene(scene);

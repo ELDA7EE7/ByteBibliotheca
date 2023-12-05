@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="1080" maxWidth="1920" minHeight="1080" minWidth="1920" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.CreateNewUserAccountSceneController">
+   <children>
+      <BorderPane prefHeight="1080.0" prefWidth="1920.0">
+         <top>
+            <AnchorPane prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #191919;" BorderPane.alignment="CENTER_LEFT">
+               <children>
+                  <ImageView cache="true" fitHeight="36.0" fitWidth="270.0" layoutX="185.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="51.0" AnchorPane.topAnchor="32.0">
+                     <image>
+                        <Image url="@../../../Logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="980.0" prefWidth="1920.0" style="-fx-background-color: #191919;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="603.3333333333334" layoutY="179.66666666666666" prefHeight="607.0" prefWidth="717.0" style="-fx-background-color: #191919; -fx-background-radius: 8;" AnchorPane.bottomAnchor="321.0" AnchorPane.leftAnchor="603.3333333333334" AnchorPane.rightAnchor="603.3333333333333" AnchorPane.topAnchor="179.66666666666666">
+                     <children>
+                        <Text fx:id="createAnAccount" fill="#e5e5e5" layoutX="211.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="createAnAccount" text="Create an Account" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="211.0" AnchorPane.topAnchor="0.0" />
+                        <Group layoutX="233.0" layoutY="51.0">
+                           <children>
+                              <Text fx:id="alreadyHaveAnAccount" fill="#e5e5e5" layoutY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="alreadyHaveAnAccount" text="Already have an account?" />
+                           </children>
+                        </Group>
+                        <Pane layoutX="72.66666666666667" layoutY="57.0" prefHeight="65.0" prefWidth="734.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Line endX="643.0" layoutY="33.0" startX="100.0" stroke="#292929" />
+                           </children>
+                        </Pane>
+                        <Pane layoutY="122.0" prefHeight="375.0" prefWidth="716.0" stylesheets="@SignUp.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <padding>
+                              <Insets left="205.0" right="205.0" />
+                           </padding>
+                           <children>
+                              <Group layoutX="205.0">
+                                 <children>
+                                    <Pane prefHeight="28.0" prefWidth="324.0">
+                                       <children>
+                                          <Text fx:id="signUpText" fill="#e5e5e5" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="signUpText" text="What should we call you?">
+                                             <font>
+                                                <Font name="Inter Bold" size="13.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </Pane>
+                                    <TextField fx:id="usernameTextField" layoutY="28.0" onAction="#getUsername" prefHeight="48.0" prefWidth="324.0" promptText="Enter you name" styleClass="signUpTextField">
+                                       <font>
+                                          <Font name="Inter Regular" size="15.0" />
+                                       </font>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="8.0" left="14.0" right="14.0" top="8.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </Group>
+                              <Group layoutX="205.0" layoutY="76.0">
+                                 <children>
+                                    <Pane prefHeight="16.0" prefWidth="324.0" />
+                                    <Pane layoutY="16.0" prefHeight="28.0" prefWidth="324.0">
+                                       <children>
+                                          <Text fill="#e5e5e5" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="signUpText" text="What's your email?">
+                                             <font>
+                                                <Font name="Inter Bold" size="13.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </Pane>
+                                    <TextField fx:id="emailTextField" layoutY="44.0" onAction="#getEmail" prefHeight="48.0" prefWidth="324.0" promptText="Enter you email" styleClass="signUpTextField">
+                                       <font>
+                                          <Font name="Inter Regular" size="15.0" />
+                                       </font>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="8.0" left="14.0" right="14.0" top="8.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </Group>
+                              <Pane layoutX="205.0" layoutY="168.0" prefHeight="16.0" prefWidth="324.0" />
+                              <AnchorPane layoutX="205.0" layoutY="261.0" prefHeight="112.0" prefWidth="324.0">
+                                 <children>
+                                    <Button fx:id="signUpButton" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" layoutX="136.0" layoutY="44.0" mnemonicParsing="false" onAction="#SignUp" styleClass="signUpButton" text="Create an Account" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0" />
+                                 </children>
+                              </AnchorPane>
+                              <Group layoutX="205.0" layoutY="168.0">
+                                 <children>
+                                    <Pane prefHeight="16.0" prefWidth="324.0" />
+                                    <Pane layoutY="16.0" prefHeight="28.0" prefWidth="324.0">
+                                       <children>
+                                          <Text fill="#e5e5e5" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="signUpText" text="Create a password">
+                                             <font>
+                                                <Font name="Inter Bold" size="13.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </Pane>
+                                    <TextField fx:id="enterPasswordField" layoutY="44.0" onAction="#getPassword" prefHeight="48.0" prefWidth="324.0" promptText="Enter you password" styleClass="signUpTextField">
+                                       <font>
+                                          <Font name="Inter Regular" size="15.0" />
+                                       </font>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="8.0" left="14.0" right="14.0" top="8.0" />
+                                       </padding>
+                                    </TextField>
+                                 </children>
+                              </Group>
+                           </children>
+                        </Pane>
+                        <Hyperlink layoutX="413.0" layoutY="32.0" onAction="#BackToLoginPage" text="LogIn">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</VBox>
