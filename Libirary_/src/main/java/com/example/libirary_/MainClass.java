@@ -19,6 +19,7 @@ public class MainClass extends Application {
         //stage.setFullScreen(true);
         stage.show();
 
+
         // add default user
         User user = new User("mazenalaa","mazen@gmail.com","12345678a");
 

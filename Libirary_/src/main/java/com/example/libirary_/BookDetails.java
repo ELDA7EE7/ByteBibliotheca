@@ -1,6 +1,4 @@
 package com.example.libirary_;
 
-public class CartScene {
-
-
+public class BookDetails {
 }
