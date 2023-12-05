@@ -19,6 +19,7 @@ public class HomePageSceneController
         root= FXMLLoader.load(getClass().getResource("RandomPage.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
+        stage.setFullScreen(true);
         stage.setScene(scene);
 
         stage.show();
@@ -29,10 +30,20 @@ public class HomePageSceneController
         root= FXMLLoader.load(getClass().getResource("CartScene.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
+        stage.setFullScreen(true);
         stage.setScene(scene);
         stage.show();
 
     }
 
+    public void CategoriesPage(ActionEvent e) throws IOException {
+        root= FXMLLoader.load(getClass().getResource("Categories.fxml"));
+        stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
+        scene= new Scene(root);
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
+
+    }
 
 }

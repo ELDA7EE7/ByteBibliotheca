@@ -90,7 +90,7 @@
             <Image url="@../../../berserk1.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="Categories_id" contentDisplay="TOP" graphicTextGap="100.0" layoutX="52.0" layoutY="304.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="245.0" text="Categories">
+      <Button fx:id="Categories_id" contentDisplay="TOP" graphicTextGap="100.0" layoutX="52.0" layoutY="304.0" mnemonicParsing="false" onAction="#CategoriesPage" prefHeight="32.0" prefWidth="245.0" text="Categories">
          <font>
             <Font size="18.0" />
          </font>
