@@ -20,9 +20,7 @@ public abstract class RegistrationSystem {
             usernameTextField,
             emailTextField,
             enterPasswordField;
-    @FXML
-    protected PasswordField
-            confirmPasswordField;
+
     protected String username,
             email,
             password,

@@ -18,29 +18,25 @@ import java.util.ArrayList;
 public class SignInAsUserSceneController extends RegistrationSystem
 {
     @FXML
-    private Button loginButton;
-
-@FXML
     private void checkAccount(ActionEvent event) throws IOException {
-    try{
-        System.out.println(this.email);
-        System.out.println(this.username);
-        String password = this.username;
-        String emailOrUsername = this.email;
-        for (User user : User.users) {
-            System.out.println(user.userInfo.email);
+        try{
+            String emailOrUsername  =this.emailTextField.getText();
+            String password=this.enterPasswordField.getText();
 
-            System.out.println(user.userInfo.userName);
+            for (User user : User.users) {
+                System.out.println(user.userInfo.email);
 
-            System.out.println(user.userInfo.password);
-            if (((user.userInfo.email.equals(emailOrUsername)) || (user.userInfo.userName.equals(emailOrUsername))) && user.userInfo.password.equals(password)) {
-                switchToHomePageScene(event);
-                return;
+                System.out.println(user.userInfo.userName);
+
+                System.out.println(user.userInfo.password);
+                if (((user.userInfo.email.equals(emailOrUsername)) || (user.userInfo.userName.equals(emailOrUsername))) && user.userInfo.password.equals(password)) {
+                    switchToHomePageScene(event);
+                    return;
+                }
             }
+            this.showAlert("Data Not Found");
+        }catch (NullPointerException ex){
+            this.showAlert("please enter information then please press enter");
         }
-        this.showAlert("Data Not Found");
-    }catch (NullPointerException ex){
-        this.showAlert("please enter information then please press enter");
     }
-}
 }

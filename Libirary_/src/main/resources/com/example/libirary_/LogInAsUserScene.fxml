@@ -92,7 +92,7 @@
                                  </children>
                               </Pane>
                               <Pane layoutX="205.0" layoutY="168.0" prefHeight="16.0" prefWidth="324.0" />
-                              <TextField fx:id="usernameTextField" layoutX="205.0" layoutY="120.0" onAction="#getUsername" prefHeight="48.0" prefWidth="324.0" promptText="Password" style="-fx-background-color: #121212; -fx-border-radius: 4; -fx-border-color: #7f7f7f; -fx-background-radius: 4;">
+                              <TextField fx:id="enterPasswordField" layoutX="205.0" layoutY="120.0" onAction="#getPassword" prefHeight="48.0" prefWidth="324.0" promptText="Password" style="-fx-background-color: #121212; -fx-border-radius: 4; -fx-border-color: #7f7f7f; -fx-background-radius: 4;">
                                  <font>
                                     <Font name="Inter Regular" size="15.0" />
                                  </font>

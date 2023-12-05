@@ -9,10 +9,6 @@ import java.io.IOException;
 import java.util.regex.Pattern;
 
 public class CreateNewUserAccountSceneController extends RegistrationSystem {
-
-    @FXML
-    private Button signupButton,backButton;
-
     private boolean checkName(String username){
         if(username==null) {
     //        this.usernameTextField.clear();
@@ -63,45 +59,43 @@ public class CreateNewUserAccountSceneController extends RegistrationSystem {
         Pattern pattern = Pattern.compile(EMAIL_PATTERN);
         return pattern.matcher(email).matches();
     }
+    @FXML
     public void SignUp(ActionEvent event) throws IOException {
-    try {
-        boolean signedInSuccessfully = true;
-        if (this.checkName(this.username) == false) {
-            System.out.println("Please Enter only characters in user name field");
-            //  usernameLabel.setText("* Please Enter only characters in user name field");
-            usernameTextField.clear();
-            signedInSuccessfully = false;
+        try {
+            this.username =this.usernameTextField.getText();
+            this.email = this.emailTextField.getText();
+            this.password = this.enterPasswordField.getText();
+            boolean signedInSuccessfully = true;
+            if (this.checkName(this.username) == false) {
+                System.out.println("Please Enter only characters in user name field");
+                //  usernameLabel.setText("* Please Enter only characters in user name field");
+                usernameTextField.clear();
+                signedInSuccessfully = false;
+            }
+            if (this.checkPasswordIsStrong(this.password) == false) {
+                System.out.println("Please Enter Strong Password with out space ");
+                // enterpasswordLabel.setText("* Please Enter Strong Password with out space");
+                enterPasswordField.clear();
+                signedInSuccessfully = false;
+            }
+            if (!this.isValidEmail(email)) {
+                System.out.println("invalid email");
+                signedInSuccessfully = false;
+            }
+            if (signedInSuccessfully) {
+                // switch to libraryScene
+                switchToHomePageScene(event);
+                User newuser = new User(username, email, password);
+            } else {
+                this.showAlert("email format must be correct and Password Must be Strong");
+                enterPasswordField.clear();
+                usernameTextField.clear();
+                emailTextField.clear();
+            }
+        }catch (NullPointerException ex){
+            System.out.println(ex.getMessage());
+            this.showAlert("enter information then please press enter");
         }
-        if (this.checkPasswordIsStrong(this.password) == false) {
-            System.out.println("Please Enter Strong Password with out space ");
-            // enterpasswordLabel.setText("* Please Enter Strong Password with out space");
-            enterPasswordField.clear();
-            confirmPasswordField.clear();
-            signedInSuccessfully = false;
-        }
-        if (!this.isValidEmail(email)) {
-            System.out.println("invalid email");
-            signedInSuccessfully = false;
-        }
-        if (signedInSuccessfully) {
-            // switch to libraryScene
-            switchToHomePageScene(event);
-            User newuser = new User(username, email, password);
-        } else {
-            // Alert
-            /*Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Error");
-            alert.setHeaderText("Data Failed");
-            alert.setContentText("email format must be correct and Password Must be Strong ");
-            alert.showAndWait();*/
-            enterPasswordField.clear();
-            confirmPasswordField.clear();
-            usernameTextField.clear();
-            emailTextField.clear();
-        }
-    }catch (NullPointerException ex){
-        this.showAlert("enter information then please press enter");
-    }
     }
     public void BackToLoginPage(ActionEvent event) throws IOException{
         switchToSignInAsUserScene(event);
