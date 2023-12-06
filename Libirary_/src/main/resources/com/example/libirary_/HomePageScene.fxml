@@ -1,16 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.HomePageSceneController">
+<AnchorPane prefHeight="831.4" prefWidth="1866.0" scaleShape="false" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.HomePageSceneController">
    <children>
-      <Label layoutX="195.0" layoutY="32.0" prefHeight="60.0" prefWidth="150.0" text="Homepage">
+      <Label alignment="CENTER" layoutX="7.0" layoutY="1.0" prefHeight="109.0" prefWidth="460.0" text="ByteBibilotheca">
          <font>
-            <Font size="28.0" />
+            <Font name="Rage Italic" size="61.0" />
          </font>
       </Label>
+      <Label layoutX="407.0" layoutY="172.0" prefHeight="35.0" prefWidth="935.0" text="What's Hot !">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField layoutX="517.0" layoutY="111.0" prefHeight="40.0" prefWidth="621.0" promptText="Search">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Label alignment="CENTER" layoutX="1275.0" layoutY="14.0" prefHeight="62.0" prefWidth="186.0" text="Username">
+         <font>
+            <Font name="Lobster1.4" size="27.0" />
+         </font>
+      </Label>
+      <Button fx:id="RandomBook" contentDisplay="TOP" graphicTextGap="100.0" layoutX="52.0" layoutY="425.0" mnemonicParsing="false" onAction="#random" prefHeight="32.0" prefWidth="245.0" text="Random Book ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="407.0" layoutY="488.0" prefHeight="6.0" prefWidth="935.0" text="On Sale !">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="hot1" fitHeight="206.0" fitWidth="152.0" layoutX="443.0" layoutY="243.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../berserk1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hot2" fitHeight="206.0" fitWidth="152.0" layoutX="643.0" layoutY="241.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../berserk1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hot3" fitHeight="206.0" fitWidth="152.0" layoutX="843.0" layoutY="243.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../berserk1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hot4" fitHeight="206.0" fitWidth="152.0" layoutX="1043.0" layoutY="243.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../berserk1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="sale1" fitHeight="206.0" fitWidth="152.0" layoutX="443.0" layoutY="570.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../berserk1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="sale2" fitHeight="206.0" fitWidth="152.0" layoutX="643.0" layoutY="570.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../berserk1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="sale3" fitHeight="206.0" fitWidth="152.0" layoutX="843.0" layoutY="570.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../berserk1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="sale4" fitHeight="206.0" fitWidth="152.0" layoutX="1043.0" layoutY="570.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../berserk1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hot5" fitHeight="206.0" fitWidth="152.0" layoutX="1243.0" layoutY="243.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../berserk1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="sale5" fitHeight="206.0" fitWidth="152.0" layoutX="1243.0" layoutY="570.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../berserk1.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="Categories_id" contentDisplay="TOP" graphicTextGap="100.0" layoutX="52.0" layoutY="304.0" mnemonicParsing="false" onAction="#CategoriesPage" prefHeight="32.0" prefWidth="245.0" text="Categories">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="cart" fitHeight="54.0" fitWidth="40.0" layoutX="1203.0" layoutY="25.0" onMouseClicked="#cart" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@shopping-cart_833314.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rand" fitHeight="206.0" fitWidth="152.0" layoutX="85.0" layoutY="534.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../berserk1.jpg" />
+         </image>
+      </ImageView>
+      <Text fx:id="book1" layoutX="453.0" layoutY="468.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="114.13665771484375" />
+      <Text fx:id="book2" layoutX="653.0" layoutY="468.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="126.93670654296875" />
+      <Text fx:id="book3" layoutX="853.0" layoutY="467.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="126.93670654296875" />
+      <Text fx:id="book4" layoutX="1053.0" layoutY="468.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="88.53668212890625" />
+      <Text fx:id="book5" layoutX="1253.0" layoutY="468.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="88.53668212890625" />
+      <Text fx:id="book6" layoutX="453.0" layoutY="797.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="114.13665771484375" />
+      <Text fx:id="book7" layoutX="653.0" layoutY="797.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="126.93670654296875" />
+      <Text fx:id="book8" layoutX="853.0" layoutY="797.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="126.93670654296875" />
+      <Text fx:id="book9" layoutX="1053.0" layoutY="796.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="88.53668212890625" />
+      <Text fx:id="book10" layoutX="1253.0" layoutY="796.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="88.53668212890625" />
+      <ImageView fitHeight="74.0" fitWidth="127.0" layoutX="1464.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Profile" fitHeight="54.0" fitWidth="50.0" layoutX="1451.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@user_1144760.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
