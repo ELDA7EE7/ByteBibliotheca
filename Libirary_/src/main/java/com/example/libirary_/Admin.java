@@ -30,9 +30,11 @@ public class Admin extends UpdateBookInfoController {
     public void UpdateBookInfo(int bookID) throws IOException {
         Book updateBook = Book.books.get(bookID-1);
 
-        updateBook.setAuthor(/*updateAuthor.getText()*/"mazen2");
-        updateBook.setPrice(/*Float.parseFloat(updatePrice.getText())*/500.0F);
+        updateBook.setAuthor(updateAuthor.getText());
+        updateBook.setPrice(Float.parseFloat(updatePrice.getText()));
         updateBook.setStatus(Update_Available.getText());
-        System.out.println("1");
+        updateBook.setTitle(UpdateTitle.getText());
+        updateBook.setPublishYear(Integer.parseInt(UpdatePublishYear.getText()));
+
     }
 }

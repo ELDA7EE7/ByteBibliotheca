@@ -12,14 +12,12 @@ import java.io.IOException;
 
 public class UpdateBookInfoController {
     @FXML
-    TextField updateAuthor,updatePrice;
+    TextField updateAuthor,updatePrice,UpdateTitle,UpdatePublishYear;
     @FXML
     RadioButton UpdateAvailable;
+
     @FXML
-    private Label update2;
-    @FXML
-    private Label UpdateP;
-    @FXML
+    private Label UpdateP,update2,Update_PublishYear,Update_Title;
     protected Label Update_Available;
 
     public void setUpdate2(ActionEvent e) throws IOException {
@@ -34,6 +32,12 @@ public class UpdateBookInfoController {
         else
             Update_Available.setText("Out stock");
 
+    }
+    public void setUpdateTitle(ActionEvent e) throws IOException {
+        Update_Title.setText(UpdateTitle.getText());
+    }
+    public void setUpdatePublishYear(ActionEvent e) throws IOException {
+        Update_PublishYear.setText(UpdatePublishYear.getText());
     }
 
 
