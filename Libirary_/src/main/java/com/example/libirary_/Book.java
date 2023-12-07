@@ -7,7 +7,7 @@ public class Book {
     private static int bookCounter=0;
     private int bookID,
     publishYear;
-    private String title, author,status;
+    private String title, author,status,imagepath;
     private float price;
     private String Genre;
     static ArrayList<Book> books = new ArrayList<Book>();
@@ -22,6 +22,7 @@ public class Book {
         this.price = price;
         this.Genre=genre;
         this.image =new Image(path);
+        this.imagepath=path;
 
         bookCounter++;
         bookID=bookCounter;
@@ -82,4 +83,13 @@ public class Book {
         this.view.setImage(image);
     }
 
+    public Image getImage() {  return image; }
+
+    public String getImagepath() { return imagepath; }
+
+    public void setImagepath(String imagepath) {  this.imagepath = imagepath; }
+
+    public ImageView getView() {  return view; }
+
+    public void setView(ImageView view) { this.view = view;}
 }
