@@ -47,6 +47,7 @@ public class UpdateBookInfoController {
             UpdatePublishYear.setText(Integer.toString(Book.books.get(index).getPublishYear()));
             genreTextField.setText(Book.books.get(index).getGenre());
           String avilable=new String(Book.books.get(index).getStatus());
+          //jada
           if (avilable.equalsIgnoreCase("in stock")){
               UpdateAvailable.setSelected(true);
           }
