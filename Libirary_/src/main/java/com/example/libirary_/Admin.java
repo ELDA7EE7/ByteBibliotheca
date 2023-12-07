@@ -33,7 +33,6 @@ public class Admin extends UpdateBookInfoController {
         updateBook.setAuthor(/*updateAuthor.getText()*/"mazen2");
         updateBook.setPrice(/*Float.parseFloat(updatePrice.getText())*/500.0F);
         updateBook.setStatus(Update_Available.getText());
+        System.out.println("1");
     }
-
-
 }
