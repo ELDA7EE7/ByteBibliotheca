@@ -4,7 +4,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class Admin extends UpdateBookInfoController {
+public class Admin{
     private String email="admin",password="admin";
 
     public String getPassword() {
@@ -27,14 +27,5 @@ public class Admin extends UpdateBookInfoController {
         Book.books.remove(bookID);
     }
 
-    public void UpdateBookInfo(int bookID) throws IOException {
-        Book updateBook = Book.books.get(bookID-1);
 
-        updateBook.setAuthor(updateAuthor.getText());
-        updateBook.setPrice(Float.parseFloat(updatePrice.getText()));
-        updateBook.setStatus(Update_Available.getText());
-        updateBook.setTitle(UpdateTitle.getText());
-        updateBook.setPublishYear(Integer.parseInt(UpdatePublishYear.getText()));
-
-    }
 }
