@@ -1,6 +1,10 @@
 package com.example.libirary_;
 
-public class Admin {
+import javafx.scene.control.TextField;
+
+import java.io.IOException;
+
+public class Admin extends UpdateBookInfoController {
     private String email="admin",password="admin";
 
     public String getPassword() {
@@ -22,10 +26,14 @@ public class Admin {
     public void RemoveBook(int bookID){
         Book.books.remove(bookID);
     }
-    public void UpdateBookInfo(int bookID){
-      Book updateBook = Book.books.get(bookID-1);
 
+    public void UpdateBookInfo(int bookID) throws IOException {
+        Book updateBook = Book.books.get(bookID-1);
 
+        updateBook.setAuthor(/*updateAuthor.getText()*/"mazen2");
+        updateBook.setPrice(/*Float.parseFloat(updatePrice.getText())*/500.0F);
+        updateBook.setStatus(Update_Available.getText());
     }
+
 
 }

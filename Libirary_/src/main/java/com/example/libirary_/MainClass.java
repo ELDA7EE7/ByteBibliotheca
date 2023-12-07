@@ -40,7 +40,10 @@ public class MainClass extends Application {
             stage.close();
         }
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        Book book=new Book("mazen","mazen","Mario",2005,2000.0F,"Action","berserk1.jpg");
+        Admin u=new Admin();
+        u.UpdateBookInfo(1);
         launch();
     }
 }

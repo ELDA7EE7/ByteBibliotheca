@@ -7,7 +7,11 @@ public class Book {
     private static int bookCounter=0;
     private int bookID,
     publishYear;
-    private String title, author,status,imagepath;
+    private String title;
+    private String author;
+    private String status;
+
+    private String imagepath;
     private float price;
     private String Genre;
     static ArrayList<Book> books = new ArrayList<Book>();
