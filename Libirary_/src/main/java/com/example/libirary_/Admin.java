@@ -1,7 +1,7 @@
 package com.example.libirary_;
 
 public class Admin {
-    private String email,password="Administrator1";
+    private String email="admin",password="admin";
 
     public String getPassword() {
         return password;
@@ -21,6 +21,11 @@ public class Admin {
     }
     public void RemoveBook(int bookID){
         Book.books.remove(bookID);
+    }
+    public void UpdateBookInfo(int bookID){
+      Book updateBook = Book.books.get(bookID-1);
+
+
     }
 
 }
