@@ -24,6 +24,22 @@ public class HomePageSceneController implements Initializable
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    @FXML
+    private AnchorPane platform;
+    @FXML
+    private ImageView bookimage1=new ImageView(),bookimage2=new ImageView(),bookimage3=new ImageView(),
+            bookimage4=new ImageView(),bookimage5=new ImageView()
+            ,bookimage6=new ImageView(),bookimage7=new ImageView(),bookimage8=new ImageView(),bookimage9=new ImageView()
+            ,bookimage10=new ImageView(), bookimage11=new ImageView(),bookimage12=new ImageView(),bookimage13=new ImageView()
+            ,bookimage14=new ImageView(),bookimage15=new ImageView();
+
+
+    @FXML
+    private Label bookname1 =new Label(),bookname2 =new Label(),bookname3 =new Label(),bookname4 =new Label(),bookname5
+            ,bookname6,bookname7,bookname8,bookname9,bookname10,
+            bookname11,bookname12,bookname13,bookname14,bookname15;
+
     public void RandomBookGen(ActionEvent e) throws IOException {
         root= FXMLLoader.load(getClass().getResource("RandomPage.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -65,6 +81,10 @@ public class HomePageSceneController implements Initializable
     }
 
     public void CategoriesPage(ActionEvent e) throws IOException {
+
+
+
+        System.out.println(Book.books.size());
         root= FXMLLoader.load(getClass().getResource("Categories.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
@@ -72,51 +92,40 @@ public class HomePageSceneController implements Initializable
         stage.setFullScreen(true);
         stage.show();
 
+
+
+
     }
-
-    @FXML
-    private AnchorPane platform;
-    @FXML
-    private ImageView bookimage1,bookimage2,bookimage3,bookimage4,bookimage5
-            ,bookimage6,bookimage7,bookimage8,bookimage9,bookimage10,
-            bookimage11,bookimage12,bookimage13,bookimage14,bookimage15;
-
-
-    @FXML
-    private Label bookname1,bookname2,bookname3,bookname4,bookname5
-            ,bookname6,bookname7,bookname8,bookname9,bookname10,
-            bookname11,bookname12,bookname13,bookname14,bookname15;
-
-    private ImageView booksimageview[]=new ImageView[]{bookimage1,bookimage2,bookimage3,bookimage4,bookimage5
-            ,bookimage6,bookimage7,bookimage8,bookimage9,bookimage10,
-            bookimage11,bookimage12,bookimage13,bookimage14,bookimage15};
-
-    private Label bookslabels[]=new Label[]{bookname1,bookname2,bookname3,bookname4,bookname5
-            ,bookname6,bookname7,bookname8,bookname9,bookname10,
-            bookname11,bookname12,bookname13,bookname14,bookname15};
-
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+
         Book book =new Book("Rich Dad Poor Dad","Ehab","Valid",2000,500,
                 "HUmanDevelopment", "/RichDadPoorDad.jpg");
 
-        book =new Book("Rich Poor Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/RichDadPoorDad.jpg");
+        book =new Book("Atomic habit","Ehab","Valid",2000,500,
+                "HUmanDevelopment", "/atomic.jpg");
 
         book =new Book("Rich Dad  Dad","Ehab","Valid",2000,500,
                 "HUmanDevelopment", "/RichDadPoorDad.jpg");
 
 
 
-        for (int i=0;i<1;i++){
-            Image  imagebook =new Image(Book.books.get(i).getImagepath());
-            booksimageview[i]=new ImageView();
-            booksimageview[i]= Book.books.get(i).getView();
-            bookslabels[i]=new Label(Book.books.get(i).getTitle());
-        }
+
+        Image  imagebook =new Image(Book.books.get(0).getImagepath());
+         bookimage1.setImage(imagebook);
+        bookname1.setText(Book.books.get(0).getTitle());
+
+        imagebook =new Image(Book.books.get(1).getImagepath());
+        bookimage2.setImage(imagebook);
+        bookname2.setText(Book.books.get(1).getTitle());
+
+        imagebook =new Image(Book.books.get(2).getImagepath());
+        bookimage3.setImage(imagebook);
+        bookname3.setText(Book.books.get(2).getTitle());
+
 
     }
 }
