@@ -34,6 +34,11 @@ public class SignInAsUserSceneController extends RegistrationSystem
                     return;
                 }
             }
+            Admin admin = new Admin();
+            if(admin.getPassword().equals(password)){
+                switchToAdminHomePageScene(event);
+                return;
+            }
             this.showAlert("Data Not Found");
         }catch (NullPointerException ex){
             this.showAlert("please enter information then please press enter");

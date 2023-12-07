@@ -1,7 +1,7 @@
 package com.example.libirary_;
 
 public class Admin {
-    private String email,password="Administrator1";
+    private String email="admin",password="admin";
 
     public String getPassword() {
         return password;
@@ -17,10 +17,15 @@ public class Admin {
         return email;
     }
     public void AddBook(String title,String author,String status,int publishYear,float price,String genre){
-        Book newBook = new Book(title,author,status,publishYear,price,genre,"berserk1.jpg");
+        Book newBook = new Book(title,author,status,publishYear,price,genre,"berserk1.jpg",true,4);
     }
     public void RemoveBook(int bookID){
         Book.books.remove(bookID);
+    }
+    public void UpdateBookInfo(int bookID){
+      Book updateBook = Book.books.get(bookID-1);
+
+
     }
 
 }

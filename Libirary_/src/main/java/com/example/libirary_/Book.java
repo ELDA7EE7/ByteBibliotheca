@@ -13,8 +13,9 @@ public class Book {
     static ArrayList<Book> books = new ArrayList<Book>();
     private Image image;
     private ImageView view;
-
-    public Book(String title, String author, String status, int publishYear, float price, String genre, String path){
+    private boolean IsAvailable;
+    private int ExpiryDate;
+    public Book(String title, String author, String status, int publishYear, float price, String genre, String path,boolean IsAvailable,int expiryDate){
         this.title = title;
         this.author = author;
         this.status = status;
@@ -23,12 +24,12 @@ public class Book {
         this.Genre=genre;
         this.image =new Image(path);
         this.imagepath=path;
-
+        this.IsAvailable=IsAvailable;
         bookCounter++;
         bookID=bookCounter;
         books.add(this);
+        this.ExpiryDate=expiryDate;
     }
-
 
     public int getBookID() {
         return bookID;
@@ -92,4 +93,20 @@ public class Book {
     public ImageView getView() {  return view; }
 
     public void setView(ImageView view) { this.view = view;}
+
+    public boolean isAvailable() {
+        return IsAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        IsAvailable = available;
+    }
+
+    public int getExpiryDate() {
+        return ExpiryDate;
+    }
+
+    public void setExpiryDate(int expiryDate) {
+        ExpiryDate = expiryDate;
+    }
 }

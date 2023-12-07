@@ -92,24 +92,21 @@ public class HomePageSceneController implements Initializable
         stage.setFullScreen(true);
         stage.show();
 
-
-
-
     }
 
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
+    public void initialize(URL url, ResourceBundle resourceBundle)
+    {
 
         Book book =new Book("Rich Dad Poor Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/RichDadPoorDad.jpg");
+                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,4);
 
         book =new Book("Atomic habit","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/atomic.jpg");
+                "HUmanDevelopment", "/atomic.jpg",true,4);
 
         book =new Book("Rich Dad  Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/RichDadPoorDad.jpg");
+                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,3);
 
 
 
