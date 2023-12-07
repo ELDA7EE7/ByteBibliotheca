@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="platform" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.BookCategories">
+   <children>
+      <HBox prefHeight="41.0" prefWidth="600.0" />
+      <VBox layoutX="-1.0" layoutY="40.0" prefHeight="362.0" prefWidth="136.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="88.0" prefWidth="136.0" text="Human Development" underline="true">
+               <font>
+                  <Font name="Bookman Old Style" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="130.0" prefWidth="135.0" text="Fantasy" underline="true">
+               <font>
+                  <Font name="Bookman Old Style" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="149.0" prefWidth="148.0" text="Romance" underline="true">
+               <font>
+                  <Font name="Bookman Old Style" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <ImageView fx:id="bookimage1" fitHeight="88.0" fitWidth="68.0" layoutX="155.0" layoutY="41.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookimage2" fitHeight="88.0" fitWidth="68.0" layoutX="248.0" layoutY="41.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookimage3" fitHeight="88.0" fitWidth="68.0" layoutX="345.0" layoutY="41.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookimage4" fitHeight="88.0" fitWidth="68.0" layoutX="443.0" layoutY="41.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookimage5" fitHeight="88.0" fitWidth="68.0" layoutX="534.0" layoutY="41.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookimage6" fitHeight="88.0" fitWidth="68.0" layoutX="155.0" layoutY="156.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookimage11" fitHeight="88.0" fitWidth="68.0" layoutX="155.0" layoutY="278.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookimage7" fitHeight="88.0" fitWidth="68.0" layoutX="248.0" layoutY="156.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookimage8" fitHeight="88.0" fitWidth="68.0" layoutX="345.0" layoutY="156.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookimage9" fitHeight="88.0" fitWidth="68.0" layoutX="443.0" layoutY="156.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookimage10" fitHeight="88.0" fitWidth="68.0" layoutX="534.0" layoutY="156.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookimage12" fitHeight="88.0" fitWidth="68.0" layoutX="248.0" layoutY="278.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookimage13" fitHeight="88.0" fitWidth="68.0" layoutX="345.0" layoutY="278.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookimage14" fitHeight="88.0" fitWidth="68.0" layoutX="443.0" layoutY="278.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="bookimage15" fitHeight="88.0" fitWidth="68.0" layoutX="534.0" layoutY="278.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+      <VBox layoutX="147.0" layoutY="129.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname1" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="240.0" layoutY="129.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname2" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="80.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="337.0" layoutY="129.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname3" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="80.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="435.0" layoutY="129.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname4" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="80.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="526.0" layoutY="129.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname5" onMouseClicked="#BookDetails" prefHeight="29.0" prefWidth="74.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="147.0" layoutY="244.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname6" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="82.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="240.0" layoutY="244.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname7" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="337.0" layoutY="244.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname8" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="435.0" layoutY="244.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname9" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="526.0" layoutY="244.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname10" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="147.0" layoutY="366.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname11" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="240.0" layoutY="366.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname12" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="337.0" layoutY="366.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname13" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="435.0" layoutY="366.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname14" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+         </children>
+      </VBox>
+      <VBox layoutX="526.0" layoutY="366.0" prefHeight="27.0" prefWidth="76.0">
+         <children>
+            <Label fx:id="bookname15" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
