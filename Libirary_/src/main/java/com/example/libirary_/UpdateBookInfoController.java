@@ -3,21 +3,21 @@ package com.example.libirary_;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
 
 public class UpdateBookInfoController {
     @FXML
-    private TextField updateAuthor,updatePrice,UpdateTitle,UpdatePublishYear,indexsearchTextField,genreTextField;
+    TextField updateAuthor,updatePrice,UpdateTitle,UpdatePublishYear,indexsearchTextField,genreTextField,authorTextField;
     @FXML
-   private RadioButton UpdateAvailable;
+   private CheckBox statusCheckBox;
 
     @FXML
-    private Label UpdateP,update2,Update_PublishYear,Update_Title, Update_Available;
+    private Label UpdateP,update2,Update_PublishYear,Update_Title, Update_Available,successLabel;
+    int index=Integer.MAX_VALUE;
+
 
     public void setUpdate2(ActionEvent e) throws IOException {
         update2.setText(updateAuthor.getText());
@@ -26,10 +26,10 @@ public class UpdateBookInfoController {
         UpdateP.setText(updatePrice.getText());
     }
     public void setUpdateAvailable(ActionEvent e) throws IOException {
-        if(UpdateAvailable.isSelected()==true)
+        if(statusCheckBox.isSelected())
         Update_Available.setText("In stock");
         else
-            Update_Available.setText("Out stock");
+            Update_Available.setText("Out of stock");
 
     }
     public void setUpdateTitle(ActionEvent e) throws IOException {
@@ -38,41 +38,94 @@ public class UpdateBookInfoController {
     public void setUpdatePublishYear(ActionEvent e) throws IOException {
         Update_PublishYear.setText(UpdatePublishYear.getText());
     }
+    public void ResetAll(){
+        indexsearchTextField.clear();
+        authorTextField.clear();
+        genreTextField.clear();
+        UpdatePublishYear.clear();
+        UpdateTitle.clear();
+        updatePrice.clear();
+        updateAuthor.clear();
+        statusCheckBox.setSelected(false);
+    }
     public void ViewBookToUpdate(ActionEvent event){
         try {
-            int index = Integer.parseInt(indexsearchTextField.getText()) - 1;
+            successLabel.setText("");
+            String bookname = indexsearchTextField.getText(),bookauthor= authorTextField.getText();
+            for (int i=0;i<Book.books.size();i++){
+                if (Book.books.get(i).getTitle().equalsIgnoreCase(bookname)&&Book.books.get(i).getAuthor().equalsIgnoreCase(bookauthor) ){
+                    index= i;
+                }
+            }
           updateAuthor.setText(Book.books.get(index).getAuthor());
             updatePrice.setText(Float.toString(Book.books.get(index).getPrice()));
             UpdateTitle.setText(Book.books.get(index).getTitle());
             UpdatePublishYear.setText(Integer.toString(Book.books.get(index).getPublishYear()));
             genreTextField.setText(Book.books.get(index).getGenre());
-          String avilable=new String(Book.books.get(index).getStatus());
-          //jada
-          if (avilable.equalsIgnoreCase("in stock")){
-              UpdateAvailable.setSelected(true);
+          String available=new String(Book.books.get(index).getStatus());
+
+          if (available.equalsIgnoreCase("in stock")){
+              statusCheckBox.setSelected(true);
           }
           else{
-              UpdateAvailable.setSelected(false);
+              statusCheckBox.setSelected(false);
 
           }
 
         }catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Book not found");
+            alert.showAndWait();
             System.out.println(e.getMessage());
         }
 
     }
-   // public void UpdateBookInfo(int bookID)  {
-     //   Book updateBook = Book.books.get(bookID-1);
-
-       // updateBook.setAuthor(updateAuthor.getText());
-        //updateBook.setPrice(Float.parseFloat(updatePrice.getText()));
-        //updateBook.setStatus(Update_Available.getText());
-        //updateBook.setTitle(UpdateTitle.getText());
-        //updateBook.setPublishYear(Integer.parseInt(UpdatePublishYear.getText()));
-
-    //}
-
     public void UpdateBookInfo(ActionEvent event) {
+        try{
+            if(indexsearchTextField.getText().isEmpty()
+                    ||updateAuthor.getText().isEmpty()
+                    || UpdateTitle.getText().isEmpty()
+                    || genreTextField.getText().isEmpty()
+                    ||updatePrice.getText().isEmpty()
+                    || UpdatePublishYear.getText().isEmpty()){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Please Enter all the data");
+                alert.showAndWait();
+                return;
+            }
 
+            Book.books.get(index).setAuthor(updateAuthor.getText());
+            Book.books.get(index).setTitle(UpdateTitle.getText());
+            Book.books.get(index).setGenre(genreTextField.getText());
+            Book.books.get(index).setPrice(Float.parseFloat(updatePrice.getText()));
+            Book.books.get(index).setPublishYear(Integer.parseInt(UpdatePublishYear.getText()));
+            if(statusCheckBox.isSelected()){
+                Book.books.get(index).setStatus("In stock");
+            }
+            else{
+                Book.books.get(index).setStatus("Out of stock");
+            }
+            successLabel.setText("Book Updated Successfully");
+
+            ResetAll();
+            System.out.println(Book.books.get(index).getBookID());
+            System.out.println(Book.books.get(index).getGenre());
+            System.out.println(Book.books.get(index).getAuthor());
+            System.out.println(Book.books.get(index).getPrice());
+            System.out.println(Book.books.get(index).getPublishYear());
+            System.out.println(Book.books.get(index).getTitle());
+            System.out.println(Book.books.get(index).getStatus());
+        }catch(Exception e){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please Enter all the data");
+            alert.showAndWait();
+            System.out.println(e.getMessage());
+        }
     }
 }

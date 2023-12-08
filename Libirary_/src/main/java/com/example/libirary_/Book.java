@@ -63,7 +63,7 @@ public class Book {
     }
 
     public void setAuthor(String author) {
-        author = author;
+        this.author = author;
     }
 
     public String getStatus() {
@@ -71,7 +71,7 @@ public class Book {
     }
 
     public void setStatus(String status) {
-        status = status;
+        this.status = status;
     }
 
     public float getPrice() {
