@@ -41,9 +41,7 @@ public class MainClass extends Application {
         }
     }
     public static void main(String[] args) throws IOException {
-        Book book=new Book("mazen","mazen","Mario",2005,2000.0F,"Action","berserk1.jpg");
-        Admin u=new Admin();
-        u.UpdateBookInfo(1);
+        Book book=new Book("mazen","mazen","In stock",2005,2000.0F,"Action","berserk1.jpg");
         launch();
     }
 }

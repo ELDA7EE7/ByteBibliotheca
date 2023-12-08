@@ -10,18 +10,21 @@
 <AnchorPane prefHeight="732.0" prefWidth="1009.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.UpdateBookInfoController">
    <children>
       <TextField layoutX="45.0" layoutY="31.0" />
-      <Button fx:id="update_search" layoutX="229.0" layoutY="31.0" mnemonicParsing="false" text="Button" />
-      <TextField fx:id="updateAuthor" layoutX="706.0" layoutY="31.0" onAction="#setUpdate2" />
-      <Label fx:id="update2" layoutX="656.0" layoutY="35.0" text="Label" />
-      <TextField fx:id="updatePrice" layoutX="707.0" layoutY="83.0" onAction="#setUpdatePrice" />
-      <TextField fx:id="UpdateTitle" layoutX="706.0" layoutY="200.0" />
-      <TextField layoutX="707.0" layoutY="309.0" />
-      <TextField fx:id="UpdatePublishYear" layoutX="707.0" layoutY="249.0" />
-      <Label fx:id="UpdateP" layoutX="656.0" layoutY="87.0" text="Label" />
-      <Label fx:id="Update_Available" layoutX="656.0" layoutY="147.0" text="Label" />
-      <RadioButton fx:id="UpdateAvailable" layoutX="724.0" layoutY="147.0" mnemonicParsing="false" text="Available" />
-      <Label fx:id="Update_Title" layoutX="656.0" layoutY="204.0" text="Label" />
-      <Label fx:id="Update_PublishYear" layoutX="656.0" layoutY="253.0" text="Label" />
       <ImageView fitHeight="247.0" fitWidth="200.0" layoutX="55.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="indexsearchTextField" layoutX="45.0" layoutY="31.0" />
+      <Button fx:id="searchButton" layoutX="232.0" layoutY="31.0" mnemonicParsing="false" onAction="#ViewBookToUpdate" text="Show" />
+      <TextField fx:id="updateAuthor" layoutX="419.0" layoutY="31.0" onAction="#setUpdate2" />
+      <Label fx:id="update2" layoutX="369.0" layoutY="35.0" text="Author" />
+      <TextField fx:id="updatePrice" layoutX="420.0" layoutY="83.0" onAction="#setUpdatePrice" />
+      <TextField fx:id="UpdateTitle" layoutX="419.0" layoutY="200.0" />
+      <TextField fx:id="genreTextField" layoutX="420.0" layoutY="309.0" />
+      <TextField fx:id="UpdatePublishYear" layoutX="420.0" layoutY="249.0" />
+      <Label fx:id="UpdateP" layoutX="369.0" layoutY="87.0" text="Price" />
+      <Label fx:id="Update_Available" layoutX="369.0" layoutY="147.0" text="Status" />
+      <RadioButton fx:id="UpdateAvailable" layoutX="437.0" layoutY="147.0" mnemonicParsing="false" text="Available" />
+      <Label fx:id="Update_Title" layoutX="369.0" layoutY="204.0" text="Title" />
+      <Label fx:id="Update_PublishYear" layoutX="348.0" layoutY="253.0" text="Publish Year" />
+      <Button fx:id="updateButton" layoutX="255.0" layoutY="351.0" mnemonicParsing="false" onAction="#UpdateBookInfo" text="Update" />
+      <Label layoutX="367.0" layoutY="313.0" text="Genre" />
    </children>
 </AnchorPane>

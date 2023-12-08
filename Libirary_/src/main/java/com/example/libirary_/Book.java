@@ -96,4 +96,12 @@ public class Book {
     public ImageView getView() {  return view; }
 
     public void setView(ImageView view) { this.view = view;}
+
+    public String getGenre() {
+        return Genre;
+    }
+
+    public void setGenre(String genre) {
+        Genre = genre;
+    }
 }
