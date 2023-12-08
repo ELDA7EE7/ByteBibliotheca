@@ -50,6 +50,7 @@ public class UpdateBookInfoController {
     }
     public void ViewBookToUpdate(ActionEvent event){
         try {
+            index=Integer.MAX_VALUE;
             successLabel.setText("");
             String bookname = indexsearchTextField.getText(),bookauthor= authorTextField.getText();
             for (int i=0;i<Book.books.size();i++){

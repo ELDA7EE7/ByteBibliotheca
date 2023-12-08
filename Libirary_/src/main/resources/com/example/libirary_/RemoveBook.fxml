@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="768.0" prefWidth="933.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.RemoveBookController">
    <children>
-      <TextField fx:id="RemoveTextField" layoutX="110.0" layoutY="64.0" onAction="#ViewBookToRemove" prefHeight="26.0" prefWidth="398.0" />
+      <TextField fx:id="RemoveNameAuthor" layoutX="120.0" layoutY="134.0" onAction="#ViewBookToRemove" prefHeight="26.0" prefWidth="191.0" />
       <Button fx:id="Remove" layoutX="177.0" layoutY="554.0" mnemonicParsing="false" onAction="#DeleteBook" text="Delete" />
       <Button fx:id="Cancel" layoutX="467.0" layoutY="554.0" mnemonicParsing="false" onAction="#BackToAdmin" text="Cancel" />
       <ImageView fx:id="RemoveImage" fitHeight="150.0" fitWidth="200.0" layoutX="158.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" />
@@ -19,5 +19,6 @@
       <Label fx:id="RemovePublishYear" layoutX="479.0" layoutY="335.0" />
       <Label fx:id="RemoveGenre" layoutX="479.0" layoutY="367.0" />
       <Label fx:id="Success" layoutX="295.0" layoutY="479.0" />
+      <TextField fx:id="RemoveBookname" layoutX="120.0" layoutY="74.0" onAction="#ViewBookToRemove" prefHeight="26.0" prefWidth="191.0" />
    </children>
 </AnchorPane>

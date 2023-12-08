@@ -18,17 +18,28 @@ import java.io.IOException;
 public class RemoveBookController implements CommonFunctions {
 
 
+ int index;
 
    @FXML
     private Label RemoveAuthor,RemovePrice,RemoveTitle,RemovePublishYear,RemoveGenre,RemoveAvailable,Success;
    @FXML
-   private TextField RemoveTextField;
+   private TextField RemoveBookname,RemoveNameAuthor;
    @FXML
    private ImageView RemoveImage;
    private Image image;
+    String NameBook;
+    String NameAuthor;
+
    public void ViewBookToRemove(ActionEvent event){
        try {
-           int index = Integer.parseInt(RemoveTextField.getText()) - 1;
+           index = Integer.MAX_VALUE;
+
+           String NameBook =RemoveBookname.getText(),NameAuthor= RemoveNameAuthor.getText();
+           for (int i=0;i<Book.books.size();i++){
+               if (Book.books.get(i).getTitle().equalsIgnoreCase(NameBook)&&Book.books.get(i).getAuthor().equalsIgnoreCase(NameAuthor) ){
+                   index= i;
+               }
+           }
            RemoveAuthor.setText(Book.books.get(index).getAuthor()); //show Book Author
            RemovePrice.setText(Float.toString(Book.books.get(index).getPrice()));//show Book Price
            RemoveTitle.setText(Book.books.get(index).getTitle());//show Book Title
@@ -44,22 +55,33 @@ public class RemoveBookController implements CommonFunctions {
                RemoveAvailable.setText("out stock");
 
            }
+           RemoveImage.setCache(false);
            image=new Image(Book.books.get(index).getImagepath());
            RemoveImage.setImage(image); //show book image
 
        }catch (Exception e){
            System.out.println(e.getMessage());
-           Success.setText("Wrong BookId");
+           Success.setText("Wrong BookName or Author");
 
        }
-
    }
    public void DeleteBook(ActionEvent e){
        try{
-       Book.books.remove(Integer.parseInt(RemoveTextField.getText()) - 1);//Remove book from arraylist
-           Success.setText("Book deleted successfully");
-           RemoveTextField.setText("");
-   }
+               Book.books.remove(index);
+
+
+           RemoveBookname.setText("");
+           RemoveNameAuthor.setText("");
+           RemoveAuthor.setText("");
+           RemovePrice.setText("");
+           RemoveTitle.setText("");
+           RemovePublishYear.setText("");
+           RemoveGenre.setText("");
+           RemoveAvailable.setText("");
+           image=new Image("");
+           RemoveImage.setCache(false);
+           RemoveImage.setImage(null);
+       }
        catch(Exception event)
        {
            System.out.println(event.getMessage());

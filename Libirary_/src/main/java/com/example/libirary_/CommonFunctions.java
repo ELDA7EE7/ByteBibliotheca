@@ -30,5 +30,13 @@ public interface CommonFunctions {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    default void BackToHomePage(ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("HomePageScene.fxml"));
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
+    }
 
 }
