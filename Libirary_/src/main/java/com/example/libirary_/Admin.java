@@ -20,9 +20,7 @@ public class Admin{
     public String getEmail() {
         return email;
     }
-    public void AddBook(String title,String author,String status,int publishYear,float price,String genre){
-        Book newBook = new Book(title,author,status,publishYear,price,genre,"berserk1.jpg");
-    }
+
 
 
 }

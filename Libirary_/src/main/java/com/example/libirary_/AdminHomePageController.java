@@ -16,7 +16,7 @@ public class AdminHomePageController {
   private Parent root;
    private Scene scene;
     @FXML
-    Button updateBookInfoButton,RemoveBook;
+    Button updateBookInfoButton,RemoveBook,addbookButton;
 
     @FXML
     public void switchToUpdateBookInfoPageScene(ActionEvent event) throws IOException { //Change Scene to Update Book Info Page
@@ -31,6 +31,15 @@ public class AdminHomePageController {
     @FXML
     public void switchToRemoveBook(ActionEvent event) throws IOException { //Change Scene to Remove Book Page
         root = FXMLLoader.load(getClass().getResource("RemoveBook.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
+    }
+    @FXML
+    public void SwitchToAddBookScene(ActionEvent event) throws IOException { // Change Scene to Add Book Page
+        root = FXMLLoader.load(getClass().getResource("AddBookScene.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

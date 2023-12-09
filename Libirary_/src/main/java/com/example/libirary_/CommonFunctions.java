@@ -30,5 +30,14 @@ public interface CommonFunctions {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    default int SearchForBookByNameAndAuthor(String name,String author){
+        int index=Integer.MAX_VALUE;
+        for (int i=0;i<Book.books.size();i++){
+            if (Book.books.get(i).getTitle().equalsIgnoreCase(name)&&Book.books.get(i).getAuthor().equalsIgnoreCase(author) ){
+                index= i;
+            }
+        }
+        return index;
+    }
 
 }

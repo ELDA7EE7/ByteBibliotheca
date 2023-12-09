@@ -7,5 +7,6 @@
    <children>
       <Button fx:id="updateBookInfoButton" layoutX="71.0" layoutY="188.0" mnemonicParsing="false" onAction="#switchToUpdateBookInfoPageScene" text="Update Book Info" />
       <Button fx:id="RemoveBook" layoutX="274.0" layoutY="188.0" mnemonicParsing="false" onAction="#switchToRemoveBook" text="Remove Book" />
+      <Button fx:id="addbookButton" layoutX="439.0" layoutY="188.0" mnemonicParsing="false" onAction="#SwitchToAddBookScene" text="Add Book" />
    </children>
 </AnchorPane>
