@@ -7,18 +7,15 @@ public class Book {
     private static int bookCounter=0;
     private int bookID,
     publishYear;
-    private String title;
-    private String author;
-    private String status;
-
-    private String imagepath;
+    private String title, author,status,imagepath;
     private float price;
     private String Genre;
     static ArrayList<Book> books = new ArrayList<Book>();
     private Image image;
     private ImageView view;
-
-    public Book(String title, String author, String status, int publishYear, float price, String genre, String path){
+    private boolean IsAvailable;
+    private int ExpiryDate;
+    public Book(String title, String author, String status, int publishYear, float price, String genre, String path,boolean IsAvailable,int expiryDate){
         this.title = title;
         this.author = author;
         this.status = status;
@@ -27,12 +24,12 @@ public class Book {
         this.Genre=genre;
         this.image =new Image(path);
         this.imagepath=path;
-
+        this.IsAvailable=IsAvailable;
         bookCounter++;
         bookID=bookCounter;
         books.add(this);
+        this.ExpiryDate=expiryDate;
     }
-
 
     public int getBookID() {
         return bookID;
@@ -63,7 +60,7 @@ public class Book {
     }
 
     public void setAuthor(String author) {
-        this.author = author;
+        author = author;
     }
 
     public String getStatus() {
@@ -71,7 +68,7 @@ public class Book {
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        status = status;
     }
 
     public float getPrice() {
@@ -97,11 +94,19 @@ public class Book {
 
     public void setView(ImageView view) { this.view = view;}
 
-    public String getGenre() {
-        return Genre;
+    public boolean isAvailable() {
+        return IsAvailable;
     }
 
-    public void setGenre(String genre) {
-        Genre = genre;
+    public void setAvailable(boolean available) {
+        IsAvailable = available;
+    }
+
+    public int getExpiryDate() {
+        return ExpiryDate;
+    }
+
+    public void setExpiryDate(int expiryDate) {
+        ExpiryDate = expiryDate;
     }
 }
