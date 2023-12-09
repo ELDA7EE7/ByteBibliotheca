@@ -5,7 +5,7 @@ import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 public class Book {
     private static int bookCounter=0;
-    private int bookID,
+    private int bookID,ExpiryDate,
     publishYear;
     private String title, author,status,imagepath;
     private float price;
@@ -13,23 +13,30 @@ public class Book {
     static ArrayList<Book> books = new ArrayList<Book>();
     private Image image;
     private ImageView view;
+    private boolean IsAvailable;
 
-    public Book(String title, String author, String status, int publishYear, float price, String genre, String path){
+    public Book(String title, String author, String status, int publishYear, float price, String genre, String path, boolean IsAvailable, int expiryDate) {
         this.title = title;
         this.author = author;
         this.status = status;
         this.publishYear = publishYear;
         this.price = price;
-        this.Genre=genre;
-        this.image =new Image(path);
-        this.imagepath=path;
-
+        this.Genre = genre;
+        this.image = new Image(path);
+        this.imagepath = path;
+        this.IsAvailable = IsAvailable;
         bookCounter++;
-        bookID=bookCounter;
+        bookID = bookCounter;
         books.add(this);
+        this.ExpiryDate = expiryDate;
+    }
+    public String getGenre() {
+        return Genre;
     }
 
-
+    public void setGenre(String genre) {
+        Genre = genre;
+    }
     public int getBookID() {
         return bookID;
     }
@@ -92,4 +99,20 @@ public class Book {
     public ImageView getView() {  return view; }
 
     public void setView(ImageView view) { this.view = view;}
+    public boolean isAvailable() {
+        return IsAvailable;
+    }
+
+    public void setAvailable (boolean available){
+        IsAvailable = available;
+    }
+
+    public int getExpiryDate () {
+        return ExpiryDate;
+    }
+
+    public void setExpiryDate (int expiryDate){
+        ExpiryDate = expiryDate;
+
+    }
 }

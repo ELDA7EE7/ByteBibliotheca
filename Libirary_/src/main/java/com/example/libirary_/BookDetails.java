@@ -46,7 +46,7 @@ public class BookDetails implements Initializable
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Book book=new Book("mazen","mazen","In stock",2005,2000.0F,"Action","berserk1.jpg");
+        Book book=new Book("mazen","mazen","In stock",2005,2000.0F,"Action","berserk1.jpg",true,4);
         displayBook(book);
     }
 }
