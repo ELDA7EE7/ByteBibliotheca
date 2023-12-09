@@ -78,8 +78,7 @@ public interface CommonFunctions {
         return false;
     }
     default boolean isValidEmail(String email) {
-        if(email==null)
-        {
+        if (email == null) {
             //    this.emailTextField.clear();
             return false;
         }
@@ -87,6 +86,15 @@ public interface CommonFunctions {
 
         Pattern pattern = Pattern.compile(EMAIL_PATTERN);
         return pattern.matcher(email).matches();
+    }
+    default int SearchForBookByNameAndAuthor(String name,String author){
+        int index=Integer.MAX_VALUE;
+        for (int i=0;i<Book.books.size();i++){
+            if (Book.books.get(i).getTitle().equalsIgnoreCase(name)&&Book.books.get(i).getAuthor().equalsIgnoreCase(author) ){
+                index= i;
+            }
+        }
+        return index;
     }
 
 }

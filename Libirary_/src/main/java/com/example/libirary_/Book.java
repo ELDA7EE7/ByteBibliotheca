@@ -35,7 +35,16 @@ public class Book {
         books.add(this);
         this.ExpiryDate = expiryDate;
     }
-
+    public Book(String title, String author, String status, int publishYear, float price, String genre, String path) {
+        this.title = title;
+        this.author = author;
+        this.status = status;
+        this.publishYear = publishYear;
+        this.price = price;
+        this.Genre = genre;
+        this.image = new Image(path);
+        this.imagepath = path;
+    }
     public int getBookID() {
         return bookID;
     }

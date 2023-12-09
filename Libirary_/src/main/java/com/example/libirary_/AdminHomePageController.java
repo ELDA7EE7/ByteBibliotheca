@@ -44,7 +44,6 @@ public class AdminHomePageController implements CommonFunctions {
         stage.setFullScreen(true);
         stage.show();
     }
-
     public void addBorrower(ActionEvent e) throws IOException{
      // BorrowerNum+=1;
         try{
@@ -167,6 +166,16 @@ public class AdminHomePageController implements CommonFunctions {
       }
 
 
-    }
 
+
+    @FXML
+    public void SwitchToAddBookScene(ActionEvent event) throws IOException { // Change Scene to Add Book Page
+        root = FXMLLoader.load(getClass().getResource("AddBookScene.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
+    }
+}
 

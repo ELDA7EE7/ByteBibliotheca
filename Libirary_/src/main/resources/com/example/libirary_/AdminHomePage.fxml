@@ -6,8 +6,6 @@
 
 <AnchorPane prefHeight="686.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.AdminHomePageController">
    <children>
-      <Button fx:id="updateBookInfoButton" layoutX="139.0" layoutY="116.0" mnemonicParsing="false" onAction="#switchToUpdateBookInfoPageScene" text="Update Book Info" />
-      <Button fx:id="RemoveBook" layoutX="404.0" layoutY="116.0" mnemonicParsing="false" onAction="#switchToRemoveBook" text="Remove Book" />
       <Button fx:id="AddBorrower" layoutX="93.0" layoutY="288.0" mnemonicParsing="false" onAction="#addBorrower" text="AddBorrower" />
       <TextField fx:id="BorrowerName" layoutX="79.0" layoutY="368.0" />
       <TextField fx:id="EmailBorrower" layoutX="79.0" layoutY="419.0" />
@@ -19,5 +17,8 @@
       <TextField fx:id="CurrentEmail" layoutX="382.0" layoutY="326.0" onAction="#ViewBorrower" />
       <Button fx:id="ShowInfo" layoutX="545.0" layoutY="326.0" mnemonicParsing="false" onAction="#ViewBorrower" text="ShowInfo" />
       <Button fx:id="RemoveBorrower" layoutX="545.0" layoutY="288.0" mnemonicParsing="false" onAction="#RemoveBorrowers" text="RemoveBorrower" />
+      <Button fx:id="updateBookInfoButton" layoutX="71.0" layoutY="188.0" mnemonicParsing="false" onAction="#switchToUpdateBookInfoPageScene" text="Update Book Info" />
+      <Button fx:id="RemoveBook" layoutX="274.0" layoutY="188.0" mnemonicParsing="false" onAction="#switchToRemoveBook" text="Remove Book" />
+      <Button fx:id="addbookButton" layoutX="439.0" layoutY="188.0" mnemonicParsing="false" onAction="#SwitchToAddBookScene" text="Add Book" />
    </children>
 </AnchorPane>
