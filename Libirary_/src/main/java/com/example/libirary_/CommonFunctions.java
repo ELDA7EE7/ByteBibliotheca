@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 public interface CommonFunctions {
 
@@ -37,6 +38,55 @@ public interface CommonFunctions {
         stage.setScene(scene);
         stage.setFullScreen(true);
         stage.show();
+    }
+    default boolean checkName(String username){
+        if(username==null) {
+            //        this.usernameTextField.clear();
+            return false;
+        }
+        for ( char c: username.toCharArray()) {
+            if((c>='A'&&c<='Z')||(c>='a'&&c<='z'))
+            {
+                continue;
+            }
+            return false;
+        }
+        return true;
+    }
+    default boolean checkPasswordIsStrong(String password){
+        if(password==null){
+            //      this.confirmPasswordField.clear();
+            return false;
+        }
+        if(password.length()<8){
+            return false;
+        }
+        boolean isFindChar =false,isFindSymbolOrNumber =false;
+        for (char c:password.toCharArray()) {
+            if((c>='A'&&c<='Z')||(c>='a'&&c<='z'))
+            {
+                isFindChar=true;
+            }else if(c=='\t'){
+                return false;
+            }else {
+                isFindSymbolOrNumber =true;
+            }
+        }
+        if(isFindChar&&isFindSymbolOrNumber) {
+            return true;
+        }
+        return false;
+    }
+    default boolean isValidEmail(String email) {
+        if(email==null)
+        {
+            //    this.emailTextField.clear();
+            return false;
+        }
+        String EMAIL_PATTERN = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+
+        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        return pattern.matcher(email).matches();
     }
 
 }

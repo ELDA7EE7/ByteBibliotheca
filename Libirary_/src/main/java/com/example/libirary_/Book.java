@@ -4,9 +4,9 @@ import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
 public class Book {
-    private static int bookCounter=0;
+    private static int bookCounter = 0;
     private int bookID,
-    publishYear;
+            publishYear;
     private String title;
     private String author;
     private String status;
@@ -17,22 +17,24 @@ public class Book {
     static ArrayList<Book> books = new ArrayList<Book>();
     private Image image;
     private ImageView view;
+    private boolean IsAvailable;
+    private int ExpiryDate;
 
-    public Book(String title, String author, String status, int publishYear, float price, String genre, String path){
+    public Book(String title, String author, String status, int publishYear, float price, String genre, String path, boolean IsAvailable, int expiryDate) {
         this.title = title;
         this.author = author;
         this.status = status;
         this.publishYear = publishYear;
         this.price = price;
-        this.Genre=genre;
-        this.image =new Image(path);
-        this.imagepath=path;
-
+        this.Genre = genre;
+        this.image = new Image(path);
+        this.imagepath = path;
+        this.IsAvailable = IsAvailable;
         bookCounter++;
-        bookID=bookCounter;
+        bookID = bookCounter;
         books.add(this);
+        this.ExpiryDate = expiryDate;
     }
-
 
     public int getBookID() {
         return bookID;
@@ -82,20 +84,29 @@ public class Book {
         this.price = price;
     }
 
-    public void setImageview(Image image)
-    {
+    public void setImageview(Image image) {
         this.view.setImage(image);
     }
 
-    public Image getImage() {  return image; }
+    public Image getImage() {
+        return image;
+    }
 
-    public String getImagepath() { return imagepath; }
+    public String getImagepath() {
+        return imagepath;
+    }
 
-    public void setImagepath(String imagepath) {  this.imagepath = imagepath; }
+    public void setImagepath(String imagepath) {
+        this.imagepath = imagepath;
+    }
 
-    public ImageView getView() {  return view; }
+    public ImageView getView() {
+        return view;
+    }
 
-    public void setView(ImageView view) { this.view = view;}
+    public void setView(ImageView view) {
+        this.view = view;
+    }
 
     public String getGenre() {
         return Genre;
@@ -104,4 +115,22 @@ public class Book {
     public void setGenre(String genre) {
         Genre = genre;
     }
-}
+
+        public boolean isAvailable() {
+            return IsAvailable;
+        }
+
+        public void setAvailable (boolean available){
+            IsAvailable = available;
+        }
+
+        public int getExpiryDate () {
+            return ExpiryDate;
+        }
+
+        public void setExpiryDate (int expiryDate){
+            ExpiryDate = expiryDate;
+
+        }
+    }
+
