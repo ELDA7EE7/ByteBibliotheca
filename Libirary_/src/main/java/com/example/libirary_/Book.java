@@ -30,8 +30,11 @@ public class Book {
     }
 
 
-    public int getBookID() {
-        return bookID;
+    public int getBookID() {return bookID;}
+    public String getGenre() {return Genre;}
+
+    public void setGenre(String genre) {
+        Genre = genre;
     }
 
     public void setBookID(int bookID) {
