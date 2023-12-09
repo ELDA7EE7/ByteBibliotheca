@@ -66,6 +66,7 @@ public class UpdateBookInfoController implements CommonFunctions {
     }
     public void ViewBookToUpdate(ActionEvent event){
         try {
+            index=Integer.MAX_VALUE;
             successLabel.setText("");
             String bookname = indexsearchTextField.getText(),bookauthor= authorTextField.getText();
             index= SearchForBookByNameAndAuthor(bookname,bookauthor);
