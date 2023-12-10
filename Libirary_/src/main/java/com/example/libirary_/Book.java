@@ -10,7 +10,7 @@ public class Book {
     private String title, author,status,imagepath;
     private float price;
     private String Genre;
-    static ArrayList<Book> books = new ArrayList<Book>();
+    public static ArrayList<Book> books = new ArrayList<Book>();
     private Image image;
     private ImageView view;
     private boolean IsAvailable;
