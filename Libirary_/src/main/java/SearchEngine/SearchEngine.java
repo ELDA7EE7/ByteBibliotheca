@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public abstract class SearchEngine {
-    ArrayList<String> words = new ArrayList<>();
+   protected ArrayList<String> words = new ArrayList<>();
     protected void uploadAllBooks (){
         for (Book book:
              Book.books) {

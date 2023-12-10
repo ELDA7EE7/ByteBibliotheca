@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,10 +20,6 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <TextField layoutX="517.0" layoutY="111.0" prefHeight="40.0" prefWidth="621.0" promptText="Search">
-         <font>
-            <Font size="18.0" />
-         </font></TextField>
       <Label alignment="CENTER" layoutX="1275.0" layoutY="14.0" prefHeight="62.0" prefWidth="186.0" text="Username">
          <font>
             <Font name="Lobster1.4" size="27.0" />
@@ -121,5 +116,10 @@
             <Image url="@user_1144760.png" />
          </image>
       </ImageView>
+      <Button layoutX="680.0" layoutY="93.0" mnemonicParsing="false" onAction="#SwitchToSearchScene" prefHeight="62.0" prefWidth="305.0" text="Search">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
