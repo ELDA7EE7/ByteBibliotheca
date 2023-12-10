@@ -15,7 +15,8 @@ public class Book {
     private ImageView view;
     private boolean IsAvailable;
     private int ExpiryDate;
-    public Book(String title, String author, String status, int publishYear, float price, String genre, String path,boolean IsAvailable,int expiryDate){
+    private int InStock;
+    public Book(String title, String author, String status, int publishYear, float price, String genre, String path,boolean IsAvailable,int expiryDate,int Instock){
         this.title = title;
         this.author = author;
         this.status = status;
@@ -29,6 +30,7 @@ public class Book {
         bookID=bookCounter;
         books.add(this);
         this.ExpiryDate=expiryDate;
+        this.InStock=Instock;
     }
 
     public int getBookID() {
@@ -108,5 +110,13 @@ public class Book {
 
     public void setExpiryDate(int expiryDate) {
         ExpiryDate = expiryDate;
+    }
+
+    public int getInStock() {
+        return InStock;
+    }
+
+    public void setInStock(int inStock) {
+        InStock = inStock;
     }
 }
