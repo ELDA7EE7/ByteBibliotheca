@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.AddBookSceneController">
+   <children>
+      <Label layoutX="95.0" layoutY="94.0" text="Name" />
+      <TextField fx:id="nameTextField" layoutX="209.0" layoutY="90.0" />
+      <Label layoutX="95.0" layoutY="198.0" text="Author" />
+      <TextField fx:id="authorTextField" layoutX="209.0" layoutY="194.0" />
+      <Label layoutX="95.0" layoutY="321.0" text="Publish Year" />
+      <TextField fx:id="publishyearTextField" layoutX="209.0" layoutY="317.0" />
+      <Label layoutX="95.0" layoutY="466.0" text="Price" />
+      <TextField fx:id="priceTextField" layoutX="209.0" layoutY="462.0" />
+      <Label layoutX="95.0" layoutY="564.0" text="Status" />
+      <Label layoutX="70.0" layoutY="398.0" text="Book Cover Image Path" />
+      <TextField fx:id="imagepathTextField" layoutX="209.0" layoutY="394.0" />
+      <Label layoutX="95.0" layoutY="263.0" text="Genre" />
+      <TextField fx:id="genreTextField" layoutX="209.0" layoutY="259.0" />
+      <CheckBox fx:id="statusCheckBox" layoutX="209.0" layoutY="564.0" mnemonicParsing="false" text="In Stock" />
+      <Button layoutX="205.0" layoutY="775.0" mnemonicParsing="false" onAction="#AddBook" text="ADD" />
+      <Label fx:id="successLabel" layoutX="378.0" layoutY="636.0" />
+      <CheckBox fx:id="availableCheckBox" layoutX="205.0" layoutY="601.0" mnemonicParsing="false" text="Available for borrow" />
+      <TextField fx:id="expiredateTextField" layoutX="209.0" layoutY="682.0" />
+      <Label layoutX="82.0" layoutY="686.0" text="Borrow Expire Date" />
+      <Button layoutX="372.0" layoutY="879.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+   </children>
+</AnchorPane>
