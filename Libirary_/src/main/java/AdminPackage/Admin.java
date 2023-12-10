@@ -1,9 +1,4 @@
-package com.example.libirary_;
-
-import javafx.scene.control.TextField;
-
-import java.io.IOException;
-
+package AdminPackage;
 public class Admin{
     private String email="admin",password="admin";
 
@@ -20,7 +15,4 @@ public class Admin{
     public String getEmail() {
         return email;
     }
-
-
-
 }

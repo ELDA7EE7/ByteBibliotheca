@@ -1,5 +1,6 @@
-package com.example.libirary_;
+package InterfacesPackage;
 
+import com.example.libirary_.Book;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -89,7 +90,7 @@ public interface CommonFunctions {
     }
     default int SearchForBookByNameAndAuthor(String name,String author){
         int index=Integer.MAX_VALUE;
-        for (int i=0;i<Book.books.size();i++){
+        for (int i = 0; i< Book.books.size(); i++){
             if (Book.books.get(i).getTitle().equalsIgnoreCase(name)&&Book.books.get(i).getAuthor().equalsIgnoreCase(author) ){
                 index= i;
             }

@@ -22,8 +22,11 @@
       <Label layoutX="95.0" layoutY="263.0" text="Genre" />
       <TextField fx:id="genreTextField" layoutX="209.0" layoutY="259.0" />
       <CheckBox fx:id="statusCheckBox" layoutX="209.0" layoutY="564.0" mnemonicParsing="false" text="In Stock" />
-      <Button layoutX="209.0" layoutY="682.0" mnemonicParsing="false" onAction="#AddBook" text="ADD" />
+      <Button layoutX="205.0" layoutY="775.0" mnemonicParsing="false" onAction="#AddBook" text="ADD" />
       <Label fx:id="successLabel" layoutX="378.0" layoutY="636.0" />
-      <CheckBox layoutX="205.0" layoutY="601.0" mnemonicParsing="false" text="Available" />
+      <CheckBox fx:id="availableCheckBox" layoutX="205.0" layoutY="601.0" mnemonicParsing="false" text="Available for borrow" />
+      <TextField fx:id="expiredateTextField" layoutX="209.0" layoutY="682.0" />
+      <Label layoutX="82.0" layoutY="686.0" text="Borrow Expire Date" />
+      <Button layoutX="372.0" layoutY="879.0" mnemonicParsing="false" onAction="#Back" text="Back" />
    </children>
 </AnchorPane>

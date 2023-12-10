@@ -1,53 +1,25 @@
 package com.example.libirary_;
+import AdminPackage.AdminFunctionalities;
+import InterfacesPackage.CommonFunctions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static com.example.libirary_.Borrower.BorrowerNum;
-import static com.example.libirary_.Borrower.borrowers;
-import static com.example.libirary_.User.users;
-import static com.example.libirary_.UserInformation.*;
-
-public class AdminHomePageController implements CommonFunctions {
+public class AdminHomePageController extends AdminFunctionalities implements CommonFunctions {
   private   Stage stage;
   private Parent root;
    private Scene scene;
-    @FXML
-    Button updateBookInfoButton,RemoveBook;
-    @FXML
-    TextField BorrowerName,EmailBorrower,PasswordBorrower,NameOfBorrower,EmailOfBorrower,PasswordOfBorrower,CurrentEmail;
 
-    @FXML
-    public void switchToUpdateBookInfoPageScene(ActionEvent event) throws IOException { //Change Scene to Update Book Info Page
-        root = FXMLLoader.load(getClass().getResource("UpdateBookInfo.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
-    }
 
-    @FXML
-    public void switchToRemoveBook(ActionEvent event) throws IOException { //Change Scene to Remove Book Page
-        root = FXMLLoader.load(getClass().getResource("RemoveBook.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
-    }
-    public void addBorrower(ActionEvent e) throws IOException{
-     // BorrowerNum+=1;
+  /*  public void AddBorrower2(ActionEvent event){
         try{
-        String borrowusername,borrowemail,borrowpassword;
+            String borrowusername,borrowemail,borrowpassword;
             try {
                 borrowusername =this.BorrowerName.getText();
                 borrowemail = this.EmailBorrower.getText();
@@ -88,11 +60,8 @@ public class AdminHomePageController implements CommonFunctions {
                 }
                 else
                 {
-                    //Mazen Mohammed
-                    User u=new User(BorrowerName.getText(),EmailBorrower.getText(),PasswordBorrower.getText());
-                    users.add(u);
                     Borrower bro=new Borrower(BorrowerNum,BorrowerName.getText(),EmailBorrower.getText(),PasswordBorrower.getText());
-                    borrowers.add(bro);
+                    borrowers.add(bro); // borrower extends user so we dont need to make an object of user
                     System.out.println(borrowers.size());
                 }
             }catch (NullPointerException ex){
@@ -103,67 +72,28 @@ public class AdminHomePageController implements CommonFunctions {
         catch(NullPointerException n) {
             System.out.println("ok");
         }
+    }*/
 
+    @FXML
+    public void switchToUpdateBookInfoPageScene(ActionEvent event) throws IOException { //Change Scene to Update Book Info Page
+        root = FXMLLoader.load(getClass().getResource("UpdateBookInfo.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
     }
-    int index;
 
-    boolean ChangeSuccesfully=false;
+    @FXML
+    public void switchToRemoveBook(ActionEvent event) throws IOException { //Change Scene to Remove Book Page
+        root = FXMLLoader.load(getClass().getResource("RemoveBook.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
+    }
 
-    public void ViewBorrower(ActionEvent e) throws IOException {
-
-            String C_Email = CurrentEmail.getText();
-            for (int i = 0; i < users.size(); i++) {
-                if (C_Email.compareTo(users.get(i).getEmailInfo()) == 0) {
-                    ChangeSuccesfully = true;
-                    index = i;
-                    NameOfBorrower.setText(users.get(i).getUsernameInfo());
-                    EmailOfBorrower.setText(users.get(i).getEmailInfo());
-                    PasswordOfBorrower.setText(users.get(i).getPasswordInfo());
-
-                } else {
-
-                    PasswordOfBorrower.setText(null);
-                    NameOfBorrower.setText(null);
-                    EmailOfBorrower.setText(null);
-
-                }
-            }
-           }
-
-      public void UpdateBorrowers(ActionEvent e) throws IOException
-      {    String Password=PasswordOfBorrower.getText(),Username=NameOfBorrower.getText(),Email=EmailOfBorrower.getText();
-
-          try{
-
-          if(ChangeSuccesfully) {
-              User.users.get(index).setEmailInfo(Email);
-              User.users.get(index).setPasswordInfo(Password);
-              User.users.get(index).setUserNameInfo(Username);
-              ChangeSuccesfully = false;
-              //System.out.println(users.size());
-              //  System.out.println(ChangeSuccesfully);
-          }
-          }
-        catch (NullPointerException n) {
-        }
-      }
-      public void RemoveBorrowers(ActionEvent e) throws IOException
-      {
-          if(ChangeSuccesfully){
-              User.users.remove(index);
-              ChangeSuccesfully=false;
-              PasswordOfBorrower.setText("");
-              NameOfBorrower.setText("");
-              EmailOfBorrower.setText("");
-              CurrentEmail.setText("");
-
-             // System.out.println(users.size());
-              //  System.out.println(ChangeSuccesfully);
-
-          }
-
-
-      }
 
 
 

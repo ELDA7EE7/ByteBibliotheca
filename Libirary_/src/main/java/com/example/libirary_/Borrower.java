@@ -11,7 +11,7 @@ public class Borrower extends UserInformation
     public static int BorrowerNum;
     private boolean IsBorrowing;
     private String PhoneNumber ;
-    static ArrayList<Borrower> borrowers = new ArrayList<Borrower>();
+    public static ArrayList<Borrower> borrowers = new ArrayList<Borrower>();
 
 
 
