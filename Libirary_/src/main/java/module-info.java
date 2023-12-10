@@ -7,4 +7,8 @@ module com.example.libirary_ {
     exports com.example.libirary_;
     opens SearchEngine to javafx.fxml;
     exports SearchEngine;
+    exports AdminPackage;
+    opens AdminPackage to javafx.fxml;
+    exports InterfacesPackage;
+    opens InterfacesPackage to javafx.fxml;
 }
