@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SearchEngine.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SearchEngine.SearchSceneController">
     <children>
         <TextField fx:id="searchBar" layoutX="24.0" layoutY="24.0" prefHeight="35.0" prefWidth="475.0" />
         <ListView fx:id="listView" layoutX="24.0" layoutY="69.0" prefHeight="309.0" prefWidth="553.0" />
