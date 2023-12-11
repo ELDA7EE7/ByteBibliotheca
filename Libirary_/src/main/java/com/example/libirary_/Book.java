@@ -20,9 +20,10 @@ public class Book {
     private ImageView view;
     private boolean IsAvailable;
     private int ExpiryDate;
-
-    public Book(String title, String author, String status, int publishYear, float price, String genre, String path, boolean IsAvailable, int expiryDate) {
-        this.title = title;
+//<<<<<<< HEAD
+    private int InStock;
+    public Book(String title, String author, String status, int publishYear, float price, String genre, String path,boolean IsAvailable,int expiryDate,int Instock){
+     this.title = title;
         this.author = author;
         this.status = status;
         bookCounterInShoppingCart = 0;
@@ -37,19 +38,10 @@ public class Book {
         books.add(this);
         this.ExpiryDate = expiryDate;
     }
-    public Book(String title, String author, String status, int publishYear, float price, String genre, String path) {
-        this.title = title;
-        this.author = author;
-        this.status = status;
-        this.publishYear = publishYear;
-        this.price = price;
-        this.Genre = genre;
-        this.image = new Image(path);
-        this.imagepath = path;
-    }
+
     public int getBookCounterInShoppingCart() {
         return bookCounterInShoppingCart;
-    }
+  }
 
     public void setBookCounterInShoppingCart(int bookCounterInShoppingCart) {
         this.bookCounterInShoppingCart = bookCounterInShoppingCart;
@@ -120,6 +112,14 @@ public class Book {
 
     public ImageView getView() {
         return view;
+    }
+
+    public int getInStock() {
+        return InStock;
+    }
+
+    public void setInStock(int inStock) {
+        InStock = inStock;
     }
 
     public void setView(ImageView view) {

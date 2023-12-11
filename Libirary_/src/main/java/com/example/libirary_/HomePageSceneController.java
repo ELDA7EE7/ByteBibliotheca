@@ -97,13 +97,13 @@ public class HomePageSceneController implements Initializable
     {
 
         Book book =new Book("Rich Dad Poor Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,4);
+                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,4,10);
 
         book =new Book("Atomic habit","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/atomic.jpg",true,4);
+                "HUmanDevelopment", "/atomic.jpg",true,4,10);
 
         book =new Book("Rich Dad  Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,3);
+                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,3,10);
 
 
 

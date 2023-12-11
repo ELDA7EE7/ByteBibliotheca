@@ -71,6 +71,7 @@ public class Borrower extends UserInformation
                 if (borrower.ExpireDate.get(i).isBefore(java.time.LocalDateTime.now()))
                 {
                     System.out.println("Duration of the borrowed book has expired :" +" "+Book.books.get(borrower.BorrowedBookID.get(i)).getTitle());
+                    System.out.println("You will be fined 50$ ");
                     IsReturned.set(i,false);
                     Book.books.get(borrower.BorrowedBookID.get(i)).setAvailable(true);
                 }

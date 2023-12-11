@@ -50,7 +50,7 @@ public abstract class AddBookFunctions implements CommonFunctions {
             status = "Out of Stock";
         }
         successLabel.setText("Book added successfully");
-        Book newBook = new Book(name,author,status,publishyear,price,genre,imagepath,isAvailable,expireDate);
+        Book newBook = new Book(name,author,status,publishyear,price,genre,imagepath,isAvailable,expireDate,3);
         System.out.println(Book.books.size());
     }
     public void AddBook(ActionEvent event){
