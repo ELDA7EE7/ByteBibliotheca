@@ -5,6 +5,7 @@ import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 public class Book {
     private static int bookCounter=0;
+    private int bookCounterInShoppingCart;
     private int bookID,
     publishYear;
     private String title, author,status,imagepath;
@@ -19,6 +20,7 @@ public class Book {
         this.title = title;
         this.author = author;
         this.status = status;
+        bookCounterInShoppingCart = 0;
         this.publishYear = publishYear;
         this.price = price;
         this.Genre=genre;
@@ -29,6 +31,14 @@ public class Book {
         bookID=bookCounter;
         books.add(this);
         this.ExpiryDate=expiryDate;
+    }
+
+    public int getBookCounterInShoppingCart() {
+        return bookCounterInShoppingCart;
+    }
+
+    public void setBookCounterInShoppingCart(int bookCounterInShoppingCart) {
+        this.bookCounterInShoppingCart = bookCounterInShoppingCart;
     }
 
     public int getBookID() {
