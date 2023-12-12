@@ -12,4 +12,6 @@ module com.example.libirary_ {
     opens AdminPackage to javafx.fxml;
     exports InterfacesPackage;
     opens InterfacesPackage to javafx.fxml;
+    exports userprofile;
+    opens userprofile to javafx.fxml;
 }

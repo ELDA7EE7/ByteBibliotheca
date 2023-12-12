@@ -50,6 +50,16 @@ public class HomePageSceneController implements Initializable
         stage.show();
     }
 
+    @FXML
+    void SwitchToUserProfileScene(ActionEvent e) throws IOException{
+        root= FXMLLoader.load(getClass().getResource("UserProfileScene.fxml"));
+        stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
+        scene= new Scene(root);
+        stage.setFullScreen(true);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void cart(MouseEvent e) throws IOException { //Change Scene to Cart Page
         root= FXMLLoader.load(getClass().getResource("CartScene.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();

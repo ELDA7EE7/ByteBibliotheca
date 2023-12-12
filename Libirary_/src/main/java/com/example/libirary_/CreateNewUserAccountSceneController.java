@@ -85,8 +85,10 @@ public class CreateNewUserAccountSceneController extends RegistrationSystem {
             }
             if (signedInSuccessfully) {
                 // switch to libraryScene
-                switchToHomePageScene(event);
+
                 User newuser = new User(username, email, password);
+                User.setCurrentUser(newuser);
+                switchToHomePageScene(event);
             } else {
                 this.showAlert("email format must be correct and Password Must be Strong");
                 enterPasswordField.clear();

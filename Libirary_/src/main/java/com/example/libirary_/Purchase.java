@@ -2,10 +2,9 @@ package com.example.libirary_;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
-public class Purchase  extends UserInformation {
+public class Purchase  extends Person {
 
 
     private  String CustomerName;
