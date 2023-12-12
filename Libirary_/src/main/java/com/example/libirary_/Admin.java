@@ -17,7 +17,7 @@ public class Admin {
         return email;
     }
     public void AddBook(String title,String author,String status,int publishYear,float price,String genre){
-        Book newBook = new Book(title,author,status,publishYear,price,genre,"berserk1.jpg",true,4);
+        Book newBook = new Book(title,author,status,publishYear,price,genre,"berserk1.jpg",true,4,10);
     }
     public void RemoveBook(int bookID){
         Book.books.remove(bookID);

@@ -65,6 +65,7 @@ public class CreateNewUserAccountSceneController extends RegistrationSystem {
             this.username =this.usernameTextField.getText();
             this.email = this.emailTextField.getText();
             this.password = this.enterPasswordField.getText();
+
             boolean signedInSuccessfully = true;
             if (this.checkName(this.username) == false) {
                 System.out.println("Please Enter only characters in user name field");

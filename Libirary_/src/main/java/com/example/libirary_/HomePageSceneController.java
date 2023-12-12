@@ -40,18 +40,17 @@ public class HomePageSceneController implements Initializable
             ,bookname6,bookname7,bookname8,bookname9,bookname10,
             bookname11,bookname12,bookname13,bookname14,bookname15;
 
-    public void RandomBookGen(ActionEvent e) throws IOException {
-        root= FXMLLoader.load(getClass().getResource("RandomPage.fxml"));
+    @FXML
+    void SwitchToSearchScene(ActionEvent e) throws IOException{
+        root= FXMLLoader.load(getClass().getResource("SearchScene.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
         stage.setFullScreen(true);
         stage.setScene(scene);
-
         stage.show();
-
     }
 
-    public void cart(MouseEvent e) throws IOException {
+    public void cart(MouseEvent e) throws IOException { //Change Scene to Cart Page
         root= FXMLLoader.load(getClass().getResource("CartScene.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
@@ -60,7 +59,7 @@ public class HomePageSceneController implements Initializable
         stage.show();
 
     }
-    public void BookDetails(MouseEvent e) throws IOException{
+    public void BookDetails(MouseEvent e) throws IOException{//Change Scene to BookDetails Page
         root= FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
@@ -72,14 +71,12 @@ public class HomePageSceneController implements Initializable
     @FXML
     private ImageView rand;
     public void random(ActionEvent e) throws IOException{
-        image=new Image(getClass().getResource("Cart.png").toExternalForm());
+        image=new Image(getClass().getResource("Cart.png").toExternalForm());//show image for random book
         rand.setImage(image);
 
     }
 
-    public void CategoriesPage(ActionEvent e) throws IOException {
-
-
+    public void CategoriesPage(ActionEvent e) throws IOException {//Change Scene to Categories Page
 
         System.out.println(Book.books.size());
         root= FXMLLoader.load(getClass().getResource("Categories.fxml"));
@@ -97,13 +94,13 @@ public class HomePageSceneController implements Initializable
     {
 
         Book book =new Book("Rich Dad Poor Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,4);
+                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,4,10);
 
         book =new Book("Atomic habit","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/atomic.jpg",true,4);
+                "HUmanDevelopment", "/atomic.jpg",true,4,10);
 
         book =new Book("Rich Dad  Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,3);
+                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,3,10);
 
 
 

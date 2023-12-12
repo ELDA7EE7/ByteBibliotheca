@@ -5,20 +5,30 @@ import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 public class Book {
     private static int bookCounter=0;
-    private int bookID,ExpiryDate,
-    publishYear;
-    private String title, author,status,imagepath;
+
+    private int bookCounterInShoppingCart;
+    private int bookID,
+            publishYear;
+    private String title;
+    private String author;
+    private String status;
+
+    private String imagepath;
     private float price;
     private String Genre;
-    static ArrayList<Book> books = new ArrayList<Book>();
+    public static ArrayList<Book> books = new ArrayList<Book>();
     private Image image;
     private ImageView view;
     private boolean IsAvailable;
 
-    public Book(String title, String author, String status, int publishYear, float price, String genre, String path, boolean IsAvailable, int expiryDate) {
-        this.title = title;
+    private int ExpiryDate;
+//<<<<<<< HEAD
+    private int InStock;
+    public Book(String title, String author, String status, int publishYear, float price, String genre, String path,boolean IsAvailable,int expiryDate,int Instock){
+     this.title = title;
         this.author = author;
         this.status = status;
+        bookCounterInShoppingCart = 0;
         this.publishYear = publishYear;
         this.price = price;
         this.Genre = genre;
@@ -29,13 +39,16 @@ public class Book {
         bookID = bookCounter;
         books.add(this);
         this.ExpiryDate = expiryDate;
-    }
-    public String getGenre() {
-        return Genre;
+
     }
 
-    public void setGenre(String genre) {
-        Genre = genre;
+    public int getBookCounterInShoppingCart() {
+        return bookCounterInShoppingCart;
+  }
+
+    public void setBookCounterInShoppingCart(int bookCounterInShoppingCart) {
+        this.bookCounterInShoppingCart = bookCounterInShoppingCart;
+
     }
     public int getBookID() {
         return bookID;
@@ -66,7 +79,7 @@ public class Book {
     }
 
     public void setAuthor(String author) {
-        author = author;
+        this.author = author;
     }
 
     public String getStatus() {
@@ -74,7 +87,7 @@ public class Book {
     }
 
     public void setStatus(String status) {
-        status = status;
+        this.status = status;
     }
 
     public float getPrice() {
@@ -85,34 +98,62 @@ public class Book {
         this.price = price;
     }
 
-    public void setImageview(Image image)
-    {
+    public void setImageview(Image image) {
         this.view.setImage(image);
     }
 
-    public Image getImage() {  return image; }
-
-    public String getImagepath() { return imagepath; }
-
-    public void setImagepath(String imagepath) {  this.imagepath = imagepath; }
-
-    public ImageView getView() {  return view; }
-
-    public void setView(ImageView view) { this.view = view;}
-    public boolean isAvailable() {
-        return IsAvailable;
+    public Image getImage() {
+        return image;
     }
 
-    public void setAvailable (boolean available){
-        IsAvailable = available;
+    public String getImagepath() {
+        return imagepath;
     }
 
-    public int getExpiryDate () {
-        return ExpiryDate;
+    public void setImagepath(String imagepath) {
+        this.imagepath = imagepath;
     }
 
-    public void setExpiryDate (int expiryDate){
-        ExpiryDate = expiryDate;
-
+    public ImageView getView() {
+        return view;
     }
-}
+
+    public int getInStock() {
+        return InStock;
+    }
+
+
+    public void setInStock(int inStock) {
+        InStock = inStock;
+    }
+
+    public void setView(ImageView view) {
+        this.view = view;
+    }
+
+    public String getGenre() {
+        return Genre;
+    }
+
+    public void setGenre(String genre) {
+        Genre = genre;
+    }
+
+        public boolean isAvailable() {
+            return IsAvailable;
+        }
+
+        public void setAvailable (boolean available){
+            IsAvailable = available;
+        }
+
+        public int getExpiryDate () {
+            return ExpiryDate;
+        }
+
+        public void setExpiryDate (int expiryDate){
+            ExpiryDate = expiryDate;
+
+        }
+    }
+

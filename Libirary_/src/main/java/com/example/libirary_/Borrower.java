@@ -10,11 +10,27 @@ public class Borrower extends UserInformation
     private final int  BorrowerId;
     public static int BorrowerNum;
     private boolean IsBorrowing;
+    private String PhoneNumber ;
+    public static ArrayList<Borrower> borrowers = new ArrayList<Borrower>();
+
+
+
     private ArrayList<Integer>BorrowedBookID=new ArrayList<Integer>();
     private ArrayList<LocalDateTime>ExpireDate=new ArrayList<LocalDateTime>();
     private ArrayList<LocalDateTime>DateofBorrow=new ArrayList<LocalDateTime>();
     private ArrayList<Boolean>IsReturned=new ArrayList<Boolean>();
 
+    public String getBorrowerName() {
+        return BorrowerName;
+    }
+
+    public void setBorrowerName(String borrowerName) {
+        BorrowerName = borrowerName;
+    }
+
+    public int getBorrowerId() {
+        return BorrowerId;
+    }
 
     LocalDate currentDate = LocalDate.now();
 
@@ -26,6 +42,7 @@ public class Borrower extends UserInformation
         BorrowerName=userName;
 
     }
+
 
     public void BorrowBook(Book book)
     {
@@ -54,6 +71,7 @@ public class Borrower extends UserInformation
                 if (borrower.ExpireDate.get(i).isBefore(java.time.LocalDateTime.now()))
                 {
                     System.out.println("Duration of the borrowed book has expired :" +" "+Book.books.get(borrower.BorrowedBookID.get(i)).getTitle());
+                    System.out.println("You will be fined 50$ ");
                     IsReturned.set(i,false);
                     Book.books.get(borrower.BorrowedBookID.get(i)).setAvailable(true);
                 }
