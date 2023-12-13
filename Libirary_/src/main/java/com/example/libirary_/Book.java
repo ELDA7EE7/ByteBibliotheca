@@ -5,6 +5,7 @@ import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 public class Book {
     private static int bookCounter=0;
+
     private int bookCounterInShoppingCart;
     private int bookID,
             publishYear;
@@ -19,6 +20,7 @@ public class Book {
     private Image image;
     private ImageView view;
     private boolean IsAvailable;
+
     private int ExpiryDate;
 //<<<<<<< HEAD
     private int InStock;
@@ -37,6 +39,7 @@ public class Book {
         bookID = bookCounter;
         books.add(this);
         this.ExpiryDate = expiryDate;
+
     }
 
     public int getBookCounterInShoppingCart() {
@@ -45,6 +48,7 @@ public class Book {
 
     public void setBookCounterInShoppingCart(int bookCounterInShoppingCart) {
         this.bookCounterInShoppingCart = bookCounterInShoppingCart;
+
     }
     public int getBookID() {
         return bookID;
@@ -117,6 +121,7 @@ public class Book {
     public int getInStock() {
         return InStock;
     }
+
 
     public void setInStock(int inStock) {
         InStock = inStock;
