@@ -51,7 +51,7 @@ public class HomePageSceneController implements Initializable
     }
 
     public void cart(MouseEvent e) throws IOException { //Change Scene to Cart Page
-        root= FXMLLoader.load(getClass().getResource("CartScene.fxml"));
+        root= FXMLLoader.load(getClass().getResource("ShoppingCart.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
         stage.setFullScreen(true);
