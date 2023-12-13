@@ -68,19 +68,19 @@ public class CreateNewUserAccountSceneController extends RegistrationSystem {
 
             boolean signedInSuccessfully = true;
             if (this.checkName(this.username) == false) {
-                System.out.println("Please Enter only characters in user name field");
+                System.out.println("Please enter characters only in user name field.");
                 //  usernameLabel.setText("* Please Enter only characters in user name field");
                 usernameTextField.clear();
                 signedInSuccessfully = false;
             }
             if (this.checkPasswordIsStrong(this.password) == false) {
-                System.out.println("Please Enter Strong Password with out space ");
+                System.out.println("Please enter a stronger password without any space.");
                 // enterpasswordLabel.setText("* Please Enter Strong Password with out space");
                 enterPasswordField.clear();
                 signedInSuccessfully = false;
             }
             if (!this.isValidEmail(email)) {
-                System.out.println("invalid email");
+                System.out.println("Please enter a valid email.");
                 signedInSuccessfully = false;
             }
             if (signedInSuccessfully) {
@@ -88,14 +88,14 @@ public class CreateNewUserAccountSceneController extends RegistrationSystem {
                 switchToHomePageScene(event);
                 User newuser = new User(username, email, password);
             } else {
-                this.showAlert("email format must be correct and Password Must be Strong");
+                this.showAlert("Email format must be correct and password must be strong.");
                 enterPasswordField.clear();
                 usernameTextField.clear();
                 emailTextField.clear();
             }
         }catch (NullPointerException ex){
             System.out.println(ex.getMessage());
-            this.showAlert("enter information then please press enter");
+            this.showAlert("Enter information then press enter, please.");
         }
     }
     public void BackToLoginPage(ActionEvent event) throws IOException{
