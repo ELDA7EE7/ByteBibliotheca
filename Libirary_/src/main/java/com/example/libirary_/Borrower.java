@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
-public class Borrower extends UserInformation
+public class Borrower extends Person
 {
     private  String BorrowerName;
     private final int  BorrowerId;

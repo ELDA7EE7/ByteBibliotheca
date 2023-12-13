@@ -1,7 +1,6 @@
 package com.example.libirary_;
 
-import InterfacesPackage.CommonFunctions;
-import SearchEngine.SearchEngine;
+import searchengine.SearchEngine;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;

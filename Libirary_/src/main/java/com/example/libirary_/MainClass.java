@@ -31,12 +31,12 @@ public class MainClass extends Application {
     }
     public void close(Stage stage){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Logout");
-        alert.setHeaderText("You're about to logout!");
+        alert.setTitle("Close");
+        alert.setHeaderText("You're about to Close Programme!");
         alert.setContentText("Do you want to save before exiting?");
 
         if (alert.showAndWait().get() == ButtonType.OK){
-            System.out.println("You successfully logged out");
+           // System.out.println("You successfully logged out");
             stage.close();
         }
     }

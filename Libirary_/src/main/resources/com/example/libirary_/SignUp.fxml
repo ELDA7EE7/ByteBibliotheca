@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" maxHeight="1080" maxWidth="1920" minHeight="1080" minWidth="1920" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.CreateNewUserAccountSceneController">
+<VBox alignment="CENTER" maxHeight="1080" maxWidth="1920" minHeight="1080" minWidth="1920" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.SignupSceneController">
    <children>
       <BorderPane prefHeight="1080.0" prefWidth="1920.0">
          <top>
@@ -61,7 +61,7 @@
                                           </Text>
                                        </children>
                                     </Pane>
-                                    <TextField fx:id="usernameTextField" layoutY="28.0" onAction="#getUsername" prefHeight="48.0" prefWidth="324.0" promptText="Enter you name" styleClass="signUpTextField">
+                                    <TextField fx:id="usernameTextField" layoutY="28.0" prefHeight="48.0" prefWidth="324.0" promptText="Enter you name" styleClass="signUpTextField">
                                        <font>
                                           <Font name="Inter Regular" size="15.0" />
                                        </font>
@@ -86,7 +86,7 @@
                                           </Text>
                                        </children>
                                     </Pane>
-                                    <TextField fx:id="emailTextField" layoutY="44.0" onAction="#getEmail" prefHeight="48.0" prefWidth="324.0" promptText="Enter you email" styleClass="signUpTextField">
+                                    <TextField fx:id="emailTextField" layoutY="44.0" prefHeight="48.0" prefWidth="324.0" promptText="Enter you email" styleClass="signUpTextField">
                                        <font>
                                           <Font name="Inter Regular" size="15.0" />
                                        </font>
@@ -102,7 +102,7 @@
                               <Pane layoutX="205.0" layoutY="168.0" prefHeight="16.0" prefWidth="324.0" />
                               <AnchorPane layoutX="205.0" layoutY="261.0" prefHeight="112.0" prefWidth="324.0">
                                  <children>
-                                    <Button fx:id="signUpButton" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" layoutX="136.0" layoutY="44.0" mnemonicParsing="false" onAction="#SignUp" styleClass="signUpButton" text="Create an Account" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0" />
+                                    <Button fx:id="signUpButton" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" layoutX="136.0" layoutY="44.0" mnemonicParsing="false" onAction="#clickSignUp" styleClass="signUpButton" text="Create an Account" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0" />
                                  </children>
                               </AnchorPane>
                               <Group layoutX="205.0" layoutY="168.0">
@@ -117,7 +117,7 @@
                                           </Text>
                                        </children>
                                     </Pane>
-                                    <TextField fx:id="enterPasswordField" layoutY="44.0" onAction="#getPassword" prefHeight="48.0" prefWidth="324.0" promptText="Enter you password" styleClass="signUpTextField">
+                                    <TextField fx:id="enterPasswordField" layoutY="44.0" prefHeight="48.0" prefWidth="324.0" promptText="Enter you password" styleClass="signUpTextField">
                                        <font>
                                           <Font name="Inter Regular" size="15.0" />
                                        </font>
