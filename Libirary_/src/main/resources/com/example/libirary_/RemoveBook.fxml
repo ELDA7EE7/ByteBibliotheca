@@ -5,20 +5,87 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="768.0" prefWidth="933.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.RemoveBookController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.RemoveBookController">
    <children>
-      <TextField fx:id="RemoveNameAuthor" layoutX="120.0" layoutY="134.0" onAction="#ViewBookToRemove" prefHeight="26.0" prefWidth="191.0" />
-      <Button fx:id="Remove" layoutX="177.0" layoutY="554.0" mnemonicParsing="false" onAction="#DeleteBook" text="Delete" />
-      <Button fx:id="Cancel" layoutX="467.0" layoutY="554.0" mnemonicParsing="false" onAction="#BackToAdmin" text="Cancel" />
-      <ImageView fx:id="RemoveImage" fitHeight="150.0" fitWidth="200.0" layoutX="158.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="RemoveTitle" layoutX="479.0" layoutY="185.0" text=" " />
-      <Label fx:id="RemoveAuthor" layoutX="479.0" layoutY="225.0" />
-      <Label fx:id="RemovePrice" layoutX="479.0" layoutY="260.0" />
-      <Label fx:id="RemoveAvailable" layoutX="479.0" layoutY="293.0" />
-      <Label fx:id="RemovePublishYear" layoutX="479.0" layoutY="335.0" />
-      <Label fx:id="RemoveGenre" layoutX="479.0" layoutY="367.0" />
-      <Label fx:id="Success" layoutX="295.0" layoutY="479.0" />
-      <TextField fx:id="RemoveBookname" layoutX="120.0" layoutY="74.0" onAction="#ViewBookToRemove" prefHeight="26.0" prefWidth="191.0" />
+      <TextField fx:id="RemoveNameAuthor" layoutX="210.0" layoutY="332.0" onAction="#ViewBookToRemove" prefHeight="26.0" prefWidth="193.0" />
+      <Button fx:id="Remove" layoutX="1256.0" layoutY="901.0" mnemonicParsing="false" onAction="#DeleteBook" stylesheets="@buttons.css" text="Delete" />
+      <Button fx:id="Cancel" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackToAdmin" stylesheets="@buttons.css" text="Back" />
+      <ImageView fx:id="RemoveImage" fitHeight="554.0" fitWidth="393.0" layoutX="646.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="RemoveTitle" layoutX="1256.0" layoutY="300.0" text=" ">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="RemoveAuthor" layoutX="1256.0" layoutY="400.0" prefHeight="17.0" prefWidth="4.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="RemovePrice" layoutX="1256.0" layoutY="500.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="RemoveAvailable" layoutX="1256.0" layoutY="600.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="RemovePublishYear" layoutX="1256.0" layoutY="700.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="RemoveGenre" layoutX="1256.0" layoutY="800.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="Success" layoutX="628.0" layoutY="907.0" prefHeight="20.0" prefWidth="18.0" textFill="RED">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Label>
+      <TextField fx:id="RemoveBookname" layoutX="210.0" layoutY="231.0" onAction="#ViewBookToRemove" prefHeight="26.0" prefWidth="193.0" />
+      <Label layoutX="106.0" layoutY="98.0" text="What book do you want to remove?">
+         <font>
+            <Font name="Arial Black" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="231.0" text="Title :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="332.0" text="Author :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="1100.0" layoutY="300.0" text="Book Title :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="1100.0" layoutY="400.0" text="Author :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="1100.0" layoutY="600.0" text="Status :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="1100.0" layoutY="500.0" text="Price :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="1100.0" layoutY="800.0" text="Genre :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="1100.0" layoutY="700.0" text="Publish Year :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
