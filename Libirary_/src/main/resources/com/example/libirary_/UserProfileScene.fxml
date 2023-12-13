@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="1080.0" maxWidth="1920.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.UserProfileSceneController">
    <children>
-      <Button layoutX="36.0" layoutY="34.0" mnemonicParsing="false" onAction="#BackToHomePage" prefHeight="78.0" prefWidth="254.0" text="Back To HomePage">
+      <Button layoutX="36.0" layoutY="34.0" mnemonicParsing="false" onAction="#backToHomePage" prefHeight="78.0" prefWidth="254.0" text="Back To HomePage">
          <font>
             <Font name="Bell MT" size="26.0" />
          </font>
@@ -81,15 +80,15 @@
             <Font name="Berlin Sans FB Demi Bold" size="31.0" />
          </font>
       </Label>
-      <TextField layoutX="281.0" layoutY="624.0" prefHeight="49.0" prefWidth="215.0" />
-      <TextField layoutX="281.0" layoutY="709.0" prefHeight="49.0" prefWidth="215.0" />
-      <TextField layoutX="281.0" layoutY="790.0" prefHeight="49.0" prefWidth="215.0" />
-      <Button layoutX="331.0" layoutY="886.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="93.0" text="Enter">
+      <TextField fx:id="nameTextField" layoutX="281.0" layoutY="624.0" prefHeight="49.0" prefWidth="215.0" />
+      <TextField fx:id="emailTextField" layoutX="281.0" layoutY="709.0" prefHeight="49.0" prefWidth="215.0" />
+      <TextField fx:id="passwordTextField" layoutX="281.0" layoutY="790.0" prefHeight="49.0" prefWidth="215.0" />
+      <Button layoutX="331.0" layoutY="886.0" mnemonicParsing="false" onAction="#update" prefHeight="50.0" prefWidth="93.0" text="Enter">
          <font>
             <Font name="Bookman Old Style" size="22.0" />
          </font>
       </Button>
-      <Button layoutX="1717.0" layoutY="857.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="142.0" text="Logout">
+      <Button fx:id="logoutButton" layoutX="1717.0" layoutY="857.0" mnemonicParsing="false" onAction="#pressLogoutButton" prefHeight="78.0" prefWidth="142.0" text="Logout">
          <font>
             <Font name="Bodoni MT" size="29.0" />
          </font>

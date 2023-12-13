@@ -4,14 +4,16 @@ module com.example.libirary_ {
 
 
     opens com.example.libirary_ to javafx.fxml;
-    exports SearchEngine;
+    exports searchengine;
     exports com.example.libirary_;
 
-    opens SearchEngine to javafx.fxml;
+    opens searchengine to javafx.fxml;
     exports AdminPackage;
     opens AdminPackage to javafx.fxml;
     exports InterfacesPackage;
     opens InterfacesPackage to javafx.fxml;
     exports userprofile;
     opens userprofile to javafx.fxml;
+    exports registrationsystem;
+    opens registrationsystem to javafx.fxml;
 }

@@ -25,15 +25,7 @@ public class Order {
         return price;
     }
 
-    @Override
-    public String toString() {
-        return
-                "Order Id = " + orderId +
-                "      price =" + price +
-                "      book Title = " + book.getTitle() +
-                "      quantity = " + quantity
-                ;
-    }
+
 
     public Book getBook() {
         return book;
@@ -41,5 +33,14 @@ public class Order {
 
     public int getQuantity() {
         return quantity;
+    }
+    @Override
+    public String toString() {
+        return
+                "Order Id = " + orderId +
+                        "      price =" + price +
+                        "      book Title = " + book.getTitle() +
+                        "      quantity = " + quantity
+                ;
     }
 }

@@ -61,7 +61,5 @@ public class UserProfile implements UploadUserInformation{
                  return;
             }
         }
-    }
-
-
+}
 
