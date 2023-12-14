@@ -6,8 +6,9 @@ import java.util.ArrayList;
 public class Book {
     private static int bookCounter=0;
     private int bookCounterInShoppingCart;
-    private int bookID,
-            publishYear;
+    private int bookID;
+    private int publishYear;
+    private int bookAmountAvailable;
     private String title;
     private String author;
     private String status;
@@ -20,8 +21,9 @@ public class Book {
     private ImageView view;
     private boolean IsAvailable;
     private int ExpiryDate;
+    private float totalPriceInShoppingCart;
 
-    public Book(String title, String author, String status, int publishYear, float price, String genre, String path, boolean IsAvailable, int expiryDate) {
+    public Book(String title, String author, String status, int publishYear, float price, String genre, String path, boolean IsAvailable,int bookAmountAvailable, int expiryDate) {
         this.title = title;
         this.author = author;
         this.status = status;
@@ -32,10 +34,12 @@ public class Book {
         this.image = new Image(path);
         this.imagepath = path;
         this.IsAvailable = IsAvailable;
+        this.bookAmountAvailable = bookAmountAvailable;
         bookCounter++;
         bookID = bookCounter;
         books.add(this);
         this.ExpiryDate = expiryDate;
+        totalPriceInShoppingCart = 0;
     }
     public Book(String title, String author, String status, int publishYear, float price, String genre, String path) {
         this.title = title;
@@ -150,5 +154,21 @@ public class Book {
             ExpiryDate = expiryDate;
 
         }
+
+    public int getBookAmountAvailable() {
+        return bookAmountAvailable;
     }
+
+    public void setBookAmountAvailable(int bookAmountAvailable) {
+        this.bookAmountAvailable = bookAmountAvailable;
+    }
+
+    public float getTotalPriceInShoppingCart() {
+        return totalPriceInShoppingCart;
+    }
+
+    public void setTotalPriceInShoppingCart(float totalPriceInShoppingCart) {
+        this.totalPriceInShoppingCart = totalPriceInShoppingCart;
+    }
+}
 

@@ -42,9 +42,9 @@ public class MainClass extends Application {
     }
     public static void main(String[] args) throws IOException {
         for(int i=0;i<10;i++) {
-            Book book = new Book("title" + i, "author" + i, "author", 200, 20, "author", "berserk1.jpg",true,3);
+            Book book = new Book("title" + i, "author" + i, "author", 200, 20, "author", "berserk1.jpg",true,2,3);
         }
-        Book book=new Book("mazen","mazen","In stock",2005,2000.0F,"Action","berserk1.jpg",true,3);
+        Book book=new Book("mazen","mazen","In stock",2005,2000.0F,"Action","berserk1.jpg",true,5,3);
         launch();
     }
 }
