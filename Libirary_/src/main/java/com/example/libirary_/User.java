@@ -10,6 +10,10 @@ public class User extends Person{
    public static ArrayList<User> users = new ArrayList<User>();
 
    public ArrayList<Order> orders = new ArrayList<Order>();
+
+   public User(int id,String userName, String email, String password){
+       super(userCounter,userName,email,password);
+   }
     public User(String userName, String email, String password) {
         super(userCounter+1,userName,email,password);
         userCounter++;
@@ -25,4 +29,6 @@ public class User extends Person{
     public static void setCurrentUser(User user){
         currentUser = user;
     }
+
+
 }
