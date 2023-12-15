@@ -1,5 +1,6 @@
 package com.example.libirary_;
 
+import InterfacesPackage.CommonFunctions;
 import searchengine.SearchEngine;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -18,7 +19,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SearchSceneController extends SearchEngine implements Initializable  {
+public class SearchSceneController extends SearchEngine implements Initializable , CommonFunctions {
     @FXML
     private TextField searchBar;
     @FXML
@@ -26,9 +27,10 @@ public class SearchSceneController extends SearchEngine implements Initializable
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         super.uploadAllBooks();
-        listView.getItems().addAll(words);
+
         // do event when click on any word
         try {
+            listView.getItems().addAll(words);
         listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
@@ -48,11 +50,6 @@ public class SearchSceneController extends SearchEngine implements Initializable
     }
     @FXML
     void BackToHomePage(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("HomePageScene.fxml"));
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
+        SwitchToNextScene(event,"HomePageScene.fxml");
     }
 }

@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,8 +17,16 @@ import java.util.regex.Pattern;
 public interface CommonFunctions {
 
 
-    default void BackToAdmin(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("AdminHomePage.fxml"));
+    default void SwitchToNextScene(ActionEvent event,String nameOfNextScene) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource(nameOfNextScene));
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
+    }
+    default void SwitchToNextScene(MouseEvent event, String nameOfNextScene) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource(nameOfNextScene));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -32,15 +41,7 @@ public interface CommonFunctions {
         alert.setContentText(message);
         alert.showAndWait();
     }
-    default void BackToHomePage(ActionEvent event) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("HomePageScene.fxml"));
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
-    }
-    default boolean checkName(String username){
+ /*   default boolean checkName(String username){
         if(username==null) {
             //        this.usernameTextField.clear();
             return false;
@@ -87,7 +88,7 @@ public interface CommonFunctions {
 
         Pattern pattern = Pattern.compile(EMAIL_PATTERN);
         return pattern.matcher(email).matches();
-    }
+    }*/
     default int SearchForBookByNameAndAuthor(String name,String author){
         int index=Integer.MAX_VALUE;
         for (int i = 0; i< Book.books.size(); i++){

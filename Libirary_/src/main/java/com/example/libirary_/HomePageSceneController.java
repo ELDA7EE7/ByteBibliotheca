@@ -1,5 +1,6 @@
 package com.example.libirary_;
 
+import InterfacesPackage.CommonFunctions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HomePageSceneController implements Initializable
+public class HomePageSceneController extends SearchSceneController implements Initializable , CommonFunctions
 {
     private Stage stage;
     private Scene scene;
@@ -40,7 +41,7 @@ public class HomePageSceneController implements Initializable
             ,bookname6,bookname7,bookname8,bookname9,bookname10,
             bookname11,bookname12,bookname13,bookname14,bookname15;
 
-    @FXML
+    //@FXML
     void SwitchToSearchScene(ActionEvent e) throws IOException{
         root= FXMLLoader.load(getClass().getResource("SearchScene.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -52,29 +53,16 @@ public class HomePageSceneController implements Initializable
 
     @FXML
     void SwitchToUserProfileScene(ActionEvent e) throws IOException{
-        root= FXMLLoader.load(getClass().getResource("UserProfileScene.fxml"));
-        stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setFullScreen(true);
-        stage.setScene(scene);
-        stage.show();
+        SwitchToNextScene(e,"UserProfileScene.fxml");
     }
 
     public void cart(MouseEvent e) throws IOException { //Change Scene to Cart Page
-        root= FXMLLoader.load(getClass().getResource("ShoppingCart.fxml"));
-        stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setFullScreen(true);
-        stage.setScene(scene);
-        stage.show();
+        SwitchToNextScene(e,"ShoppingCart.fxml");
 
     }
-    public void BookDetails(MouseEvent e) throws IOException{//Change Scene to BookDetails Page
-        root= FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
-        stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    public void BookDetails(MouseEvent e) throws IOException {//Change Scene to BookDetails Page
+        SwitchToNextScene(e,"BookDetails.fxml");
+
     }
 
     private Image image;
@@ -83,26 +71,18 @@ public class HomePageSceneController implements Initializable
     public void random(ActionEvent e) throws IOException{
         image=new Image(getClass().getResource("Cart.png").toExternalForm());//show image for random book
         rand.setImage(image);
-
     }
 
     public void CategoriesPage(ActionEvent e) throws IOException {//Change Scene to Categories Page
 
-        System.out.println(Book.books.size());
-        root= FXMLLoader.load(getClass().getResource("Categories.fxml"));
-        stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
-
+        SwitchToNextScene(e,"Categories.fxml");
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-
+        super.initialize(url,resourceBundle);
         Book book =new Book("Rich Dad Poor Dad","Ehab","Valid",2000,500,
                 "HUmanDevelopment", "/RichDadPoorDad.jpg",true,4,10);
 

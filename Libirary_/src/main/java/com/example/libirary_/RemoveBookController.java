@@ -13,10 +13,7 @@ import java.io.IOException;
 
 public class RemoveBookController extends RemoveBookFunctions implements CommonFunctions {
 
-
-
-    @Override
     public void BackToAdmin(ActionEvent event) throws IOException {
-        CommonFunctions.super.BackToAdmin(event); //return to AdminHomePage
+        SwitchToNextScene(event,"AdminHomePage.fxml"); //return to AdminHomePage
     }
 }

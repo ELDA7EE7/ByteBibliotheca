@@ -1,5 +1,6 @@
 package com.example.libirary_;
 
+import InterfacesPackage.CommonFunctions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,14 +17,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
 
-public class ShoppingCartController {
+public class ShoppingCartController implements CommonFunctions {
     @FXML
     void backToHomePage(MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("HomePageScene.fxml"));
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
+        SwitchToNextScene(event,"HomePageScene.fxml");
     }
 }

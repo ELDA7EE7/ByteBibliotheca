@@ -18,7 +18,7 @@ public class LoginController extends RegistrationSystem implements Login
             if(user != null)
             {
                 User.setCurrentUser(user);
-                switchToHomePageScene(event);
+                SwitchToNextScene(event,"HomePageScene.fxml");
                 return;
             }
             Admin admin = new Admin();

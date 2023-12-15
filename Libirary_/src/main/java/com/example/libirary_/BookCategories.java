@@ -1,5 +1,6 @@
 package com.example.libirary_;
 
+import InterfacesPackage.CommonFunctions;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +19,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class BookCategories  {
+public class BookCategories implements CommonFunctions {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -50,11 +51,7 @@ public class BookCategories  {
 
 */
     public void BookDetails(MouseEvent e) throws IOException {
-         root= FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
-        stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        SwitchToNextScene(e,"BookDetails.fxml");
 
 
 

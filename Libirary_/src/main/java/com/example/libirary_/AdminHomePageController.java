@@ -76,22 +76,12 @@ public class AdminHomePageController extends AdminFunctionalities implements Com
 
     @FXML
     public void switchToUpdateBookInfoPageScene(ActionEvent event) throws IOException { //Change Scene to Update Book Info Page
-        root = FXMLLoader.load(getClass().getResource("UpdateBookInfo.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
+        SwitchToNextScene(event,"UpdateBookInfo.fxml");
     }
 
     @FXML
     public void switchToRemoveBook(ActionEvent event) throws IOException { //Change Scene to Remove Book Page
-        root = FXMLLoader.load(getClass().getResource("RemoveBook.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
+        SwitchToNextScene(event,"RemoveBook.fxml");
     }
 
 
@@ -100,12 +90,7 @@ public class AdminHomePageController extends AdminFunctionalities implements Com
 
     @FXML
     public void SwitchToAddBookScene(ActionEvent event) throws IOException { // Change Scene to Add Book Page
-        root = FXMLLoader.load(getClass().getResource("AddBookScene.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
+        SwitchToNextScene(event,"AddBookScene.fxml");
     }
 }
 
