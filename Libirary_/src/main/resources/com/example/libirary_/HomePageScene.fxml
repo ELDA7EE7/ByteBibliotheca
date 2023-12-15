@@ -208,7 +208,7 @@
                               <Image url="@../../../berserk1.jpg" />
                            </image>
                         </ImageView>
-                        <Text fx:id="book51" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="88.53668212890625" />
+                        <Text fx:id="book510" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="88.53668212890625" />
                      </children>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0">
