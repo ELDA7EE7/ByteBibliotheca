@@ -2,11 +2,16 @@ package AdminPackage;
 
 import InterfacesPackage.CommonFunctions;
 import com.example.libirary_.Book;
+import com.example.libirary_.BookCategories;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 public abstract class AddBookFunctions implements CommonFunctions {
     @FXML
@@ -15,6 +20,9 @@ public abstract class AddBookFunctions implements CommonFunctions {
     private CheckBox statusCheckBox,availableCheckBox;
     @FXML
     private Label successLabel;
+    private BookCategories set=new BookCategories();
+
+    //private
     public void  CheckIfInputIsValid(){
         try {
             if(nameTextField.getText().isEmpty()
@@ -43,6 +51,7 @@ public abstract class AddBookFunctions implements CommonFunctions {
         int publishyear=Integer.parseInt(publishyearTextField.getText()),expireDate=Integer.parseInt(expiredateTextField.getText());
         float price=Float.parseFloat(priceTextField.getText());
         boolean isAvailable=availableCheckBox.isSelected();
+
         if(statusCheckBox.isSelected()){
             status="In Stock";
         }
@@ -50,11 +59,16 @@ public abstract class AddBookFunctions implements CommonFunctions {
             status = "Out of Stock";
         }
         successLabel.setText("Book added successfully");
-        Book newBook = new Book(name,author,status,publishyear,price,genre,imagepath,isAvailable,expireDate,3);
+        //Book newBook = new Book(name,author,status,publishyear,price,genre,imagepath,isAvailable,expireDate,3);
         System.out.println(Book.books.size());
     }
+
     public void AddBook(ActionEvent event){
+
         CheckIfInputIsValid();
         GetData();
-    }
-}
+        set.SetData(nameTextField.getText(),authorTextField.getText(),imagepathTextField.getText(),genreTextField.getText(),Integer.parseInt(expiredateTextField.getText()),Integer.parseInt(publishyearTextField.getText()),Float.parseFloat(priceTextField.getText()),availableCheckBox.isSelected());
+
+
+
+}}

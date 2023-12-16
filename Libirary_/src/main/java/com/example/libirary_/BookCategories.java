@@ -1,5 +1,6 @@
 package com.example.libirary_;
 
+import AdminPackage.AddBookFunctions;
 import InterfacesPackage.CommonFunctions;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -13,6 +14,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,10 +23,22 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class BookCategories implements CommonFunctions {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-   /*
+
+     @FXML
+    HBox HumanDev;
+    VBox vbox=new VBox();
+    Label label=new Label();
+    Image image;
+    ImageView imageView=new ImageView();
+    public void SetData(String name,String author,String imagepath,String genre,int expireDate,int publishyear,float price,boolean isAvailable)
+    {
+        label.setText(name);
+        image=new Image(imagepath);
+        imageView.setImage(image);
+        vbox.getChildren().addAll(label,imageView);
+        HumanDev.getChildren().addAll(vbox);
+    }
+    /*
     @FXML
     private AnchorPane platform;
     private Stage stage;
@@ -52,9 +67,6 @@ public class BookCategories implements CommonFunctions {
 */
     public void BookDetails(MouseEvent e) throws IOException {
         SwitchToNextScene(e,"BookDetails.fxml");
-
-
-
     }
 
 /*

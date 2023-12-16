@@ -61,6 +61,9 @@ public class HomePageSceneController extends SearchSceneController implements In
 
     }
     public void BookDetails(MouseEvent e) throws IOException {//Change Scene to BookDetails Page
+        String id=e.getPickResult().getIntersectedNode().getId();
+        BookDetails bookDetails=new BookDetails();
+        bookDetails.setId(id);
         SwitchToNextScene(e,"BookDetails.fxml");
 
     }
@@ -84,13 +87,13 @@ public class HomePageSceneController extends SearchSceneController implements In
     {
         super.initialize(url,resourceBundle);
         Book book =new Book("Rich Dad Poor Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,4,10);
+                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,4,10,"bookimage62");
 
         book =new Book("Atomic habit","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/atomic.jpg",true,4,10);
+                "HUmanDevelopment", "/atomic.jpg",true,4,10,"bookimage72");
 
         book =new Book("Rich Dad  Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,3,10);
+                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,3,10,"");
 
 
 

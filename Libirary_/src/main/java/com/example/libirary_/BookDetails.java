@@ -15,9 +15,7 @@ import java.util.ResourceBundle;
 
 public class BookDetails implements Initializable
 {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+
     @FXML
     Label titleID,autherID,publishYearID,priceID,genreID,statusID;
     @FXML
@@ -25,6 +23,12 @@ public class BookDetails implements Initializable
     Image star_1_image,star_2_image,star_3_image,star_4_image,star_5_image;
     private boolean resetStarBlooen=true,savedStars=false;
     Button back,borrowID;
+    private static String id;
+    public void setId(String id){
+        this.id=id;
+        System.out.println(id);
+        System.out.println(this.id);
+    }
 
     public void displayBook(Book book)
     {
@@ -46,6 +50,7 @@ public class BookDetails implements Initializable
         star_3.setImage(star_3_image);
         star_4.setImage(star_4_image);
         star_5.setImage(star_5_image);
+
     }
     //Waiting for Interface To Go back to Homepage
     @FXML
@@ -65,8 +70,12 @@ public class BookDetails implements Initializable
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Book book=new Book("mazen","mazen","In stock",2005,2000.0F,"Action","berserk1.jpg",true,5,1);
-        displayBook(book);
+        for (int i=0;i<Book.books.size();i++) {
+           // Book book = new Book("mazen", "mazen", "In stock", 2005, 2000.0F, "Action", "berserk1.jpg", true, 5, 1);
+            if((Book.books.get(i).getFixId().compareTo(id))==0){
+                displayBook(Book.books.get(i));
+        }
+        }
     }
     public void save_Star_1()
     {

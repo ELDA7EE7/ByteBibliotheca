@@ -92,5 +92,9 @@ public class AdminHomePageController extends AdminFunctionalities implements Com
     public void SwitchToAddBookScene(ActionEvent event) throws IOException { // Change Scene to Add Book Page
         SwitchToNextScene(event,"AddBookScene.fxml");
     }
+    public void SwitchToLoginScene(ActionEvent event) throws IOException { // Change Scene to Add Book Page
+        SwitchToNextScene(event,"LogInAsUserScene.fxml");
+    }
+
 }
 

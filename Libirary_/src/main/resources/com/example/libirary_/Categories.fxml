@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,9 +15,9 @@
 
 <AnchorPane fx:id="platform" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.HomePageSceneController">
    <children>
-      <ScrollPane layoutX="84.0" layoutY="149.0" prefHeight="888.0" prefWidth="1181.0" styleClass="scrollbar.css" stylesheets="@scrollbar.css">
+      <ScrollPane layoutX="84.0" layoutY="137.0" prefHeight="874.0" prefWidth="1396.0" styleClass="scrollbar.css" stylesheets="@scrollbar.css">
          <content>
-            <HBox prefHeight="1077.0" prefWidth="1166.0" spacing="25.0">
+            <HBox prefHeight="1089.0" prefWidth="1379.0" spacing="25.0">
                <children>
                   <VBox prefHeight="362.0" prefWidth="136.0" spacing="25.0">
                      <children>
@@ -48,214 +51,213 @@
                               <Font name="Bookman Old Style" size="12.0" />
                            </font>
                         </Label>
+                        <Label alignment="CENTER" prefHeight="139.0" prefWidth="136.0" text="Programming" underline="true">
+                           <font>
+                              <Font name="Bookman Old Style" size="12.0" />
+                           </font>
+                        </Label>
                      </children>
                   </VBox>
-                  <VBox prefHeight="319.0" prefWidth="562.0" spacing="50.0">
+                  <VBox prefHeight="1092.0" prefWidth="1221.0" spacing="50.0">
                      <children>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <VBox prefHeight="200.0" prefWidth="100.0">
+                        <ScrollPane prefHeight="160.0" prefWidth="1188.0">
+                           <content>
+                              <HBox fx:id="HumanDev" prefHeight="141.0" prefWidth="1278.0" spacing="25.0">
                                  <children>
-                                    <ImageView fx:id="bookimage1" fitHeight="92.0" fitWidth="80.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname1" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                    <VBox prefHeight="143.0" prefWidth="99.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage62" fitHeight="124.0" fitWidth="91.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../RichDadPoorDad.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label fx:id="bookname62" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="82.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage72" fitHeight="122.0" fitWidth="99.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../atomic.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label fx:id="bookname72" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage82" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname82" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage92" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname92" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage102" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname102" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
                                  </children>
-                              </VBox>
-                              <VBox prefHeight="200.0" prefWidth="100.0">
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane prefHeight="129.0" prefWidth="351.0">
+                           <content>
+                              <HBox fx:id="Fantasy" prefHeight="110.0" prefWidth="1307.0">
                                  <children>
-                                    <ImageView fx:id="bookimage2" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname2" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="80.0" text="Label" />
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage61" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname61" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="82.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage71" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname71" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage81" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname81" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage91" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname91" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage101" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname101" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
                                  </children>
-                              </VBox>
-                              <VBox prefHeight="200.0" prefWidth="100.0">
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane prefHeight="129.0" prefWidth="564.0">
+                           <content>
+                              <HBox fx:id="Romance" prefHeight="109.0" prefWidth="1299.0">
                                  <children>
-                                    <ImageView fx:id="bookimage3" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname3" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="80.0" text="Label" />
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage1" fitHeight="92.0" fitWidth="80.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname1" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="book" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage2" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname2" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="80.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage3" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname3" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="80.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage4" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname4" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="80.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage5" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname5" onMouseClicked="#BookDetails" prefHeight="29.0" prefWidth="74.0" text="Label" />
+                                       </children>
+                                    </VBox>
                                  </children>
-                              </VBox>
-                              <VBox prefHeight="200.0" prefWidth="100.0">
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane prefHeight="129.0" prefWidth="1301.0">
+                           <content>
+                              <HBox fx:id="Manga" prefHeight="110.0" prefWidth="1262.0">
                                  <children>
-                                    <ImageView fx:id="bookimage4" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname4" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="80.0" text="Label" />
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage6" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname6" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="82.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage7" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname7" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage8" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname8" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage9" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname9" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage10" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname10" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
                                  </children>
-                              </VBox>
-                              <VBox prefHeight="200.0" prefWidth="100.0">
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                        <ScrollPane prefHeight="129.0" prefWidth="351.0">
+                           <content>
+                              <HBox fx:id="History" prefHeight="110.0" prefWidth="1364.0">
                                  <children>
-                                    <ImageView fx:id="bookimage5" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname5" onMouseClicked="#BookDetails" prefHeight="29.0" prefWidth="74.0" text="Label" />
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage63" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname63" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="82.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage73" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname73" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage83" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname83" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage93" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname93" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="27.0" prefWidth="76.0">
+                                       <children>
+                                          <ImageView fx:id="bookimage103" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="bookname103" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
+                                       </children>
+                                    </VBox>
                                  </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage6" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname6" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="82.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage7" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname7" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage8" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname8" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage9" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname9" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage10" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname10" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage11" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname11" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage12" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname12" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage13" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname13" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage14" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname14" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage15" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname15" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage111" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname111" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage121" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname121" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage131" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname131" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage141" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname141" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage151" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname151" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage1111" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname1111" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage1211" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname1211" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage1311" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname1311" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage1411" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname1411" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage1511" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname1511" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage11111" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname11111" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage12111" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname12111" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage13111" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname13111" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage14111" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname14111" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="27.0" prefWidth="76.0">
-                                 <children>
-                                    <ImageView fx:id="bookimage15111" fitHeight="88.0" fitWidth="68.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true" />
-                                    <Label fx:id="bookname15111" onMouseClicked="#BookDetails" prefHeight="27.0" prefWidth="79.0" text="Label" />
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
                      </children>
                   </VBox>
                </children>
@@ -282,5 +284,12 @@
             <Image url="@shopping-cart_833314.png" />
          </image>
       </ImageView>
+      <Button layoutX="1825.0" layoutY="120.0" mnemonicParsing="false" onAction="#CategoriesPage" prefHeight="23.0" prefWidth="70.0" text="Search">
+         <font>
+            <Font name="Bodoni MT Black" size="23.0" />
+         </font>
+      </Button>
+      <TextField fx:id="searchBar" layoutX="1522.0" layoutY="127.0" prefHeight="30.0" prefWidth="277.0" />
+      <ListView fx:id="listView" layoutX="1503.0" layoutY="192.0" prefHeight="379.0" prefWidth="403.0" />
    </children>
 </AnchorPane>

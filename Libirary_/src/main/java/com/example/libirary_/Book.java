@@ -20,11 +20,11 @@ public class Book {
     private Image image;
     private ImageView view;
     private boolean IsAvailable;
-
+    private String fixId;
     private int ExpiryDate;
 //<<<<<<< HEAD
     private int InStock;
-    public Book(String title, String author, String status, int publishYear, float price, String genre, String path,boolean IsAvailable,int expiryDate,int Instock){
+    public Book(String title, String author, String status, int publishYear, float price, String genre, String path,boolean IsAvailable,int expiryDate,int Instock,String fixId){
      this.title = title;
         this.author = author;
         this.status = status;
@@ -39,7 +39,11 @@ public class Book {
         bookID = bookCounter;
         books.add(this);
         this.ExpiryDate = expiryDate;
+        this.fixId=fixId;
+    }
 
+    public String getFixId() {
+        return fixId;
     }
 
     public int getBookCounterInShoppingCart() {

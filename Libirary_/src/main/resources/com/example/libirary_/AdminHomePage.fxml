@@ -77,5 +77,6 @@
          </font>
       </Label>
       <Button fx:id="updateBookInfoButton" alignment="CENTER" layoutX="109.0" layoutY="245.0" mnemonicParsing="false" onAction="#switchToUpdateBookInfoPageScene" prefHeight="40.0" prefWidth="140.0" stylesheets="@buttons.css" text="Update Book Info" />
+      <Button fx:id="backfromadmin" layoutX="851.0" layoutY="86.0" mnemonicParsing="false" onAction="#SwitchToLoginScene" text="back" />
    </children>
 </AnchorPane>
