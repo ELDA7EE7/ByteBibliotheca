@@ -49,7 +49,7 @@ public class AdminFunctionalities implements CommonFunctions
                 }
                 for(int i=0;i<users.size();i++)
                 {
-                    if(borrowemail.compareTo(users.get(i).getEmailInfo())==0)
+                    if(borrowemail.compareTo(users.get(i).getEmail())==0)
                     {
                         signedInSuccessfully = false;
                         System.out.println("email");
@@ -90,12 +90,12 @@ public class AdminFunctionalities implements CommonFunctions
 
         String C_Email = CurrentEmail.getText();
         for (int i = 0; i < users.size(); i++) {
-            if (C_Email.compareTo(users.get(i).getEmailInfo()) == 0) {
+            if (C_Email.compareTo(users.get(i).getEmail()) == 0) {
                 ChangeSuccesfully = true;
                 index = i;
-                NameOfBorrower.setText(users.get(i).getUsernameInfo());
-                EmailOfBorrower.setText(users.get(i).getEmailInfo());
-                PasswordOfBorrower.setText(users.get(i).getPasswordInfo());
+                NameOfBorrower.setText(users.get(i).getName());
+                EmailOfBorrower.setText(users.get(i).getEmail());
+                PasswordOfBorrower.setText(users.get(i).getPassword());
 
             } else {
 
@@ -113,9 +113,9 @@ public class AdminFunctionalities implements CommonFunctions
         try{
 
             if(ChangeSuccesfully) {
-                users.get(index).setEmailInfo(Email);
-                users.get(index).setPasswordInfo(Password);
-                users.get(index).setUserNameInfo(Username);
+                users.get(index).setEmail(Email);
+                users.get(index).setPassword(Password);
+                users.get(index).setName(Username);
                 ChangeSuccesfully = false;
                 //System.out.println(users.size());
                 //  System.out.println(ChangeSuccesfully);

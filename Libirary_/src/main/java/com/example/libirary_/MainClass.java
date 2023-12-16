@@ -31,20 +31,22 @@ public class MainClass extends Application {
     }
     public void close(Stage stage){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Logout");
-        alert.setHeaderText("You're about to logout!");
+        alert.setTitle("Close");
+        alert.setHeaderText("You're about to Close Programme!");
         alert.setContentText("Do you want to save before exiting?");
 
         if (alert.showAndWait().get() == ButtonType.OK){
-            System.out.println("You successfully logged out");
+           // System.out.println("You successfully logged out");
             stage.close();
         }
     }
     public static void main(String[] args) throws IOException {
+
         /*for(int i=0;i<10;i++) {
             Book book = new Book("title" + i, "author" + i, "author", 200, 20, "author", "berserk1.jpg",true,2,3);
         }
         Book book=new Book("mazen","mazen","In stock",2005,2000.0F,"Action","berserk1.jpg",true,5,3);*/
+
         launch();
     }
 }

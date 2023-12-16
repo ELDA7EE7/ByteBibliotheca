@@ -7,15 +7,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="836.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.SearchSceneController">
+<AnchorPane maxHeight="1080.0" maxWidth="1920.0" minHeight="1080.0" minWidth="1920.0" prefHeight="1920.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.SearchSceneController">
     <children>
-        <TextField fx:id="searchBar" layoutX="119.0" layoutY="122.0" prefHeight="35.0" prefWidth="475.0" />
-        <ListView fx:id="listView" layoutX="119.0" layoutY="184.0" prefHeight="309.0" prefWidth="553.0" />
-        <Button layoutX="605.0" layoutY="122.0" mnemonicParsing="false" onAction="#search" prefHeight="35.0" prefWidth="68.0" text="Search" />
-      <Button layoutX="27.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackToHomePage" text="Back To HomePage" />
-      <Label alignment="CENTER" layoutX="146.0" prefHeight="109.0" prefWidth="460.0" text="ByteBibilotheca">
+        <TextField fx:id="searchBar" layoutX="68.0" layoutY="205.0" prefHeight="54.0" prefWidth="1530.0" />
+        <ListView fx:id="listView" layoutX="69.0" layoutY="290.0" prefHeight="539.0" prefWidth="1530.0" />
+        <Button layoutX="1654.0" layoutY="205.0" mnemonicParsing="false" onAction="#search" prefHeight="54.0" prefWidth="169.0" text="Search">
          <font>
-            <Font name="Rage Italic" size="61.0" />
+            <Font name="Bodoni MT Black" size="23.0" />
+         </font></Button>
+      <Button layoutX="14.0" layoutY="38.0" mnemonicParsing="false" onAction="#BackToHomePage" prefHeight="78.0" prefWidth="254.0" text="Back To HomePage">
+         <font>
+            <Font name="Bell MT" size="26.0" />
+         </font></Button>
+      <Label alignment="CENTER" layoutX="283.0" layoutY="14.0" prefHeight="150.0" prefWidth="1312.0" text="ByteBibilotheca">
+         <font>
+            <Font name="Rage Italic" size="70.0" />
          </font>
       </Label>
     </children>

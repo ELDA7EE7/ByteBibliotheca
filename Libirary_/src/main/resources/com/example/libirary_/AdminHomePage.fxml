@@ -1,24 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="686.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.AdminHomePageController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.AdminHomePageController">
    <children>
-      <Button fx:id="AddBorrower" layoutX="93.0" layoutY="288.0" mnemonicParsing="false" onAction="#addBorrower" text="AddBorrower" />
-      <TextField fx:id="BorrowerName" layoutX="79.0" layoutY="368.0" />
-      <TextField fx:id="EmailBorrower" layoutX="79.0" layoutY="419.0" />
-      <TextField fx:id="PasswordBorrower" layoutX="79.0" layoutY="481.0" />
-      <TextField fx:id="NameOfBorrower" layoutX="382.0" layoutY="368.0" />
-      <TextField fx:id="PasswordOfBorrower" layoutX="382.0" layoutY="481.0" />
-      <TextField fx:id="EmailOfBorrower" layoutX="382.0" layoutY="419.0" />
-      <Button fx:id="UpdateBorrower" layoutX="421.0" layoutY="288.0" mnemonicParsing="false" onAction="#UpdateBorrowers" text="UpdateBorrower" />
-      <TextField fx:id="CurrentEmail" layoutX="382.0" layoutY="326.0" onAction="#ViewBorrower" />
-      <Button fx:id="ShowInfo" layoutX="545.0" layoutY="326.0" mnemonicParsing="false" onAction="#ViewBorrower" text="ShowInfo" />
-      <Button fx:id="RemoveBorrower" layoutX="545.0" layoutY="288.0" mnemonicParsing="false" onAction="#RemoveBorrowers" text="RemoveBorrower" />
-      <Button fx:id="updateBookInfoButton" layoutX="71.0" layoutY="188.0" mnemonicParsing="false" onAction="#switchToUpdateBookInfoPageScene" text="Update Book Info" />
-      <Button fx:id="RemoveBook" layoutX="274.0" layoutY="188.0" mnemonicParsing="false" onAction="#switchToRemoveBook" text="Remove Book" />
-      <Button fx:id="addbookButton" layoutX="439.0" layoutY="188.0" mnemonicParsing="false" onAction="#SwitchToAddBookScene" text="Add Book" />
+      <Button fx:id="AddBorrower" layoutX="143.0" layoutY="918.0" mnemonicParsing="false" onAction="#addBorrower" stylesheets="@buttons.css" text="AddBorrower" />
+      <TextField fx:id="BorrowerName" layoutX="210.0" layoutY="600.0" prefHeight="25.0" prefWidth="193.0" />
+      <TextField fx:id="EmailBorrower" layoutX="210.0" layoutY="700.0" prefHeight="25.0" prefWidth="193.0" />
+      <TextField fx:id="PasswordBorrower" layoutX="210.0" layoutY="800.0" prefHeight="25.0" prefWidth="193.0" />
+      <TextField fx:id="NameOfBorrower" layoutX="1105.0" layoutY="688.0" prefWidth="193.0" />
+      <TextField fx:id="PasswordOfBorrower" layoutX="1105.0" layoutY="888.0" prefWidth="193.0" />
+      <TextField fx:id="EmailOfBorrower" layoutX="1105.0" layoutY="788.0" prefWidth="193.0" />
+      <Button fx:id="UpdateBorrower" layoutX="1040.0" layoutY="963.0" mnemonicParsing="false" onAction="#UpdateBorrowers" stylesheets="@buttons.css" text="Update Borrower" />
+      <TextField fx:id="CurrentEmail" layoutX="1105.0" layoutY="613.0" onAction="#ViewBorrower" prefWidth="193.0" />
+      <Button fx:id="ShowInfo" layoutX="1388.0" layoutY="610.0" mnemonicParsing="false" onAction="#ViewBorrower" stylesheets="@buttons.css" text="Show Info" />
+      <Button fx:id="RemoveBorrower" layoutX="1310.0" layoutY="963.0" mnemonicParsing="false" onAction="#RemoveBorrowers" stylesheets="@buttons.css" text="Remove Borrower" />
+      <Button fx:id="RemoveBook" layoutX="109.0" layoutY="301.0" mnemonicParsing="false" onAction="#switchToRemoveBook" prefHeight="40.0" prefWidth="140.0" stylesheets="@buttons.css" text="Remove Book" />
+      <Button fx:id="addbookButton" layoutX="109.0" layoutY="183.0" mnemonicParsing="false" onAction="#SwitchToAddBookScene" prefHeight="40.0" prefWidth="140.0" stylesheets="@buttons.css" text="Add Book" />
+      <Label layoutX="79.0" layoutY="50.0" text="Book Functionalities">
+         <font>
+            <Font name="Elephant" size="57.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="600.0" text="Borrower Name :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="700.0" text="Borrower Email :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="800.0" text="Borrower Password :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="423.0" text="Borrower Functionalities">
+         <font>
+            <Font name="Elephant" size="57.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="532.0" text="New Borrower?">
+         <font>
+            <Font name="Elephant" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="1047.0" layoutY="532.0" text="Change Borrower Information">
+         <font>
+            <Font name="Elephant" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="1083.0" layoutY="580.0" text="Enter user's email to access his info">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="918.0" layoutY="688.0" text="Borrower Name :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="918.0" layoutY="790.0" text="Borrower Email :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="918.0" layoutY="888.0" text="Borrower Password :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="updateBookInfoButton" alignment="CENTER" layoutX="109.0" layoutY="245.0" mnemonicParsing="false" onAction="#switchToUpdateBookInfoPageScene" prefHeight="40.0" prefWidth="140.0" stylesheets="@buttons.css" text="Update Book Info" />
    </children>
 </AnchorPane>

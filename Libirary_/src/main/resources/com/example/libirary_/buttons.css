@@ -1,0 +1,18 @@
+/* Library Theme for JavaFX Buttons */
+
+.button {
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial", sans-serif;
+    -fx-text-fill: #ffffff; /* Text color */
+    -fx-background-color: #3498db; /* Button background color */
+    -fx-background-radius: 5px; /* Button corner radius */
+    -fx-padding: 8px 12px; /* Button padding */
+}
+
+.button:hover {
+    -fx-background-color: #2980b9; /* Hover background color */
+}
+
+.button:pressed {
+    -fx-background-color: #1f618d; /* Pressed background color */
+}

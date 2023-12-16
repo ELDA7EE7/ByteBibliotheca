@@ -4,30 +4,68 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.UpdateBookInfoController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.UpdateBookInfoController">
    <children>
-      <TextField fx:id="indexsearchTextField" layoutX="45.0" layoutY="31.0" promptText="Book Title" />
-      <Button fx:id="searchButton" layoutX="229.0" layoutY="31.0" mnemonicParsing="false" onAction="#ViewBookToUpdate" text="Show" />
-      <TextField fx:id="updateAuthor" layoutX="419.0" layoutY="31.0" />
-      <Label fx:id="update2" layoutX="369.0" layoutY="35.0" text="Author" />
-      <TextField fx:id="updatePrice" layoutX="420.0" layoutY="83.0" />
-      <TextField fx:id="UpdateTitle" layoutX="419.0" layoutY="200.0" />
-      <TextField fx:id="genreTextField" layoutX="420.0" layoutY="309.0" />
-      <TextField fx:id="UpdatePublishYear" layoutX="420.0" layoutY="249.0" />
-      <Label fx:id="UpdateP" layoutX="369.0" layoutY="87.0" text="Price" />
-      <Label fx:id="Update_Available" layoutX="369.0" layoutY="147.0" text="Status" />
-      <Label fx:id="Update_Title" layoutX="369.0" layoutY="204.0" text="Title" />
-      <Label fx:id="Update_PublishYear" layoutX="348.0" layoutY="253.0" text="Publish Year" />
-      <Button fx:id="updateButton" layoutX="255.0" layoutY="351.0" mnemonicParsing="false" onAction="#UpdateBookInfo" text="Update" />
-      <Label layoutX="367.0" layoutY="313.0" text="Genre" />
-      <CheckBox fx:id="statusCheckBox" layoutX="431.0" layoutY="130.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="64.0" text="In Stock" />
-      <TextField fx:id="authorTextField" layoutX="45.0" layoutY="75.0" promptText="Book Author" />
-      <Label fx:id="successLabel" layoutX="52.0" layoutY="301.0" />
-      <CheckBox fx:id="availableCheckBox" layoutX="431.0" layoutY="156.0" mnemonicParsing="false" text="Available For Borrow" />
-      <TextField fx:id="expiredatwTextField" layoutX="419.0" layoutY="351.0" />
-      <Label layoutX="350.0" layoutY="355.0" text="Expire Date" />
-      <Button layoutX="94.0" layoutY="351.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+      <TextField fx:id="indexsearchTextField" layoutX="144.0" layoutY="246.0" prefWidth="193.0" promptText="Book Title" />
+      <Button fx:id="searchButton" layoutX="204.0" layoutY="409.0" mnemonicParsing="false" onAction="#ViewBookToUpdate" stylesheets="@buttons.css" text="Show" />
+      <TextField fx:id="updateAuthor" layoutX="1313.0" layoutY="300.0" prefWidth="193.0" />
+      <Label fx:id="update2" layoutX="1176.0" layoutY="300.0" text="Author :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Label>
+      <TextField fx:id="updatePrice" layoutX="1313.0" layoutY="400.0" prefWidth="193.0" />
+      <TextField fx:id="UpdateTitle" layoutX="1313.0" layoutY="200.0" prefWidth="193.0" />
+      <TextField fx:id="genreTextField" layoutX="1313.0" layoutY="600.0" prefWidth="193.0" />
+      <TextField fx:id="UpdatePublishYear" layoutX="1313.0" layoutY="500.0" prefWidth="193.0" />
+      <Label fx:id="UpdateP" layoutX="1176.0" layoutY="400.0" text="Price :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Label>
+      <Label fx:id="Update_Available" layoutX="1176.0" layoutY="800.0" text="Status">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Label>
+      <Label fx:id="Update_Title" layoutX="1176.0" layoutY="200.0" text="Title :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Label>
+      <Label fx:id="Update_PublishYear" layoutX="1176.0" layoutY="500.0" text="Publish Year :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Label>
+      <Button fx:id="updateButton" layoutX="1370.0" layoutY="913.0" mnemonicParsing="false" onAction="#UpdateBookInfo" stylesheets="@buttons.css" text="Update" />
+      <Label layoutX="1176.0" layoutY="600.0" text="Genre :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Label>
+      <CheckBox fx:id="statusCheckBox" layoutX="1313.0" layoutY="800.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="92.0" text="In Stock">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></CheckBox>
+      <TextField fx:id="authorTextField" layoutX="144.0" layoutY="313.0" prefWidth="193.0" promptText="Book Author" />
+      <Label fx:id="successLabel" layoutX="1517.0" layoutY="921.0" prefHeight="17.0" prefWidth="14.0">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Label>
+      <CheckBox fx:id="availableCheckBox" layoutX="1472.0" layoutY="800.0" mnemonicParsing="false" text="Available For Borrow">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></CheckBox>
+      <TextField fx:id="expiredatwTextField" layoutX="1313.0" layoutY="700.0" prefWidth="193.0" />
+      <Label layoutX="1176.0" layoutY="700.0" text="Expire Date :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Label>
+      <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#Back" stylesheets="@buttons.css" text="Back" />
+      <Label layoutX="52.0" layoutY="91.0" text="What book do you want to update?">
+         <font>
+            <Font name="Arial Black" size="25.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="coverImageView" fitHeight="544.0" fitWidth="421.0" layoutX="665.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
