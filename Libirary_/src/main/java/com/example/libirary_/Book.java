@@ -14,6 +14,7 @@ public class Book {
     private String status;
     private float price;
     private String genre;
+    private String coverPath;
     public static ArrayList<Book> books = new ArrayList<Book>();
     private Image cover;
     private ImageView coverView;
@@ -21,13 +22,14 @@ public class Book {
     private int daysTillReturn;
     private float totalPriceInShoppingCart;
 
-    public Book(String title, String author, String status, int publishYear, float price, String genre, boolean isAvailable,int bookAmountAvailable, int daysTillReturn) {
+    public Book(String title, String author, String status, int publishYear, float price, String genre, String coverPath, boolean isAvailable,int bookAmountAvailable, int daysTillReturn) {
         this.title = title;
         this.author = author;
         this.status = status;
         this.publishYear = publishYear;
         this.price = price;
         this.genre = genre;
+        this.coverPath = coverPath;
         this.isAvailable = isAvailable;
         this.bookAmountAvailable = bookAmountAvailable;
         bookCounter++;
@@ -147,6 +149,14 @@ public class Book {
 
     public void setDaysTillReturn(int daysTillReturn) {
         this.daysTillReturn = daysTillReturn;
+    }
+
+    public String getCoverPath() {
+        return coverPath;
+    }
+
+    public void setCoverPath(String coverPath) {
+        this.coverPath = coverPath;
     }
 }
 

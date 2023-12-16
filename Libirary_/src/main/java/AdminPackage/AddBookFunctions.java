@@ -12,7 +12,7 @@ import resourcesimports.BooksImages;
 
 public abstract class AddBookFunctions implements CommonFunctions {
     @FXML
-    private TextField nameTextField,authorTextField,genreTextField,publishyearTextField,bookAmountAvailableTextField,priceTextField,daysTillReturnTextField;
+    private TextField nameTextField,authorTextField,genreTextField,publishyearTextField,coverPathTextField,bookAmountAvailableTextField,priceTextField,daysTillReturnTextField;
     @FXML
     private CheckBox statusCheckBox,availableCheckBox;
     @FXML
@@ -24,7 +24,8 @@ public abstract class AddBookFunctions implements CommonFunctions {
                     ||genreTextField.getText().isEmpty()
                     ||publishyearTextField.getText().isEmpty()
                     ||priceTextField.getText().isEmpty()
-                    || daysTillReturnTextField.getText().isEmpty()
+                    ||coverPathTextField.getText().isEmpty()
+                    ||daysTillReturnTextField.getText().isEmpty()
                     ||bookAmountAvailableTextField.getText().isEmpty()){
                 showAlert("Please Enter all the data");
                 successLabel.setText("");
@@ -41,6 +42,7 @@ public abstract class AddBookFunctions implements CommonFunctions {
         String name = nameTextField.getText()
                 ,author =authorTextField.getText()
                 ,genre= genreTextField.getText()
+                ,coverPath=coverPathTextField.getText()
                 ,status;
         int publishyear=Integer.parseInt(publishyearTextField.getText()),daysTillReturn=Integer.parseInt(daysTillReturnTextField.getText()),bookAmountAvailable=Integer.parseInt(bookAmountAvailableTextField.getText());
         float price=Float.parseFloat(priceTextField.getText());
@@ -52,8 +54,7 @@ public abstract class AddBookFunctions implements CommonFunctions {
             status = "Out of Stock";
         }
         successLabel.setText("Book added successfully");
-        BooksImages booksImages = new BooksImages();
-        Book newBook = new Book(name,author,status,publishyear,price,genre,isAvailable,bookAmountAvailable,daysTillReturn);
+        Book newBook = new Book(name,author,status,publishyear,price,genre,coverPath,isAvailable,bookAmountAvailable,daysTillReturn);
         System.out.println(Book.books.size());
     }
     public void AddBook(ActionEvent event){

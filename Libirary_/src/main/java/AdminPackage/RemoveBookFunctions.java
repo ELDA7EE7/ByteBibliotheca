@@ -46,9 +46,9 @@ public class RemoveBookFunctions {
                 RemoveAvailable.setText("out stock");
 
             }
-            //RemoveImage.setCache(false);
-            //image=new Image(Book.books.get(index).getImagepath());
-            //RemoveImage.setImage(image); //show book image
+            RemoveImage.setCache(false);
+            image=new Image(Book.books.get(index).getCoverPath());
+            RemoveImage.setImage(image); //show book image
 
         }catch (Exception e){
             System.out.println(e.getMessage());
