@@ -10,12 +10,12 @@
    <children>
       <ImageView fitHeight="450.0" fitWidth="675.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Splash_Screen.png" />
+            <Image url="@../../../SplashScreen/Splash_Screen.png" />
          </image>
       </ImageView>
       <ImageView fx:id="loadingImageView" fitHeight="450.0" fitWidth="675.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Splash_ScreenFG.png" />
+            <Image url="@../../../SplashScreen/Splash_ScreenFG.png" />
          </image>
       </ImageView>
       <ProgressIndicator layoutX="312.0" layoutY="238.0">

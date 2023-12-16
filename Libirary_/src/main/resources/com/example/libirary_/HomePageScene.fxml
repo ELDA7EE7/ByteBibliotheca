@@ -1,126 +1,405 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
-<?import javafx.scene.control.Label?>
+
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="831.4" prefWidth="1866.0" scaleShape="false" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.HomePageSceneController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" scaleShape="false" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.HomePageSceneController">
    <children>
-      <Label alignment="CENTER" layoutX="7.0" layoutY="1.0" prefHeight="109.0" prefWidth="460.0" text="ByteBibilotheca">
-         <font>
-            <Font name="Rage Italic" size="61.0" />
-         </font>
-      </Label>
-      <Label layoutX="407.0" layoutY="172.0" prefHeight="35.0" prefWidth="935.0" text="What's Hot !">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <Button fx:id="RandomBook" contentDisplay="TOP" graphicTextGap="100.0" layoutX="52.0" layoutY="425.0" mnemonicParsing="false" onAction="#random" prefHeight="32.0" prefWidth="245.0" text="Random Book ">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Label layoutX="407.0" layoutY="488.0" prefHeight="6.0" prefWidth="935.0" text="On Sale !">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="hot1" fitHeight="206.0" fitWidth="152.0" layoutX="443.0" layoutY="243.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../berserk1.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="hot2" fitHeight="206.0" fitWidth="152.0" layoutX="643.0" layoutY="241.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../berserk1.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="hot3" fitHeight="206.0" fitWidth="152.0" layoutX="843.0" layoutY="243.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../berserk1.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="hot4" fitHeight="206.0" fitWidth="152.0" layoutX="1043.0" layoutY="243.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../berserk1.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="sale1" fitHeight="206.0" fitWidth="152.0" layoutX="443.0" layoutY="570.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../berserk1.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="sale2" fitHeight="206.0" fitWidth="152.0" layoutX="643.0" layoutY="570.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../berserk1.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="sale3" fitHeight="206.0" fitWidth="152.0" layoutX="843.0" layoutY="570.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../berserk1.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="sale4" fitHeight="206.0" fitWidth="152.0" layoutX="1043.0" layoutY="570.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../berserk1.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="hot5" fitHeight="206.0" fitWidth="152.0" layoutX="1243.0" layoutY="243.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../berserk1.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="sale5" fitHeight="206.0" fitWidth="152.0" layoutX="1243.0" layoutY="570.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../berserk1.jpg" />
-         </image>
-      </ImageView>
-      <Button fx:id="Categories_id" contentDisplay="TOP" graphicTextGap="100.0" layoutX="52.0" layoutY="304.0" mnemonicParsing="false" onAction="#CategoriesPage" prefHeight="32.0" prefWidth="245.0" text="Categories">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <ImageView fx:id="cart" fitHeight="54.0" fitWidth="40.0" layoutX="1203.0" layoutY="25.0" onMouseClicked="#cart" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@shopping-cart_833314.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="rand" fitHeight="206.0" fitWidth="152.0" layoutX="85.0" layoutY="534.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../berserk1.jpg" />
-         </image>
-      </ImageView>
-      <Text fx:id="book1" layoutX="453.0" layoutY="468.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="114.13665771484375" />
-      <Text fx:id="book2" layoutX="653.0" layoutY="468.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="126.93670654296875" />
-      <Text fx:id="book3" layoutX="853.0" layoutY="467.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="126.93670654296875" />
-      <Text fx:id="book4" layoutX="1053.0" layoutY="468.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="88.53668212890625" />
-      <Text fx:id="book5" layoutX="1253.0" layoutY="468.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="88.53668212890625" />
-      <Text fx:id="book6" layoutX="453.0" layoutY="797.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="114.13665771484375" />
-      <Text fx:id="book7" layoutX="653.0" layoutY="797.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="126.93670654296875" />
-      <Text fx:id="book8" layoutX="853.0" layoutY="797.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="126.93670654296875" />
-      <Text fx:id="book9" layoutX="1053.0" layoutY="796.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="88.53668212890625" />
-      <Text fx:id="book10" layoutX="1253.0" layoutY="796.0" onMouseClicked="#BookDetails" strokeType="OUTSIDE" strokeWidth="0.0" text="Book1" wrappingWidth="88.53668212890625" />
-      <ImageView fitHeight="74.0" fitWidth="127.0" layoutX="1464.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="Profile" fitHeight="54.0" fitWidth="50.0" layoutX="1451.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@user_1144760.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="680.0" layoutY="93.0" mnemonicParsing="false" onAction="#SwitchToSearchScene" prefHeight="62.0" prefWidth="305.0" text="Search">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Button>
-      <Hyperlink layoutX="1277.0" layoutY="28.0" onAction="#SwitchToUserProfileScene" prefHeight="54.0" prefWidth="158.0" text="MyProfile">
-         <font>
-            <Font name="Bodoni MT" size="29.0" />
-         </font>
-      </Hyperlink>
+      <BorderPane prefHeight="1080.0" prefWidth="1920.0">
+         <top>
+            <AnchorPane prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #191919;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="36.0" fitWidth="270.0" layoutX="227.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="51.0" AnchorPane.topAnchor="32.0">
+                     <image>
+                        <Image url="@../../../UserInterfaceIcons/Logo.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="searchButton" contentDisplay="CENTER" layoutX="899.0" layoutY="20.0" mnemonicParsing="false" onAction="#SwitchToSearchScene" prefHeight="60.0" prefWidth="310.0" styleClass="searchButton" stylesheets="@HomePage.css" text="Search by Title or Author" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Categories_id" contentDisplay="TOP" graphicTextGap="100.0" layoutX="1174.0" layoutY="20.0" mnemonicParsing="false" onAction="#CategoriesPage" prefHeight="60.0" prefWidth="230.0" styleClass="searchButton" stylesheets="@HomePage.css" text="See all Categories" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="510.0" AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <ImageView fx:id="profileIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1697.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <image>
+                        <Image url="@../../../UserInterfaceIcons/Profile.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="backIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1766.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="20.0">
+                     <image>
+                        <Image url="@../../../UserInterfaceIcons/ShoppingCart.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="980.0" prefWidth="1920.0" style="-fx-background-color: #191919;" stylesheets="@HomePage.css" BorderPane.alignment="CENTER">
+               <children>
+                  <GridPane alignment="BOTTOM_RIGHT" hgap="50.0" layoutX="50.0" layoutY="179.0" prefHeight="270.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="170.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/IronFlame.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/AtomicHabits.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/Spare.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/FourthWing.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/The48LawsOfPower.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/ItStartsWithUs.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/Outlive.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/ItEndsWithUs.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                     </children>
+                  </GridPane>
+                  <Text fill="#e3e3e3" layoutX="62.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading1" text="What's Hot!" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="20.0" />
+                  <Text layoutX="50.0" layoutY="152.55208333333331" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading2" text="Explore the latest bestselling books making waves right now." AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="100.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="0.2018927685469859" startY="0.5394321646224063">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.5058823823928833" green="0.7568627595901489" blue="0.8509804010391235" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.2384187264691439">
+                                 <color>
+                                    <Color red="0.6823529601097107" green="0.6352941393852234" blue="0.8588235378265381" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.4936978228842691">
+                                 <color>
+                                    <Color red="0.3960784375667572" green="0.7529411911964417" blue="0.8784313797950745" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.7669149342500137">
+                                 <color>
+                                    <Color red="0.7215686440467834" green="0.7568627595901489" blue="0.7529411911964417" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.9137254953384399" green="0.6470588445663452" blue="0.6470588445663452" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Text>
+                  <GridPane hgap="50.0" layoutX="112.0" layoutY="628.0" prefHeight="270.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="640.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/AllTheLightWeCannotSee.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/GhostsOfHonolulu.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/HowToKnowAPerson.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/InterestingFactsForCuriousMinds.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/Murdle.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/NoBrainer.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/TheExchange.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../../BooksImages/TheWager.png" />
+                           </image>
+                           <effect>
+                              <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
+                                 <color>
+                                    <Color red="0.10000000149011612" green="0.10000000149011612" blue="0.10000000149011612" />
+                                 </color>
+                                 <input>
+                                    <Reflection fraction="0.2" topOffset="5.0" topOpacity="0.2" />
+                                 </input>
+                              </DropShadow>
+                           </effect>
+                        </ImageView>
+                     </children>
+                  </GridPane>
+                  <Text fill="#e3e3e3" layoutX="124.0" layoutY="587.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading1" text="Great Deals!" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="490.0" />
+                  <Text layoutX="112.0" layoutY="601.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading2" text="Snag fantastic reads at unbeatable prices in our book sale." AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="570.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="0.2018927685469859" startY="0.5394321646224063">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.5058823823928833" green="0.7568627595901489" blue="0.8509804010391235" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.2384187264691439">
+                                 <color>
+                                    <Color red="0.6823529601097107" green="0.6352941393852234" blue="0.8588235378265381" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.4936978228842691">
+                                 <color>
+                                    <Color red="0.3960784375667572" green="0.7529411911964417" blue="0.8784313797950745" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.7669149342500137">
+                                 <color>
+                                    <Color red="0.7215686440467834" green="0.7568627595901489" blue="0.7529411911964417" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.9137254953384399" green="0.6470588445663452" blue="0.6470588445663452" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>

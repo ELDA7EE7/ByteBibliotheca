@@ -47,7 +47,7 @@ public class RemoveBookFunctions {
 
             }
             RemoveImage.setCache(false);
-            image=new Image(Book.books.get(index).getImagepath());
+            image=new Image(Book.books.get(index).getCoverPath());
             RemoveImage.setImage(image); //show book image
 
         }catch (Exception e){

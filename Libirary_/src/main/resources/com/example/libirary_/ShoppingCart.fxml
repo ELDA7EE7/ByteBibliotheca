@@ -2,31 +2,41 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@ShoppingCart.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.ShoppingCartController">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@ShoppingCart.css" type="BorderPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.ShoppingCartController">
    <center>
-      <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="1005.0" prefWidth="1827.0" BorderPane.alignment="BOTTOM_CENTER">
-         <content>
-            <GridPane alignment="CENTER" prefHeight="345.0" prefWidth="475.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                  <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-         </content>
+      <ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="980.0" prefWidth="1622.0" style="-fx-background-color: #191919;" BorderPane.alignment="BOTTOM_CENTER">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
+         <content>
+            <VBox fx:id="shoppingCartVBox" prefWidth="1920.0" style="-fx-background-color: #191919;" />
+         </content>
       </ScrollPane>
    </center>
    <top>
-      <AnchorPane prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #191919;" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #191919;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="backIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1620.0" layoutY="15.0" onMouseClicked="#backToHomePage" onMouseEntered="#switchBackIconOnHover" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="20.0">
+               <image>
+                  <Image url="@../../../UserInterfaceIcons/BackIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="profileIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1837.0" layoutY="20.0" onMouseClicked="#goToProfilePage" onMouseEntered="#switchProfileIconOnHover" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <image>
+                  <Image url="@../../../UserInterfaceIcons/Profile.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="270.0" layoutX="55.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="51.0" AnchorPane.topAnchor="32.0">
+               <image>
+                  <Image url="@../../../UserInterfaceIcons/Logo.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
    </top>
-</BorderPane>
+</fx:root>
