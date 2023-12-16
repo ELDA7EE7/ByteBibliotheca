@@ -49,7 +49,7 @@ public class CategoriesController {
     @FXML
     void switchToUserProfile(ActionEvent e) throws IOException{
         profileIcon.setImage(profileIconOnClick);
-        root= FXMLLoader.load(getClass().getResource("UserProfileScene.fxml"));
+        root= FXMLLoader.load(getClass().getResource("UserProfile.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
         stage.setFullScreen(true);

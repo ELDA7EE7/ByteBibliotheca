@@ -44,7 +44,7 @@ public class ShoppingCartController {
     @FXML
     void goToProfilePage(MouseEvent event) throws IOException {
         profileIcon.setImage(profileIconOnClick);
-        root = FXMLLoader.load(getClass().getResource("UserProfileScene.fxml"));
+        root = FXMLLoader.load(getClass().getResource("UserProfile.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

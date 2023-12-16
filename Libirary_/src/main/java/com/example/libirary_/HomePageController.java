@@ -7,12 +7,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import resourcesimports.UserInterfaceIcons;
 
@@ -32,10 +29,6 @@ public class HomePageController implements Initializable
     public Image profileIconOnHover = UserInterfaceIcons.profileOnHover;
     public Image profileIconOnClick = UserInterfaceIcons.profileOnClick;
 
-    @FXML
-    private AnchorPane platform;
-    @FXML
-    private Button searchButton;
     @FXML
     ImageView shoppingCartIcon;
     @FXML
@@ -69,7 +62,7 @@ public class HomePageController implements Initializable
     @FXML
     void switchToUserProfile(MouseEvent e) throws IOException{
         profileIcon.setImage(profileIconOnClick);
-        root= FXMLLoader.load(getClass().getResource("UserProfileScene.fxml"));
+        root= FXMLLoader.load(getClass().getResource("UserProfile.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
         stage.setFullScreen(true);
@@ -98,7 +91,6 @@ public class HomePageController implements Initializable
 
     @FXML
     public void switchToCategories(ActionEvent e) throws IOException {//Change Scene to Categories Page
-        System.out.println(Book.books.size());
         root= FXMLLoader.load(getClass().getResource("Categories.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
