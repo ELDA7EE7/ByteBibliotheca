@@ -23,7 +23,7 @@
                <children>
                   <ImageView cache="true" fitHeight="36.0" fitWidth="270.0" layoutX="185.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="51.0" AnchorPane.topAnchor="32.0">
                      <image>
-                        <Image url="@../../../Logo.png" />
+                        <Image url="@../../../UserInterfaceIcons/Logo.png" />
                      </image>
                   </ImageView>
                </children>

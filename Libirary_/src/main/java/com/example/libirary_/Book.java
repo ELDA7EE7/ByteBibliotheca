@@ -12,44 +12,30 @@ public class Book {
     private String title;
     private String author;
     private String status;
-
-    private String imagepath;
     private float price;
-    private String Genre;
+    private String genre;
     public static ArrayList<Book> books = new ArrayList<Book>();
-    private Image image;
-    private ImageView view;
-    private boolean IsAvailable;
-    private int ExpiryDate;
+    private Image cover;
+    private ImageView coverView;
+    private boolean isAvailable;
+    private int daysTillReturn;
     private float totalPriceInShoppingCart;
 
-    public Book(String title, String author, String status, int publishYear, float price, String genre, String path, boolean IsAvailable,int bookAmountAvailable, int expiryDate) {
+    public Book(String title, String author, String status, int publishYear, float price, String genre, boolean isAvailable,int bookAmountAvailable, int daysTillReturn) {
         this.title = title;
         this.author = author;
         this.status = status;
-        bookCounterInShoppingCart = 0;
         this.publishYear = publishYear;
         this.price = price;
-        this.Genre = genre;
-        this.image = new Image(path);
-        this.imagepath = path;
-        this.IsAvailable = IsAvailable;
+        this.genre = genre;
+        this.isAvailable = isAvailable;
         this.bookAmountAvailable = bookAmountAvailable;
         bookCounter++;
         bookID = bookCounter;
         books.add(this);
-        this.ExpiryDate = expiryDate;
+        this.daysTillReturn = daysTillReturn;
         totalPriceInShoppingCart = 0;
-    }
-    public Book(String title, String author, String status, int publishYear, float price, String genre, String path) {
-        this.title = title;
-        this.author = author;
-        this.status = status;
-        this.publishYear = publishYear;
-        this.price = price;
-        this.Genre = genre;
-        this.image = new Image(path);
-        this.imagepath = path;
+        bookCounterInShoppingCart = 0;
     }
     public int getBookCounterInShoppingCart() {
         return bookCounterInShoppingCart;
@@ -106,54 +92,31 @@ public class Book {
         this.price = price;
     }
 
-    public void setImageview(Image image) {
-        this.view.setImage(image);
+
+
+    public ImageView getCoverView() {
+        return coverView;
     }
 
-    public Image getImage() {
-        return image;
-    }
-
-    public String getImagepath() {
-        return imagepath;
-    }
-
-    public void setImagepath(String imagepath) {
-        this.imagepath = imagepath;
-    }
-
-    public ImageView getView() {
-        return view;
-    }
-
-    public void setView(ImageView view) {
-        this.view = view;
+    public void setCoverView(ImageView coverView) {
+        this.coverView = coverView;
     }
 
     public String getGenre() {
-        return Genre;
+        return genre;
     }
 
     public void setGenre(String genre) {
-        Genre = genre;
+        this.genre = genre;
     }
 
-        public boolean isAvailable() {
-            return IsAvailable;
-        }
+    public boolean isAvailable() {
+        return isAvailable;
+    }
 
-        public void setAvailable (boolean available){
-            IsAvailable = available;
-        }
-
-        public int getExpiryDate () {
-            return ExpiryDate;
-        }
-
-        public void setExpiryDate (int expiryDate){
-            ExpiryDate = expiryDate;
-
-        }
+    public void setAvailable (boolean isAvailable){
+        this.isAvailable = isAvailable;
+    }
 
     public int getBookAmountAvailable() {
         return bookAmountAvailable;
@@ -169,6 +132,21 @@ public class Book {
 
     public void setTotalPriceInShoppingCart(float totalPriceInShoppingCart) {
         this.totalPriceInShoppingCart = totalPriceInShoppingCart;
+    }
+    public Image getCover() {
+        return cover;
+    }
+
+    public void setCover(Image cover) {
+        this.cover = cover;
+    }
+
+    public int getDaysTillReturn() {
+        return daysTillReturn;
+    }
+
+    public void setDaysTillReturn(int daysTillReturn) {
+        this.daysTillReturn = daysTillReturn;
     }
 }
 

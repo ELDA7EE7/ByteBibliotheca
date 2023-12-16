@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import resourcesimports.*;
 
 public class HomePageSceneController implements Initializable
 {
@@ -27,6 +28,12 @@ public class HomePageSceneController implements Initializable
 
     @FXML
     private AnchorPane platform;
+    @FXML
+    private Button searchButton;
+    @FXML
+    ImageView backIcon;
+    @FXML
+    ImageView profileIcon;
     @FXML
     private ImageView bookimage1=new ImageView(),bookimage2=new ImageView(),bookimage3=new ImageView(),
             bookimage4=new ImageView(),bookimage5=new ImageView()
@@ -96,19 +103,19 @@ public class HomePageSceneController implements Initializable
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
 
-        Book book =new Book("Rich Dad Poor Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,4);
+        /*Book book =new Book("Rich Dad Poor Dad","Ehab","Valid",2000,500,
+                "HUmanDevelopment", BooksImages.richDadPoorDad,true,4,12);
 
         book =new Book("Atomic habit","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/atomic.jpg",true,4);
+                "HUmanDevelopment", BooksImages.atomicHabits,true,4,4);
 
         book =new Book("Rich Dad  Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", "/RichDadPoorDad.jpg",true,3);
+                "HUmanDevelopment", BooksImages.richDadPoorDad,true,3,5);*/
 
 
 
 
-        Image  imagebook =new Image(Book.books.get(0).getImagepath());
+        /*Image  imagebook =new Image(Book.books.get(0).getImagepath());
          bookimage1.setImage(imagebook);
         bookname1.setText(Book.books.get(0).getTitle());
 
@@ -118,7 +125,7 @@ public class HomePageSceneController implements Initializable
 
         imagebook =new Image(Book.books.get(2).getImagepath());
         bookimage3.setImage(imagebook);
-        bookname3.setText(Book.books.get(2).getTitle());
+        bookname3.setText(Book.books.get(2).getTitle());*/
 
 
     }

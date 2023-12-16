@@ -1,4 +1,4 @@
-package resources;
+package resourcesimports;
 
 public class BackgroundImages {
 }

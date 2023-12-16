@@ -1,4 +1,4 @@
-package resources;
+package resourcesimports;
 
 import javafx.scene.paint.Color;
 

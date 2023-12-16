@@ -16,7 +16,7 @@ public class Borrower extends UserInformation
 
 
     private ArrayList<Integer>BorrowedBookID=new ArrayList<Integer>();
-    private ArrayList<LocalDateTime>ExpireDate=new ArrayList<LocalDateTime>();
+    private ArrayList<LocalDateTime>DaysTillReturn=new ArrayList<LocalDateTime>();
     private ArrayList<LocalDateTime>DateofBorrow=new ArrayList<LocalDateTime>();
     private ArrayList<Boolean>IsReturned=new ArrayList<Boolean>();
 
@@ -55,7 +55,7 @@ public class Borrower extends UserInformation
             System.out.println("This book is available ,If you want to borrow it press Y");
             book.setAvailable(false);
             DateofBorrow.add(java.time.LocalDateTime.now());
-            ExpireDate.add(java.time.LocalDateTime.now().plusDays(book.getExpiryDate()));
+            DaysTillReturn.add(java.time.LocalDateTime.now().plusDays(book.getDaysTillReturn()));
             IsBorrowing=true;
             BorrowedBookID.add(book.getBookID());
             book.setAvailable(false);
@@ -68,16 +68,16 @@ public class Borrower extends UserInformation
         {
             if(IsReturned.get(i))
             {
-                if (borrower.ExpireDate.get(i).isBefore(java.time.LocalDateTime.now()))
+                if (borrower.DaysTillReturn.get(i).isBefore(LocalDateTime.now()))
                 {
                     System.out.println("Duration of the borrowed book has expired :" +" "+Book.books.get(borrower.BorrowedBookID.get(i)).getTitle());
                     IsReturned.set(i,false);
                     Book.books.get(borrower.BorrowedBookID.get(i)).setAvailable(true);
                 }
-                else if (borrower.ExpireDate.get(i).isAfter(java.time.LocalDateTime.now()))
+                else if (borrower.DaysTillReturn.get(i).isAfter(LocalDateTime.now()))
                 {
                     System.out.println("Due Time for the borrowed book :" +" "+Book.books.get(borrower.BorrowedBookID.get(i)).getTitle()
-                            +" "+ ChronoUnit.DAYS.between(LocalDate.now(), borrower.ExpireDate.get(borrower.BorrowedBookID.get(i))));
+                            +" "+ ChronoUnit.DAYS.between(LocalDate.now(), borrower.DaysTillReturn.get(borrower.BorrowedBookID.get(i))));
                 }
             }
 
