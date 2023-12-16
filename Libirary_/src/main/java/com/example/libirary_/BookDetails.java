@@ -28,7 +28,7 @@ public class BookDetails implements Initializable
 
     public void displayBook(Book book)
     {
-        Image imagePath = new Image (book.getImagepath());
+        Image imagePath = new Image (book.getCoverPath());
         imageID.setImage(imagePath);
         titleID.setText(book.getTitle());
         autherID.setText(book.getAuthor());

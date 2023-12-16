@@ -34,7 +34,7 @@ public class UserProfileSceneController extends UpdateUserData implements Initia
     }
     @FXML
     public void backToHomePage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("HomePageScene.fxml"));
+        root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
