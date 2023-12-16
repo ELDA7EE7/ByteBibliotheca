@@ -52,7 +52,7 @@ public class UpdateBookFunctions implements CommonFunctions {
             statusCheckBox.setSelected(false);
 
         }
-        coverImage = new Image(Book.books.get(index).getImagepath());
+        coverImage = new Image(Book.books.get(index).getCoverPath());
         coverImageView.setImage(coverImage);
     }
     public void ViewBookToUpdate(ActionEvent event){
