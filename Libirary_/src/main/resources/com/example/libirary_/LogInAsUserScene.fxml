@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox id="loginPage" alignment="CENTER" maxHeight="1080" maxWidth="1920" minHeight="1080" minWidth="1920" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.SignInAsUserSceneController">
+<VBox id="loginPage" alignment="CENTER" maxHeight="1080" maxWidth="1920" minHeight="1080" minWidth="1920" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.LoginController">
    <children>
       <BorderPane id="loginPageBorderPane" prefHeight="1080.0" prefWidth="1920.0">
          <top>
@@ -71,7 +71,7 @@
                                  </children>
                               </Pane>
                               <Pane layoutX="205.0" layoutY="76.0" prefHeight="16.0" prefWidth="324.0" />
-                              <TextField fx:id="emailTextField" layoutX="205.0" layoutY="28.0" onAction="#getEmail" prefHeight="48.0" prefWidth="324.0" promptText="Email or Username" style="-fx-background-color: #121212; -fx-border-radius: 4; -fx-border-color: #7f7f7f; -fx-background-radius: 4;">
+                              <TextField fx:id="emailTextField" layoutX="205.0" layoutY="28.0" prefHeight="48.0" prefWidth="324.0" promptText="Email or Username" style="-fx-background-color: #121212; -fx-border-radius: 4; -fx-border-color: #7f7f7f; -fx-background-radius: 4;">
                                  <font>
                                     <Font name="Inter Regular" size="15.0" />
                                  </font>
@@ -92,7 +92,7 @@
                                  </children>
                               </Pane>
                               <Pane layoutX="205.0" layoutY="168.0" prefHeight="16.0" prefWidth="324.0" />
-                              <TextField fx:id="enterPasswordField" layoutX="205.0" layoutY="120.0" onAction="#getPassword" prefHeight="48.0" prefWidth="324.0" promptText="Password" style="-fx-background-color: #121212; -fx-border-radius: 4; -fx-border-color: #7f7f7f; -fx-background-radius: 4;">
+                              <TextField fx:id="enterPasswordField" layoutX="205.0" layoutY="120.0" prefHeight="48.0" prefWidth="324.0" promptText="Password" style="-fx-background-color: #121212; -fx-border-radius: 4; -fx-border-color: #7f7f7f; -fx-background-radius: 4;">
                                  <font>
                                     <Font name="Inter Regular" size="15.0" />
                                  </font>
@@ -105,7 +105,7 @@
                               </TextField>
                               <AnchorPane layoutX="205.0" layoutY="184.0" prefHeight="112.0" prefWidth="324.0">
                                  <children>
-                                    <Button fx:id="loginButton" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" layoutX="136.0" layoutY="44.0" mnemonicParsing="false" onAction="#checkAccount" styleClass="logInButton" stylesheets="@LogIn.css" text="Log In" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+                                    <Button fx:id="loginButton" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" layoutX="136.0" layoutY="44.0" mnemonicParsing="false" onAction="#pressLogin" styleClass="logInButton" stylesheets="@LogIn.css" text="Log In" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
                                     </Button>
                                  </children>
                               </AnchorPane>

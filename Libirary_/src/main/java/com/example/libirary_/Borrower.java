@@ -4,11 +4,11 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
-public class Borrower extends UserInformation
+public class Borrower extends User
 {
-    private  String BorrowerName;
     private final int  BorrowerId;
     public static int BorrowerNum;
+    private static Borrower current_borrower;
     private boolean IsBorrowing;
     private String PhoneNumber ;
     public static ArrayList<Borrower> borrowers = new ArrayList<Borrower>();
@@ -20,17 +20,6 @@ public class Borrower extends UserInformation
     private ArrayList<LocalDateTime>DateofBorrow=new ArrayList<LocalDateTime>();
     private ArrayList<Boolean>IsReturned=new ArrayList<Boolean>();
 
-    public String getBorrowerName() {
-        return BorrowerName;
-    }
-
-    public void setBorrowerName(String borrowerName) {
-        BorrowerName = borrowerName;
-    }
-
-    public int getBorrowerId() {
-        return BorrowerId;
-    }
 
     LocalDate currentDate = LocalDate.now();
 
@@ -39,8 +28,7 @@ public class Borrower extends UserInformation
         super(userID, userName, email, password);
         BorrowerNum++;
         BorrowerId=BorrowerNum;
-        BorrowerName=userName;
-
+        borrowers.add(this);
     }
 
 
@@ -54,12 +42,14 @@ public class Borrower extends UserInformation
         {
             System.out.println("This book is available ,If you want to borrow it press Y");
             book.setAvailable(false);
+
             DateofBorrow.add(java.time.LocalDateTime.now());
             DaysTillReturn.add(java.time.LocalDateTime.now().plusDays(book.getDaysTillReturn()));
+
             IsBorrowing=true;
-            BorrowedBookID.add(book.getBookID());
+            current_borrower.BorrowedBookID.add(book.getBookID());
             book.setAvailable(false);
-            IsReturned.add(true);
+            current_borrower.IsReturned.add(true);
         }
     }
     public void BorrowedBookIsExpired(Borrower borrower)
@@ -71,6 +61,7 @@ public class Borrower extends UserInformation
                 if (borrower.DaysTillReturn.get(i).isBefore(LocalDateTime.now()))
                 {
                     System.out.println("Duration of the borrowed book has expired :" +" "+Book.books.get(borrower.BorrowedBookID.get(i)).getTitle());
+                    System.out.println("You will be fined 50$ ");
                     IsReturned.set(i,false);
                     Book.books.get(borrower.BorrowedBookID.get(i)).setAvailable(true);
                 }
@@ -84,5 +75,11 @@ public class Borrower extends UserInformation
         }
     }
 
+    public static void setCurrent_borrower(Borrower current_borrower) {
+        Borrower.current_borrower = current_borrower;
+    }
 
+    public int getBorrowerId() {
+        return BorrowerId;
+    }
 }

@@ -1,41 +1,34 @@
 package com.example.libirary_;
 
+import userprofile.Order;
+
 import java.util.ArrayList;
 
-public class User {
-    static int userCounter =0;
-    UserInformation userInfo;
-    static User CurrentUser;
+public class User extends Person{
+    private static int userCounter =0;
+    private static User currentUser;
    public static ArrayList<User> users = new ArrayList<User>();
 
+   public ArrayList<Order> orders = new ArrayList<Order>();
+
+   public User(int id,String userName, String email, String password){
+       super(userCounter,userName,email,password);
+   }
     public User(String userName, String email, String password) {
+        super(userCounter+1,userName,email,password);
         userCounter++;
-        this.userInfo = new UserInformation(userCounter+200,userName,email,password);
         users.add(this);
     }
-
-    public String getEmailInfo() {
-        return userInfo.getEmail();
-    }
-    public String getPasswordInfo() {
-        return userInfo.getPassword();
-    }
-    public String getUsernameInfo() {
-        return userInfo.getUserName();
-    }
-
-    public void setEmailInfo(String email) {
-        this.userInfo.email = email;
-    }
-    public void setPasswordInfo(String password) {
-        this.userInfo.password = password;
-    }
-    public void setUserNameInfo(String userName) {
-        this.userInfo.userName = userName;
-    }
-
-
     public static int getUserCounter() {
         return userCounter;
     }
+
+    public static User getCurrentUser() {
+        return currentUser;
+    }
+    public static void setCurrentUser(User user){
+        currentUser = user;
+    }
+
+
 }

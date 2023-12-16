@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class UpdateBookFunctions implements CommonFunctions {
     @FXML
@@ -16,6 +18,9 @@ public class UpdateBookFunctions implements CommonFunctions {
 
     @FXML
     private Label successLabel;
+    @FXML
+    private ImageView coverImageView;
+    private Image coverImage ;
     int index;
     public void ResetAll(){
         indexsearchTextField.clear();
@@ -28,6 +33,7 @@ public class UpdateBookFunctions implements CommonFunctions {
         daysTillReturnTextField.clear();
         availableCheckBox.setSelected(false);
         statusCheckBox.setSelected(false);
+
     }
     public void ShowDataInTextFeilds(){
         updateAuthor.setText(Book.books.get(index).getAuthor());
@@ -46,6 +52,8 @@ public class UpdateBookFunctions implements CommonFunctions {
             statusCheckBox.setSelected(false);
 
         }
+        coverImage = new Image(Book.books.get(index).getImagepath());
+        coverImageView.setImage(coverImage);
     }
     public void ViewBookToUpdate(ActionEvent event){
         try {

@@ -5,6 +5,7 @@ import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 public class Book {
     private static int bookCounter=0;
+
     private int bookCounterInShoppingCart;
     private int bookID;
     private int publishYear;
@@ -16,6 +17,7 @@ public class Book {
     private String genre;
     private String coverPath;
     public static ArrayList<Book> books = new ArrayList<Book>();
+
     private Image cover;
     private ImageView coverView;
     private boolean isAvailable;
@@ -24,6 +26,7 @@ public class Book {
 
     public Book(String title, String author, String status, int publishYear, float price, String genre, String coverPath, boolean isAvailable,int bookAmountAvailable, int daysTillReturn) {
         this.title = title;
+
         this.author = author;
         this.status = status;
         this.publishYear = publishYear;
@@ -35,16 +38,19 @@ public class Book {
         bookCounter++;
         bookID = bookCounter;
         books.add(this);
+
         this.daysTillReturn = daysTillReturn;
         totalPriceInShoppingCart = 0;
         bookCounterInShoppingCart = 0;
     }
+
     public int getBookCounterInShoppingCart() {
         return bookCounterInShoppingCart;
-    }
+  }
 
     public void setBookCounterInShoppingCart(int bookCounterInShoppingCart) {
         this.bookCounterInShoppingCart = bookCounterInShoppingCart;
+
     }
     public int getBookID() {
         return bookID;
@@ -120,9 +126,10 @@ public class Book {
         this.isAvailable = isAvailable;
     }
 
+
     public int getBookAmountAvailable() {
         return bookAmountAvailable;
-    }
+}
 
     public void setBookAmountAvailable(int bookAmountAvailable) {
         this.bookAmountAvailable = bookAmountAvailable;

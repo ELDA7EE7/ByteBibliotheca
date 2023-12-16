@@ -1,4 +1,4 @@
-package SearchEngine;
+package searchengine;
 
 import com.example.libirary_.Book;
 
@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 public abstract class SearchEngine {
    protected ArrayList<String> words = new ArrayList<>();
+
     protected void uploadAllBooks (){
         for (Book book:
              Book.books) {

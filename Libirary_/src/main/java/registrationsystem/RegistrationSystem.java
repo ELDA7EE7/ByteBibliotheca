@@ -1,4 +1,4 @@
-package com.example.libirary_;
+package registrationsystem;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,17 +15,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public abstract class RegistrationSystem {
+
     @FXML
     protected TextField
             usernameTextField,
             emailTextField,
             enterPasswordField;
-
-    protected String username,
-            email,
-            password,
-            confirmPassword;
-
     private Scene scene;
     private Stage stage;
 
@@ -63,14 +58,7 @@ public abstract class RegistrationSystem {
         stage.setFullScreen(true);
         stage.show();
     }
-    @FXML
-    public void switchToSignInAsAdminScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("LogLogInAsAdminScene.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
+
     @FXML
     public void switchToCreateNewUserAccountScene(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
@@ -79,21 +67,6 @@ public abstract class RegistrationSystem {
         stage.setScene(scene);
         stage.show();
     }
-    @FXML
-    protected void getUsername(ActionEvent event){
-        username= usernameTextField.getText();
-        System.out.println(username);
-    }
-    @FXML
-    protected void getPassword(ActionEvent event){
-        password= enterPasswordField.getText();
-        System.out.println(password);
 
-    }
-    @FXML
-    protected void getEmail(ActionEvent event){
-        email= emailTextField.getText();
-        System.out.println(email);
-    }
 
 }
