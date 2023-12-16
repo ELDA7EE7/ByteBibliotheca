@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HomePageSceneController extends SearchSceneController implements Initializable , CommonFunctions
+public class HomePageSceneController implements Initializable , CommonFunctions
 {
     private Stage stage;
     private Scene scene;
@@ -85,7 +85,6 @@ public class HomePageSceneController extends SearchSceneController implements In
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-        super.initialize(url,resourceBundle);
         Book book =new Book("Rich Dad Poor Dad","Ehab","Valid",2000,500,
                 "HUmanDevelopment", "/RichDadPoorDad.jpg",true,4,10,"bookimage62");
 
