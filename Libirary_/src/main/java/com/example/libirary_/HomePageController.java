@@ -18,9 +18,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import resourcesimports.*;
 
-public class HomePageSceneController implements Initializable
+public class HomePageController implements Initializable
 {
     private Stage stage;
     private Scene scene;
@@ -31,22 +30,9 @@ public class HomePageSceneController implements Initializable
     @FXML
     private Button searchButton;
     @FXML
-    ImageView backIcon;
+    ImageView shoppingCartIcon;
     @FXML
     ImageView profileIcon;
-    @FXML
-    private ImageView bookimage1=new ImageView(),bookimage2=new ImageView(),bookimage3=new ImageView(),
-            bookimage4=new ImageView(),bookimage5=new ImageView()
-            ,bookimage6=new ImageView(),bookimage7=new ImageView(),bookimage8=new ImageView(),bookimage9=new ImageView()
-            ,bookimage10=new ImageView(), bookimage11=new ImageView(),bookimage12=new ImageView(),bookimage13=new ImageView()
-            ,bookimage14=new ImageView(),bookimage15=new ImageView();
-
-
-    @FXML
-    private Label bookname1 =new Label(),bookname2 =new Label(),bookname3 =new Label(),bookname4 =new Label(),bookname5
-            ,bookname6,bookname7,bookname8,bookname9,bookname10,
-            bookname11,bookname12,bookname13,bookname14,bookname15;
-
     @FXML
     void SwitchToSearchScene(ActionEvent e) throws IOException{
         root= FXMLLoader.load(getClass().getResource("SearchScene.fxml"));
@@ -66,28 +52,15 @@ public class HomePageSceneController implements Initializable
         stage.show();
 
     }
-    public void BookDetails(MouseEvent e) throws IOException{//Change Scene to BookDetails Page
+    public void switchToBookDetails(MouseEvent e) throws IOException{//Change Scene to BookDetails Page
         root= FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
-
-
-
     }
 
-    private Image image;
-    @FXML
-    private ImageView rand;
-    public void random(ActionEvent e) throws IOException{
-        image=new Image(getClass().getResource("Cart.png").toExternalForm());//show image for random book
-        rand.setImage(image);
-
-    }
-
-    public void CategoriesPage(ActionEvent e) throws IOException {//Change Scene to Categories Page
-
+    public void switchToCategories(ActionEvent e) throws IOException {//Change Scene to Categories Page
         System.out.println(Book.books.size());
         root= FXMLLoader.load(getClass().getResource("Categories.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -95,7 +68,6 @@ public class HomePageSceneController implements Initializable
         stage.setScene(scene);
         stage.setFullScreen(true);
         stage.show();
-
     }
 
 

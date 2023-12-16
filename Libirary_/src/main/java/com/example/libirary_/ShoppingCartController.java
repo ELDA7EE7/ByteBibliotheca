@@ -16,6 +16,9 @@ import resourcesimports.UserInterfaceIcons;
 import java.io.IOException;
 
 public class ShoppingCartController {
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
     @FXML
     ImageView backIcon;
     @FXML
@@ -35,9 +38,9 @@ public class ShoppingCartController {
     @FXML
     void backToHomePage(MouseEvent event) throws IOException {
         backIcon.setImage(backIconOnClick);
-        Parent root = FXMLLoader.load(getClass().getResource("HomePageScene.fxml"));
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
+        root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
         stage.setScene(scene);
         stage.setFullScreen(true);
         stage.show();
@@ -45,9 +48,9 @@ public class ShoppingCartController {
     @FXML
     void goToProfilePage(MouseEvent event) throws IOException {
         backIcon.setImage(profileIconOnClick);
-        Parent root = FXMLLoader.load(getClass().getResource("HomePageScene.fxml"));
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
+        root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
         stage.setScene(scene);
         stage.setFullScreen(true);
         stage.show();

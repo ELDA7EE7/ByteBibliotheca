@@ -16,7 +16,7 @@ public class RandomBook
     private Scene scene;
     private Parent root;
     public void BackRandom(ActionEvent e) throws IOException {
-        root= FXMLLoader.load(getClass().getResource("HomePageScene.fxml"));
+        root= FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
         stage.setScene(scene);
