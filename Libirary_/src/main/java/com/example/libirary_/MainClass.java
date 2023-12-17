@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static librarypackage.Library.users;
+
 public class MainClass extends Application {
 
     public static Trie names=new Trie(),emails=new Trie();
@@ -20,7 +22,7 @@ public class MainClass extends Application {
 
         // add default user
         Person user = new User("mazenalaa","mazen@gmail.com","12345678a");
-        for (Person p : User.users ) {
+        for (Person p : users ) {
             names.insert(p.getName());
             emails.insert(p.getEmail());
         }

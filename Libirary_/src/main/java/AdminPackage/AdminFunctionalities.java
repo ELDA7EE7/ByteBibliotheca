@@ -12,7 +12,7 @@ import java.io.IOException;
 
 import static com.example.libirary_.Borrower.BorrowerNum;
 import static com.example.libirary_.Borrower.borrowers;
-import static com.example.libirary_.User.users;
+import static librarypackage.Library.users;
 
 
 public class AdminFunctionalities implements CommonFunctions

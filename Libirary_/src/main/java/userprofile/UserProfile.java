@@ -7,6 +7,8 @@ import javafx.scene.control.ListView;
 
 import java.util.ArrayList;
 
+import static librarypackage.Library.orders;
+
 public class UserProfile implements UploadUserInformation {
     @FXML
     protected Label emailLabel, nameLabel, passwordLabel, idLabel;
@@ -19,8 +21,10 @@ public class UserProfile implements UploadUserInformation {
     @Override
     public void fillListviewWithUserOrders() {
 
-        for (Order order : user.orders) {
-            ordersList.add(order.toString());
+        for (Order order : orders) {
+            if(user.findOrderID(order.getOrderId())) {
+                ordersList.add(order.toString());
+            }
         }
         try {
             listView.getItems().addAll(ordersList);

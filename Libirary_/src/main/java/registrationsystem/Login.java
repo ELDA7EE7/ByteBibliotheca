@@ -4,10 +4,12 @@ import com.example.libirary_.Book;
 import com.example.libirary_.User;
 import userprofile.Order;
 
+import static librarypackage.Library.users;
+
 public interface Login {
     default User findUser(String emailOrUsername,String password) {
 
-        for (User user : User.users) {
+        for (User user : users) {
             System.out.println(user.getEmail());
             System.out.println(user.getName());
             System.out.println(user.getPassword());
