@@ -1,4 +1,6 @@
-package com.example.libirary_;
+package UsersOfLibrary;
+
+import com.example.libirary_.Book;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -8,6 +10,7 @@ public class Purchase  extends User {
 
     private final int  CustomerId;
     private boolean HasDiscount=true;
+    private int CurrentCustomerId=getCurrentUser().getId();
     public static int CustomerNum;
     private boolean Isbuying;
     private static Purchase current_Purchase;
@@ -22,9 +25,12 @@ public class Purchase  extends User {
 
     public Purchase(int userID, String userName, String email, String password) {
         super(userID, userName, email, password);
-        CustomerNum++;
-        CustomerId= CustomerNum;
+        CustomerId= userID;
+        CustomerNum=CustomerId;
         Purchase.add(this);
+        for (User u:users) {
+            if (u.getId()==CurrentCustomerId ) current_Purchase =getCurrent_Purchase(CurrentCustomerId);
+        }
     }
 
     public void PurchasedBook(Book book)
@@ -45,10 +51,12 @@ public class Purchase  extends User {
 
         }
     }
-
-      public void ApplyDiscount(){
-
-      }
+    public Purchase getCurrent_Purchase(int userId){
+        for (Purchase Purch: Purchase){
+            if (Purch.getId()==userId)return Purch;
+        }
+        return null;
+    }
 
     public static Purchase getCurrent_Purchase() {
         return current_Purchase;

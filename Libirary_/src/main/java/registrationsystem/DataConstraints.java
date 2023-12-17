@@ -1,6 +1,6 @@
 package registrationsystem;
 
-import com.example.libirary_.User;
+import UsersOfLibrary.User;
 
 import java.util.regex.Pattern;
 

@@ -1,8 +1,6 @@
 package registrationsystem;
 
-import com.example.libirary_.Book;
-import com.example.libirary_.User;
-import userprofile.Order;
+import UsersOfLibrary.User;
 
 public interface Login {
     default User findUser(String emailOrUsername,String password) {

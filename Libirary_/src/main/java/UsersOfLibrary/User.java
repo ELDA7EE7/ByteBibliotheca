@@ -1,10 +1,10 @@
-package com.example.libirary_;
+package UsersOfLibrary;
 
 import userprofile.Order;
 
 import java.util.ArrayList;
 
-public class User extends Person{
+public class User extends Person {
     private static int userCounter =0;
     private static User currentUser;
    public static ArrayList<User> users = new ArrayList<User>();
@@ -15,7 +15,7 @@ public class User extends Person{
        super(userCounter,userName,email,password);
    }
     public User(String userName, String email, String password) {
-        super(userCounter+1,userName,email,password);
+        super(userCounter,userName,email,password);
         userCounter++;
         users.add(this);
     }
