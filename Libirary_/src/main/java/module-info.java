@@ -16,4 +16,6 @@ module com.example.libirary_ {
     opens userprofile to javafx.fxml;
     exports registrationsystem;
     opens registrationsystem to javafx.fxml;
+    exports datastructure.trie;
+    opens datastructure.trie to javafx.fxml;
 }

@@ -1,5 +1,6 @@
 package com.example.libirary_;
 
+import datastructure.trie.Trie;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,20 +11,29 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainClass extends Application {
+
+    public static Trie names=new Trie(),emails=new Trie();
+    static {
+
+        // upload data from files here
+
+
+        // add default user
+        Person user = new User("mazenalaa","mazen@gmail.com","12345678a");
+        for (Person p : User.users ) {
+            names.insert(p.getName());
+            emails.insert(p.getEmail());
+        }
+    }
     @Override
     public void start(Stage stage) throws IOException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(MainClass.class.getResource("SplashScreen.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Library");
         stage.setScene(scene);
         //stage.setFullScreen(true);
         stage.show();
-
-
-        // add default user
-        User user = new User("mazenalaa","mazen@gmail.com","12345678a");
-
-
         stage.setOnCloseRequest(event -> {
             event.consume();
             close(stage);
@@ -42,10 +52,6 @@ public class MainClass extends Application {
     }
     public static void main(String[] args) throws IOException {
 
-        /*for(int i=0;i<10;i++) {
-            Book book = new Book("title" + i, "author" + i, "author", 200, 20, "author", "berserk1.jpg",true,2,3);
-        }
-        Book book=new Book("mazen","mazen","In stock",2005,2000.0F,"Action","berserk1.jpg",true,5,3);*/
 
         launch();
     }
