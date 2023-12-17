@@ -17,7 +17,10 @@ public interface Login {
 
             if (((user.getEmail().equals(emailOrUsername)) || (user.getName().equals(emailOrUsername))) && user.getPassword().equals(password)) {
                 User.setCurrentUser(user);
+              
+              //add order to Mazen to check if code run correctly
                 //Order order = new Order(100.0f, Book.books.get(1), 3);
+               // Order order = new Order(100.0f, Book.books.get(0), 3);
                 //user.orders.add(order);
                 return user;
             }
