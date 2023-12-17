@@ -51,7 +51,7 @@ public abstract class RegistrationSystem {
     }
     @FXML
     public void switchToHomePageScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("HomePageScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

@@ -29,11 +29,11 @@ public class Purchase  extends User {
 
     public void PurchasedBook(Book book)
     {
-        if(book.getInStock()>0)
+        if(book.getBookAmountAvailable()>0)
         {
             System.out.println("This book is available ,If you want to Purchase it press Y");
             System.out.println(book.getPrice()+"has been deducted form your Account ");
-            book.setInStock(book.getInStock()-1);
+            book.setBookAmountAvailable(book.getBookAmountAvailable()-1);
             current_Purchase.DateofPurchase.add(java.time.LocalDateTime.now());
             current_Purchase.PurchaseBookID.add(book.getBookID());
         }
