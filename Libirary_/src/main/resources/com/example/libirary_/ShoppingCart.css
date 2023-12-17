@@ -1,0 +1,50 @@
+.heading1{
+    -fx-text-fill: #e5e5e5;
+    -fx-font-family: Inter;
+    -fx-font-size: 55px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+}
+.radio-button{
+    -fx-text-fill: #e5e5e5;
+    -fx-font-family: Inter;
+    -fx-font-size: 25px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+}
+.payWith{
+    -fx-text-fill: #e5e5e5;
+    -fx-font-family: Inter;
+    -fx-font-size: 25px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+}
+.promoCode{
+    -fx-text-fill: #e5e5e5;
+    -fx-font-family: Inter;
+    -fx-font-size: 40px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+}
+.totalPrice{
+    -fx-text-fill: #e5e5e5;
+    -fx-font-family: Inter;
+    -fx-font-size: 70px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+}
+.text-field{
+    -fx-background-color: #232323;
+    -fx-text-fill: #e5e5e5;
+    -fx-font-family: Inter;
+    -fx-font-size: 30px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+    -fx-background-radius: 500px;
+}
