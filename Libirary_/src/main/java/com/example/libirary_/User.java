@@ -12,7 +12,8 @@ public class User extends Person{
    public ArrayList<Order> orders = new ArrayList<Order>();
 
    public User(int id,String userName, String email, String password){
-       super(userCounter,userName,email,password);
+
+       super(id,userName,email,password);
    }
     public User(String userName, String email, String password) {
         super(userCounter+1,userName,email,password);
