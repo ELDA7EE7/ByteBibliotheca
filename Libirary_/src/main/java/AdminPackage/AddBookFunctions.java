@@ -58,7 +58,7 @@ public abstract class AddBookFunctions implements CommonFunctions {
         }
         successLabel.setText("Book added successfully");
 
-        Book newBook = new Book(name,author,status,publishyear,price,genre,coverPath,isAvailable,bookAmountAvailable,daysTillReturn);
+        Book newBook = new Book(name,author,"",status,publishyear, 4.5F,price,genre,coverPath,isAvailable,bookAmountAvailable,daysTillReturn);
 
         System.out.println(books.size());
     }

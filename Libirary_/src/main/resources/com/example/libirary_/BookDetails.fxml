@@ -80,8 +80,9 @@
                </children>
             </VBox>
             <Label layoutX="1523.0" layoutY="34.0" styleClass="heading2" text="Searching for similar books?" />
-            <Label fx:id="bookDescription" layoutX="360.0" layoutY="115.66666666666667" maxHeight="300.0" maxWidth="1095.0" styleClass="description" text="BookDescription" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="120.0" />
-            <Label fx:id="bookName" layoutX="347.0" layoutY="31.0" maxHeight="68.0" maxWidth="1095.0" styleClass="heading1" text="BookName" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="40.0" />
+            <Label fx:id="genre" layoutX="360.0" layoutY="140.0" styleClass="heading3" text="Fantasy" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="140.0" />
+            <Label fx:id="bookDescription" layoutX="360.0" layoutY="180.33333333333334" maxHeight="230.0" maxWidth="1095.0" prefWidth="1095.0" styleClass="description" text="In the prelude to World War II in 1941 Hawaii, &quot;Ghosts of Honolulu&quot; is a captivating debut recommended by Publishers Weekly for espionage enthusiasts. The story revolves around Douglas Wada, the only Japanese American agent in naval intelligence, and Takeo Yoshikawa, a Japanese spy stationed at Pearl Harbor. Their dual perspectives unveil a world of espionage, with Wada working undercover, translating wiretaps, and interrogating a captured POW, while Yoshikawa gathers crucial information for Admiral Yamamoto. Against the backdrop of cat-and-mouse games between Japanese and US military intelligence, innocent residents become entangled. Mark Harmon and co-author Leon Carroll, a former NCIS Special Agent, present a gripping NCIS story based on historical documents, revealing the high-stakes game of naval intelligence on the brink of World War II." wrapText="true" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="180.0" />
+            <Label fx:id="bookName" layoutX="347.0" layoutY="31.0" maxHeight="68.0" maxWidth="1095.0" styleClass="heading1" text="Iron Flame" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="40.0" />
             <Button fx:id="addToShoppingCart" layoutX="76.0" layoutY="453.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="270.0" styleClass="Button" text="Add to Shopping Cart" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="455.0" />
             <Button fx:id="borrow" layoutX="343.3333333333333" layoutY="453.3333333333333" mnemonicParsing="false" prefHeight="70.0" prefWidth="150.0" styleClass="Button" text="Borrow" AnchorPane.leftAnchor="345.0" AnchorPane.topAnchor="455.0" />
             <Button fx:id="notifyWhenAvailable" layoutX="513.3333333333333" layoutY="453.3333333333333" mnemonicParsing="false" prefHeight="70.0" prefWidth="275.0" styleClass="Button" text="Notify when Available" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="455.0" />
@@ -105,6 +106,11 @@
             <Label layoutX="809.0" layoutY="560.0" maxHeight="68.0" maxWidth="1095.0" styleClass="heading1" text="Write your Review" AnchorPane.leftAnchor="810.0" AnchorPane.topAnchor="550.0" />
             <TextArea fx:id="reviewArea" prefHeight="193.0" prefWidth="740.0" styleClass="reviewarea" stylesheets="@BookDetails.css" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="810.0" AnchorPane.topAnchor="650.0" />
             <Button fx:id="confirmReview" layoutX="1280.0" layoutY="884.6666666666666" mnemonicParsing="false" prefHeight="60.0" prefWidth="225.0" styleClass="Button" text="Confirm Review" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="370.0" />
+            <Label layoutX="360.0" layoutY="390.0" styleClass="heading3" text="Rating:" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="390.0" />
+            <Label fx:id="rating" layoutX="370.0" layoutY="400.0" styleClass="heading3" text="4.5" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="390.0" />
+            <Label fx:id="author" layoutX="370.0" layoutY="110.0" styleClass="heading3" text="Rebecca Yarros" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="105.0" />
+            <Label fx:id="price" layoutX="1370.0" layoutY="380.0" maxHeight="68.0" maxWidth="1095.0" prefHeight="68.0" styleClass="heading1" text="190 LE" AnchorPane.leftAnchor="1370.0" AnchorPane.topAnchor="380.0" />
+            <Label fx:id="releaseDate" layoutX="360.0" layoutY="17.666666666666668" styleClass="heading3" text="2023" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="15.0" />
          </children>
       </AnchorPane>
    </center>

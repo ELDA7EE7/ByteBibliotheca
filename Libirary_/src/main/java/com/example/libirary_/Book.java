@@ -9,14 +9,15 @@ import static librarypackage.Library.books;
 
 public class Book implements Serializable {
     private static int bookCounter=0;
-
     private int bookCounterInShoppingCart;
     private int bookID;
     private int publishYear;
     private int bookAmountAvailable;
     private String title;
     private String author;
+    private String description;
     private String status;
+    private float rating;
     private float price;
     private String genre;
     private String coverPath;
@@ -27,12 +28,13 @@ public class Book implements Serializable {
     private int daysTillReturn;
     private float totalPriceInShoppingCart;
 
-    public Book(String title, String author, String status, int publishYear, float price, String genre, String coverPath, boolean isAvailable,int bookAmountAvailable, int daysTillReturn) {
+    public Book(String title, String author,String description, String status, int publishYear,float rating, float price, String genre, String coverPath, boolean isAvailable,int bookAmountAvailable, int daysTillReturn) {
         this.title = title;
-
         this.author = author;
+        this.description = description;
         this.status = status;
         this.publishYear = publishYear;
+        this.rating = rating;
         this.price = price;
         this.genre = genre;
         this.coverPath = coverPath;
@@ -41,7 +43,6 @@ public class Book implements Serializable {
         bookCounter++;
         bookID = bookCounter;
         books.add(this);
-
         this.daysTillReturn = daysTillReturn;
         totalPriceInShoppingCart = 0;
         bookCounterInShoppingCart = 0;
@@ -167,6 +168,22 @@ public class Book implements Serializable {
 
     public void setCoverPath(String coverPath) {
         this.coverPath = coverPath;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
     }
 }
 
