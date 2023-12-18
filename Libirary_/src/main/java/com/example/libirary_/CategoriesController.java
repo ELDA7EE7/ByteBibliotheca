@@ -16,6 +16,8 @@ import resourcesimports.UserInterfaceIcons;
 
 import java.io.IOException;
 
+import static librarypackage.Library.books;
+
 public class CategoriesController {
     private Stage stage;
     private Scene scene;
@@ -80,7 +82,7 @@ public class CategoriesController {
 
     @FXML
     public void switchToCategories(ActionEvent e) throws IOException {//Change Scene to Categories Page
-        System.out.println(Book.books.size());
+        System.out.println(books.size());
         root= FXMLLoader.load(getClass().getResource("Categories.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);

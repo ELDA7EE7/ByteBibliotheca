@@ -7,12 +7,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static librarypackage.Library.books;
+
 public abstract class SearchEngine {
    protected ArrayList<String> words = new ArrayList<>();
 
     protected void uploadAllBooks (){
-        for (Book book:
-             Book.books) {
+        for (Book book: books) {
             words.add(book.getTitle());
             words.add(book.getAuthor());
         }

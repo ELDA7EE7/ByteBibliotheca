@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import static librarypackage.Library.books;
+
 public class UpdateBookFunctions implements CommonFunctions {
     @FXML
     TextField updateAuthor,updatePrice,UpdateTitle,UpdatePublishYear,indexsearchTextField,genreTextField,authorTextField,daysTillReturnTextField;
@@ -36,14 +38,14 @@ public class UpdateBookFunctions implements CommonFunctions {
 
     }
     public void ShowDataInTextFeilds(){
-        updateAuthor.setText(Book.books.get(index).getAuthor());
-        updatePrice.setText(Float.toString(Book.books.get(index).getPrice()));
-        UpdateTitle.setText(Book.books.get(index).getTitle());
-        UpdatePublishYear.setText(Integer.toString(Book.books.get(index).getPublishYear()));
-        genreTextField.setText(Book.books.get(index).getGenre());
-        availableCheckBox.setSelected(Book.books.get(index).isAvailable());
-        daysTillReturnTextField.setText(Integer.toString(Book.books.get(index).getDaysTillReturn()));
-        String available=new String(Book.books.get(index).getStatus());
+        updateAuthor.setText(books.get(index).getAuthor());
+        updatePrice.setText(Float.toString(books.get(index).getPrice()));
+        UpdateTitle.setText(books.get(index).getTitle());
+        UpdatePublishYear.setText(Integer.toString(books.get(index).getPublishYear()));
+        genreTextField.setText(books.get(index).getGenre());
+        availableCheckBox.setSelected(books.get(index).isAvailable());
+        daysTillReturnTextField.setText(Integer.toString(books.get(index).getDaysTillReturn()));
+        String available=new String(books.get(index).getStatus());
 
         if (available.equalsIgnoreCase("in stock")){
             statusCheckBox.setSelected(true);
@@ -52,7 +54,7 @@ public class UpdateBookFunctions implements CommonFunctions {
             statusCheckBox.setSelected(false);
 
         }
-        coverImage = new Image(Book.books.get(index).getCoverPath());
+        coverImage = new Image(books.get(index).getCoverPath());
         coverImageView.setImage(coverImage);
     }
     public void ViewBookToUpdate(ActionEvent event){
@@ -81,32 +83,32 @@ public class UpdateBookFunctions implements CommonFunctions {
             return;
         }
 
-        Book.books.get(index).setAuthor(updateAuthor.getText());
-        Book.books.get(index).setTitle(UpdateTitle.getText());
-        Book.books.get(index).setGenre(genreTextField.getText());
-        Book.books.get(index).setPrice(Float.parseFloat(updatePrice.getText()));
-        Book.books.get(index).setPublishYear(Integer.parseInt(UpdatePublishYear.getText()));
-        Book.books.get(index).setDaysTillReturn(Integer.parseInt(daysTillReturnTextField.getText()));
-        Book.books.get(index).setAvailable(availableCheckBox.isSelected());
+        books.get(index).setAuthor(updateAuthor.getText());
+        books.get(index).setTitle(UpdateTitle.getText());
+        books.get(index).setGenre(genreTextField.getText());
+        books.get(index).setPrice(Float.parseFloat(updatePrice.getText()));
+        books.get(index).setPublishYear(Integer.parseInt(UpdatePublishYear.getText()));
+        books.get(index).setDaysTillReturn(Integer.parseInt(daysTillReturnTextField.getText()));
+        books.get(index).setAvailable(availableCheckBox.isSelected());
         if(statusCheckBox.isSelected()){
-            Book.books.get(index).setStatus("In stock");
+            books.get(index).setStatus("In stock");
         }
         else{
-            Book.books.get(index).setStatus("Out of stock");
+            books.get(index).setStatus("Out of stock");
         }
 
         successLabel.setText("Book Updated Successfully");
     }
     public void PrintStuffForDebugging(){
-        System.out.println(Book.books.get(index).getBookID());
-        System.out.println(Book.books.get(index).getGenre());
-        System.out.println(Book.books.get(index).getAuthor());
-        System.out.println(Book.books.get(index).getPrice());
-        System.out.println(Book.books.get(index).getPublishYear());
-        System.out.println(Book.books.get(index).getTitle());
-        System.out.println(Book.books.get(index).getStatus());
-        System.out.println(Book.books.get(index).getDaysTillReturn());
-        System.out.println(Book.books.size());
+        System.out.println(books.get(index).getBookID());
+        System.out.println(books.get(index).getGenre());
+        System.out.println(books.get(index).getAuthor());
+        System.out.println(books.get(index).getPrice());
+        System.out.println(books.get(index).getPublishYear());
+        System.out.println(books.get(index).getTitle());
+        System.out.println(books.get(index).getStatus());
+        System.out.println(books.get(index).getDaysTillReturn());
+        System.out.println(books.size());
     }
     public void UpdateBookInfo(ActionEvent event) {
         try{

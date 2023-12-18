@@ -2,8 +2,12 @@ package com.example.libirary_;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-public class Book {
+
+import static librarypackage.Library.books;
+
+public class Book implements Serializable {
     private static int bookCounter=0;
 
     private int bookCounterInShoppingCart;
@@ -16,7 +20,6 @@ public class Book {
     private float price;
     private String genre;
     private String coverPath;
-    public static ArrayList<Book> books = new ArrayList<Book>();
 
     private Image cover;
     private ImageView coverView;

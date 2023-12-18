@@ -1,11 +1,12 @@
 package com.example.libirary_;
 
-public abstract class Person {
-    private final int id;
-    private String name;
-    private String email;
-    private String password;
+import java.io.Serializable;
 
+public abstract class Person implements Serializable {
+    protected int id;
+    protected String name;
+    protected String email;
+    protected String password;
     public Person(int id, String name, String email, String password) {
         this.id = id;
         this.name = name;
@@ -40,4 +41,5 @@ public abstract class Person {
     public String getPassword() {
         return password;
     }
+
 }

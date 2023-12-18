@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
+import static librarypackage.Library.books;
+
 public class Borrower extends User
 {
     private final int  BorrowerId;
@@ -60,14 +62,14 @@ public class Borrower extends User
             {
                 if (borrower.DaysTillReturn.get(i).isBefore(LocalDateTime.now()))
                 {
-                    System.out.println("Duration of the borrowed book has expired :" +" "+Book.books.get(borrower.BorrowedBookID.get(i)).getTitle());
+                    System.out.println("Duration of the borrowed book has expired :" +" "+books.get(borrower.BorrowedBookID.get(i)).getTitle());
                     System.out.println("You will be fined 50$ ");
                     IsReturned.set(i,false);
-                    Book.books.get(borrower.BorrowedBookID.get(i)).setAvailable(true);
+                    books.get(borrower.BorrowedBookID.get(i)).setAvailable(true);
                 }
                 else if (borrower.DaysTillReturn.get(i).isAfter(LocalDateTime.now()))
                 {
-                    System.out.println("Due Time for the borrowed book :" +" "+Book.books.get(borrower.BorrowedBookID.get(i)).getTitle()
+                    System.out.println("Due Time for the borrowed book :" +" "+books.get(borrower.BorrowedBookID.get(i)).getTitle()
                             +" "+ ChronoUnit.DAYS.between(LocalDate.now(), borrower.DaysTillReturn.get(borrower.BorrowedBookID.get(i))));
                 }
             }
