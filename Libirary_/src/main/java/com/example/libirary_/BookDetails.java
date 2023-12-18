@@ -69,7 +69,7 @@ public class BookDetails extends SaveStar implements Initializable
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Book book=new Book("mazen","mazen","In stock",2005,2000.0F,"Action","berserk1.jpg",true,5,1);
+        Book book=new Book("mazen","mazen"," ","In stock",2005,4.5F,2000.0F,"Action","berserk1.jpg",true,5,1);
         displayBook(book);
     }
 
