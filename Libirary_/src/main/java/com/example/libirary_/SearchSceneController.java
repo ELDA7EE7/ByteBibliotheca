@@ -1,5 +1,6 @@
 package com.example.libirary_;
 
+import librarypackage.Library;
 import searchengine.SearchEngine;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -18,6 +19,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static librarypackage.Library.setSelectedBook;
+
 public class SearchSceneController extends SearchEngine implements Initializable  {
     @FXML
     private TextField searchBar;
@@ -32,8 +35,13 @@ public class SearchSceneController extends SearchEngine implements Initializable
         listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-                String currentWord = listView.getSelectionModel().getSelectedItem();
-                searchBar.setText(currentWord);
+                String selectedWord = listView.getSelectionModel().getSelectedItem();
+                setSelectedBook(findBook(selectedWord));
+                try {
+                    switchToBookDetailsScene(searchBar);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
         }catch (NullPointerException ex){
@@ -50,6 +58,15 @@ public class SearchSceneController extends SearchEngine implements Initializable
     void BackToHomePage(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
+    }
+
+    void switchToBookDetailsScene(Node node) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
+        Stage stage = (Stage) (node).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setFullScreen(true);

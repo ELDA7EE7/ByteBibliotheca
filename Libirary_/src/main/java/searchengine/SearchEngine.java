@@ -19,6 +19,13 @@ public abstract class SearchEngine {
         }
     }
 
+    public Book findBook(String word){
+        for(Book book: books ){
+            if(word.equals(book.getAuthor())||word.equals(book.getTitle()))
+                return book;
+        }
+        return null;
+    }
     //this function returns all words that contains String you write in search textField
     protected List<String> searchList(String searchWords, List<String> listOfStrings) {
         List<String> searchWordsArray = Arrays.asList(searchWords.trim().split(" "));

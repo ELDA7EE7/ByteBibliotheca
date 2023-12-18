@@ -8,6 +8,9 @@ import registrationsystem.SignUp;
 
 import java.io.IOException;
 
+import static com.example.libirary_.MainClass.emails;
+import static com.example.libirary_.MainClass.names;
+
 public class SignupSceneController extends RegistrationSystem implements SignUp {
 
 
@@ -22,14 +25,16 @@ public class SignupSceneController extends RegistrationSystem implements SignUp 
             if (!this.isValidEmail(email)||!this.checkPasswordIsStrong(password)||!this.checkName(username)) {
                 signedInSuccessfully = false;
             }
-            if (signedInSuccessfully) {
+            if (signedInSuccessfully){
                 //add user to system
                 User newuser = new User(username, email, password);
+                 names.insert(username);
+                emails.insert(email);
                 //add this data to currentUser
                 User.setCurrentUser(newuser);
                 //go to home page
                 switchToHomePageScene(event);
-            } else {
+            }else{
                 System.out.println(username+email+password);
                 clearFields();
             }

@@ -13,11 +13,11 @@ public  class Library implements Serializable {
     public static ArrayList<Book> books = new ArrayList<Book>();
     private static Book selectedBook;
 
-    public static Book getBook() {
+    public static Book getSelectedBook() {
         return selectedBook;
     }
 
-    public static void setBook(Book book) {
+    public static void setSelectedBook(Book book) {
         Library.selectedBook = book;
     }
 }
