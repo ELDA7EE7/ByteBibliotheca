@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import resourcesimports.BooksImages;
 
+import static librarypackage.Library.books;
+
 public abstract class AddBookFunctions implements CommonFunctions {
     @FXML
     private TextField nameTextField,authorTextField,genreTextField,publishyearTextField,coverPathTextField,bookAmountAvailableTextField,priceTextField,daysTillReturnTextField;
@@ -25,7 +27,7 @@ public abstract class AddBookFunctions implements CommonFunctions {
                     ||priceTextField.getText().isEmpty()
                     ||coverPathTextField.getText().isEmpty()
                     ||daysTillReturnTextField.getText().isEmpty()
-                    ||bookAmountAvailableTextField.getText().isEmpty()){
+                    /*||bookAmountAvailableTextField.getText().isEmpty()*/){
                 showAlert("Please Enter all the data");
                 successLabel.setText("");
 
@@ -43,7 +45,9 @@ public abstract class AddBookFunctions implements CommonFunctions {
                 ,genre= genreTextField.getText()
                 ,coverPath=coverPathTextField.getText()
                 ,status;
-        int publishyear=Integer.parseInt(publishyearTextField.getText()),daysTillReturn=Integer.parseInt(daysTillReturnTextField.getText()),bookAmountAvailable=Integer.parseInt(bookAmountAvailableTextField.getText());
+        int publishyear=Integer.parseInt(publishyearTextField.getText())
+                ,daysTillReturn=Integer.parseInt(daysTillReturnTextField.getText())
+                ,bookAmountAvailable= 10 /*Integer.parseInt(bookAmountAvailableTextField.getText())*/;
         float price=Float.parseFloat(priceTextField.getText());
         boolean isAvailable=availableCheckBox.isSelected();
         if(statusCheckBox.isSelected()){
@@ -56,7 +60,7 @@ public abstract class AddBookFunctions implements CommonFunctions {
 
         Book newBook = new Book(name,author,status,publishyear,price,genre,coverPath,isAvailable,bookAmountAvailable,daysTillReturn);
 
-        System.out.println(Book.books.size());
+        System.out.println(books.size());
     }
     public void AddBook(ActionEvent event){
         CheckIfInputIsValid();

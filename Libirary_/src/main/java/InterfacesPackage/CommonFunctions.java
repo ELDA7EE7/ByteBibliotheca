@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.regex.Pattern;
 
+import static librarypackage.Library.books;
+
 public interface CommonFunctions {
 
 
@@ -90,8 +92,8 @@ public interface CommonFunctions {
     }
     default int SearchForBookByNameAndAuthor(String name,String author){
         int index=Integer.MAX_VALUE;
-        for (int i = 0; i< Book.books.size(); i++){
-            if (Book.books.get(i).getTitle().equalsIgnoreCase(name)&&Book.books.get(i).getAuthor().equalsIgnoreCase(author) ){
+        for (int i = 0; i< books.size(); i++){
+            if (books.get(i).getTitle().equalsIgnoreCase(name)&&books.get(i).getAuthor().equalsIgnoreCase(author) ){
                 index= i;
             }
         }

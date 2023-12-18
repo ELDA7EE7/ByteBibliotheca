@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import static librarypackage.Library.users;
+
 public class Purchase  extends User {
 
     private final int  CustomerId;

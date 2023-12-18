@@ -10,9 +10,9 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+import static librarypackage.Library.users;
 import static UsersOfLibrary.Borrower.BorrowerNum;
 import static UsersOfLibrary.Borrower.borrowers;
-import static UsersOfLibrary.User.users;
 
 
 public class AdminFunctionalities implements CommonFunctions

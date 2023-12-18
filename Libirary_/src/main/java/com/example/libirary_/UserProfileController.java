@@ -62,7 +62,7 @@ public class UserProfileController extends UpdateUserData implements Initializab
         super.fillPasswordLabel();
     }
     @FXML
-    public void goBackToHomePage(ActionEvent event) throws IOException {
+    public void goBackToHomePage(MouseEvent event) throws IOException {
         backIcon.setImage(backIconOnClick);
         root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

@@ -4,6 +4,8 @@ import UsersOfLibrary.User;
 
 import java.util.regex.Pattern;
 
+import static librarypackage.Library.users;
+
 public interface DataConstraints {
     default boolean checkName(String username){
 
@@ -49,7 +51,7 @@ public interface DataConstraints {
             return false;
         }
         for (User user :
-                User.users  ) {
+                users  ) {
             if(email.equals(user.getEmail()))
             {
                 return false;
