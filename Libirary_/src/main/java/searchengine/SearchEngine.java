@@ -1,6 +1,6 @@
 package searchengine;
 
-import com.example.libirary_.Book;
+import librarypackage.Book;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,7 +1,5 @@
 package UsersOfLibrary;
 
-import userprofile.Order;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -41,12 +39,10 @@ public class User extends Person implements Serializable {
        this.userOrders.add(orderID);
     }
     public boolean findOrderID(int orderId){
-
        for(Integer id : this.userOrders){
                if(orderId==id)
                    return true;
        }
-
        return false;
     }
 
@@ -54,7 +50,7 @@ public class User extends Person implements Serializable {
     public String toString() {
         return "User{" +
                 "userOrders=" + userOrders +
-                ", id=" + id +
+                ", id=" + ID +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +

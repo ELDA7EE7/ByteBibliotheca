@@ -1,6 +1,6 @@
 package shoppingcart.commands;
 
-import com.example.libirary_.Book;
+import librarypackage.Book;
 import shoppingcart.ShoppingCart;
 
 public class BookAdder implements ShoppingCartCommand {

@@ -1,13 +1,12 @@
 package AdminPackage;
 
 import InterfacesPackage.CommonFunctions;
-import com.example.libirary_.Book;
+import librarypackage.Book;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import resourcesimports.BooksImages;
 
 import static librarypackage.Library.books;
 

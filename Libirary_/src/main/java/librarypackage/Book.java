@@ -1,4 +1,4 @@
-package com.example.libirary_;
+package librarypackage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -9,6 +9,8 @@ import static librarypackage.Library.books;
 
 public class Book implements Serializable {
     private static int bookCounter=0;
+
+
     private int bookCounterInShoppingCart;
     private int bookID;
     private int publishYear;
