@@ -40,7 +40,7 @@
    <center>
       <AnchorPane style="-fx-background-color: #191919;" stylesheets="@BookDetails.css" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="451.0" fitWidth="270.0" layoutX="63.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="20.0">
+            <ImageView fx:id="bookImage" fitHeight="451.0" fitWidth="270.0" layoutX="63.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="20.0">
                <image>
                   <Image url="@../../../BooksImages/IronFlame.png" />
                </image>

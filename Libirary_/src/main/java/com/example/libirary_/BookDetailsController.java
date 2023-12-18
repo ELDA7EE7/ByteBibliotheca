@@ -1,69 +1,85 @@
 package com.example.libirary_;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class BookDetailsController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import static librarypackage.Library.getSelectedBook;
+
+public class BookDetailsController implements Initializable {
     @FXML
-    private Label Review1;
+    public Label Review1;
 
     @FXML
-    private Label Review2;
+    public Label Review2;
 
     @FXML
-    private Label Username1;
+    public Label Username1;
 
     @FXML
-    private Label Username2;
+    public Label Username2;
 
     @FXML
-    private Button addToShoppingCart;
+     public Button addToShoppingCart;
 
     @FXML
-    private ImageView backIcon;
+    public ImageView backIcon;
 
     @FXML
-    private ImageView book1Cover;
+    public ImageView book1Cover;
 
     @FXML
-    private Label book1Name;
+    public Label book1Name;
 
     @FXML
-    private ImageView book2Cover;
+    public ImageView book2Cover;
 
     @FXML
-    private Label book2Name;
+    public Label book2Name;
 
     @FXML
-    private ImageView book3Cover;
+    public ImageView book3Cover;
 
     @FXML
-    private Label book3Name;
+    public Label book3Name;
 
     @FXML
-    private Label bookDescription;
+    public Label bookDescription;
 
     @FXML
-    private Label bookName;
+    public Label bookName;
 
     @FXML
-    private Button borrow;
+    public Button borrow;
 
     @FXML
-    private Button confirmReview;
+    public Button confirmReview;
 
     @FXML
-    private Button notifyWhenAvailable;
+    public Button notifyWhenAvailable;
 
     @FXML
-    private ImageView profileIcon;
+    public ImageView profileIcon;
 
     @FXML
-    private TextArea reviewArea;
+    public TextArea reviewArea;
 
     @FXML
-    private ImageView shoppingCartIcon;
+    public ImageView shoppingCartIcon;
+
+    @FXML
+    public ImageView bookImage;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image imagePath = new Image (getSelectedBook().getCoverPath());
+        bookImage.setImage(imagePath);
+    }
 }
