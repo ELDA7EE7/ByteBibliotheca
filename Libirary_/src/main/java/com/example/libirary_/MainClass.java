@@ -1,6 +1,8 @@
 package com.example.libirary_;
 
+import UsersOfLibrary.Person;
 import datastructure.trie.Trie;
+import UsersOfLibrary.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

@@ -1,11 +1,13 @@
 package com.example.libirary_;
 
 import AdminPackage.Admin;
+import UsersOfLibrary.Borrower;
+import UsersOfLibrary.Purchase;
+import UsersOfLibrary.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import registrationsystem.Login;
 import registrationsystem.RegistrationSystem;
-import userprofile.Order;
 
 import java.io.IOException;
 
@@ -18,6 +20,8 @@ public class LoginController extends RegistrationSystem implements Login
             if(user != null)
             {
                 User.setCurrentUser(user);
+                Borrower borrower =new Borrower(user.getId(), user.getName(), user.getEmail(), user.getPassword());
+                Purchase purchase=new Purchase(user.getId(), user.getName(), user.getEmail(), user.getPassword());
                 switchToHomePageScene(event);
                 return;
             }

@@ -18,4 +18,7 @@ module com.example.libirary_ {
     opens registrationsystem to javafx.fxml;
     exports datastructure.trie;
     opens datastructure.trie to javafx.fxml;
+
+    exports UsersOfLibrary;
+    opens UsersOfLibrary to javafx.fxml;
 }

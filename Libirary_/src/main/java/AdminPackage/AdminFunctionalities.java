@@ -1,8 +1,8 @@
 package AdminPackage;
 
-import com.example.libirary_.Borrower;
+import UsersOfLibrary.Borrower;
 import InterfacesPackage.CommonFunctions;
-import com.example.libirary_.User;
+import UsersOfLibrary.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,9 +10,9 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-import static com.example.libirary_.Borrower.BorrowerNum;
-import static com.example.libirary_.Borrower.borrowers;
 import static librarypackage.Library.users;
+import static UsersOfLibrary.Borrower.BorrowerNum;
+import static UsersOfLibrary.Borrower.borrowers;
 
 
 public class AdminFunctionalities implements CommonFunctions
@@ -68,6 +68,7 @@ public class AdminFunctionalities implements CommonFunctions
                     //Mazen Mohammed
                     User u=new User(BorrowerName.getText(),EmailBorrower.getText(),PasswordBorrower.getText());
                     users.add(u); // user constructor already adds u to the array list
+                    // need to check
                     Borrower bro=new Borrower(BorrowerNum,BorrowerName.getText(),EmailBorrower.getText(),PasswordBorrower.getText());
                     borrowers.add(bro); // borrower extends user so we dont need to make an object of user
                     System.out.println(borrowers.size());

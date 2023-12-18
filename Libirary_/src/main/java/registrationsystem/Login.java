@@ -1,8 +1,6 @@
 package registrationsystem;
 
-import com.example.libirary_.Book;
-import com.example.libirary_.User;
-import userprofile.Order;
+import UsersOfLibrary.User;
 
 import static librarypackage.Library.users;
 

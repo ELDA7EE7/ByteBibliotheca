@@ -1,4 +1,4 @@
-package com.example.libirary_;
+package UsersOfLibrary;
 
 import userprofile.Order;
 
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import static librarypackage.Library.users;
 
 public class User extends Person implements Serializable {
+
     private static int userCounter =0;
     private static User currentUser;
 
@@ -22,7 +23,7 @@ public class User extends Person implements Serializable {
        super(id,userName,email,password);
    }
     public User(String userName, String email, String password) {
-        super(userCounter+1,userName,email,password);
+        super(userCounter,userName,email,password);
         userCounter++;
         users.add(this);
     }

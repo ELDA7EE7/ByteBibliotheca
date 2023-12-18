@@ -1,21 +1,24 @@
-package com.example.libirary_;
+package UsersOfLibrary;
+import com.example.libirary_.Book;
+import com.example.libirary_.UserProfileController;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 import static librarypackage.Library.books;
+import static librarypackage.Library.users;
 
 public class Borrower extends User
 {
     private final int  BorrowerId;
     public static int BorrowerNum;
-    private static Borrower current_borrower;
+    public static int CurrentBorrowerId=getCurrentUser().getId();
     private boolean IsBorrowing;
     private String PhoneNumber ;
+    private Borrower current_borrower;
     public static ArrayList<Borrower> borrowers = new ArrayList<Borrower>();
-
-
 
     private ArrayList<Integer>BorrowedBookID=new ArrayList<Integer>();
     private ArrayList<LocalDateTime>DaysTillReturn=new ArrayList<LocalDateTime>();
@@ -28,9 +31,12 @@ public class Borrower extends User
     public Borrower(int userID, String userName, String email, String password)
     {
         super(userID, userName, email, password);
-        BorrowerNum++;
-        BorrowerId=BorrowerNum;
+        BorrowerId=userID;
+        BorrowerNum= BorrowerId;
         borrowers.add(this);
+        for (User u:users) {
+            if (u.getId()==CurrentBorrowerId ) current_borrower =getCurrent_borrower(CurrentBorrowerId);
+        }
     }
 
 
@@ -54,6 +60,13 @@ public class Borrower extends User
             current_borrower.IsReturned.add(true);
         }
     }
+    public Borrower getCurrent_borrower(int userId){
+        for (Borrower borro:borrowers){
+            if (borro.getId()==userId)return borro;
+        }
+        return null;
+    }
+
     public void BorrowedBookIsExpired(Borrower borrower)
     {
         for (int i=0;i<borrower.BorrowedBookID.size();i++)
@@ -77,11 +90,11 @@ public class Borrower extends User
         }
     }
 
-    public static void setCurrent_borrower(Borrower current_borrower) {
-        Borrower.current_borrower = current_borrower;
+    public Borrower getCurrent_borrower() {
+        return current_borrower;
     }
 
-    public int getBorrowerId() {
-        return BorrowerId;
+    public void setCurrent_borrower(Borrower current_borrower) {
+        this.current_borrower = current_borrower;
     }
 }
