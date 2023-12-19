@@ -1,6 +1,7 @@
 package AdminPackage;
 
 import InterfacesPackage.CommonFunctions;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import librarypackage.Book;
 import javafx.event.ActionEvent;
@@ -24,6 +25,8 @@ public abstract class AddBookFunctions implements CommonFunctions {
             ,descriptionTextField
             ,ratingTextField;
     @FXML
+    private TextArea descriptionTextArea;
+    @FXML
     private CheckBox statusCheckBox,availableCheckBox;
     @FXML
     private Label successLabel;
@@ -38,7 +41,7 @@ public abstract class AddBookFunctions implements CommonFunctions {
                     ||daysTillReturnTextField.getText().isEmpty()
                     ||bookAmountTextField.getText().isEmpty()
                     ||ratingTextField.getText().isEmpty()
-                    ||descriptionTextField.getText().isEmpty()){
+                    ||descriptionTextArea.getText().isEmpty()){
                 showAlert("Please Enter all the data");
                 return false;
             }
@@ -57,11 +60,22 @@ public abstract class AddBookFunctions implements CommonFunctions {
     }
     public void GetData(){
         try {
-            String name = nameTextField.getText(), author = authorTextField.getText(), genre = genreTextField.getText(), coverPath = coverPathTextField.getText(), status, description = descriptionTextField.getText();
-            int publishyear = Integer.parseInt(publishyearTextField.getText()), daysTillReturn = Integer.parseInt(daysTillReturnTextField.getText()), bookAmountAvailable = Integer.parseInt(bookAmountTextField.getText());
+            String name = nameTextField.getText()
+                    , author = authorTextField.getText()
+                    , genre = genreTextField.getText()
+                    , coverPath = coverPathTextField.getText()
+                    , status
+                    , description = descriptionTextArea.getText();
+
+            int publishyear = Integer.parseInt(publishyearTextField.getText())
+                    , daysTillReturn = Integer.parseInt(daysTillReturnTextField.getText())
+                    , bookAmountAvailable = Integer.parseInt(bookAmountTextField.getText());
+
             float price = Float.parseFloat(priceTextField.getText()),
                     rating = Float.parseFloat(ratingTextField.getText());
+
             boolean isAvailable = availableCheckBox.isSelected();
+
             if (statusCheckBox.isSelected()) {
                 status = "In Stock";
             } else {

@@ -26,7 +26,8 @@ public class LoginController extends RegistrationSystem implements Login
                 return;
             }
             Admin admin = new Admin();
-            if(admin.getPassword().equals(this.enterPasswordField.getText())){
+            if(admin.getPassword().equals(this.enterPasswordField.getText())
+                    &&admin.getUsername().equals(this.emailTextField.getText())){
                 switchToAdminHomePageScene(event);
                 return;
             }

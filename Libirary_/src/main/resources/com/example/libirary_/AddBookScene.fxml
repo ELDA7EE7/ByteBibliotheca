@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -79,6 +80,6 @@
             <Font name="Arial Black" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="descriptionTextField" layoutX="834.0" layoutY="335.0" prefHeight="327.0" prefWidth="460.0" />
+      <TextArea fx:id="descriptionTextArea" layoutX="845.0" layoutY="340.0" prefHeight="303.0" prefWidth="379.0" wrapText="true" />
    </children>
 </AnchorPane>
