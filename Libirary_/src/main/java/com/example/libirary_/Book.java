@@ -1,6 +1,7 @@
 package com.example.libirary_;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import shoppingcart.commands.BookPriceCalculator;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -184,6 +185,9 @@ public class Book implements Serializable {
 
     public void setRating(float rating) {
         this.rating = rating;
+    }
+    public void calculateBookPrice() {
+        setTotalPriceInShoppingCart(getPrice() * getBookCounterInShoppingCart());
     }
 }
 
