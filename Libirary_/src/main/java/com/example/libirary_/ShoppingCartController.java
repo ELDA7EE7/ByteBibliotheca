@@ -17,6 +17,7 @@ import resourcesimports.UserInterfaceIcons;
 import shoppingcart.ShoppingCart;
 import shoppingcart.commands.TotalPriceCalculator;
 
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class ShoppingCartController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
 
     @FXML
     private ImageView backIcon;
