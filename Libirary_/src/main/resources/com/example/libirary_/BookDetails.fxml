@@ -42,7 +42,7 @@
          <children>
             <ImageView fx:id="bookImage" fitHeight="451.0" fitWidth="270.0" layoutX="63.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="20.0">
                <image>
-                  <Image url="@../../../BooksImages/IronFlame.png" />
+                  <Image url="@../../../IronFlame.png" />
                </image>
             </ImageView>
             <VBox alignment="TOP_CENTER" layoutX="1705.0" layoutY="95.33333333333333" prefHeight="825.0" prefWidth="350.0" spacing="40.0" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="95.0">
@@ -51,7 +51,7 @@
                      <children>
                         <ImageView fx:id="book1Cover" fitHeight="218.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../BooksImages/FourthWing.png" />
+                              <Image url="@../../../FourthWing.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="book1Name" styleClass="booknamerecommendations" text="Label" />
@@ -61,7 +61,7 @@
                      <children>
                         <ImageView fx:id="book2Cover" fitHeight="218.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../BooksImages/FourthWing.png" />
+                              <Image url="@../../../FourthWing.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="book2Name" styleClass="booknamerecommendations" text="Label" />
@@ -71,7 +71,7 @@
                      <children>
                         <ImageView fx:id="book3Cover" fitHeight="218.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../BooksImages/FourthWing.png" />
+                              <Image url="@../../../FourthWing.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="book3Name" styleClass="booknamerecommendations" text="Label" />

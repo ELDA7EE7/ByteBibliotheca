@@ -70,7 +70,7 @@
                      <children>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/IronFlame.png" />
+                              <Image url="@../../../IronFlame.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -85,7 +85,7 @@
                         </ImageView>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/AtomicHabits.png" />
+                              <Image url="@../../../AtomicHabits.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -100,7 +100,7 @@
                         </ImageView>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/Spare.png" />
+                              <Image url="@../../../Spare.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -115,7 +115,7 @@
                         </ImageView>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/FourthWing.png" />
+                              <Image url="@../../../FourthWing.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -130,7 +130,7 @@
                         </ImageView>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/The48LawsOfPower.png" />
+                              <Image url="@../../../The48LawsOfPower.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -145,7 +145,7 @@
                         </ImageView>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/ItStartsWithUs.png" />
+                              <Image url="@../../../ItStartsWithUs.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -160,7 +160,7 @@
                         </ImageView>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/Outlive.png" />
+                              <Image url="@../../../Outlive.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -175,7 +175,7 @@
                         </ImageView>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/ItEndsWithUs.png" />
+                              <Image url="@../../../ItEndsWithUs.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -241,7 +241,7 @@
                      <children>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/AllTheLightWeCannotSee.png" />
+                              <Image url="@../../../AllTheLightWeCannotSee.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -256,7 +256,7 @@
                         </ImageView>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/GhostsOfHonolulu.png" />
+                              <Image url="@../../../GhostsOfHonolulu.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -271,7 +271,7 @@
                         </ImageView>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/HowToKnowAPerson.png" />
+                              <Image url="@../../../HowToKnowAPerson.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -286,7 +286,7 @@
                         </ImageView>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/InterestingFactsForCuriousMinds.png" />
+                              <Image url="@../../../InterestingFactsForCuriousMinds.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -301,7 +301,7 @@
                         </ImageView>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/Murdle.png" />
+                              <Image url="@../../../Murdle.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -316,7 +316,7 @@
                         </ImageView>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/NoBrainer.png" />
+                              <Image url="@../../../NoBrainer.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -331,7 +331,7 @@
                         </ImageView>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/TheExchange.png" />
+                              <Image url="@../../../TheExchange.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
@@ -346,7 +346,7 @@
                         </ImageView>
                         <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
-                              <Image url="@../../../BooksImages/TheWager.png" />
+                              <Image url="@../../../TheWager.png" />
                            </image>
                            <effect>
                               <DropShadow height="50.0" radius="24.5" spread="0.46" width="50.0">
