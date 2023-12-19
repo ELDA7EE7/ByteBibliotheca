@@ -62,5 +62,23 @@
             <Font name="Arial Black" size="13.0" />
          </font></Label>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Back" stylesheets="@buttons.css" text="Back" />
+      <Label layoutX="806.0" layoutY="100.0" text="Rating :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ratingTextField" layoutX="1045.0" layoutY="100.0" prefHeight="25.0" prefWidth="193.0" />
+      <Label layoutX="806.0" layoutY="200.0" text="Book Amount in stock :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="bookAmountTextField" layoutX="1045.0" layoutY="200.0" prefHeight="25.0" prefWidth="193.0" />
+      <Label layoutX="806.0" layoutY="300.0" text="Book Description :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="descriptionTextField" layoutX="834.0" layoutY="335.0" prefHeight="327.0" prefWidth="460.0" />
    </children>
 </AnchorPane>

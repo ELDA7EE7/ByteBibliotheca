@@ -44,10 +44,11 @@ public class Book implements Serializable {
         this.bookAmountAvailable = bookAmountAvailable;
         bookCounter++;
         bookID = bookCounter;
-        books.add(this);
         this.daysTillReturn = daysTillReturn;
         totalPriceInShoppingCart = 0;
         bookCounterInShoppingCart = 0;
+        books.add(this);
+
     }
 
     public int getBookCounterInShoppingCart() {
