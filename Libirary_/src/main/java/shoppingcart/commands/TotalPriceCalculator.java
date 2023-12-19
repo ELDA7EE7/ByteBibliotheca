@@ -10,6 +10,6 @@ public class TotalPriceCalculator implements ShoppingCartCommand {
         for (Book currentBook : shoppingCart.getBooks()) {
             shoppingCart.setTotalPrice(shoppingCart.getTotalPrice() + (currentBook.getTotalPriceInShoppingCart()));
         }
-        shoppingCart.setTotalPrice(shoppingCart.getTotalPrice() + (shoppingCart.getTotalPrice() * shoppingCart.getDiscountAmount()));
+        //shoppingCart.setTotalPrice(shoppingCart.getTotalPrice() + (shoppingCart.getTotalPrice() * shoppingCart.getDiscountAmount()));
     }
 }

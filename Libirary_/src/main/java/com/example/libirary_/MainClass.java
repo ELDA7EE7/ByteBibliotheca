@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
+import shoppingcart.ShoppingCart;
 import userprofile.Order;
 
 import java.io.*;
@@ -25,7 +26,7 @@ public class MainClass extends Application  {
            loadData();
 
             // add default user
-            //Person user = new User("mazenalaa","mazen@gmail.com","12345678a");
+            //Person user = new User("mazenalaa","mazen@gmail.com","123456789a");
             for (Person p : users) {
                 names.insert(p.getName());
                 emails.insert(p.getEmail());
@@ -153,7 +154,6 @@ public class MainClass extends Application  {
         }
     }
     public static void main(String[] args) throws IOException {
-
 
         launch();
     }
