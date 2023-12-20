@@ -7,5 +7,5 @@ public interface UploadUserInformation {
     void fillEmailLabel();
     void fillPasswordLabel();
     void fillIdLabel();
-
+    void fillListviewWithUserTransaction();
 }

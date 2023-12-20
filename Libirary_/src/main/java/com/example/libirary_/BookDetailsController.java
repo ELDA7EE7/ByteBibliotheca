@@ -1,6 +1,7 @@
 package com.example.libirary_;
 
 import displaybook.SaveStar;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -19,7 +20,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 import static librarypackage.Library.books;
+
+import static UsersOfLibrary.Borrower.getCurrent_borrower;
 import static librarypackage.Library.getSelectedBook;
 
 public class BookDetailsController implements Initializable {
@@ -181,5 +185,9 @@ public class BookDetailsController implements Initializable {
             star_5_image = new Image("star_fill.png");
             star_5.setImage(star_5_image);
         }
+    }
+    @FXML
+    public void borrowButtonPressed(ActionEvent event){
+        getCurrent_borrower().BorrowBook(getSelectedBook());
     }
 }

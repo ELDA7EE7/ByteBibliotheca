@@ -56,6 +56,7 @@ public class UserProfileController extends UpdateUserData implements Initializab
     @Override
     public void initialize(URL arg0, ResourceBundle arg1){
         super.fillListviewWithUserOrders();
+        super.fillListviewWithUserTransaction();
         super.fillEmailLabel();
         super.fillIdLabel();
         super.fillNameLabel();
