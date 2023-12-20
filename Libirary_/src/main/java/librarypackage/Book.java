@@ -5,8 +5,6 @@ import java.io.Serializable;
 import static librarypackage.Library.books;
 public class Book implements Serializable {
     private static int bookCounter=0;
-
-
     private int bookCounterInShoppingCart;
     private int bookID;
     private int publishYear;
@@ -44,7 +42,6 @@ public class Book implements Serializable {
         totalPriceInShoppingCart = 0;
         bookCounterInShoppingCart = 0;
         books.add(this);
-
     }
 
     public int getBookCounterInShoppingCart() {

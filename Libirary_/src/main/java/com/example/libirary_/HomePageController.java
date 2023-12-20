@@ -11,11 +11,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import librarypackage.Book;
 import resourcesimports.UserInterfaceIcons;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static librarypackage.Library.books;
 
 public class HomePageController implements Initializable
 {
