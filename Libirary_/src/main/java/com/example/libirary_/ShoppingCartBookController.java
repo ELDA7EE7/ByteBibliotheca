@@ -9,12 +9,14 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import librarypackage.Book;
+
+import shoppingcart.ShoppingCart;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ShoppingCartBookController implements Initializable {
+public class ShoppingCartBookController{
 
     @FXML
     private Label author;
@@ -43,30 +45,35 @@ public class ShoppingCartBookController implements Initializable {
     @FXML
     private Label totalPrice;
     private VBox shoppingCartBooksList;
+    private ShoppingCart shoppingCart;
 
     @FXML
     public void deleteBookClicked(ActionEvent event) {
         HBox parentContainer = (HBox) deleteBook.getParent().getParent();
         shoppingCartBooksList.getChildren().remove(parentContainer);
+        Book bookToRemove = (Book)parentContainer.getUserData();
+        shoppingCart.removeBook(bookToRemove);
+        shoppingCart.calculateTotalPrice();
     }
-    public void setData(Book book, VBox shoppingCartBooksList){
+    public void setData(Book book, VBox shoppingCartBooksList, ShoppingCart shoppingCart, Label totalBooksPrice){
+        this.shoppingCart = shoppingCart;
         this.shoppingCartBooksList = shoppingCartBooksList;
+        HBox parentContainer = (HBox) bookName.getParent();
+        parentContainer.setUserData(book);
         bookName.setText(book.getTitle());
         author.setText(book.getAuthor());
         genre.setText(book.getGenre());
         rating.setText(Float.toString(book.getRating()));
         price.setText(Float.toString(book.getPrice()));
         quantitySlider.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,book.getBookAmountAvailable(),1));
-        //quantity.setText(Integer.toString(quantitySlider.getValue()));
         quantitySlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            shoppingCart.updateQuantity(book,newValue);
             quantity.setText(Integer.toString(newValue));
             book.setBookCounterInShoppingCart(newValue);
             book.calculateBookPrice();
+            shoppingCart.calculateTotalPrice();
             totalPrice.setText(Float.toString(book.getTotalPriceInShoppingCart()));
+            totalBooksPrice.setText(shoppingCart.getTotalPrice()+ " LE");
         });
-    }
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 }

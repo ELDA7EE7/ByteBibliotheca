@@ -15,6 +15,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import librarypackage.Book;
 import resourcesimports.UserInterfaceIcons;
+import shoppingcart.Discount;
 import shoppingcart.ShoppingCart;
 import shoppingcart.commands.TotalPriceCalculator;
 
@@ -56,13 +57,19 @@ public class ShoppingCartController implements Initializable {
     private VBox shoppingCartBooksList;
 
     @FXML
-    private Label totalPrice;
-    Image backIconOnHover = UserInterfaceIcons.goBackOnHover;
-    Image backIconOnClick = UserInterfaceIcons.goBackOnClick;
-    Image profileIconOnHover = UserInterfaceIcons.profileOnHover;
-    Image profileIconOnClick = UserInterfaceIcons.profileOnClick;
+    private Label totalBooksPrice;
+    @FXML
+    private Button confirmCode;
+    @FXML
+    private Label promoCodeMessage;
+    private final Image backIconDefault = UserInterfaceIcons.goBack;
+    private final Image backIconOnHover = UserInterfaceIcons.goBackOnHover;
+    private final Image backIconOnClick = UserInterfaceIcons.goBackOnClick;
+    private final Image profileIconDefault = UserInterfaceIcons.profile;
+    private final Image profileIconOnHover = UserInterfaceIcons.profileOnHover;
+    private final Image profileIconOnClick = UserInterfaceIcons.profileOnClick;
+    private String promoCode;
     private ShoppingCart shoppingCart;
-    private TotalPriceCalculator totalPriceCalculator = new TotalPriceCalculator();
 
 
     @FXML
@@ -91,36 +98,57 @@ public class ShoppingCartController implements Initializable {
     void switchBackIconOnHover(MouseEvent event) {
         backIcon.setImage(backIconOnHover);
     }
-
+    @FXML
+    void resetBackIcon(){
+        backIcon.setImage(backIconDefault);
+    }
     @FXML
     void switchProfileIconOnHover(MouseEvent event) {
         profileIcon.setImage(profileIconOnHover);
     }
+    @FXML
+    void resetProfileIcon(){
+        profileIcon.setImage(profileIconDefault);
+    }
 
-
+    @FXML
+    void confirmCodeClicked(){
+        promoCode=promoCodeField.getText();
+        shoppingCart.applyDiscount(promoCode);
+        totalBooksPrice.setText(shoppingCart.getTotalPrice()+ " LE");
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         shoppingCart = new ShoppingCart();
-        List<Book> shoppingCartBooks = new ArrayList<>(shoppingCartBooks());
         shoppingCart.setBooks(shoppingCartBooks());
-        for(int i =0;i<shoppingCartBooks.size();i++){
+        shoppingCart.setDiscounts(shoppingCartDis());
+        for(int i = 0; i< shoppingCart.getBooks().size(); i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("ShoppingCartBook.fxml"));
             try{
                 HBox newBook = fxmlLoader.load();
                 ShoppingCartBookController shoppingCartBookController = fxmlLoader.getController();
-                shoppingCartBookController.setData(shoppingCartBooks.get(i),shoppingCartBooksList);
+                shoppingCartBookController.setData(shoppingCart.getBooks().get(i),shoppingCartBooksList, shoppingCart,totalBooksPrice);
                 shoppingCartBooksList.getChildren().add(newBook);
             } catch (IOException e){
                 e.printStackTrace();
             }
         }
-
     }
     private List<Book> shoppingCartBooks(){
         List<Book> ls =new ArrayList<>();
-        Book book = new Book("It Ends with Us","Colleen Hoover","","In Stock",2016,4.7f,90f,"Romance","",true,12,5);
-        ls.add(book);
+        Book book1 = new Book("It Ends with Us","Colleen Hoover","","In Stock",2016,4.7f,90f,"Romance","",true,12,5);
+        ls.add(book1);
+        Book book2 = new Book("The 48 Laws of Power","Robert Greene","","In Stock",1998,4.7f,120f,"Personal Development","",true,9,4);
+        ls.add(book2);
         return ls;
+    }
+    private List<Discount> shoppingCartDis(){
+        List<Discount> ls2 =new ArrayList<>();
+        Discount discount1 = new Discount("amogus",0.2f);
+        ls2.add(discount1);
+        Discount discount2 = new Discount("morbius",0.1f);
+        ls2.add(discount2);
+        return ls2;
     }
 }

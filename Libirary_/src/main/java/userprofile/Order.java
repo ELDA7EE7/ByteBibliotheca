@@ -2,17 +2,21 @@ package userprofile;
 
 import librarypackage.Book;
 
+import java.time.LocalDate;
+
 public class Order {
     private final int orderId;
     private static int orderCounter = 0;
     private final float price;
     private final Book book;
+    private final LocalDate orderDate;
     private final int quantity;
 
-    public Order(float price, Book book, int quantity) {
+    public Order(float price, Book book, LocalDate orderDate, int quantity) {
         orderCounter++;
         this.price = price;
         this.book = book;
+        this.orderDate = orderDate;
         this.quantity = quantity;
         this.orderId = orderCounter;
     }
@@ -42,5 +46,9 @@ public class Order {
                         "      book Title = " + book.getTitle() +
                         "      quantity = " + quantity
                 ;
+    }
+
+    public LocalDate getOrderDate() {
+        return orderDate;
     }
 }
