@@ -1,22 +1,26 @@
 package UsersOfLibrary;
+import FileHandlingPackage.FileHandling;
+import InterfacesPackage.CommonFunctions;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import librarypackage.Book;
+import librarypackage.Transaction;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
-import static librarypackage.Library.books;
-import static librarypackage.Library.users;
+import static librarypackage.Library.*;
 
-public class Borrower extends User
+public class Borrower extends User implements CommonFunctions
 {
     private final int  BorrowerId;
     public static int BorrowerNum;
-    public static int CurrentBorrowerId=getCurrentUser().getId();
+    //public static int CurrentBorrowerId = getCurrentUser().getId();
     private boolean IsBorrowing;
     private String PhoneNumber ;
-    private Borrower current_borrower;
+    private static Borrower current_borrower;
     public static ArrayList<Borrower> borrowers = new ArrayList<Borrower>();
 
     private ArrayList<Integer>BorrowedBookID=new ArrayList<Integer>();
@@ -34,7 +38,8 @@ public class Borrower extends User
         BorrowerNum= BorrowerId;
         borrowers.add(this);
         for (User u:users) {
-            if (u.getId()==CurrentBorrowerId ) current_borrower =getCurrent_borrower(CurrentBorrowerId);
+            if (u.getId()==getCurrentUser().getId() )
+                current_borrower =getCurrent_borrower(getCurrentUser().getId());
         }
     }
 
@@ -43,20 +48,30 @@ public class Borrower extends User
     {
         if(!book.isAvailable())
         {
-            System.out.println("This book is not available at the moment");
+            showAlert("This book is not available at the moment");
         }
         else
         {
-            System.out.println("This book is available ,If you want to borrow it press Y");
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Borrow Book");
+            alert.setHeaderText("You're about to borrow book");
+            alert.setContentText("if you need it Press OK");
+            if (alert.showAndWait().get() == ButtonType.OK){
             book.setAvailable(false);
-
-            DateofBorrow.add(java.time.LocalDateTime.now());
             DaysTillReturn.add(java.time.LocalDateTime.now().plusDays(book.getDaysTillReturn()));
-
             IsBorrowing=true;
             current_borrower.BorrowedBookID.add(book.getBookID());
             book.setAvailable(false);
             current_borrower.IsReturned.add(true);
+            /*
+             Book borrowedBook;
+             Borrower currentBorrower;
+             Date borrowDate,
+
+             returnDate;
+             */
+                transactions.add(new Transaction(book,this,LocalDateTime.now(), DaysTillReturn.get(DaysTillReturn.size()-1)));
+            }
         }
     }
     public Borrower getCurrent_borrower(int userId){
@@ -66,7 +81,7 @@ public class Borrower extends User
         return null;
     }
 
-    public void BorrowedBookIsExpired(Borrower borrower)
+    public void  BorrowedBookIsExpired(Borrower borrower)
     {
         for (int i=0;i<borrower.BorrowedBookID.size();i++)
         {
@@ -88,12 +103,10 @@ public class Borrower extends User
 
         }
     }
-
-    public Borrower getCurrent_borrower() {
+    public static Borrower getCurrent_borrower() {
         return current_borrower;
     }
-
-    public void setCurrent_borrower(Borrower current_borrower) {
-        this.current_borrower = current_borrower;
+    public static void setCurrent_borrower(Borrower currentborrower) {
+        current_borrower = currentborrower;
     }
 }

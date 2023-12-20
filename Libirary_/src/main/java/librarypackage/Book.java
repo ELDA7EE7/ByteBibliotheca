@@ -44,7 +44,6 @@ public class Book implements Serializable {
         totalPriceInShoppingCart = 0;
         bookCounterInShoppingCart = 0;
         books.add(this);
-
     }
 
     public int getBookCounterInShoppingCart() {
@@ -151,6 +150,10 @@ public class Book implements Serializable {
 
     public void setCover(Image cover) {
         this.cover = cover;
+    }
+    public String testCover(){
+       Image test = new Image(coverPath);
+        return test.getUrl();
     }
 
     public int getDaysTillReturn() {

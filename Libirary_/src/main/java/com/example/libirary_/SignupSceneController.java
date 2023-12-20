@@ -1,6 +1,11 @@
 package com.example.libirary_;
 
+<<<<<<< HEAD
 import InterfacesPackage.CommonFunctions;
+=======
+import UsersOfLibrary.Borrower;
+import UsersOfLibrary.Customer;
+>>>>>>> 54b174dda850cf5b0386cfabc8902ac0380f89a7
 import UsersOfLibrary.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,8 +14,8 @@ import registrationsystem.SignUp;
 
 import java.io.IOException;
 
-import static com.example.libirary_.MainClass.emails;
-import static com.example.libirary_.MainClass.names;
+import static com.example.libirary_.MainClass.emailsTrie;
+import static com.example.libirary_.MainClass.namesTrie;
 
 public class SignupSceneController extends RegistrationSystem implements SignUp,CommonFunctions {
 
@@ -29,10 +34,13 @@ public class SignupSceneController extends RegistrationSystem implements SignUp,
             if (signedInSuccessfully){
                 //add user to system
                 User newuser = new User(username, email, password);
-                 names.insert(username);
-                emails.insert(email);
+                 namesTrie.insert(username);
+                emailsTrie.insert(email);
                 //add this data to currentUser
                 User.setCurrentUser(newuser);
+
+                Borrower borrower =new Borrower(newuser.getId(), newuser.getName(), newuser.getEmail(), newuser.getPassword());
+                Customer purchase=new Customer(newuser.getId(), newuser.getName(), newuser.getEmail(), newuser.getPassword());
                 //go to home page
                 switchToHomePageScene(event);
             }else{
