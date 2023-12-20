@@ -1,5 +1,7 @@
 package com.example.libirary_;
 
+import UsersOfLibrary.Borrower;
+import UsersOfLibrary.Customer;
 import UsersOfLibrary.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,6 +34,9 @@ public class SignupSceneController extends RegistrationSystem implements SignUp 
                 emailsTrie.insert(email);
                 //add this data to currentUser
                 User.setCurrentUser(newuser);
+
+                Borrower borrower =new Borrower(newuser.getId(), newuser.getName(), newuser.getEmail(), newuser.getPassword());
+                Customer purchase=new Customer(newuser.getId(), newuser.getName(), newuser.getEmail(), newuser.getPassword());
                 //go to home page
                 switchToHomePageScene(event);
             }else{
