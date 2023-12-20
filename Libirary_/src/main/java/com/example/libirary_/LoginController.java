@@ -2,7 +2,7 @@ package com.example.libirary_;
 
 import AdminPackage.Admin;
 import UsersOfLibrary.Borrower;
-import UsersOfLibrary.Purchase;
+import UsersOfLibrary.Customer;
 import UsersOfLibrary.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,12 +21,13 @@ public class LoginController extends RegistrationSystem implements Login
             {
                 User.setCurrentUser(user);
                 Borrower borrower =new Borrower(user.getId(), user.getName(), user.getEmail(), user.getPassword());
-                Purchase purchase=new Purchase(user.getId(), user.getName(), user.getEmail(), user.getPassword());
+                Customer purchase=new Customer(user.getId(), user.getName(), user.getEmail(), user.getPassword());
                 switchToHomePageScene(event);
                 return;
             }
             Admin admin = new Admin();
-            if(admin.getPassword().equals(this.enterPasswordField.getText())){
+            if(admin.getPassword().equals(this.enterPasswordField.getText())
+                    &&admin.getUsername().equals(this.emailTextField.getText())){
                 switchToAdminHomePageScene(event);
                 return;
             }

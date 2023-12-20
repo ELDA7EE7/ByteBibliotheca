@@ -1,6 +1,6 @@
 package AdminPackage;
 public class Admin{
-    private String email="admin",password="admin";
+    private String username="admin",password="admin";
 
     public String getPassword() {
         return password;
@@ -8,11 +8,12 @@ public class Admin{
     public void setPassword(String password) {
         this.password = password;
     }
-    public void setEmail(String email) {
-        this.email = email;
+
+    public String getUsername() {
+        return username;
     }
 
-    public String getEmail() {
-        return email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

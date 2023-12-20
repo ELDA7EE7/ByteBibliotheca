@@ -40,10 +40,11 @@ public class Book implements Serializable {
         this.bookAmountAvailable = bookAmountAvailable;
         bookCounter++;
         bookID = bookCounter;
-        books.add(this);
         this.daysTillReturn = daysTillReturn;
         totalPriceInShoppingCart = 0;
         bookCounterInShoppingCart = 0;
+        books.add(this);
+
     }
 
     public int getBookCounterInShoppingCart() {
@@ -183,6 +184,29 @@ public class Book implements Serializable {
     public void setRating(float rating) {
         this.rating = rating;
     }
+
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookCounterInShoppingCart=" + bookCounterInShoppingCart +
+                ", bookID=" + bookID +
+                ", publishYear=" + publishYear +
+                ", bookAmountAvailable=" + bookAmountAvailable +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", description='" + description + '\'' +
+                ", status='" + status + '\'' +
+                ", rating=" + rating +
+                ", price=" + price +
+                ", genre='" + genre + '\'' +
+                ", coverPath='" + coverPath + '\'' +
+                ", isAvailable=" + isAvailable +
+                ", daysTillReturn=" + daysTillReturn +
+                ", totalPriceInShoppingCart=" + totalPriceInShoppingCart +
+                '}';
+    }
+
     public void calculateBookPrice() {
         setTotalPriceInShoppingCart(getPrice() * getBookCounterInShoppingCart());
     }
