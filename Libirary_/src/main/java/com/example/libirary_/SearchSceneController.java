@@ -1,6 +1,6 @@
 package com.example.libirary_;
 
-import librarypackage.Library;
+import searchengine.FillLists;
 import searchengine.SearchEngine;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -17,42 +17,88 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import static com.example.libirary_.MainClass.booksTrie;
 import static librarypackage.Library.setSelectedBook;
 
-public class SearchSceneController extends SearchEngine implements Initializable  {
+public class SearchSceneController extends FillLists implements SearchEngine , Initializable  {
+
+    protected ArrayList<String> words = new ArrayList<>();
     @FXML
     private TextField searchBar;
     @FXML
-    private ListView<String> listView;
+    private ListView<String> searchListView;
+
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        super.uploadAllBooks();
-        listView.getItems().addAll(words);
+        uploadAllBooks(words);
+        searchListView.getItems().addAll(words);
+        uploadAvailableBooks();
         // do event when click on any word
         try {
-        listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+        searchListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
-                String selectedWord = listView.getSelectionModel().getSelectedItem();
-                setSelectedBook(findBook(selectedWord));
-                try {
-                    switchToBookDetailsScene(searchBar);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+                String selectedWord = searchListView.getSelectionModel().getSelectedItem();
+                if(booksTrie.search(selectedWord)) {
+                    setSelectedBook(findBook(selectedWord));
+                    try {
+                        switchToBookDetailsScene(searchBar);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
+               else
+                    uploadAuthorBooks(selectedWord);
+
             }
         });
         }catch (NullPointerException ex){
         System.out.println(ex);
         }
+
+        try {
+            availableList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+                @Override
+                public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+                    String selectedWord = availableList.getSelectionModel().getSelectedItem();
+                    setSelectedBook(findBook(selectedWord));
+                    try {
+                        switchToBookDetailsScene(searchBar);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            });
+        }catch (NullPointerException ex){
+            System.out.println(ex);
+        }
+
+        try {
+            authorList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+                @Override
+                public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+                    String selectedWord = authorList.getSelectionModel().getSelectedItem();
+                    setSelectedBook(findBook(selectedWord));
+                    try {
+                        switchToBookDetailsScene(searchBar);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            });
+        }catch (NullPointerException ex){
+            System.out.println(ex);
+        }
     }
 
     @FXML//when click on search button
     void search(ActionEvent event) {
-        listView.getItems().clear();
-        listView.getItems().addAll(super.searchList(searchBar.getText(),words));
+        searchListView.getItems().clear();
+        searchListView.getItems().addAll(searchList(searchBar.getText(),words));
     }
     @FXML
     void BackToHomePage(ActionEvent event) throws IOException {

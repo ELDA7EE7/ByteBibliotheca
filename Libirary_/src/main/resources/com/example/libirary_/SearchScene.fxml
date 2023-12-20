@@ -9,9 +9,9 @@
 
 <AnchorPane maxHeight="1080.0" maxWidth="1920.0" minHeight="1080.0" minWidth="1920.0" prefHeight="1920.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.SearchSceneController">
     <children>
-        <TextField fx:id="searchBar" layoutX="68.0" layoutY="205.0" prefHeight="54.0" prefWidth="1530.0" />
-        <ListView fx:id="listView" layoutX="69.0" layoutY="290.0" prefHeight="539.0" prefWidth="1530.0" />
-        <Button layoutX="1654.0" layoutY="205.0" mnemonicParsing="false" onAction="#search" prefHeight="54.0" prefWidth="169.0" text="Search">
+        <TextField fx:id="searchBar" layoutX="850.0" layoutY="205.0" prefHeight="54.0" prefWidth="858.0" />
+        <ListView fx:id="searchListView" layoutX="850.0" layoutY="296.0" prefHeight="539.0" prefWidth="858.0" />
+        <Button layoutX="1729.0" layoutY="205.0" mnemonicParsing="false" onAction="#search" prefHeight="54.0" prefWidth="169.0" text="Search">
          <font>
             <Font name="Bodoni MT Black" size="23.0" />
          </font></Button>
@@ -19,9 +19,21 @@
          <font>
             <Font name="Bell MT" size="26.0" />
          </font></Button>
-      <Label alignment="CENTER" layoutX="283.0" layoutY="14.0" prefHeight="150.0" prefWidth="1312.0" text="ByteBibilotheca">
+      <Label alignment="CENTER" layoutX="304.0" layoutY="14.0" prefHeight="150.0" prefWidth="1312.0" text="ByteBibilotheca">
          <font>
             <Font name="Rage Italic" size="70.0" />
+         </font>
+      </Label>
+      <ListView fx:id="authorList" layoutX="631.0" layoutY="296.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label fx:id="authorName" layoutX="631.0" layoutY="220.0" prefHeight="54.0" prefWidth="118.0" text="Author">
+         <font>
+            <Font name="Baskerville Old Face" size="30.0" />
+         </font>
+      </Label>
+      <ListView fx:id="availableList" layoutX="52.0" layoutY="285.0" prefHeight="521.0" prefWidth="363.0" />
+      <Label fx:id="listLabel" layoutX="52.0" layoutY="212.0" prefHeight="54.0" prefWidth="363.0" text="all available books">
+         <font>
+            <Font name="Bodoni MT" size="30.0" />
          </font>
       </Label>
     </children>
