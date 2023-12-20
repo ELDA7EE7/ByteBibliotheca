@@ -3,7 +3,6 @@ package com.example.libirary_;
 import FileHandlingPackage.FileHandling;
 import UsersOfLibrary.Person;
 import datastructure.trie.Trie;
-import UsersOfLibrary.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,15 +10,14 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 import librarypackage.Book;
-import userprofile.Order;
 
 import java.io.*;
-import java.util.ArrayList;
 
+import static UsersOfLibrary.User.incrementUsersCounter;
 import static librarypackage.Library.*;
 
 public class MainClass extends Application  {
-    public static Trie names=new Trie(),emails=new Trie();
+    public static Trie namesTrie =new Trie(), emailsTrie =new Trie(),booksTrie =new Trie();
     static {
         try {
             // upload data from files here
@@ -28,8 +26,12 @@ public class MainClass extends Application  {
             // add default user
             //Person user = new User("mazenalaa","mazen@gmail.com","123456789a");
             for (Person p : users) {
-                names.insert(p.getName());
-                emails.insert(p.getEmail());
+                incrementUsersCounter();
+                namesTrie.insert(p.getName());
+                emailsTrie.insert(p.getEmail());
+            }
+            for(Book b :books){
+                booksTrie.insert(b.getTitle());
             }
         }catch (NullPointerException e){
             e.printStackTrace();

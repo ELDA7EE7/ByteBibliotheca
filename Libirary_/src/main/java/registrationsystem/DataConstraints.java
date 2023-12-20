@@ -1,12 +1,9 @@
 package registrationsystem;
 
-import UsersOfLibrary.User;
-
 import java.util.regex.Pattern;
 
-import static com.example.libirary_.MainClass.emails;
-import static com.example.libirary_.MainClass.names;
-import static librarypackage.Library.users;
+import static com.example.libirary_.MainClass.emailsTrie;
+import static com.example.libirary_.MainClass.namesTrie;
 
 public interface DataConstraints {
     default boolean checkName(String username){
@@ -14,7 +11,7 @@ public interface DataConstraints {
         if(username==null||username.length()<5)
             return false;
 
-        if(names.search(username))
+        if(namesTrie.search(username))
             return false;
         if(username.length()>15)
             return false;
@@ -50,7 +47,7 @@ public interface DataConstraints {
         if(email==null)
             return false;
 
-        if(emails.search(email))
+        if(emailsTrie.search(email))
             return false;
 
         String EMAIL_PATTERN = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";

@@ -97,6 +97,6 @@ public abstract class AddBookFunctions implements CommonFunctions {
     }
     public void AddBook(ActionEvent event){
         if(CheckIfInputIsValid())
-         GetData();
+          GetData();
     }
 }
