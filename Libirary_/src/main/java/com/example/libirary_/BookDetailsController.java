@@ -21,6 +21,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
+import static com.example.libirary_.HomePageController.notifyWhenAvailableBook;
 import static librarypackage.Library.books;
 
 import static UsersOfLibrary.Borrower.getCurrent_borrower;
@@ -40,7 +41,7 @@ public class BookDetailsController implements Initializable {
      public Button addToShoppingCart,borrow,confirmReview,notifyWhenAvailable;
     @FXML
     public TextArea reviewArea;
-    private boolean resetStarBlooen=true,savedStars=false;
+    private boolean resetStarBlooen=true,savedStars=false,isSavedStars;
     int bookID;
 
     @Override
@@ -54,6 +55,26 @@ public class BookDetailsController implements Initializable {
         bookName.setText(getSelectedBook().getTitle());
         price.setText(Float.toString(getSelectedBook().getPrice()));
         genre.setText(getSelectedBook().getGenre());
+        if(getSelectedBook().getRating()==1)
+        {
+            display_Star_1();
+        }
+        else if(getSelectedBook().getRating()==2)
+        {
+            display_Star_2();
+        }
+        else if(getSelectedBook().getRating()==3)
+        {
+            display_Star_3();
+        }
+        else if(getSelectedBook().getRating()==4)
+        {
+            display_Star_4();
+        }
+        else if(getSelectedBook().getRating()==5)
+        {
+            display_Star_5();
+        }
     }
     @FXML
     void switchToShoppingCart(MouseEvent e) throws IOException{
@@ -85,6 +106,10 @@ public class BookDetailsController implements Initializable {
     @FXML
     void save_Star_1()
     {
+        if(!isSavedStars) {
+            getSelectedBook().setRating(1);
+            isSavedStars=true;
+        }
         savedStars=true;
         resetStarBlooen = false;
         star_1_image = new Image("star_fill.png");
@@ -93,6 +118,10 @@ public class BookDetailsController implements Initializable {
     @FXML
     void save_Star_2()
     {
+        if(!isSavedStars) {
+            getSelectedBook().setRating(2);
+            isSavedStars=true;
+        }
         savedStars=true;
         resetStarBlooen = false;
         display_Star_1();
@@ -102,6 +131,10 @@ public class BookDetailsController implements Initializable {
     @FXML
     void save_Star_3()
     {
+        if(!isSavedStars) {
+            getSelectedBook().setRating(3);
+            isSavedStars=true;
+        }
         savedStars=true;
         resetStarBlooen = false;
         display_Star_2();
@@ -110,6 +143,10 @@ public class BookDetailsController implements Initializable {
     }
     public void save_Star_4()
     {
+        if(!isSavedStars) {
+            getSelectedBook().setRating(4);
+            isSavedStars=true;
+        }
         savedStars=true;
         resetStarBlooen = false;
         display_Star_3();
@@ -119,6 +156,10 @@ public class BookDetailsController implements Initializable {
     }
     public void save_Star_5()
     {
+        if(!isSavedStars) {
+            getSelectedBook().setRating(5);
+            isSavedStars=true;
+        }
         savedStars=true;
         resetStarBlooen = false;
         display_Star_4();
@@ -189,5 +230,10 @@ public class BookDetailsController implements Initializable {
     @FXML
     public void borrowButtonPressed(ActionEvent event){
         getCurrent_borrower().BorrowBook(getSelectedBook());
+    }
+    @FXML
+    public void notifyWhenAvailable(ActionEvent event)
+    {
+        notifyWhenAvailableBook.add(getSelectedBook());
     }
 }

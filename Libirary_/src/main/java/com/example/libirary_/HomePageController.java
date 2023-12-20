@@ -16,6 +16,7 @@ import resourcesimports.UserInterfaceIcons;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import static librarypackage.Library.books;
@@ -32,6 +33,7 @@ public class HomePageController implements Initializable
     public Image profileIconDefault = UserInterfaceIcons.profile;
     public Image profileIconOnHover = UserInterfaceIcons.profileOnHover;
     public Image profileIconOnClick = UserInterfaceIcons.profileOnClick;
+    public static ArrayList<Book> notifyWhenAvailableBook = new ArrayList<Book>();
 
     @FXML
     ImageView shoppingCartIcon;
@@ -116,7 +118,6 @@ public class HomePageController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-
 
         /*Book book =new Book("Rich Dad Poor Dad","Ehab","Valid",2000,500,
                 "HUmanDevelopment", BooksImages.richDadPoorDad,true,4,12);

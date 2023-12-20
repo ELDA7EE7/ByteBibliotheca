@@ -126,12 +126,12 @@
                   <Image url="@../../../star_before.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="star_4" fitHeight="80.0" fitWidth="80.0" layoutX="1140.0" layoutY="445.0" onMouseClicked="#save_Star_4" onMouseEntered="#display_Star_4" onMouseExited="#resetStars" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="star_4" fitHeight="80.0" fitWidth="80.0" layoutX="1131.0" layoutY="445.0" onMouseClicked="#save_Star_4" onMouseEntered="#display_Star_4" onMouseExited="#resetStars" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../star_before.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="star_5" fitHeight="80.0" fitWidth="80.0" layoutX="1220.0" layoutY="445.0" onMouseClicked="#save_Star_5" onMouseEntered="#display_Star_5" onMouseExited="#resetStars" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="star_5" fitHeight="80.0" fitWidth="80.0" layoutX="1211.0" layoutY="445.0" onMouseClicked="#save_Star_5" onMouseEntered="#display_Star_5" onMouseExited="#resetStars" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../star_before.png" />
                </image>
