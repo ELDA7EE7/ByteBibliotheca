@@ -84,7 +84,7 @@
                         <Font name="Berlin Sans FB Demi Bold" size="31.0" />
                      </font>
                   </Label>
-                  <ListView fx:id="listView" layoutX="960.0" layoutY="111.0" prefHeight="325.0" prefWidth="910.0" stylesheets="@UserProfile.css" AnchorPane.leftAnchor="960.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="115.0" />
+                  <ListView fx:id="listViewOrders" layoutX="960.0" layoutY="111.0" prefHeight="325.0" prefWidth="910.0" stylesheets="@UserProfile.css" AnchorPane.leftAnchor="960.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="115.0" />
                   <Text fill="#e5e5e5" layoutX="60.0" layoutY="83.28125" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading1" text="Update your Information" wrappingWidth="677.4296875" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="490.0" />
                   <Label layoutX="50.0" layoutY="592.0" prefHeight="30.0" prefWidth="215.0" styleClass="label1" text="Username :" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="592.0">
                      <font>
@@ -119,7 +119,7 @@
                         <Font name="Berlin Sans FB Demi Bold" size="31.0" />
                      </font>
                   </Label>
-                  <ListView fx:id="listView1" layoutX="960.0" layoutY="586.0" prefHeight="325.0" prefWidth="910.0" stylesheets="@UserProfile.css" AnchorPane.leftAnchor="960.0" AnchorPane.topAnchor="585.0" />
+                  <ListView fx:id="listViewTransactions" layoutX="960.0" layoutY="586.0" prefHeight="325.0" prefWidth="910.0" stylesheets="@UserProfile.css" AnchorPane.leftAnchor="960.0" AnchorPane.topAnchor="585.0" />
                </children>
             </AnchorPane>
          </center>

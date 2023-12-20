@@ -3,24 +3,17 @@ package librarypackage;
 import UsersOfLibrary.Borrower;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
-<<<<<<< HEAD
 public class Transaction implements Serializable {
     Book borrowedBook;
-    Borrower currentBorrower;
-    Date borrowDate,
-=======
-public class Transaction {
-    private Book borrowedBook;
-    private Borrower currentBorrower;
-    private Date borrowDate,
->>>>>>> main
+    Borrower borrower;
+    LocalDateTime borrowDate,
     returnDate;
 
-    public Transaction(Book borrowedBook, Borrower currentBorrower, Date borrowDate, Date returnDate) {
+    public Transaction(Book borrowedBook, Borrower currentBorrower, LocalDateTime borrowDate, LocalDateTime returnDate) {
         this.borrowedBook = borrowedBook;
-        this.currentBorrower = currentBorrower;
+        this.borrower = currentBorrower;
         this.borrowDate = borrowDate;
         this.returnDate = returnDate;
     }
@@ -32,28 +25,45 @@ public class Transaction {
         this.borrowedBook = borrowedBook;
     }
 
-    public Borrower getCurrentBorrower() {
-        return currentBorrower;
+    public Borrower getBorrower() {
+        return borrower;
     }
 
-    public void setCurrentBorrower(Borrower currentBorrower) {
-        this.currentBorrower = currentBorrower;
+    public void setBorrower(Borrower borrower) {
+        this.borrower = borrower;
     }
 
-    public Date getBorrowDate() {
+    public LocalDateTime getBorrowDate() {
         return borrowDate;
     }
 
-    public void setBorrowDate(Date borrowDate) {
+    public void setBorrowDate(LocalDateTime borrowDate) {
         this.borrowDate = borrowDate;
     }
 
-    public Date getReturnDate() {
+    public LocalDateTime getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(Date returnDate) {
+    public void setReturnDate(LocalDateTime returnDate) {
         this.returnDate = returnDate;
     }
 
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "borrowedBook=" + borrowedBook +
+                ", borrower=" + borrower +
+                ", borrowDate=" + borrowDate +
+                ", returnDate=" + returnDate +
+                '}';
+    }
+
+    public String toString2() {
+        return "Transaction{" +
+                "borrowedBook=" + borrowedBook.getTitle() +
+                ", borrowDate=" + borrowDate.toString() +
+                ", returnDate=" + returnDate.toString() +
+                '}';
+    }
 }
