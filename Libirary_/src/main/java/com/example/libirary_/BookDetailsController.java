@@ -20,6 +20,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
+import static librarypackage.Library.books;
+
 import static UsersOfLibrary.Borrower.getCurrent_borrower;
 import static librarypackage.Library.getSelectedBook;
 
@@ -38,6 +41,8 @@ public class BookDetailsController implements Initializable {
     @FXML
     public TextArea reviewArea;
     private boolean resetStarBlooen=true,savedStars=false;
+    int bookID;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image imagePath = new Image (getSelectedBook().getCoverPath());

@@ -68,7 +68,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../IronFlame.png" />
                            </image>
@@ -83,7 +83,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../AtomicHabits.png" />
                            </image>
@@ -98,7 +98,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../Spare.png" />
                            </image>
@@ -113,7 +113,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../FourthWing.png" />
                            </image>
@@ -128,7 +128,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../The48LawsOfPower.png" />
                            </image>
@@ -143,7 +143,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../ItStartsWithUs.png" />
                            </image>
@@ -158,7 +158,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../Outlive.png" />
                            </image>
@@ -173,7 +173,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="220.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../ItEndsWithUs.png" />
                            </image>
@@ -239,7 +239,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../AllTheLightWeCannotSee.png" />
                            </image>
@@ -254,7 +254,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../GhostsOfHonolulu.png" />
                            </image>
@@ -269,7 +269,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../HowToKnowAPerson.png" />
                            </image>
@@ -284,7 +284,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../InterestingFactsForCuriousMinds.png" />
                            </image>
@@ -299,7 +299,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../Murdle.png" />
                            </image>
@@ -314,7 +314,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../NoBrainer.png" />
                            </image>
@@ -329,7 +329,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../TheExchange.png" />
                            </image>
@@ -344,7 +344,7 @@
                               </DropShadow>
                            </effect>
                         </ImageView>
-                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView cacheHint="QUALITY" fitHeight="270.0" fitWidth="239.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                            <image>
                               <Image url="@../../../TheWager.png" />
                            </image>

@@ -70,12 +70,6 @@ public class MainClass extends Application  {
         }
     }
     public static void main(String[] args) throws IOException {
-
-
-
         launch();
     }
-    // save orders needs to be checked
-    // search engine has errors
-    // save of borrowers and purchase
 }
