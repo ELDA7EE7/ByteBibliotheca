@@ -76,6 +76,10 @@ public class RemoveBookFunctions {
             image=new Image("");
             RemoveImage.setCache(false);
             RemoveImage.setImage(null);
+            RemoveExpire.setText("");
+            RemoveDes.setText("");
+            RemoveRating.setText("");
+            RemoveCoverPath.setText("");
         }
         catch(Exception event)
         {
