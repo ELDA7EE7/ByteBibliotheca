@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import static librarypackage.Library.*;
 
 public class MainClass extends Application  {
-
     public static Trie names=new Trie(),emails=new Trie();
     static {
         try {
