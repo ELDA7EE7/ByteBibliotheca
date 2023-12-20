@@ -33,6 +33,7 @@ public class MainClass extends Application  {
             }
         }catch (NullPointerException e){
             e.printStackTrace();
+            System.out.println("ok");
         }
     }
 
