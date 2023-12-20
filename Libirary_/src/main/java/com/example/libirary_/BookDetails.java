@@ -15,6 +15,8 @@ import librarypackage.Book;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static librarypackage.Library.books;
+
 public class BookDetails extends SaveStar implements Initializable
 {
     private Stage stage;
@@ -49,6 +51,12 @@ public class BookDetails extends SaveStar implements Initializable
         star_4.setImage(star_4_image);
         star_5.setImage(star_5_image);
     }
+    private static String id;
+    public void setId(String id){
+        this.id=id;
+        System.out.println(id);
+        System.out.println(this.id);
+    }
     //Waiting for Interface To Go back to Homepage
     @FXML
     void backToHomePage()
@@ -70,8 +78,12 @@ public class BookDetails extends SaveStar implements Initializable
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Book book=new Book("mazen","mazen"," ","In stock",2005,4.5F,2000.0F,"Action","berserk1.jpg",true,5,1);
-        displayBook(book);
+        for (int i=0;i<books.size();i++) {
+            // Book book = new Book("mazen", "mazen", "In stock", 2005, 2000.0F, "Action", "berserk1.jpg", true, 5, 1);
+            if((books.get(i).getTitle().compareTo(id))==0){
+                displayBook(books.get(i));
+            }
+        }
     }
 
 

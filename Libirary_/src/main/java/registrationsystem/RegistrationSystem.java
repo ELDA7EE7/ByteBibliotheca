@@ -1,5 +1,6 @@
 package registrationsystem;
 
+import InterfacesPackage.CommonFunctions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public abstract class RegistrationSystem {
+public abstract class RegistrationSystem implements CommonFunctions {
 
     @FXML
     protected TextField
@@ -24,48 +25,31 @@ public abstract class RegistrationSystem {
     private Scene scene;
     private Stage stage;
 
- protected void showAlert(String message){
+  /*void showAlert(String message){
         // Alert
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Error");
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
-    }
+    }*/
     @FXML
     public void switchToSignInAsUserScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("LogInAsUserScene.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        SwitchToNextScene(event,"LogInAsUserScene.fxml");
+
     }
     @FXML
     public void switchToAdminHomePageScene(ActionEvent event) throws  IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("AdminHomePage.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
+       SwitchToNextScene(event,"AdminHomePage.fxml");
     }
     @FXML
     public void switchToHomePageScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
+     SwitchToNextScene(event,"HomePage.fxml");
     }
 
     @FXML
     public void switchToCreateNewUserAccountScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        SwitchToNextScene(event,"SignUp.fxml");
     }
 
 

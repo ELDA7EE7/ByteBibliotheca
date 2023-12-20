@@ -13,7 +13,7 @@ public class RemoveBookFunctions {
     int index;
 
     @FXML
-    private Label RemoveAuthor,RemovePrice,RemoveTitle,RemovePublishYear,RemoveGenre,RemoveAvailable,Success;
+    private Label RemoveAuthor,RemovePrice,RemoveTitle,RemovePublishYear,RemoveGenre,RemoveAvailable,RemoveCoverPath,RemoveRating,RemoveDes,RemoveExpire,Success;
     @FXML
     private TextField RemoveBookname,RemoveNameAuthor;
     @FXML
@@ -37,7 +37,10 @@ public class RemoveBookFunctions {
             RemoveTitle.setText(books.get(index).getTitle());//show Book Title
             RemovePublishYear.setText(Integer.toString(books.get(index).getPublishYear()));//show Book PublishYear
             RemoveGenre.setText(books.get(index).getGenre());//show Book Genre
-
+            RemoveCoverPath.setText(books.get(index).getCoverPath());
+            RemoveRating.setText(Float.toString(books.get(index).getRating()));
+            RemoveDes.setText(books.get(index).getDescription());
+            RemoveExpire.setText(Integer.toString(books.get(index).getDaysTillReturn()));
             String avilable=new String(books.get(index).getStatus());
             //jada
             if (avilable.equalsIgnoreCase("in stock")){//show Book status
