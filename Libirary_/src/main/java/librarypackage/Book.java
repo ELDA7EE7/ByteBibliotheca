@@ -5,6 +5,8 @@ import java.io.Serializable;
 import static librarypackage.Library.books;
 public class Book implements Serializable {
     private static int bookCounter=0;
+
+
     private int bookCounterInShoppingCart;
     private int bookID;
     private int publishYear;
@@ -148,6 +150,10 @@ public class Book implements Serializable {
 
     public void setCover(Image cover) {
         this.cover = cover;
+    }
+    public String testCover(){
+       Image test = new Image(coverPath);
+        return test.getUrl();
     }
 
     public int getDaysTillReturn() {

@@ -4,18 +4,10 @@ import UsersOfLibrary.Borrower;
 
 import java.io.Serializable;
 import java.util.Date;
-
-<<<<<<< HEAD
 public class Transaction implements Serializable {
     Book borrowedBook;
     Borrower currentBorrower;
     Date borrowDate,
-=======
-public class Transaction {
-    private Book borrowedBook;
-    private Borrower currentBorrower;
-    private Date borrowDate,
->>>>>>> main
     returnDate;
 
     public Transaction(Book borrowedBook, Borrower currentBorrower, Date borrowDate, Date returnDate) {
