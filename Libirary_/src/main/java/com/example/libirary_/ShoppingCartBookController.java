@@ -9,7 +9,9 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+
 import shoppingcart.ShoppingCart;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;

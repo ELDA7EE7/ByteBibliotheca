@@ -1,6 +1,6 @@
 package UsersOfLibrary;
 
-import com.example.libirary_.Book;
+import librarypackage.Book;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -8,15 +8,15 @@ import java.util.ArrayList;
 
 import static librarypackage.Library.users;
 
-public class Purchase  extends User {
+public class Customer extends User {
 
     private final int  CustomerId;
     private boolean HasDiscount=true;
     private int CurrentCustomerId=getCurrentUser().getId();
     public static int CustomerNum;
     private boolean Isbuying;
-    private static Purchase current_Purchase;
-    private ArrayList<Purchase>Purchase=new ArrayList<Purchase>();
+    private static Customer current_Purchase;
+    private ArrayList<Customer>Purchase=new ArrayList<Customer>();
     private ArrayList<Integer> PurchaseBookID=new ArrayList<Integer>();
    //private ArrayList<LocalDateTime>ExpireDate=new ArrayList<LocalDateTime>();
     private ArrayList<LocalDateTime>DateofPurchase=new ArrayList<LocalDateTime>();
@@ -25,7 +25,7 @@ public class Purchase  extends User {
 
     LocalDate currentDate = LocalDate.now();
 
-    public Purchase(int userID, String userName, String email, String password) {
+    public Customer(int userID, String userName, String email, String password) {
         super(userID, userName, email, password);
         CustomerId= userID;
         CustomerNum=CustomerId;
@@ -39,7 +39,7 @@ public class Purchase  extends User {
     {
         if(book.getBookAmountAvailable()>0)
         {
-            System.out.println("This book is available ,If you want to Purchase it press Y");
+            System.out.println("This book is available ,If you want to Customer it press Y");
             System.out.println(book.getPrice()+"has been deducted form your Account ");
             book.setBookAmountAvailable(book.getBookAmountAvailable()-1);
             current_Purchase.DateofPurchase.add(java.time.LocalDateTime.now());
@@ -53,18 +53,18 @@ public class Purchase  extends User {
 
         }
     }
-    public Purchase getCurrent_Purchase(int userId){
-        for (Purchase Purch: Purchase){
+    public Customer getCurrent_Purchase(int userId){
+        for (Customer Purch: Purchase){
             if (Purch.getId()==userId)return Purch;
         }
         return null;
     }
 
-    public static Purchase getCurrent_Purchase() {
+    public static Customer getCurrent_Purchase() {
         return current_Purchase;
     }
 
-    public static void setCurrent_Purchase(Purchase current_Purchase) {
+    public static void setCurrent_Purchase(Customer current_Purchase) {
        current_Purchase = current_Purchase;
     }
 }

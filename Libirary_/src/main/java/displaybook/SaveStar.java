@@ -8,11 +8,11 @@ import javafx.scene.image.ImageView;
 
 public abstract class SaveStar extends DisplayStar{
 
-    @FXML
-    ImageView star_1,star_2,star_3,star_4,star_5;
-    Image star_1_image,star_2_image,star_3_image,star_4_image,star_5_image;
     private boolean resetStarBlooen=true,savedStars=false;
     Button back,borrowID;
+    @FXML
+    private ImageView star_1,star_2,star_3,star_4,star_5;
+    private Image star_1_image,star_2_image,star_3_image,star_4_image,star_5_image;
 
     void save_Star_1()
     {
@@ -21,7 +21,7 @@ public abstract class SaveStar extends DisplayStar{
         star_1_image = new Image("star_fill.png");
         star_1.setImage(star_1_image);
     }
-     void save_Star_2()
+    void save_Star_2()
     {
         savedStars=true;
         resetStarBlooen = false;
@@ -29,7 +29,7 @@ public abstract class SaveStar extends DisplayStar{
         star_2_image = new Image("star_fill.png");
         star_2.setImage(star_2_image);
     }
-     void save_Star_3()
+    void save_Star_3()
     {
         savedStars=true;
         resetStarBlooen = false;

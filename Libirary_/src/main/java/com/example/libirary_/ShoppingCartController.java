@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import librarypackage.Book;
 import resourcesimports.UserInterfaceIcons;
 import shoppingcart.Discount;
 import shoppingcart.ShoppingCart;

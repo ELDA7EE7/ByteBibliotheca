@@ -1,11 +1,11 @@
 package AdminPackage;
 
 import InterfacesPackage.CommonFunctions;
-import com.example.libirary_.Book;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -14,9 +14,20 @@ import static librarypackage.Library.books;
 
 public class UpdateBookFunctions implements CommonFunctions {
     @FXML
-    TextField updateAuthor,updatePrice,UpdateTitle,UpdatePublishYear,indexsearchTextField,genreTextField,authorTextField,daysTillReturnTextField;
+    TextField priceTextField
+            ,searchAuthorTextField
+            ,titleTextField
+            ,publishYearTextField
+            ,indexsearchTextField
+            ,genreTextField
+            ,authorTextField
+            ,daysTillReturnTextField
+            ,ratingTextField
+            ,amountAvailableTextField;
     @FXML
     private CheckBox statusCheckBox,availableCheckBox;
+    @FXML
+    private TextArea descriptionTextArea;
 
     @FXML
     private Label successLabel;
@@ -26,25 +37,31 @@ public class UpdateBookFunctions implements CommonFunctions {
     int index;
     public void ResetAll(){
         indexsearchTextField.clear();
+        searchAuthorTextField.clear();
+        amountAvailableTextField.clear();
+        descriptionTextArea.clear();
         authorTextField.clear();
         genreTextField.clear();
-        UpdatePublishYear.clear();
-        UpdateTitle.clear();
-        updatePrice.clear();
-        updateAuthor.clear();
+        publishYearTextField.clear();
+        titleTextField.clear();
+        priceTextField.clear();
         daysTillReturnTextField.clear();
+        ratingTextField.clear();
         availableCheckBox.setSelected(false);
         statusCheckBox.setSelected(false);
 
     }
     public void ShowDataInTextFeilds(){
-        updateAuthor.setText(books.get(index).getAuthor());
-        updatePrice.setText(Float.toString(books.get(index).getPrice()));
-        UpdateTitle.setText(books.get(index).getTitle());
-        UpdatePublishYear.setText(Integer.toString(books.get(index).getPublishYear()));
+        authorTextField.setText(books.get(index).getAuthor());
+        priceTextField.setText(Float.toString(books.get(index).getPrice()));
+        titleTextField.setText(books.get(index).getTitle());
+        publishYearTextField.setText(Integer.toString(books.get(index).getPublishYear()));
         genreTextField.setText(books.get(index).getGenre());
         availableCheckBox.setSelected(books.get(index).isAvailable());
         daysTillReturnTextField.setText(Integer.toString(books.get(index).getDaysTillReturn()));
+        ratingTextField.setText(Float.toString(books.get(index).getRating()));
+        amountAvailableTextField.setText(Integer.toString(books.get(index).getBookAmountAvailable()));
+        descriptionTextArea.setText(books.get(index).getDescription());
         String available=new String(books.get(index).getStatus());
 
         if (available.equalsIgnoreCase("in stock")){
@@ -61,7 +78,7 @@ public class UpdateBookFunctions implements CommonFunctions {
         try {
             index=Integer.MAX_VALUE;
             successLabel.setText("");
-            String bookname = indexsearchTextField.getText(),bookauthor= authorTextField.getText();
+            String bookname = indexsearchTextField.getText(),bookauthor= searchAuthorTextField.getText();
             index= SearchForBookByNameAndAuthor(bookname,bookauthor);
             ShowDataInTextFeilds();
         }catch (Exception e){
@@ -73,23 +90,30 @@ public class UpdateBookFunctions implements CommonFunctions {
     public void SaveTheDataInTheBook(){
         //check if any text field is empty
         if(indexsearchTextField.getText().isEmpty()
-                ||updateAuthor.getText().isEmpty()
-                || UpdateTitle.getText().isEmpty()
+                ||searchAuthorTextField.getText().isEmpty()
+                ||authorTextField.getText().isEmpty()
+                || titleTextField.getText().isEmpty()
                 || genreTextField.getText().isEmpty()
-                ||updatePrice.getText().isEmpty()
-                || UpdatePublishYear.getText().isEmpty()
-                || daysTillReturnTextField.getText().isEmpty()){
+                || priceTextField.getText().isEmpty()
+                || publishYearTextField.getText().isEmpty()
+                || daysTillReturnTextField.getText().isEmpty()
+                || ratingTextField.getText().isEmpty()
+                || descriptionTextArea.getText().isEmpty()
+                || amountAvailableTextField.getText().isEmpty()){
             showAlert("Please Enter all the data");
             return;
         }
 
-        books.get(index).setAuthor(updateAuthor.getText());
-        books.get(index).setTitle(UpdateTitle.getText());
+        books.get(index).setAuthor(authorTextField.getText());
+        books.get(index).setTitle(titleTextField.getText());
         books.get(index).setGenre(genreTextField.getText());
-        books.get(index).setPrice(Float.parseFloat(updatePrice.getText()));
-        books.get(index).setPublishYear(Integer.parseInt(UpdatePublishYear.getText()));
+        books.get(index).setPrice(Float.parseFloat(priceTextField.getText()));
+        books.get(index).setPublishYear(Integer.parseInt(publishYearTextField.getText()));
         books.get(index).setDaysTillReturn(Integer.parseInt(daysTillReturnTextField.getText()));
         books.get(index).setAvailable(availableCheckBox.isSelected());
+        books.get(index).setRating(Float.parseFloat(ratingTextField.getText()));
+        books.get(index).setDescription(descriptionTextArea.getText());
+        books.get(index).setBookAmountAvailable(Integer.parseInt(amountAvailableTextField.getText()));
         if(statusCheckBox.isSelected()){
             books.get(index).setStatus("In stock");
         }

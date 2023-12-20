@@ -11,11 +11,15 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import librarypackage.Book;
 import resourcesimports.UserInterfaceIcons;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static librarypackage.Library.books;
+import static librarypackage.Library.setSelectedBook;
 
 public class HomePageController implements Initializable
 {
@@ -82,6 +86,15 @@ public class HomePageController implements Initializable
 
     @FXML
     public void switchToBookDetails(MouseEvent e) throws IOException{//Change Scene to BookDetails Page
+        ImageView clickedImageView =(ImageView) e.getSource();
+        String clickedImageURL= clickedImageView.getImage().getUrl();
+
+
+        for(Book book:books){
+            if(book.testCover().equals(clickedImageURL)){
+              setSelectedBook(book);
+            }
+        }
         root= FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
