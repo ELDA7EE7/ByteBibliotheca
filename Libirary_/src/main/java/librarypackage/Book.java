@@ -1,12 +1,8 @@
 package librarypackage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import java.io.Serializable;
-import java.util.ArrayList;
-
 import static librarypackage.Library.books;
-
 public class Book implements Serializable {
     private static int bookCounter=0;
 
@@ -189,6 +185,7 @@ public class Book implements Serializable {
         this.rating = rating;
     }
 
+
     @Override
     public String toString() {
         return "Book{" +
@@ -210,5 +207,8 @@ public class Book implements Serializable {
                 '}';
     }
 
+    public void calculateBookPrice() {
+        setTotalPriceInShoppingCart(getPrice() * getBookCounterInShoppingCart());
+    }
 }
 

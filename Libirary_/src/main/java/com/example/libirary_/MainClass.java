@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import static librarypackage.Library.*;
 
 public class MainClass extends Application  {
-
     public static Trie names=new Trie(),emails=new Trie();
     static {
         try {
@@ -27,7 +26,7 @@ public class MainClass extends Application  {
            FileHandling.loadData();
 
             // add default user
-            //Person user = new User("mazenalaa","mazen@gmail.com","12345678a");
+            //Person user = new User("mazenalaa","mazen@gmail.com","123456789a");
             for (Person p : users) {
                 names.insert(p.getName());
                 emails.insert(p.getEmail());
@@ -73,9 +72,8 @@ public class MainClass extends Application  {
         }
     }
     public static void main(String[] args) throws IOException {
-//        for(Book book : books){
-//            System.out.println(book);
-//        }
+
+
 
         launch();
     }
