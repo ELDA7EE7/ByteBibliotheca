@@ -37,10 +37,6 @@ public class MainClass extends Application  {
             e.printStackTrace();
         }
     }
-
-
-
-
     @Override
     public void start(Stage stage) throws IOException {
 

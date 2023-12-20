@@ -14,17 +14,17 @@
    <top>
       <AnchorPane prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #191919;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="backIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1780.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="20.0">
+            <ImageView fx:id="backIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1780.0" layoutY="-5.0" onMouseClicked="#backToHomePage" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="20.0">
                <image>
                   <Image url="@../../../UserInterfaceIcons/BackIcon.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="shoppingCartIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1770.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="20.0">
+            <ImageView fx:id="shoppingCartIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1770.0" layoutY="-15.0" onMouseClicked="#switchToShoppingCart" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="20.0">
                <image>
                   <Image url="@../../../UserInterfaceIcons/ShoppingCart.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="profileIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1760.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <ImageView fx:id="profileIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1760.0" layoutY="-25.0" onMouseClicked="#switchToUserProfile" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                <image>
                   <Image url="@../../../UserInterfaceIcons/Profile.png" />
                </image>
@@ -107,10 +107,35 @@
             <TextArea fx:id="reviewArea" prefHeight="193.0" prefWidth="740.0" styleClass="reviewarea" stylesheets="@BookDetails.css" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="810.0" AnchorPane.topAnchor="650.0" />
             <Button fx:id="confirmReview" layoutX="1280.0" layoutY="884.6666666666666" mnemonicParsing="false" prefHeight="60.0" prefWidth="225.0" styleClass="Button" text="Confirm Review" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="370.0" />
             <Label layoutX="360.0" layoutY="390.0" styleClass="heading3" text="Rating:" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="390.0" />
-            <Label fx:id="rating" layoutX="370.0" layoutY="400.0" styleClass="heading3" text="4.5" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="390.0" />
-            <Label fx:id="author" layoutX="370.0" layoutY="110.0" styleClass="heading3" text="Rebecca Yarros" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="105.0" />
+            <Label fx:id="rate" layoutX="370.0" layoutY="400.0" styleClass="heading3" text="4.5" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="390.0" />
+            <Label fx:id="auther" layoutX="370.0" layoutY="110.0" styleClass="heading3" text="Rebecca Yarros" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="105.0" />
             <Label fx:id="price" layoutX="1370.0" layoutY="380.0" maxHeight="68.0" maxWidth="1095.0" prefHeight="68.0" styleClass="heading1" text="190 LE" AnchorPane.leftAnchor="1370.0" AnchorPane.topAnchor="380.0" />
-            <Label fx:id="releaseDate" layoutX="360.0" layoutY="17.666666666666668" styleClass="heading3" text="2023" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="15.0" />
+            <Label fx:id="publishDate" layoutX="360.0" layoutY="17.666666666666668" styleClass="heading3" text="2023" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="15.0" />
+            <ImageView fx:id="star_1" fitHeight="80.0" fitWidth="80.0" layoutX="891.0" layoutY="445.0" onMouseClicked="#save_Star_1" onMouseEntered="#display_Star_1" onMouseExited="#resetStars" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../star_before.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="star_2" fitHeight="80.0" fitWidth="80.0" layoutX="971.0" layoutY="445.0" onMouseClicked="#save_Star_2" onMouseEntered="#display_Star_2" onMouseExited="#resetStars" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../star_before.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="star_3" fitHeight="80.0" fitWidth="80.0" layoutX="1051.0" layoutY="445.0" onMouseClicked="#save_Star_3" onMouseEntered="#display_Star_3" onMouseExited="#resetStars" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../star_before.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="star_4" fitHeight="80.0" fitWidth="80.0" layoutX="1140.0" layoutY="445.0" onMouseClicked="#save_Star_4" onMouseEntered="#display_Star_4" onMouseExited="#resetStars" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../star_before.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="star_5" fitHeight="80.0" fitWidth="80.0" layoutX="1220.0" layoutY="445.0" onMouseClicked="#save_Star_5" onMouseEntered="#display_Star_5" onMouseExited="#resetStars" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../star_before.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>
