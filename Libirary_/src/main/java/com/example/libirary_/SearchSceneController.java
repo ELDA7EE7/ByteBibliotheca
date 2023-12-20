@@ -1,5 +1,6 @@
 package com.example.libirary_;
 
+import InterfacesPackage.CommonFunctions;
 import librarypackage.Library;
 import searchengine.SearchEngine;
 import javafx.beans.value.ChangeListener;
@@ -21,7 +22,7 @@ import java.util.ResourceBundle;
 
 import static librarypackage.Library.setSelectedBook;
 
-public class SearchSceneController extends SearchEngine implements Initializable  {
+public class SearchSceneController extends SearchEngine implements Initializable, CommonFunctions {
     @FXML
     private TextField searchBar;
     @FXML
@@ -56,12 +57,8 @@ public class SearchSceneController extends SearchEngine implements Initializable
     }
     @FXML
     void BackToHomePage(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
+        SwitchToNextScene(event,"HomePage.fxml");
+
     }
 
     void switchToBookDetailsScene(Node node) throws IOException {

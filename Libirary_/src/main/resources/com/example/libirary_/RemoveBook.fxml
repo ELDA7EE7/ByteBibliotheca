@@ -13,27 +13,27 @@
       <Button fx:id="Remove" layoutX="1256.0" layoutY="901.0" mnemonicParsing="false" onAction="#DeleteBook" stylesheets="@buttons.css" text="Delete" />
       <Button fx:id="Cancel" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackToAdmin" stylesheets="@buttons.css" text="Back" />
       <ImageView fx:id="RemoveImage" fitHeight="554.0" fitWidth="393.0" layoutX="646.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="RemoveTitle" layoutX="1256.0" layoutY="300.0" text=" ">
+      <Label fx:id="RemoveTitle" layoutX="1252.0" layoutY="169.0" text=" ">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label fx:id="RemoveAuthor" layoutX="1256.0" layoutY="400.0" prefHeight="17.0" prefWidth="4.0">
+      <Label fx:id="RemoveAuthor" layoutX="1252.0" layoutY="269.0" prefHeight="17.0" prefWidth="4.0">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label fx:id="RemovePrice" layoutX="1256.0" layoutY="500.0">
+      <Label fx:id="RemovePrice" layoutX="1252.0" layoutY="369.0">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label fx:id="RemoveAvailable" layoutX="1256.0" layoutY="600.0">
+      <Label fx:id="RemoveAvailable" layoutX="1252.0" layoutY="469.0">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label fx:id="RemovePublishYear" layoutX="1256.0" layoutY="700.0">
+      <Label fx:id="RemovePublishYear" layoutX="1252.0" layoutY="522.0">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label fx:id="RemoveGenre" layoutX="1256.0" layoutY="800.0">
+      <Label fx:id="RemoveGenre" layoutX="1222.0" layoutY="593.0" prefHeight="20.0" prefWidth="36.0">
          <font>
             <Font size="14.0" />
          </font></Label>
@@ -57,32 +57,72 @@
             <Font name="Arial Black" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="1100.0" layoutY="300.0" text="Book Title :">
+      <Label layoutX="1096.0" layoutY="169.0" text="Book Title :">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="1100.0" layoutY="400.0" text="Author :">
+      <Label layoutX="1096.0" layoutY="269.0" text="Author :">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="1100.0" layoutY="600.0" text="Status :">
+      <Label layoutX="1096.0" layoutY="469.0" text="Status :">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="1100.0" layoutY="500.0" text="Price :">
+      <Label layoutX="1096.0" layoutY="369.0" text="Price :">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="1100.0" layoutY="800.0" text="Genre :">
+      <Label layoutX="1099.0" layoutY="593.0" text="Genre :">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="1100.0" layoutY="700.0" text="Publish Year :">
+      <Label layoutX="1096.0" layoutY="522.0" text="Publish Year :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="RemoveCoverPath" layoutX="1215.0" layoutY="654.0" prefHeight="20.0" prefWidth="25.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="1100.0" layoutY="654.0" text="Cover :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="RemoveRating" layoutX="1215.0" layoutY="696.0" prefHeight="20.0" prefWidth="25.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="1100.0" layoutY="696.0" text="Rating :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="RemoveDes" layoutX="1215.0" layoutY="735.0" prefHeight="20.0" prefWidth="25.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="1101.0" layoutY="735.0" text="Description:">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="RemoveExpire" layoutX="1215.0" layoutY="783.0" prefHeight="20.0" prefWidth="25.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="1101.0" layoutY="783.0" text="Expire date:">
          <font>
             <Font name="Arial Black" size="13.0" />
          </font>

@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import registrationsystem.DataConstraints;
 
 import java.io.IOException;
 
@@ -15,7 +16,7 @@ import static UsersOfLibrary.Borrower.BorrowerNum;
 import static UsersOfLibrary.Borrower.borrowers;
 
 
-public class AdminFunctionalities implements CommonFunctions
+public class AdminFunctionalities implements CommonFunctions , DataConstraints
 {
     @FXML
     Button updateBookInfoButton,RemoveBook;
@@ -143,6 +144,6 @@ public class AdminFunctionalities implements CommonFunctions
 
     }
     public void Back(ActionEvent event) throws IOException {
-        BackToAdmin(event);
+        SwitchToNextScene(event,"AdminHomePage.fxml");
     }
 }

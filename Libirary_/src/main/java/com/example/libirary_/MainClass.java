@@ -36,10 +36,6 @@ public class MainClass extends Application  {
             System.out.println("ok");
         }
     }
-
-
-
-
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -73,8 +69,8 @@ public class MainClass extends Application  {
         }
     }
     public static void main(String[] args) throws IOException {
-
-
+      //  Book b=new Book("Iron Flame","Rebecca Yarros","Everyone Expected Violet Sorrengail To Die During Her First Year At Basgiath War College—Violet Included. But Threshing Was Only The First Impossible Test Meant To Weed Out The Weak-Willed, The Unworthy, And The Unlucky. Now The Real Training Begins, And Violet’s Already Wondering How She’ll Get Through. It’s Not Just That It’s Grueling And Maliciously Brutal, Or Even That It’s Designed To Stretch The Riders’ Capacity For Pain Beyond Endurance. It’s The New Vice Commandant, Who’s Made It His Personal Mission To Teach Violet Exactly How Powerless She Is–Unless She Betrays The Man She Loves. Although Violet’s Body Might Be Weaker And Frailer Than Everyone Else’s, She Still Has Her Wits—And A Will Of Iron. And Leadership Is Forgetting The Most Important Lesson Basgiath Has Taught Her: Dragon Riders Make Their Own Rules.","In Stock",2023,4.7F,190.0F,"Fantasy","IronFlame.png",true,2,5);
+      //books.add(b);
 
         launch();
     }

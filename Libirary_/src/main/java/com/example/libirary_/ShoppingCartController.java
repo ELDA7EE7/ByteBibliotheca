@@ -1,5 +1,6 @@
 package com.example.libirary_;
 
+import InterfacesPackage.CommonFunctions;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ShoppingCartController implements Initializable {
+public class ShoppingCartController implements Initializable, CommonFunctions {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -68,23 +69,14 @@ public class ShoppingCartController implements Initializable {
     @FXML
     void backToHomePage(MouseEvent event) throws IOException {
         backIcon.setImage(backIconOnClick);
-        root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
+        SwitchToNextScene(event,"HomePage.fxml");
+
     }
 
     @FXML
     void goToProfilePage(MouseEvent event) throws IOException {
         profileIcon.setImage(profileIconOnClick);
-        root = FXMLLoader.load(getClass().getResource("UserProfile.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
+      SwitchToNextScene(event,"UserProfile.fxml");
     }
 
     @FXML

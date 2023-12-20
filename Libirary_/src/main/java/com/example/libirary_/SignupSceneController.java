@@ -1,5 +1,6 @@
 package com.example.libirary_;
 
+import InterfacesPackage.CommonFunctions;
 import UsersOfLibrary.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +12,7 @@ import java.io.IOException;
 import static com.example.libirary_.MainClass.emails;
 import static com.example.libirary_.MainClass.names;
 
-public class SignupSceneController extends RegistrationSystem implements SignUp {
+public class SignupSceneController extends RegistrationSystem implements SignUp,CommonFunctions {
 
 
     @Override@FXML
