@@ -1,5 +1,6 @@
 package com.example.libirary_;
 
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -120,8 +121,8 @@ public class ShoppingCartController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         shoppingCart = new ShoppingCart();
-        shoppingCart.setBooks(shoppingCartBooks());
-        shoppingCart.setDiscounts(shoppingCartDis());
+       // shoppingCart.setBooks(shoppingCartBooks());
+      //  shoppingCart.setDiscounts(shoppingCartDis());
         for(int i = 0; i< shoppingCart.getBooks().size(); i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("ShoppingCartBook.fxml"));
@@ -135,6 +136,7 @@ public class ShoppingCartController implements Initializable {
             }
         }
     }
+    /*
     private List<Book> shoppingCartBooks(){
         List<Book> ls =new ArrayList<>();
         Book book1 = new Book("It Ends with Us","Colleen Hoover","","In Stock",2016,4.7f,90f,"Romance","",true,12,5);
@@ -151,4 +153,6 @@ public class ShoppingCartController implements Initializable {
         ls2.add(discount2);
         return ls2;
     }
+
+     */
 }

@@ -15,8 +15,8 @@ public class RemoveBookController extends RemoveBookFunctions implements CommonF
 
 
 
-    @Override
+
     public void BackToAdmin(ActionEvent event) throws IOException {
-        CommonFunctions.super.BackToAdmin(event); //return to AdminHomePage
+        SwitchToNextScene(event,"AdminHomePage.fxml");//return to AdminHomePage
     }
 }
