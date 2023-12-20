@@ -3,21 +3,21 @@ package shoppingcart;
 import com.example.libirary_.Book;
 import shoppingcart.commands.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCart {
-    private List<Book> books;
-    private List<Discount> discounts;
+    private static List<Book> books= new ArrayList<>();
+    private static List<Discount> discounts=new ArrayList<>();
     private String paymentMethod;
     private float totalPrice;
     private float discountAmount;
-
     public List<Book> getBooks() {
         return books;
     }
 
     public void setBooks(List<Book> books) {
-        this.books = books;
+        ShoppingCart.books = books;
     }
 
     public String getPaymentMethod() {
@@ -80,5 +80,9 @@ public class ShoppingCart {
     public void calculateTotalPrice() {
         TotalPriceCalculator totalPriceCalculator = new TotalPriceCalculator();
         totalPriceCalculator.execute(this);
+    }
+    public void applyDiscount(String promoCode){
+        DiscountApplier discountApplier = new DiscountApplier(promoCode);
+        discountApplier.execute(this);
     }
 }

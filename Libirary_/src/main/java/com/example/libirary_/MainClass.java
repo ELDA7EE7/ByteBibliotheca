@@ -14,6 +14,7 @@ import userprofile.Order;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 import static librarypackage.Library.*;
 
@@ -144,7 +145,7 @@ public class MainClass extends Application  {
     public void close(Stage stage) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Close");
-        alert.setHeaderText("You're about to Close Programme!");
+        alert.setHeaderText("You're about to close ByteBibliotheca!");
         alert.setContentText("Do you want to save before exiting?");
 
         if (alert.showAndWait().get() == ButtonType.OK){

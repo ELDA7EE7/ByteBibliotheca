@@ -20,7 +20,6 @@ public class UserProfile implements UploadUserInformation {
 
     @Override
     public void fillListviewWithUserOrders() {
-
         for (Order order : orders) {
             if(user.findOrderID(order.getOrderId())) {
                 ordersList.add(order.toString());

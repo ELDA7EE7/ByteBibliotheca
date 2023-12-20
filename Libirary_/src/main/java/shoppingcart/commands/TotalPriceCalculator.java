@@ -7,9 +7,16 @@ public class TotalPriceCalculator implements ShoppingCartCommand {
     public TotalPriceCalculator(){};
     @Override
     public void execute(ShoppingCart shoppingCart) {
-        for (Book currentBook : shoppingCart.getBooks()) {
-            shoppingCart.setTotalPrice(shoppingCart.getTotalPrice() + (currentBook.getTotalPriceInShoppingCart()));
+        if (!shoppingCart.getBooks().isEmpty()) {
+            Book firstBook = shoppingCart.getBooks().get(0);
+            shoppingCart.setTotalPrice(firstBook.getTotalPriceInShoppingCart()-firstBook.getTotalPriceInShoppingCart()*shoppingCart.getDiscountAmount());
+            for (int i = 1; i < shoppingCart.getBooks().size(); i++) {
+                Book currentBook = shoppingCart.getBooks().get(i);
+                shoppingCart.setTotalPrice(shoppingCart.getTotalPrice() + (currentBook.getTotalPriceInShoppingCart()-currentBook.getTotalPriceInShoppingCart()*shoppingCart.getDiscountAmount()));
+            }
         }
-        //shoppingCart.setTotalPrice(shoppingCart.getTotalPrice() + (shoppingCart.getTotalPrice() * shoppingCart.getDiscountAmount()));
+        else{
+            shoppingCart.setTotalPrice(0);
+        }
     }
 }
