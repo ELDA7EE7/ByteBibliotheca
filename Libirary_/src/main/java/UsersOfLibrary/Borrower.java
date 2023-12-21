@@ -19,6 +19,7 @@ public class Borrower extends User implements CommonFunctions
     public static int BorrowerNum;
     //public static int CurrentBorrowerId = getCurrentUser().getId();
     private boolean IsBorrowing;
+   // private static int BorrowerCount=1;
     private String PhoneNumber ;
     private static Borrower current_borrower;
     public static ArrayList<Borrower> borrowers = new ArrayList<Borrower>();
@@ -31,11 +32,12 @@ public class Borrower extends User implements CommonFunctions
 
     LocalDate currentDate = LocalDate.now();
 
-    public Borrower(int userID, String userName, String email, String password)
+
+   public Borrower(int userId,String userName, String email, String password)
     {
-        super(userID, userName, email, password);
-        BorrowerId=userID;
-        BorrowerNum= BorrowerId;
+        super(userId,userName, email, password);
+        BorrowerId=userId;
+        BorrowerNum=BorrowerId;
         borrowers.add(this);
         for (User u:users) {
             if (u.getId()==getCurrentUser().getId() )
