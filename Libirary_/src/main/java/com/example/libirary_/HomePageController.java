@@ -1,5 +1,7 @@
 package com.example.libirary_;
 
+import InterfacesPackage.CommonFunctions;
+import UsersOfLibrary.Borrower;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +24,7 @@ import java.util.ResourceBundle;
 import static librarypackage.Library.books;
 import static librarypackage.Library.setSelectedBook;
 
-public class HomePageController implements Initializable
+public class HomePageController implements Initializable , CommonFunctions
 {
     private Stage stage;
     private Scene scene;
@@ -113,12 +115,24 @@ public class HomePageController implements Initializable
         stage.setFullScreen(true);
         stage.show();
     }
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-
+         ArrayList<Book> B = new ArrayList<Book>();
+        for(int i=0;i<Borrower.getCurrent_borrower().notifyWhenAvailableBook.size();i++)
+        {
+            if(Borrower.getCurrent_borrower().notifyWhenAvailableBook.get(i).isAvailable())
+            {
+                String out = Borrower.getCurrent_borrower().notifyWhenAvailableBook.get(i).getTitle();
+                showAlert(out + "is Available");
+            }
+            else
+            {
+                B.add(Borrower.getCurrent_borrower().notifyWhenAvailableBook.get(i));
+            }
+        }
+        Borrower.getCurrent_borrower().notifyWhenAvailableBook.clear();
+        Borrower.getCurrent_borrower().notifyWhenAvailableBook.addAll(B);
         /*Book book =new Book("Rich Dad Poor Dad","Ehab","Valid",2000,500,
                 "HUmanDevelopment", BooksImages.richDadPoorDad,true,4,12);
 

@@ -6,6 +6,7 @@ import javafx.scene.control.ButtonType;
 import librarypackage.Book;
 import librarypackage.Transaction;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 
 import static librarypackage.Library.*;
 
-public class Borrower extends User implements CommonFunctions
+public class Borrower extends User implements CommonFunctions , Serializable
 {
     private final int  BorrowerId;
     public static int BorrowerNum;
@@ -23,7 +24,8 @@ public class Borrower extends User implements CommonFunctions
     private static Borrower current_borrower;
     public static ArrayList<Borrower> borrowers = new ArrayList<Borrower>();
 
-    private ArrayList<Integer>BorrowedBookID=new ArrayList<Integer>();
+    public ArrayList<Book> notifyWhenAvailableBook = new ArrayList<Book>();
+    public ArrayList<Integer>BorrowedBookID=new ArrayList<Integer>();
     private ArrayList<LocalDateTime>DaysTillReturn=new ArrayList<LocalDateTime>();
     private ArrayList<LocalDateTime>DateofBorrow=new ArrayList<LocalDateTime>();
     private ArrayList<Boolean>IsReturned=new ArrayList<Boolean>();
