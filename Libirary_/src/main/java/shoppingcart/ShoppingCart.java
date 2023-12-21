@@ -9,6 +9,7 @@ import java.util.List;
 public class ShoppingCart {
     private static List<Book> books= new ArrayList<>();
     private static List<Discount> discounts=new ArrayList<>();
+    private int bookCount;
     private String paymentMethod;
     private float totalPrice;
     private float discountAmount;
@@ -41,7 +42,7 @@ public class ShoppingCart {
     }
 
     public void setDiscounts(List<Discount> discounts) {
-        this.discounts = discounts;
+        ShoppingCart.discounts = discounts;
     }
 
     public float getDiscountAmount() {
@@ -72,11 +73,6 @@ public class ShoppingCart {
         quantityUpdater.execute(this);
     }
 
-    public void calculateBookPrice() {
-        BookPriceCalculator bookPriceCalculator = new BookPriceCalculator();
-        bookPriceCalculator.execute(this);
-    }
-
     public void calculateTotalPrice() {
         TotalPriceCalculator totalPriceCalculator = new TotalPriceCalculator();
         totalPriceCalculator.execute(this);
@@ -84,5 +80,13 @@ public class ShoppingCart {
     public void applyDiscount(String promoCode){
         DiscountApplier discountApplier = new DiscountApplier(promoCode);
         discountApplier.execute(this);
+    }
+
+    public int getBookCount() {
+        return bookCount;
+    }
+
+    public void setBookCount(int bookCount) {
+        this.bookCount = bookCount;
     }
 }

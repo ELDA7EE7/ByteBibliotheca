@@ -43,16 +43,16 @@
             <Label layoutX="106.0" layoutY="50.0" styleClass="heading1" text="Shopping Cart Contents:" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="20.0" />
             <Group layoutX="1216.0" layoutY="901.3333129882812" stylesheets="@ShoppingCart.css">
                <children>
-                  <RadioButton fx:id="cashOnDelivery" mnemonicParsing="false" styleClass="radiobutton1" text="Cash on Delivery">
+                  <RadioButton fx:id="cashOnDelivery" mnemonicParsing="false" onAction="#setPaymentMethod" styleClass="radiobutton1" text="Cash on Delivery">
                      <toggleGroup>
                         <ToggleGroup fx:id="payment" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="credit" layoutX="267.3333740234375" mnemonicParsing="false" styleClass="radiobutton1" text="Credit" toggleGroup="$payment" />
+                  <RadioButton fx:id="credit" layoutX="267.3333740234375" mnemonicParsing="false" onAction="#setPaymentMethod" styleClass="radiobutton1" text="Credit" toggleGroup="$payment" />
                </children>
             </Group>
             <Label layoutX="666.0" layoutY="878.0" styleClass="payWith" text="Pay with" AnchorPane.bottomAnchor="45.0" AnchorPane.rightAnchor="730.0" />
-            <Button fx:id="confirmOrder" contentDisplay="TOP" graphicTextGap="100.0" layoutX="1517.0" layoutY="870.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="205.0" styleClass="searchButton" stylesheets="@HomePage.css" text="Confirm Order" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="50.0">
+            <Button fx:id="confirmOrder" contentDisplay="TOP" graphicTextGap="100.0" layoutX="1665.0" layoutY="888.0" mnemonicParsing="false" onAction="#createNewOrder" prefHeight="60.0" prefWidth="205.0" styleClass="searchButton" stylesheets="@HomePage.css" text="Confirm Order" AnchorPane.bottomAnchor="32.0" AnchorPane.rightAnchor="50.0">
                <font>
                   <Font size="18.0" />
                </font>
