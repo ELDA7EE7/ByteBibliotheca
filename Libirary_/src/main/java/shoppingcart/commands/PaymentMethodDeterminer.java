@@ -10,7 +10,7 @@ public class PaymentMethodDeterminer implements ShoppingCartCommand {
     @Override
     public void execute(ShoppingCart shoppingCart) {
         if(paymentIsCash)
-            shoppingCart.setPaymentMethod("Cash");
+            shoppingCart.setPaymentMethod("Cash on Delivery");
         else
             shoppingCart.setPaymentMethod("Credit");
     }
