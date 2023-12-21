@@ -49,7 +49,7 @@
                <children>
                   <VBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <ImageView fx:id="book1Cover" fitHeight="218.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="book1Cover" fitHeight="218.0" fitWidth="163.0" onMouseClicked="#switchToAnotherBook" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../FourthWing.png" />
                            </image>
@@ -59,7 +59,7 @@
                   </VBox>
                   <VBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <ImageView fx:id="book2Cover" fitHeight="218.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="book2Cover" fitHeight="218.0" fitWidth="163.0" onMouseClicked="#switchToAnotherBook" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../FourthWing.png" />
                            </image>
@@ -69,7 +69,7 @@
                   </VBox>
                   <VBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <ImageView fx:id="book3Cover" fitHeight="218.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="book3Cover" fitHeight="218.0" fitWidth="163.0" onMouseClicked="#switchToAnotherBook" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../FourthWing.png" />
                            </image>
@@ -108,7 +108,7 @@
             <Button fx:id="confirmReview" layoutX="1280.0" layoutY="884.6666666666666" mnemonicParsing="false" prefHeight="60.0" prefWidth="225.0" styleClass="Button" text="Confirm Review" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="370.0" />
             <Label layoutX="360.0" layoutY="390.0" styleClass="heading3" text="Rating:" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="390.0" />
             <Label fx:id="rate" layoutX="370.0" layoutY="400.0" styleClass="heading3" text="4.5" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="390.0" />
-            <Label fx:id="auther" layoutX="370.0" layoutY="110.0" styleClass="heading3" text="Rebecca Yarros" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="105.0" />
+            <Label fx:id="author" layoutX="370.0" layoutY="110.0" styleClass="heading3" text="Rebecca Yarros" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="105.0" />
             <Label fx:id="price" layoutX="1370.0" layoutY="380.0" maxHeight="68.0" maxWidth="1095.0" prefHeight="68.0" styleClass="heading1" text="190 LE" AnchorPane.leftAnchor="1370.0" AnchorPane.topAnchor="380.0" />
             <Label fx:id="publishDate" layoutX="360.0" layoutY="17.666666666666668" styleClass="heading3" text="2023" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="15.0" />
             <ImageView fx:id="star_1" fitHeight="80.0" fitWidth="80.0" layoutX="891.0" layoutY="445.0" onMouseClicked="#save_Star_1" onMouseEntered="#display_Star_1" onMouseExited="#resetStars" pickOnBounds="true" preserveRatio="true">
