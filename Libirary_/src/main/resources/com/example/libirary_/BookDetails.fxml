@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
@@ -14,20 +15,29 @@
    <top>
       <AnchorPane prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #191919;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="backIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1780.0" layoutY="-5.0" onMouseClicked="#backToHomePage" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="20.0">
+            <ImageView fx:id="backIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1780.0" layoutY="-5.0" onMouseClicked="#backToHomePage" onMouseEntered="#switchBackIconOnHover" onMouseExited="#resetBackIcon" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="20.0">
                <image>
                   <Image url="@../../../UserInterfaceIcons/BackIcon.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
-            <ImageView fx:id="shoppingCartIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1770.0" layoutY="-15.0" onMouseClicked="#switchToShoppingCart" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="20.0">
+            <ImageView fx:id="shoppingCartIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1770.0" layoutY="-15.0" onMouseClicked="#switchToShoppingCart" onMouseEntered="#switchShoppingCartIconToHover" onMouseExited="#resetShoppingCartIcon" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="20.0">
                <image>
                   <Image url="@../../../UserInterfaceIcons/ShoppingCart.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
-            <ImageView fx:id="profileIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1760.0" layoutY="-25.0" onMouseClicked="#switchToUserProfile" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <ImageView fx:id="profileIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1760.0" layoutY="-25.0" onMouseClicked="#switchToUserProfile" onMouseEntered="#switchProfileIconOnHover" onMouseExited="#resetProfileIcon" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                <image>
                   <Image url="@../../../UserInterfaceIcons/Profile.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fitHeight="36.0" fitWidth="270.0" layoutX="14.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="51.0" AnchorPane.topAnchor="32.0">
                <image>
@@ -115,26 +125,41 @@
                <image>
                   <Image url="@../../../UserInterfaceIcons/StarOutline_01.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fx:id="star_2" fitHeight="80.0" fitWidth="80.0" layoutX="971.0" layoutY="445.0" onMouseClicked="#select2StarRating" onMouseEntered="#switchStar2OnHover" onMouseExited="#resetStar2Icon" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="1225.0" AnchorPane.topAnchor="450.0">
                <image>
                   <Image url="@../../../UserInterfaceIcons/StarOutline_02.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fx:id="star_3" fitHeight="80.0" fitWidth="80.0" layoutX="1051.0" layoutY="445.0" onMouseClicked="#select3StarRating" onMouseEntered="#switchStar3OnHover" onMouseExited="#resetStar3Icon" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="1305.0" AnchorPane.topAnchor="450.0">
                <image>
                   <Image url="@../../../UserInterfaceIcons/StarOutline_03.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fx:id="star_4" fitHeight="80.0" fitWidth="80.0" layoutX="1385.0" layoutY="455.0" onMouseClicked="#select4StarRating" onMouseEntered="#switchStar4OnHover" onMouseExited="#resetStar4Icon" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="1385.0" AnchorPane.topAnchor="450.0">
                <image>
                   <Image url="@../../../UserInterfaceIcons/StarOutline_04.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
             <ImageView fx:id="star_5" fitHeight="80.0" fitWidth="80.0" layoutX="1465.0" layoutY="455.0" onMouseClicked="#select5StarRating" onMouseEntered="#switchStar5OnHover" onMouseExited="#resetStar5Icon" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="1465.0" AnchorPane.topAnchor="450.0">
                <image>
                   <Image url="@../../../UserInterfaceIcons/StarOutline_05.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
          </children>
       </AnchorPane>

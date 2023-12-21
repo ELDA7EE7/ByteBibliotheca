@@ -93,9 +93,9 @@ public class UserProfileController extends UpdateUserData implements Initializab
     @FXML
     public void pressLogoutButton(ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Logout");
-        alert.setHeaderText("You're about to logout!");
-        alert.setContentText("press OK to logout");
+        alert.setTitle("Log out");
+        alert.setHeaderText("You're about to log out!");
+        alert.setContentText("Press OK to log out");
 
         if (alert.showAndWait().get() == ButtonType.OK){
             System.out.println("You successfully logged out");

@@ -30,6 +30,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static librarypackage.Library.orders;
+
 public class ShoppingCartController implements Initializable {
     private Stage stage;
     private Scene scene;
@@ -127,12 +129,13 @@ public class ShoppingCartController implements Initializable {
             shoppingCart.determinePaymentMethod(true);
         } else if (credit.isSelected()) {
             shoppingCart.determinePaymentMethod(false);
+
         }
     }
     @FXML
     void createNewOrder(){
-        Order order = new Order(shoppingCart.getTotalPrice(), LocalDate.now(),shoppingCart.getBookCount());
-        User.getCurrentUser().addOrder(order.getOrderId());
+        orders.add(new Order(shoppingCart.getTotalPrice(),LocalDate.now(),shoppingCart.getBookCount()));
+        System.out.println(new Order(shoppingCart.getTotalPrice(), LocalDate.now(),shoppingCart.getBookCount()));
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
