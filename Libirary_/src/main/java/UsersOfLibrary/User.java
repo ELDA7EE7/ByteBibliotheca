@@ -27,9 +27,6 @@ public class User extends Person implements Serializable {
         userCounter++;
         users.add(this);
     }
-    //public static int getUserCounter() {
-        //return userCounter;
-    //}
     public static void incrementUsersCounter(){
         userCounter++;
     }

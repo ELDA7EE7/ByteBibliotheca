@@ -6,6 +6,7 @@ import javafx.scene.control.ButtonType;
 import librarypackage.Book;
 import librarypackage.Transaction;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -13,10 +14,9 @@ import java.util.ArrayList;
 
 import static librarypackage.Library.*;
 
-public class Borrower extends User implements CommonFunctions
+public class Borrower extends User implements CommonFunctions, Serializable
 {
-    private final int  BorrowerId;
-    public static int BorrowerNum;
+
     //public static int CurrentBorrowerId = getCurrentUser().getId();
     private boolean IsBorrowing;
    // private static int BorrowerCount=1;
@@ -37,15 +37,18 @@ public class Borrower extends User implements CommonFunctions
    public Borrower(int userId,String userName, String email, String password)
     {
         super(userId,userName, email, password);
-        BorrowerId=userId;
-        BorrowerNum=BorrowerId;
+
         borrowers.add(this);
         for (User u:users) {
             if (u.getId()==getCurrentUser().getId() )
                 current_borrower =getCurrent_borrower(getCurrentUser().getId());
         }
     }
+    public Borrower(String username,String email,String password){
+       super(username,email,password);
+       borrowers.add(this);
 
+    }
 
     public void BorrowBook(Book book)
     {

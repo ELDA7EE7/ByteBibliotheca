@@ -1,5 +1,6 @@
 package FileHandlingPackage;
 
+import UsersOfLibrary.Borrower;
 import UsersOfLibrary.User;
 import librarypackage.Book;
 import librarypackage.Transaction;
@@ -17,7 +18,7 @@ public class FileHandling {
             FileInputStream userFIS= new FileInputStream(loaduserFile);
             ObjectInputStream userOIS = new ObjectInputStream(userFIS);
             users =(ArrayList<User>) userOIS.readObject();
-            System.out.println(users.size());
+            System.out.println("size of users " + users.size());
             for(User user : users){
                 System.out.println(user);
             }
@@ -31,7 +32,7 @@ public class FileHandling {
             FileInputStream bookFIS= new FileInputStream(loadbookFile);
             ObjectInputStream bookOIS = new ObjectInputStream(bookFIS);
             books =(ArrayList<Book>) bookOIS.readObject();
-            System.out.println(books.size());
+            System.out.println("size of books " +books.size());
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
@@ -42,7 +43,7 @@ public class FileHandling {
             FileInputStream orderFIS= new FileInputStream(loadOrderFile);
             ObjectInputStream orderOIS = new ObjectInputStream(orderFIS);
             orders =(ArrayList<Order>) orderOIS.readObject();
-            System.out.println(orders.size());
+            System.out.println("size of orders " +orders.size());
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
@@ -53,7 +54,18 @@ public class FileHandling {
             FileInputStream transactionFIS= new FileInputStream(loadTransactionFile);
             ObjectInputStream transactionOIS = new ObjectInputStream(transactionFIS);
             transactions =(ArrayList<Transaction>) transactionOIS.readObject();
-            System.out.println(transactions.size());
+            System.out.println("size of transactions " +transactions.size());
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    public static void loadBorrowers(){
+        try{
+            File loadBorrowerFile = new File("Borrowers.txt");
+            FileInputStream borrowerFIS= new FileInputStream(loadBorrowerFile);
+            ObjectInputStream borrowerOIS = new ObjectInputStream(borrowerFIS);
+            borrowers =(ArrayList<Borrower>) borrowerOIS.readObject();
+            System.out.println("size of borrowers " +  borrowers.size());
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
@@ -64,6 +76,7 @@ public class FileHandling {
         loadBooks();
         loadOrders();
         loadTransactions();
+        loadBorrowers();
     }
     public static void saveUsers() throws IOException {
         try {
@@ -114,11 +127,23 @@ public class FileHandling {
             e.printStackTrace();
         }
     }
-
+    public  static void saveBorrowers(){
+        try{
+            File saveBorrowerFile = new File ("Borrowers.txt");
+            FileOutputStream borrowerFOS = new FileOutputStream(saveBorrowerFile);
+            ObjectOutputStream borrowerOOS = new ObjectOutputStream(borrowerFOS);
+            borrowerOOS.writeObject(borrowers);
+            borrowerOOS.flush();
+            borrowerOOS.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     public static void saveData() throws IOException {
         saveUsers();
         saveBooks();
         saveOrders();
         saveTransactions();
+        saveBorrowers();
     }
 }

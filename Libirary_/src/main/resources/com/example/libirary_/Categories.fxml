@@ -1,452 +1,590 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Hyperlink?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="platform" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.HomePageSceneController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" scaleShape="false" stylesheets="@Categories.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.CategoriesController">
    <children>
-      <ScrollPane layoutX="84.0" layoutY="137.0" prefHeight="874.0" prefWidth="1396.0" styleClass="scrollbar.css" stylesheets="@scrollbar.css">
-         <content>
-            <HBox prefHeight="1089.0" prefWidth="1379.0" spacing="25.0">
+      <BorderPane prefHeight="1080.0" prefWidth="1920.0">
+         <top>
+            <AnchorPane prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #191919;" BorderPane.alignment="CENTER">
                <children>
-                  <VBox prefHeight="362.0" prefWidth="136.0" spacing="25.0">
-                     <children>
-                        <Label alignment="CENTER" prefHeight="124.0" prefWidth="140.0" text="Human Development" underline="true">
-                           <font>
-                              <Font name="Bookman Old Style" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="124.0" prefWidth="140.0" text="Fantasy" underline="true">
-                           <font>
-                              <Font name="Bookman Old Style" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="124.0" prefWidth="140.0" text="Romance" underline="true">
-                           <font>
-                              <Font name="Bookman Old Style" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="124.0" prefWidth="140.0" text="Manga" underline="true">
-                           <font>
-                              <Font name="Bookman Old Style" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="124.0" prefWidth="140.0" text="History" underline="true">
-                           <font>
-                              <Font name="Bookman Old Style" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="139.0" prefWidth="136.0" text="Programming" underline="true">
-                           <font>
-                              <Font name="Bookman Old Style" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="139.0" prefWidth="136.0" text="Programming" underline="true">
-                           <font>
-                              <Font name="Bookman Old Style" size="12.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="1092.0" prefWidth="1221.0" spacing="50.0">
-                     <children>
-                        <ScrollPane prefHeight="160.0" prefWidth="1188.0">
-                           <content>
-                              <HBox fx:id="HumanDev" prefHeight="141.0" prefWidth="1278.0" spacing="25.0">
-                                 <children>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </HBox>
-                           </content>
-                        </ScrollPane>
-                        <ScrollPane prefHeight="171.0" prefWidth="1222.0">
-                           <content>
-                              <HBox fx:id="Fantasy" prefHeight="110.0" prefWidth="1307.0">
-                                 <children>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </HBox>
-                           </content>
-                        </ScrollPane>
-                        <ScrollPane prefHeight="169.0" prefWidth="1219.0">
-                           <content>
-                              <HBox fx:id="Romance" prefHeight="109.0" prefWidth="1299.0">
-                                 <children>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </HBox>
-                           </content>
-                        </ScrollPane>
-                        <ScrollPane prefHeight="173.0" prefWidth="1219.0">
-                           <content>
-                              <HBox fx:id="Manga" prefHeight="110.0" prefWidth="1262.0">
-                                 <children>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </HBox>
-                           </content>
-                        </ScrollPane>
-                        <ScrollPane prefHeight="129.0" prefWidth="351.0">
-                           <content>
-                              <HBox fx:id="History" prefHeight="110.0" prefWidth="1364.0">
-                                 <children>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="143.0" prefWidth="99.0">
-                                       <children>
-                                          <ImageView fitHeight="154.0" fitWidth="96.0" onMouseClicked="#BookDetails" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../RichDadPoorDad.jpg" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </HBox>
-                           </content>
-                        </ScrollPane>
-                     </children>
-                  </VBox>
+                  <ImageView fitHeight="36.0" fitWidth="270.0" layoutX="227.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="51.0" AnchorPane.topAnchor="32.0">
+                     <image>
+                        <Image url="@../../../UserInterfaceIcons/Logo.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="profileIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1697.0" layoutY="-25.0" onMouseClicked="#switchToUserProfile" onMouseEntered="#switchProfileIconOnHover" onMouseExited="#resetProfileIcon" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+
+
+
+
+
+                     <image>
+                        <Image url="@../../../UserInterfaceIcons/Profile.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="shoppingCartIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1766.0" layoutY="20.0" onMouseClicked="#switchToShoppingCart" onMouseEntered="#switchShoppingCartIconToHover" onMouseExited="#resetShoppingCartIcon" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="20.0">
+                     <image>
+                        <Image url="@../../../UserInterfaceIcons/ShoppingCart.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="backIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1776.0" layoutY="30.0" onMouseClicked="#backToHomePage" onMouseEntered="#switchBackIconOnHover" onMouseExited="#resetBackIcon" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="20.0">
+                     <image>
+                        <Image url="@../../../UserInterfaceIcons/BackIcon.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
                </children>
-            </HBox>
-         </content>
-      </ScrollPane>
-      <Label alignment="CENTER" layoutX="17.0" layoutY="11.0" prefHeight="109.0" prefWidth="460.0" text="ByteBibilotheca">
-         <font>
-            <Font name="Rage Italic" size="61.0" />
-         </font>
-      </Label>
-      <Hyperlink layoutX="1313.0" layoutY="39.0" onAction="#SwitchToUserProfileScene" prefHeight="54.0" prefWidth="158.0" text="MyProfile">
-         <font>
-            <Font name="Bodoni MT" size="29.0" />
-         </font>
-      </Hyperlink>
-      <ImageView fx:id="Profile" fitHeight="54.0" fitWidth="50.0" layoutX="1464.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../../../../Downloads/user_1144760.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="cart" fitHeight="54.0" fitWidth="40.0" layoutX="1232.0" layoutY="46.0" onMouseClicked="#cart" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../../../../../../Downloads/shopping-cart_833314.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="1825.0" layoutY="120.0" mnemonicParsing="false" onAction="#CategoriesPage" prefHeight="23.0" prefWidth="70.0" text="Search">
-         <font>
-            <Font name="Bodoni MT Black" size="23.0" />
-         </font>
-      </Button>
-      <TextField fx:id="searchBar" layoutX="1522.0" layoutY="127.0" prefHeight="30.0" prefWidth="277.0" />
-      <ListView fx:id="listView" layoutX="1503.0" layoutY="192.0" prefHeight="379.0" prefWidth="403.0" />
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="980.0" prefWidth="1920.0" style="-fx-background-color: #191919;" BorderPane.alignment="CENTER">
+               <children>
+                  <ScrollPane hbarPolicy="NEVER" layoutX="38.0" layoutY="51.0" prefHeight="980.0" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="1920.0" style="-fx-background-color: #191919;">
+                           <children>
+                              <VBox AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                 <children>
+                                    <HBox fx:id="children" alignment="CENTER" prefHeight="300.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="200.0" styleClass="Heading1" text="Children" textAlignment="CENTER" wrapText="true" />
+                                          <HBox alignment="CENTER" prefHeight="300.0" prefWidth="1700.0">
+                                             <children>
+                                                <ScrollPane vbarPolicy="NEVER">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="1700.0" style="-fx-background-color: #191919;">
+                                                         <children>
+                                                            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../NoBrainer.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="Diary of a Wimpy Kid: No Brainer" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="fantasy" alignment="CENTER" prefHeight="300.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="200.0" styleClass="Heading1" text="Fantasy" textAlignment="CENTER" wrapText="true" />
+                                          <HBox alignment="CENTER" prefHeight="300.0" prefWidth="1700.0">
+                                             <children>
+                                                <ScrollPane vbarPolicy="NEVER">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="1700.0" style="-fx-background-color: #191919;">
+                                                         <children>
+                                                            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../FourthWing.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="Fourth Wing" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../IronFlame.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="Iron Flame" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="historicalFiction" alignment="CENTER" prefHeight="300.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="200.0" styleClass="Heading1" text="Historical Fiction" textAlignment="CENTER" wrapText="true" />
+                                          <HBox alignment="CENTER" prefHeight="300.0" prefWidth="1700.0">
+                                             <children>
+                                                <ScrollPane vbarPolicy="NEVER">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="1700.0" style="-fx-background-color: #191919;">
+                                                         <children>
+                                                            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../AllTheLightWeCannotSee.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="All the Light We Cannot See" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="historicalNonfiction" alignment="CENTER" prefHeight="300.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="200.0" styleClass="Heading1" text="Historical Nonfiction" textAlignment="CENTER" wrapText="true" />
+                                          <HBox alignment="CENTER" prefHeight="300.0" prefWidth="1700.0">
+                                             <children>
+                                                <ScrollPane vbarPolicy="NEVER">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="1700.0" style="-fx-background-color: #191919;">
+                                                         <children>
+                                                            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../GhostsOfHonolulu.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="Ghosts of Honolulu" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../TheWager.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="The Wager" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="memoir" alignment="CENTER" prefHeight="300.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="200.0" styleClass="Heading1" text="Memoir" textAlignment="CENTER" wrapText="true" />
+                                          <HBox alignment="CENTER" prefHeight="300.0" prefWidth="1700.0">
+                                             <children>
+                                                <ScrollPane vbarPolicy="NEVER">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="1700.0" style="-fx-background-color: #191919;">
+                                                         <children>
+                                                            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../Spare.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="Spare" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="mystery" alignment="CENTER" prefHeight="300.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="200.0" styleClass="Heading1" text="Mystery" textAlignment="CENTER" wrapText="true" />
+                                          <HBox alignment="CENTER" prefHeight="300.0" prefWidth="1700.0">
+                                             <children>
+                                                <ScrollPane vbarPolicy="NEVER">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="1700.0" style="-fx-background-color: #191919;">
+                                                         <children>
+                                                            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../Murdle.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="Murdle: Volume 1" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="personalDevelopment" alignment="CENTER" prefHeight="300.0">
+                                       <children>
+                                          <Label prefWidth="200.0" styleClass="Heading1" text="Personal Development" textAlignment="CENTER" wrapText="true" />
+                                          <HBox alignment="CENTER" prefHeight="300.0" prefWidth="1700.0">
+                                             <children>
+                                                <ScrollPane vbarPolicy="NEVER">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="1700.0" style="-fx-background-color: #191919;">
+                                                         <children>
+                                                            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../AtomicHabits.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="Atomic Habits" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../The48LawsOfPower.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="The 48 Laws of Power" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../Outlive.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="Outlive" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../HowToKnowAPerson.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="How to Know a Person" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="romance" alignment="CENTER" prefHeight="300.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="200.0" styleClass="Heading1" text="Romance" textAlignment="CENTER" wrapText="true" />
+                                          <HBox alignment="CENTER" prefHeight="300.0" prefWidth="1700.0">
+                                             <children>
+                                                <ScrollPane vbarPolicy="NEVER">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="1700.0" style="-fx-background-color: #191919;">
+                                                         <children>
+                                                            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../ItStartsWithUs.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="It Starts with Us" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../ItEndsWithUs.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="It Ends with Us" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="thriller" alignment="CENTER" prefHeight="300.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="200.0" styleClass="Heading1" text="Thriller" textAlignment="CENTER" wrapText="true" />
+                                          <HBox alignment="CENTER" prefHeight="300.0" prefWidth="1700.0">
+                                             <children>
+                                                <ScrollPane vbarPolicy="NEVER">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="1700.0" style="-fx-background-color: #191919;">
+                                                         <children>
+                                                            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMouseClicked="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../TheExchange.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="The Exchange" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="trivia" alignment="CENTER" prefHeight="300.0">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="200.0" styleClass="Heading1" text="Trivia" textAlignment="CENTER" wrapText="true" />
+                                          <HBox alignment="CENTER" prefHeight="300.0" prefWidth="1700.0">
+                                             <children>
+                                                <ScrollPane vbarPolicy="NEVER">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="1700.0" style="-fx-background-color: #191919;">
+                                                         <children>
+                                                            <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <VBox alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+                                                                     <children>
+                                                                        <ImageView fitHeight="200.0" fitWidth="158.0" onMousePressed="#switchToBookDetails" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../../../InterestingFactsForCuriousMinds.png" />
+                                                                           </image>
+                                                                           <cursor>
+                                                                              <Cursor fx:constant="HAND" />
+                                                                           </cursor>
+                                                                        </ImageView>
+                                                                        <Label styleClass="bookName" text="Interesting Facts For Curious Minds" textAlignment="CENTER" wrapText="true" />
+                                                                     </children>
+                                                                     <opaqueInsets>
+                                                                        <Insets />
+                                                                     </opaqueInsets>
+                                                                     <padding>
+                                                                        <Insets top="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children></AnchorPane>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>

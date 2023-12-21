@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 
 import static librarypackage.Library.users;
-import static UsersOfLibrary.Borrower.BorrowerNum;
+
 import static UsersOfLibrary.Borrower.borrowers;
 
 
@@ -22,15 +22,12 @@ public class AdminFunctionalities implements CommonFunctions
     @FXML
     TextField BorrowerName,EmailBorrower,PasswordBorrower,NameOfBorrower,EmailOfBorrower,PasswordOfBorrower,CurrentEmail,BorID;
     public void addBorrower(ActionEvent e) throws IOException {
-        // BorrowerNum+=1;
-        try{
-            String borrowusername,borrowemail,borrowpassword;
-            int id;
             try {
+                String borrowusername,borrowemail,borrowpassword;
                 borrowusername =this.BorrowerName.getText();
                 borrowemail = this.EmailBorrower.getText();
                 borrowpassword = this.PasswordBorrower.getText();
-                id=Integer.parseInt(this.BorID.getText());
+
                 boolean signedInSuccessfully = true;
                 if (this.checkName(borrowusername) == false) {
                     System.out.println("Please Enter only characters in user name field");
@@ -48,49 +45,24 @@ public class AdminFunctionalities implements CommonFunctions
                     System.out.println("invalid email");
                     signedInSuccessfully = false;
                 }
-               /* for(int i=0;i<users.size();i++)
-                {
-                    if(borrowemail.compareTo(users.get(i).getEmail())==0)
-                    {
+                for (User user : users) {
+                    if (borrowemail.compareTo(user.getEmail()) == 0) {
                         signedInSuccessfully = false;
                         System.out.println("email");
 
                     }
-                }*/
-                for(int i=0;i<borrowers.size();i++)
-                {
-                    if(borrowers.get(i).getId()==id) {
-                        signedInSuccessfully = false;
-                        break;
-                    }
                 }
-                if (!signedInSuccessfully) {
-                    // switch to libraryScene
-                    this.showAlert("email format must be correct and Password Must be Strong");
-                    PasswordBorrower.clear();
-                    BorrowerName.clear();
-                    EmailBorrower.clear();
+                if (!signedInSuccessfully){
+                    showAlert("wrong input");
+                    return;
                 }
-                else
-                {
-                    //Mazen Mohammed
-                   User u=new User(Integer.parseInt(BorID.getText()),BorrowerName.getText(),EmailBorrower.getText(),PasswordBorrower.getText());
-                    //users.add(u); // user constructor already adds u to the array list
-                    // need to check
-                    Borrower bro=new Borrower(Integer.parseInt(BorID.getText()),BorrowerName.getText(),EmailBorrower.getText(),PasswordBorrower.getText());
-                    borrowers.add(bro); // borrower extends user so we dont need to make an object of user
-                    //System.out.println(borrowers.size());
-                    //System.out.println("Borrower");
-                }
+
+
+                    Borrower bro=new Borrower(BorrowerName.getText(),EmailBorrower.getText(),PasswordBorrower.getText());
             }catch (NullPointerException ex){
                 System.out.println(ex.getMessage());
                 this.showAlert("enter information then please press enter");
             }
-        }
-        catch(NullPointerException n) {
-            System.out.println("ok");
-        }
-
     }
     int index;
 
@@ -127,8 +99,6 @@ public class AdminFunctionalities implements CommonFunctions
                 users.get(index).setPassword(Password);
                 users.get(index).setName(Username);
                 ChangeSuccesfully = false;
-                //System.out.println(users.size());
-                //  System.out.println(ChangeSuccesfully);
             }
         }
         catch (NullPointerException n) {
