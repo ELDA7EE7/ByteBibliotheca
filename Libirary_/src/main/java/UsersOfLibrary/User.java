@@ -8,7 +8,7 @@ import static librarypackage.Library.users;
 
 public class User extends Person implements Serializable {
 
-    private static int userCounter =0;
+    protected static int userCounter =0;
     private static User currentUser;
 
   private ArrayList<Integer>userOrders = new ArrayList<>();//order id
@@ -27,9 +27,9 @@ public class User extends Person implements Serializable {
         userCounter++;
         users.add(this);
     }
-    public static int getUserCounter() {
-        return userCounter;
-    }
+    //public static int getUserCounter() {
+        //return userCounter;
+    //}
     public static void incrementUsersCounter(){
         userCounter++;
     }

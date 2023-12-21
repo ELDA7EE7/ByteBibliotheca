@@ -1,5 +1,7 @@
 package com.example.libirary_;
 
+import InterfacesPackage.CommonFunctions;
+import UsersOfLibrary.Borrower;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import librarypackage.Book;
 import resourcesimports.UserInterfaceIcons;
 import shoppingcart.ShoppingCart;
 
@@ -23,9 +26,9 @@ import java.util.ResourceBundle;
 
 
 import static UsersOfLibrary.Borrower.getCurrent_borrower;
-import static librarypackage.Library.getSelectedBook;
+import static librarypackage.Library.*;
 
-public class BookDetailsController implements Initializable {
+public class BookDetailsController implements Initializable, CommonFunctions {
 
     private Stage stage;
     private Scene scene;
@@ -87,6 +90,7 @@ public class BookDetailsController implements Initializable {
         bookName.setText(getSelectedBook().getTitle());
         price.setText(Float.toString(getSelectedBook().getPrice()));
         genre.setText(getSelectedBook().getGenre());
+        showSimilarBooks();
     }
     @FXML
     void switchToShoppingCart(MouseEvent e) throws IOException{
@@ -240,5 +244,111 @@ public class BookDetailsController implements Initializable {
     void addBookToShoppingCart(){
         ShoppingCart shoppingCart = new ShoppingCart();
         shoppingCart.addBook(getSelectedBook());
+    }
+    @FXML
+    public void notifyWhenAvailable(ActionEvent event)
+    {
+        if(getSelectedBook().isAvailable())
+        {
+            showAlert("This Book is Available");
+            return;
+        }
+        for (int i=0;i<getCurrent_borrower().BorrowedBookID.size();i++)
+        {
+            if(getSelectedBook().getBookID()==getCurrent_borrower().BorrowedBookID.get(i))
+            {
+                showAlert("You already borrowed the book");
+                return;
+            }
+        }
+        for (int i = 0; i< Borrower.getCurrent_borrower().notifyWhenAvailableBook.size(); i++)
+        {
+            if(getSelectedBook().getBookID()==Borrower.getCurrent_borrower().notifyWhenAvailableBook.get(i).getBookID())
+            {
+                showAlert("This book is already in the wishlist");
+                return;
+            }
+        }
+        Borrower.getCurrent_borrower().notifyWhenAvailableBook.add(getSelectedBook());
+    }
+    @FXML
+    public void unBorrowBook(ActionEvent event)
+    {
+        if(getSelectedBook().isAvailable())
+        {
+            showAlert("you don't the book");
+            return;
+        }
+        for (int i=0;i<getCurrent_borrower().BorrowedBookID.size();i++)
+        {
+            if(getSelectedBook().getBookID()==getCurrent_borrower().BorrowedBookID.get(i))
+            {
+                getSelectedBook().setAvailable(true);
+                int indx = getCurrent_borrower().BorrowedBookID.size()-1;
+                getCurrent_borrower().BorrowedBookID.set(i,getCurrent_borrower().BorrowedBookID.get(indx));
+                getCurrent_borrower().BorrowedBookID.remove(indx);
+                showAlert("Book returned successfully");
+                return;
+            }
+        }
+        showAlert("you are not the person who borrowed the book");
+    }
+    public void showSimilarBooks(){
+        int counter=0;
+        for (Book book:books){
+            if(book.getBookID()!=getSelectedBook().getBookID() &&(book.getAuthor().equals(getSelectedBook().getAuthor())|| book.getGenre().equals(getSelectedBook().getGenre()))){
+                if(counter==0) {
+                    book1Name.setText(book.getTitle());
+                    book1Cover.setImage(new Image(book.getCoverPath()));
+                } else if (counter==1) {
+                    book2Name.setText(book.getTitle());
+                    book2Cover.setImage(new Image(book.getCoverPath()));
+                } else if (counter==2) {
+                    book3Name.setText(book.getTitle());
+                    book3Cover.setImage(new Image(book.getCoverPath()));
+                } else{
+                    break;
+                }
+                counter++;
+            }
+        }
+        if(counter<3){
+            for(Book book:books){
+                if(!book.getTitle().equals(getSelectedBook().getTitle())
+                        && !book1Name.getText().equals(book.getTitle())
+                        && !book2Name.getText().equals(book.getTitle())){
+                    if(counter==0) {
+                        book1Name.setText(book.getTitle());
+                        book1Cover.setImage(new Image(book.getCoverPath()));
+                    } else if (counter==1) {
+                        book2Name.setText(book.getTitle());
+                        book2Cover.setImage(new Image(book.getCoverPath()));
+                    } else if (counter==2) {
+                        book3Name.setText(book.getTitle());
+                        book3Cover.setImage(new Image(book.getCoverPath()));
+                    } else if (counter==3){
+                        break;
+                    }
+                    counter++;
+                }
+            }
+        }
+    }
+    @FXML
+    public void switchToAnotherBook(MouseEvent e) throws IOException {
+        ImageView clickedImageView =(ImageView) e.getSource();
+        String clickedImageURL= clickedImageView.getImage().getUrl();
+
+
+        for(Book book:books){
+            if(book.testCover().equals(clickedImageURL)){
+                setSelectedBook(book);
+            }
+        }
+        Parent root= FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
+        Stage stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
+        Scene scene= new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

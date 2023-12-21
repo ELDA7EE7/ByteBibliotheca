@@ -27,6 +27,7 @@ public interface CommonFunctions {
         alert.showAndWait();
     }
 
+
     default void SwitchToNextScene(MouseEvent event, String nameOfNextScene) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource(nameOfNextScene));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

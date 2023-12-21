@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
@@ -13,9 +14,9 @@
 
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" scaleShape="false" stylesheets="@Categories.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.CategoriesController">
    <children>
-      <BorderPane prefHeight="1080.0" prefWidth="1920.0">
-         <top>
-            <AnchorPane prefHeight="100.0" prefWidth="1920.0" style="-fx-background-color: #191919;" BorderPane.alignment="CENTER">
+      <ScrollPane layoutX="84.0" layoutY="137.0" prefHeight="874.0" prefWidth="1396.0" styleClass="scrollbar.css" stylesheets="@scrollbar.css">
+         <content>
+            <HBox prefHeight="1089.0" prefWidth="1379.0" spacing="25.0">
                <children>
                   <ImageView fitHeight="36.0" fitWidth="270.0" layoutX="227.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="51.0" AnchorPane.topAnchor="32.0">
                      <image>

@@ -77,5 +77,11 @@
          </font>
       </Label>
       <Button fx:id="updateBookInfoButton" alignment="CENTER" layoutX="109.0" layoutY="245.0" mnemonicParsing="false" onAction="#switchToUpdateBookInfoPageScene" prefHeight="40.0" prefWidth="140.0" stylesheets="@buttons.css" text="Update Book Info" />
+      <TextField fx:id="BorID" layoutX="210.0" layoutY="849.0" prefHeight="25.0" prefWidth="193.0" />
+      <Label layoutX="28.0" layoutY="852.0" text="Borrower ID :">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
