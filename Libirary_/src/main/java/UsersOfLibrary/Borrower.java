@@ -1,11 +1,9 @@
 package UsersOfLibrary;
-import FileHandlingPackage.FileHandling;
 import InterfacesPackage.CommonFunctions;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import librarypackage.Book;
 import librarypackage.Transaction;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -22,7 +20,6 @@ public class Borrower extends User implements CommonFunctions, Serializable
    // private static int BorrowerCount=1;
     private String PhoneNumber ;
     public static Borrower current_borrower;
-    public static ArrayList<Borrower> borrowers = new ArrayList<Borrower>();
     public ArrayList<Book> notifyWhenAvailableBook = new ArrayList<Book>();
 
     public ArrayList<Integer>BorrowedBookID=new ArrayList<Integer>();
