@@ -1,5 +1,6 @@
 package com.example.libirary_;
 
+import InterfacesPackage.CommonFunctions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,16 +13,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import librarypackage.Book;
 import resourcesimports.UserInterfaceIcons;
-
 import java.io.IOException;
-
 import static librarypackage.Library.books;
+import static librarypackage.Library.setSelectedBook;
 
-public class CategoriesController {
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+public class CategoriesController implements CommonFunctions {
     public Image shoppingCartIconOnHover = UserInterfaceIcons.shoppingCartOnHover;
     public Image shoppingCartIconOnClick = UserInterfaceIcons.shoppingCartOnClick;
     public Image profileIconOnHover = UserInterfaceIcons.profileOnHover;
@@ -40,54 +38,57 @@ public class CategoriesController {
     }
     @FXML
     void switchToSearch(ActionEvent e) throws IOException {
-        root= FXMLLoader.load(getClass().getResource("SearchScene.fxml"));
-        stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setFullScreen(true);
-        stage.setScene(scene);
-        stage.show();
+       SwitchToNextScene(e,"SearchScene.fxml");
     }
 
     @FXML
     void switchToUserProfile(ActionEvent e) throws IOException{
         profileIcon.setImage(profileIconOnClick);
-        root= FXMLLoader.load(getClass().getResource("UserProfile.fxml"));
-        stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setFullScreen(true);
-        stage.setScene(scene);
-        stage.show();
+        SwitchToNextScene(e,"UserProfile.fxml");
     }
 
     @FXML
     public void switchToShoppingCart(MouseEvent e) throws IOException { //Change Scene to Cart Page
         profileIcon.setImage(shoppingCartIconOnClick);
-        root= FXMLLoader.load(getClass().getResource("ShoppingCart.fxml"));
-        stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setFullScreen(true);
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
-    @FXML
-    public void switchToBookDetails(MouseEvent e) throws IOException{//Change Scene to BookDetails Page
-        root= FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
-        stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        SwitchToNextScene(e,"ShoppingCart.fxml");
     }
 
     @FXML
     public void switchToCategories(ActionEvent e) throws IOException {//Change Scene to Categories Page
         System.out.println(books.size());
-        root= FXMLLoader.load(getClass().getResource("Categories.fxml"));
-        stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
-        stage.show();
+       SwitchToNextScene(e,"Categories.fxml");
     }
+    @FXML
+    public void switchToBookDetails(MouseEvent e) throws IOException{//Change Scene to BookDetails Page
+        ImageView clickedImageView =(ImageView) e.getSource();
+        String clickedImageURL= clickedImageView.getImage().getUrl();
+
+        for(Book book:books){
+            if(book.testCover().equals(clickedImageURL)){
+                setSelectedBook(book);
+            }
+        }
+       SwitchToNextScene(e,"BookDetails.fxml");
+    }
+    private static Image image=new Image("berserk1.jpg");
+    @FXML
+    private ImageView rand;
+    private static int last_value=-1;
+    public void random(ActionEvent e) throws IOException
+    {
+        int max = books.size()-1;
+        int min = 0;
+        int range = max - min + 1;
+        int rando = (int)(Math.random() * range) + min;
+        while (last_value==rando) {
+            rando = (int) (Math.random() * range) + min;
+        }
+        String path = books.get(rando).getCoverPath();
+        image = new Image(path);
+        setSelectedBook(books.get(rando));
+        rand.setImage(image);
+        last_value=rando;
+        System.out.println(rando);
+    }
+
 }

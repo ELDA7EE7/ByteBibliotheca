@@ -20,16 +20,17 @@ public class AdminFunctionalities implements CommonFunctions
     @FXML
     Button updateBookInfoButton,RemoveBook;
     @FXML
-    TextField BorrowerName,EmailBorrower,PasswordBorrower,NameOfBorrower,EmailOfBorrower,PasswordOfBorrower,CurrentEmail;
+    TextField BorrowerName,EmailBorrower,PasswordBorrower,NameOfBorrower,EmailOfBorrower,PasswordOfBorrower,CurrentEmail,BorID;
     public void addBorrower(ActionEvent e) throws IOException {
         // BorrowerNum+=1;
         try{
             String borrowusername,borrowemail,borrowpassword;
+            int id;
             try {
                 borrowusername =this.BorrowerName.getText();
                 borrowemail = this.EmailBorrower.getText();
                 borrowpassword = this.PasswordBorrower.getText();
-
+                id=Integer.parseInt(this.BorID.getText());
                 boolean signedInSuccessfully = true;
                 if (this.checkName(borrowusername) == false) {
                     System.out.println("Please Enter only characters in user name field");
@@ -47,13 +48,20 @@ public class AdminFunctionalities implements CommonFunctions
                     System.out.println("invalid email");
                     signedInSuccessfully = false;
                 }
-                for(int i=0;i<users.size();i++)
+               /* for(int i=0;i<users.size();i++)
                 {
                     if(borrowemail.compareTo(users.get(i).getEmail())==0)
                     {
                         signedInSuccessfully = false;
                         System.out.println("email");
 
+                    }
+                }*/
+                for(int i=0;i<borrowers.size();i++)
+                {
+                    if(borrowers.get(i).getId()==id) {
+                        signedInSuccessfully = false;
+                        break;
                     }
                 }
                 if (!signedInSuccessfully) {
@@ -66,12 +74,13 @@ public class AdminFunctionalities implements CommonFunctions
                 else
                 {
                     //Mazen Mohammed
-                    User u=new User(BorrowerName.getText(),EmailBorrower.getText(),PasswordBorrower.getText());
-                    users.add(u); // user constructor already adds u to the array list
+                   User u=new User(Integer.parseInt(BorID.getText()),BorrowerName.getText(),EmailBorrower.getText(),PasswordBorrower.getText());
+                    //users.add(u); // user constructor already adds u to the array list
                     // need to check
-                    Borrower bro=new Borrower(BorrowerNum,BorrowerName.getText(),EmailBorrower.getText(),PasswordBorrower.getText());
+                    Borrower bro=new Borrower(Integer.parseInt(BorID.getText()),BorrowerName.getText(),EmailBorrower.getText(),PasswordBorrower.getText());
                     borrowers.add(bro); // borrower extends user so we dont need to make an object of user
-                    System.out.println(borrowers.size());
+                    //System.out.println(borrowers.size());
+                    //System.out.println("Borrower");
                 }
             }catch (NullPointerException ex){
                 System.out.println(ex.getMessage());
