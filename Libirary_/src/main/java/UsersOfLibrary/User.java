@@ -20,6 +20,8 @@ public class User extends Person implements Serializable {
    public User(int id,String userName, String email, String password){
 
        super(id,userName,email,password);
+       userCounter++;
+       users.add(this);
    }
     public User(String userName, String email, String password) {
 
