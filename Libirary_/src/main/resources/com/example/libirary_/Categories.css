@@ -1,0 +1,48 @@
+.Heading1{
+    -fx-text-fill: #e5e5e5;
+    -fx-font-family: Inter;
+    -fx-font-size: 25px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+}
+.bookName{
+    -fx-text-fill: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+    -fx-font-family: Inter;
+    -fx-font-size: 20px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: #232323;
+
+}
+
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+}
+
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+    -fx-border-color: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+}
+
+.scroll-bar:horizontal .track {
+    -fx-background-color: #232323;
+}
+
+
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+}
+
+.scroll-bar:horizontal .increment-button,
+.scroll-bar:horizontal .decrement-button {
+    -fx-background-color: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+    -fx-border-color: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+}

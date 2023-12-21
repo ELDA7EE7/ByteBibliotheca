@@ -12,40 +12,56 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import librarypackage.Book;
 import resourcesimports.UserInterfaceIcons;
 
 import java.io.IOException;
 
 import static librarypackage.Library.books;
+import static librarypackage.Library.setSelectedBook;
 
 public class CategoriesController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private final Image backIconDefault = UserInterfaceIcons.goBack;
+    private final Image backIconOnHover = UserInterfaceIcons.goBackOnHover;
+    private final Image backIconOnClick = UserInterfaceIcons.goBackOnClick;
+    private final Image profileIconDefault = UserInterfaceIcons.profile;
+    private final Image profileIconOnHover = UserInterfaceIcons.profileOnHover;
+    private final Image profileIconOnClick = UserInterfaceIcons.profileOnClick;
+    public Image shoppingCartIconDefault = UserInterfaceIcons.shoppingCart;
     public Image shoppingCartIconOnHover = UserInterfaceIcons.shoppingCartOnHover;
     public Image shoppingCartIconOnClick = UserInterfaceIcons.shoppingCartOnClick;
-    public Image profileIconOnHover = UserInterfaceIcons.profileOnHover;
-    public Image profileIconOnClick = UserInterfaceIcons.profileOnClick;
     @FXML
     ImageView shoppingCartIcon;
     @FXML
     ImageView profileIcon;
     @FXML
-    void switchProfileIconToHover(){
+    ImageView backIcon;
+    @FXML
+    void switchBackIconOnHover(MouseEvent event) {
+        backIcon.setImage(backIconOnHover);
+    }
+    @FXML
+    void resetBackIcon(){
+        backIcon.setImage(backIconDefault);
+    }
+    @FXML
+    void switchProfileIconOnHover(MouseEvent event) {
         profileIcon.setImage(profileIconOnHover);
+    }
+    @FXML
+    void resetProfileIcon(){
+        profileIcon.setImage(profileIconDefault);
     }
     @FXML
     void switchShoppingCartIconToHover(){
         shoppingCartIcon.setImage(shoppingCartIconOnHover);
     }
     @FXML
-    void switchToSearch(ActionEvent e) throws IOException {
-        root= FXMLLoader.load(getClass().getResource("SearchScene.fxml"));
-        stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setFullScreen(true);
-        stage.setScene(scene);
-        stage.show();
+    void resetShoppingCartIcon(){
+        shoppingCartIcon.setImage(shoppingCartIconDefault);
     }
 
     @FXML
@@ -61,7 +77,7 @@ public class CategoriesController {
 
     @FXML
     public void switchToShoppingCart(MouseEvent e) throws IOException { //Change Scene to Cart Page
-        profileIcon.setImage(shoppingCartIconOnClick);
+        shoppingCartIcon.setImage(shoppingCartIconOnClick);
         root= FXMLLoader.load(getClass().getResource("ShoppingCart.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
@@ -70,24 +86,31 @@ public class CategoriesController {
         stage.show();
 
     }
-
+    @FXML
+    void backToHomePage(MouseEvent event) throws IOException {
+        backIcon.setImage(backIconOnClick);
+        root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setFullScreen(true);
+        stage.show();
+    }
     @FXML
     public void switchToBookDetails(MouseEvent e) throws IOException{//Change Scene to BookDetails Page
+        ImageView clickedImageView =(ImageView) e.getSource();
+        String clickedImageURL= clickedImageView.getImage().getUrl();
+
+
+        for(Book book:books){
+            if(book.testCover().equals(clickedImageURL)){
+                setSelectedBook(book);
+            }
+        }
         root= FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
         stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    public void switchToCategories(ActionEvent e) throws IOException {//Change Scene to Categories Page
-        System.out.println(books.size());
-        root= FXMLLoader.load(getClass().getResource("Categories.fxml"));
-        stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setScene(scene);
-        stage.setFullScreen(true);
         stage.show();
     }
 }
