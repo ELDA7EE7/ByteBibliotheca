@@ -89,4 +89,8 @@ public class ShoppingCart {
     public void setBookCount(int bookCount) {
         this.bookCount = bookCount;
     }
+    public void countBooks(){
+        BookCounter bookCounter = new BookCounter();
+        bookCounter.execute(this);
+    }
 }

@@ -134,8 +134,9 @@ public class ShoppingCartController implements Initializable {
     }
     @FXML
     void createNewOrder(){
-        orders.add(new Order(shoppingCart.getTotalPrice(),LocalDate.now(),shoppingCart.getBookCount()));
-        System.out.println(new Order(shoppingCart.getTotalPrice(), LocalDate.now(),shoppingCart.getBookCount()));
+        shoppingCart.countBooks();
+        Order order = new Order(shoppingCart.getTotalPrice(),LocalDate.now(),shoppingCart.getBookCount());
+        orders.add(order);
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
