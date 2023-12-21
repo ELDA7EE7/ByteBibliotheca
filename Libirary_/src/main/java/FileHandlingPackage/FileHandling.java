@@ -129,6 +129,7 @@ public class FileHandling {
     }
     public  static void saveBorrowers(){
         try{
+            System.out.println(borrowers.size());
             File saveBorrowerFile = new File ("Borrowers.txt");
             FileOutputStream borrowerFOS = new FileOutputStream(saveBorrowerFile);
             ObjectOutputStream borrowerOOS = new ObjectOutputStream(borrowerFOS);

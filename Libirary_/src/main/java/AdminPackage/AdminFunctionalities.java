@@ -12,8 +12,6 @@ import java.io.IOException;
 
 import static librarypackage.Library.users;
 
-import static UsersOfLibrary.Borrower.borrowers;
-
 
 public class AdminFunctionalities implements CommonFunctions
 {
@@ -66,14 +64,14 @@ public class AdminFunctionalities implements CommonFunctions
     }
     int index;
 
-    boolean ChangeSuccesfully=false;
+    boolean ChangeSuccessfully =false;
 
     public void ViewBorrower(ActionEvent e) throws IOException {
 
         String C_Email = CurrentEmail.getText();
         for (int i = 0; i < users.size(); i++) {
             if (C_Email.compareTo(users.get(i).getEmail()) == 0) {
-                ChangeSuccesfully = true;
+                ChangeSuccessfully = true;
                 index = i;
                 NameOfBorrower.setText(users.get(i).getName());
                 EmailOfBorrower.setText(users.get(i).getEmail());
@@ -94,11 +92,11 @@ public class AdminFunctionalities implements CommonFunctions
 
         try{
 
-            if(ChangeSuccesfully) {
+            if(ChangeSuccessfully) {
                 users.get(index).setEmail(Email);
                 users.get(index).setPassword(Password);
                 users.get(index).setName(Username);
-                ChangeSuccesfully = false;
+                ChangeSuccessfully = false;
             }
         }
         catch (NullPointerException n) {
@@ -106,9 +104,9 @@ public class AdminFunctionalities implements CommonFunctions
     }
     public void RemoveBorrowers(ActionEvent e) throws IOException
     {
-        if(ChangeSuccesfully){
+        if(ChangeSuccessfully){
             users.remove(index);
-            ChangeSuccesfully=false;
+            ChangeSuccessfully =false;
             PasswordOfBorrower.setText("");
             NameOfBorrower.setText("");
             EmailOfBorrower.setText("");

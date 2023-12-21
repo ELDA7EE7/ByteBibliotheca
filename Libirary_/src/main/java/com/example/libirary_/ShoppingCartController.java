@@ -22,7 +22,7 @@ import shoppingcart.ShoppingCart;
 import shoppingcart.commands.TotalPriceCalculator;
 import userprofile.Order;
 
-
+import static UsersOfLibrary.User.getCurrentUser;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -135,12 +135,17 @@ public class ShoppingCartController implements Initializable {
     @FXML
     void createNewOrder(){
         orders.add(new Order(shoppingCart.getTotalPrice(),LocalDate.now(),shoppingCart.getBookCount()));
+        getCurrentUser().addOder(orders.get(orders.size()-1).getOrderId());
+
         System.out.println(new Order(shoppingCart.getTotalPrice(), LocalDate.now(),shoppingCart.getBookCount()));
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         shoppingCart = new ShoppingCart();
-
+        List<Discount> ls= new ArrayList<>();
+        Discount discount = new Discount("topsale",0.2f);
+        ls.add(discount);
+        shoppingCart.setDiscounts(ls);
         for(int i = 0; i< shoppingCart.getBooks().size(); i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("ShoppingCartBook.fxml"));
