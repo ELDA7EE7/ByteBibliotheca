@@ -42,7 +42,7 @@ public class BookDetailsController implements Initializable , CommonFunctions {
      public Button addToShoppingCart,borrow,confirmReview,notifyWhenAvailable,unBorrow;
     @FXML
     public TextArea reviewArea;
-    private boolean resetStarBlooen=true,savedStars=false,isSavedStars;
+    private boolean resetStarBoolean =true,savedStars=false,isSavedStars;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image imagePath = new Image (getSelectedBook().getCoverPath());
@@ -111,7 +111,7 @@ public class BookDetailsController implements Initializable , CommonFunctions {
             isSavedStars=true;
         }
         savedStars=true;
-        resetStarBlooen = false;
+        resetStarBoolean = false;
         star_1_image = new Image("star_fill.png");
         star_1.setImage(star_1_image);
     }
@@ -123,7 +123,7 @@ public class BookDetailsController implements Initializable , CommonFunctions {
             isSavedStars=true;
         }
         savedStars=true;
-        resetStarBlooen = false;
+        resetStarBoolean = false;
         display_Star_1();
         star_2_image = new Image("star_fill.png");
         star_2.setImage(star_2_image);
@@ -136,7 +136,7 @@ public class BookDetailsController implements Initializable , CommonFunctions {
             isSavedStars=true;
         }
         savedStars=true;
-        resetStarBlooen = false;
+        resetStarBoolean = false;
         display_Star_2();
         star_3_image = new Image("star_fill.png");
         star_3.setImage(star_3_image);
@@ -148,11 +148,11 @@ public class BookDetailsController implements Initializable , CommonFunctions {
             isSavedStars=true;
         }
         savedStars=true;
-        resetStarBlooen = false;
+        resetStarBoolean = false;
         display_Star_3();
         star_4_image = new Image("star_fill.png");
         star_4.setImage(star_4_image);
-        resetStarBlooen = false;
+        resetStarBoolean = false;
     }
     public void save_Star_5()
     {
@@ -161,11 +161,11 @@ public class BookDetailsController implements Initializable , CommonFunctions {
             isSavedStars=true;
         }
         savedStars=true;
-        resetStarBlooen = false;
+        resetStarBoolean = false;
         display_Star_4();
         star_5_image = new Image("star_fill.png");
         star_5.setImage(star_5_image);
-        resetStarBlooen = false;
+        resetStarBoolean = false;
     }
     public void displayStarFrame()
     {
@@ -182,7 +182,7 @@ public class BookDetailsController implements Initializable , CommonFunctions {
     }
     public void resetStars()
     {
-        if(resetStarBlooen)
+        if(resetStarBoolean)
         {
             displayStarFrame();
         }

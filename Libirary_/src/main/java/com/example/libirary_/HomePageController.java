@@ -133,31 +133,5 @@ public class HomePageController implements Initializable , CommonFunctions
         }
         Borrower.getCurrent_borrower().notifyWhenAvailableBook.clear();
         Borrower.getCurrent_borrower().notifyWhenAvailableBook.addAll(B);
-        /*Book book =new Book("Rich Dad Poor Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", BooksImages.richDadPoorDad,true,4,12);
-
-        book =new Book("Atomic habit","Ehab","Valid",2000,500,
-                "HUmanDevelopment", BooksImages.atomicHabits,true,4,4);
-
-        book =new Book("Rich Dad  Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", BooksImages.richDadPoorDad,true,3,5);*/
-
-
-
-
-
-        /*Image  imagebook =new Image(Book.books.get(0).getImagepath());
-         bookimage1.setImage(imagebook);
-        bookname1.setText(Book.books.get(0).getTitle());
-
-        imagebook =new Image(Book.books.get(1).getImagepath());
-        bookimage2.setImage(imagebook);
-        bookname2.setText(Book.books.get(1).getTitle());
-
-        imagebook =new Image(Book.books.get(2).getImagepath());
-        bookimage3.setImage(imagebook);
-        bookname3.setText(Book.books.get(2).getTitle());*/
-
-
     }
 }
