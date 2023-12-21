@@ -1,6 +1,7 @@
 package com.example.libirary_;
 
-import displaybook.SaveStar;
+import InterfacesPackage.CommonFunctions;
+import UsersOfLibrary.Borrower;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,14 +21,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
-import static com.example.libirary_.HomePageController.notifyWhenAvailableBook;
-import static librarypackage.Library.books;
-
 import static UsersOfLibrary.Borrower.getCurrent_borrower;
+import static com.example.libirary_.HomePageController.notifyWhenAvailableBook;
 import static librarypackage.Library.getSelectedBook;
 
-public class BookDetailsController implements Initializable {
+public class BookDetailsController implements Initializable , CommonFunctions {
 
     private Stage stage;
     private Scene scene;
@@ -38,12 +36,10 @@ public class BookDetailsController implements Initializable {
     @FXML
     public Label Review1,Review2,Username1,Username2,book1Name,book2Name,book3Name,bookDescription,bookName,price,genre,auther,publishDate,rate;
     @FXML
-     public Button addToShoppingCart,borrow,confirmReview,notifyWhenAvailable;
+     public Button addToShoppingCart,borrow,confirmReview,notifyWhenAvailable,unBorrow;
     @FXML
     public TextArea reviewArea;
     private boolean resetStarBlooen=true,savedStars=false,isSavedStars;
-    int bookID;
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image imagePath = new Image (getSelectedBook().getCoverPath());
@@ -234,6 +230,50 @@ public class BookDetailsController implements Initializable {
     @FXML
     public void notifyWhenAvailable(ActionEvent event)
     {
-        notifyWhenAvailableBook.add(getSelectedBook());
+        if(getSelectedBook().isAvailable())
+        {
+            showAlert("This Book is Available");
+            return;
+        }
+        for (int i=0;i<getCurrent_borrower().BorrowedBookID.size();i++)
+        {
+            if(getSelectedBook().getBookID()==getCurrent_borrower().BorrowedBookID.get(i))
+            {
+                showAlert("You Have The Book");
+                return;
+            }
+        }
+        for (int i = 0; i< Borrower.getCurrent_borrower().notifyWhenAvailableBook.size(); i++)
+        {
+            if(getSelectedBook().getBookID()==Borrower.getCurrent_borrower().notifyWhenAvailableBook.get(i).getBookID())
+            {
+                showAlert("Is already in the wishlist");
+                return;
+            }
+        }
+        Borrower.getCurrent_borrower().notifyWhenAvailableBook.add(getSelectedBook());
+        System.out.println(notifyWhenAvailableBook.size());
+    }
+    @FXML
+    public void unBorrowBook(ActionEvent event)
+    {
+        if(getSelectedBook().isAvailable())
+        {
+            showAlert("you dont the book");
+            return;
+        }
+        for (int i=0;i<getCurrent_borrower().BorrowedBookID.size();i++)
+        {
+            if(getSelectedBook().getBookID()==getCurrent_borrower().BorrowedBookID.get(i))
+            {
+                getSelectedBook().setAvailable(true);
+                int indx = getCurrent_borrower().BorrowedBookID.size()-1;
+                getCurrent_borrower().BorrowedBookID.set(i,getCurrent_borrower().BorrowedBookID.get(indx));
+                getCurrent_borrower().BorrowedBookID.remove(indx);
+                showAlert("Unborrowed");
+                return;
+            }
+        }
+        showAlert("you are not the person who borrowed the book");
     }
 }

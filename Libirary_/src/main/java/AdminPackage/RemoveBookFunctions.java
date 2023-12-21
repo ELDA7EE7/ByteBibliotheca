@@ -60,8 +60,6 @@ public class RemoveBookFunctions {
     public void DeleteBook(ActionEvent e){
         try{
             books.remove(index);
-
-
             RemoveBookname.setText("");
             RemoveNameAuthor.setText("");
             RemoveAuthor.setText("");
