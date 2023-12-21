@@ -49,7 +49,7 @@
                <children>
                   <VBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <ImageView fx:id="book1Cover" fitHeight="218.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="book1Cover" fitHeight="218.0" fitWidth="163.0" onMouseClicked="#switchToAnotherBook" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../FourthWing.png" />
                            </image>
@@ -59,7 +59,7 @@
                   </VBox>
                   <VBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <ImageView fx:id="book2Cover" fitHeight="218.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="book2Cover" fitHeight="218.0" fitWidth="163.0" onMouseClicked="#switchToAnotherBook" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../FourthWing.png" />
                            </image>
@@ -69,7 +69,7 @@
                   </VBox>
                   <VBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <ImageView fx:id="book3Cover" fitHeight="218.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="book3Cover" fitHeight="218.0" fitWidth="163.0" onMouseClicked="#switchToAnotherBook" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../FourthWing.png" />
                            </image>
@@ -85,7 +85,7 @@
             <Label fx:id="bookName" layoutX="347.0" layoutY="31.0" maxHeight="68.0" maxWidth="1095.0" styleClass="heading1" text="Iron Flame" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="40.0" />
             <Button fx:id="addToShoppingCart" layoutX="76.0" layoutY="453.0" mnemonicParsing="false" onAction="#addBookToShoppingCart" prefHeight="70.0" prefWidth="270.0" styleClass="Button" text="Add to Shopping Cart" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="455.0" />
             <Button fx:id="borrow" layoutX="343.3333333333333" layoutY="453.3333333333333" mnemonicParsing="false" onAction="#borrowButtonPressed" prefHeight="70.0" prefWidth="150.0" styleClass="Button" text="Borrow" AnchorPane.leftAnchor="345.0" AnchorPane.topAnchor="455.0" />
-            <Button fx:id="notifyWhenAvailable" layoutX="513.3333333333333" layoutY="453.3333333333333" mnemonicParsing="false" prefHeight="70.0" prefWidth="275.0" styleClass="Button" text="Notify when Available" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="455.0" />
+            <Button fx:id="notifyWhenAvailable" layoutX="513.3333333333333" layoutY="453.3333333333333" mnemonicParsing="false" onAction="#notifyWhenAvailable" prefHeight="70.0" prefWidth="275.0" styleClass="Button" text="Notify when Available" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="455.0" />
             <Label layoutX="49.0" layoutY="550.0" maxHeight="68.0" maxWidth="1095.0" styleClass="heading1" text="Customer Reviews" AnchorPane.leftAnchor="49.0" AnchorPane.topAnchor="550.0" />
             <HBox layoutX="62.0" layoutY="726.0" maxHeight="280.0" maxWidth="740.0" prefWidth="740.0" spacing="20.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="650.0">
                <children>
@@ -136,6 +136,7 @@
                   <Image url="@../../../UserInterfaceIcons/StarOutline_05.png" />
                </image>
             </ImageView>
+            <Button layoutX="810.0" layoutY="455.0" mnemonicParsing="false" onAction="#unBorrowBook" prefHeight="70.0" prefWidth="150.0" styleClass="Button" text="Return Book" />
          </children>
       </AnchorPane>
    </center>

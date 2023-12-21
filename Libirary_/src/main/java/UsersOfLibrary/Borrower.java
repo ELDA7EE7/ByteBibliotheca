@@ -20,10 +20,11 @@ public class Borrower extends User implements CommonFunctions
     //public static int CurrentBorrowerId = getCurrentUser().getId();
     private boolean IsBorrowing;
     private String PhoneNumber ;
-    private static Borrower current_borrower;
+    public static Borrower current_borrower;
     public static ArrayList<Borrower> borrowers = new ArrayList<Borrower>();
+    public ArrayList<Book> notifyWhenAvailableBook = new ArrayList<Book>();
 
-    private ArrayList<Integer>BorrowedBookID=new ArrayList<Integer>();
+    public ArrayList<Integer>BorrowedBookID=new ArrayList<Integer>();
     private ArrayList<LocalDateTime>DaysTillReturn=new ArrayList<LocalDateTime>();
     private ArrayList<LocalDateTime>DateofBorrow=new ArrayList<LocalDateTime>();
     private ArrayList<Boolean>IsReturned=new ArrayList<Boolean>();

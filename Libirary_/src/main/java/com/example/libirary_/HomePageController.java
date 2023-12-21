@@ -1,5 +1,7 @@
 package com.example.libirary_;
 
+import InterfacesPackage.CommonFunctions;
+import UsersOfLibrary.Borrower;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,12 +18,13 @@ import resourcesimports.UserInterfaceIcons;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import static librarypackage.Library.books;
 import static librarypackage.Library.setSelectedBook;
 
-public class HomePageController implements Initializable
+public class HomePageController implements Initializable, CommonFunctions
 {
     private Stage stage;
     private Scene scene;
@@ -116,33 +119,20 @@ public class HomePageController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-
-
-        /*Book book =new Book("Rich Dad Poor Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", BooksImages.richDadPoorDad,true,4,12);
-
-        book =new Book("Atomic habit","Ehab","Valid",2000,500,
-                "HUmanDevelopment", BooksImages.atomicHabits,true,4,4);
-
-        book =new Book("Rich Dad  Dad","Ehab","Valid",2000,500,
-                "HUmanDevelopment", BooksImages.richDadPoorDad,true,3,5);*/
-
-
-
-
-
-        /*Image  imagebook =new Image(Book.books.get(0).getImagepath());
-         bookimage1.setImage(imagebook);
-        bookname1.setText(Book.books.get(0).getTitle());
-
-        imagebook =new Image(Book.books.get(1).getImagepath());
-        bookimage2.setImage(imagebook);
-        bookname2.setText(Book.books.get(1).getTitle());
-
-        imagebook =new Image(Book.books.get(2).getImagepath());
-        bookimage3.setImage(imagebook);
-        bookname3.setText(Book.books.get(2).getTitle());*/
-
-
+        ArrayList<Book> B = new ArrayList<Book>();
+        for(int i = 0; i< Borrower.getCurrent_borrower().notifyWhenAvailableBook.size(); i++)
+        {
+            if(Borrower.getCurrent_borrower().notifyWhenAvailableBook.get(i).isAvailable())
+            {
+                String out = Borrower.getCurrent_borrower().notifyWhenAvailableBook.get(i).getTitle();
+                showAlert(out + "is Available");
+            }
+            else
+            {
+                B.add(Borrower.getCurrent_borrower().notifyWhenAvailableBook.get(i));
+            }
+        }
+        Borrower.getCurrent_borrower().notifyWhenAvailableBook.clear();
+        Borrower.getCurrent_borrower().notifyWhenAvailableBook.addAll(B);
     }
 }
