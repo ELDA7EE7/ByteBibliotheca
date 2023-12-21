@@ -1,6 +1,5 @@
 package com.example.libirary_;
 
-import displaybook.SaveStar;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import librarypackage.Book;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,10 +22,9 @@ import java.util.ResourceBundle;
 
 
 import static com.example.libirary_.HomePageController.notifyWhenAvailableBook;
-import static librarypackage.Library.books;
 
 import static UsersOfLibrary.Borrower.getCurrent_borrower;
-import static librarypackage.Library.getSelectedBook;
+import static librarypackage.Library.*;
 
 public class BookDetailsController implements Initializable {
 
@@ -36,7 +35,7 @@ public class BookDetailsController implements Initializable {
     public ImageView star_1,star_2,star_3,star_4,star_5,backIcon,book1Cover,book2Cover,book3Cover,profileIcon,shoppingCartIcon,bookImage;
     public Image star_1_image,star_2_image,star_3_image,star_4_image,star_5_image;
     @FXML
-    public Label Review1,Review2,Username1,Username2,book1Name,book2Name,book3Name,bookDescription,bookName,price,genre,auther,publishDate,rate;
+    public Label Review1,Review2,Username1,Username2,book1Name,book2Name,book3Name,bookDescription,bookName,price,genre, author,publishDate,rate;
     @FXML
      public Button addToShoppingCart,borrow,confirmReview,notifyWhenAvailable;
     @FXML
@@ -49,12 +48,13 @@ public class BookDetailsController implements Initializable {
         Image imagePath = new Image (getSelectedBook().getCoverPath());
         rate.setText(Float.toString(getSelectedBook().getRating()));
         publishDate.setText(Integer.toString(getSelectedBook().getPublishYear()));
-        auther.setText(getSelectedBook().getAuthor());
+        author.setText(getSelectedBook().getAuthor());
         bookImage.setImage(imagePath);
         bookDescription.setText(getSelectedBook().getDescription());
         bookName.setText(getSelectedBook().getTitle());
         price.setText(Float.toString(getSelectedBook().getPrice()));
         genre.setText(getSelectedBook().getGenre());
+        showSimilarBooks();
         if(getSelectedBook().getRating()==1)
         {
             display_Star_1();
@@ -236,4 +236,63 @@ public class BookDetailsController implements Initializable {
     {
         notifyWhenAvailableBook.add(getSelectedBook());
     }
+    public void showSimilarBooks(){
+        int counter=0;
+        for (Book book:books){
+            if(book.getBookID()!=getSelectedBook().getBookID() &&(book.getAuthor().equals(getSelectedBook().getAuthor())|| book.getGenre().equals(getSelectedBook().getGenre()))){
+                if(counter==0) {
+                    book1Name.setText(book.getTitle());
+                    book1Cover.setImage(new Image(book.getCoverPath()));
+                } else if (counter==1) {
+                    book2Name.setText(book.getTitle());
+                    book2Cover.setImage(new Image(book.getCoverPath()));
+                } else if (counter==2) {
+                    book3Name.setText(book.getTitle());
+                    book3Cover.setImage(new Image(book.getCoverPath()));
+                } else{
+                    break;
+                }
+                counter++;
+            }
+        }
+        if(counter<3){
+            for(Book book:books){
+                if(!book.getTitle().equals(getSelectedBook().getTitle())
+                        && !book1Name.getText().equals(book.getTitle())
+                        && !book2Name.getText().equals(book.getTitle())){
+                    if(counter==0) {
+                        book1Name.setText(book.getTitle());
+                        book1Cover.setImage(new Image(book.getCoverPath()));
+                    } else if (counter==1) {
+                        book2Name.setText(book.getTitle());
+                        book2Cover.setImage(new Image(book.getCoverPath()));
+                    } else if (counter==2) {
+                        book3Name.setText(book.getTitle());
+                        book3Cover.setImage(new Image(book.getCoverPath()));
+                    } else if (counter==3){
+                        break;
+                    }
+                    counter++;
+                }
+            }
+        }
+    }
+    @FXML
+    public void switchToAnotherBook(MouseEvent e) throws IOException {
+        ImageView clickedImageView =(ImageView) e.getSource();
+        String clickedImageURL= clickedImageView.getImage().getUrl();
+
+
+        for(Book book:books){
+            if(book.testCover().equals(clickedImageURL)){
+                setSelectedBook(book);
+            }
+        }
+       Parent root= FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
+       Stage stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
+       Scene scene= new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }
