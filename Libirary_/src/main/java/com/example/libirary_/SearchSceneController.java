@@ -79,6 +79,8 @@ public class SearchSceneController extends FillLists implements SearchEngine , I
 
         try {
             authorList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+
+
                 @Override
                 public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
                     String selectedWord = authorList.getSelectionModel().getSelectedItem();

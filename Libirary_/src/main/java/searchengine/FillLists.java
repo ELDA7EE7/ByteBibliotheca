@@ -36,6 +36,7 @@ public abstract class FillLists {
         fillWordWithOnlyAuthorBooks(words,author);
         authorName.setText(author);
         try{
+            authorList.getItems().clear();
             authorList.getItems().addAll(words);
         }catch (NullPointerException ex){
             System.out.println("NO available books");

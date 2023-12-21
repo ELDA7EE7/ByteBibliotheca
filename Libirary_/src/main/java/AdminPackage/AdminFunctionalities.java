@@ -143,6 +143,6 @@ public class AdminFunctionalities implements CommonFunctions
 
     }
     public void Back(ActionEvent event) throws IOException {
-        BackToAdmin(event);
+        SwitchToNextScene(event,"AdminHomePage.fxml");
     }
 }

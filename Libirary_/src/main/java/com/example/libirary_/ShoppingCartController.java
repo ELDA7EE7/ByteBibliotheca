@@ -1,5 +1,6 @@
 package com.example.libirary_;
 
+
 import UsersOfLibrary.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -136,6 +137,7 @@ public class ShoppingCartController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         shoppingCart = new ShoppingCart();
+
         for(int i = 0; i< shoppingCart.getBooks().size(); i++){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("ShoppingCartBook.fxml"));

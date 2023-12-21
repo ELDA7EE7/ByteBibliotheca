@@ -11,6 +11,6 @@ import java.io.IOException;
 public class UpdateBookInfoController extends UpdateBookFunctions implements CommonFunctions {
 
     public void Back(ActionEvent event) throws IOException {
-        BackToAdmin(event);
+        SwitchToNextScene(event,"AdminHomePage.fxml");
     }
 }

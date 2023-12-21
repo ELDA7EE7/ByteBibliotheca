@@ -1,5 +1,6 @@
 package shoppingcart.commands;
 
+
 import javafx.scene.control.Alert;
 import shoppingcart.Discount;
 import shoppingcart.ShoppingCart;
