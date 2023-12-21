@@ -1,37 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1080.0" maxWidth="1920.0" minHeight="1080.0" minWidth="1920.0" prefHeight="1920.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.SearchSceneController">
+<AnchorPane maxHeight="1080.0" maxWidth="1920.0" minHeight="1080.0" minWidth="1920.0" prefHeight="1920.0" prefWidth="1080.0" style="-fx-background-color: #191919;" stylesheets="@Search.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.SearchSceneController">
     <children>
-        <TextField fx:id="searchBar" layoutX="850.0" layoutY="205.0" prefHeight="54.0" prefWidth="858.0" />
-        <ListView fx:id="searchListView" layoutX="850.0" layoutY="296.0" prefHeight="539.0" prefWidth="858.0" />
-        <Button layoutX="1729.0" layoutY="205.0" mnemonicParsing="false" onAction="#search" prefHeight="54.0" prefWidth="169.0" text="Search">
+      <AnchorPane prefHeight="100.0" prefWidth="1920.0">
+         <children>
+            <ImageView fitHeight="36.0" fitWidth="270.0" layoutX="44.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="51.0" AnchorPane.topAnchor="32.0">
+               <image>
+                  <Image url="@../../../UserInterfaceIcons/Logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="profileIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1736.0" layoutY="-25.0" onMouseClicked="#switchToUserProfile" onMouseEntered="#switchProfileIconOnHover" onMouseExited="#resetProfileIcon" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <image>
+                  <Image url="@../../../UserInterfaceIcons/Profile.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="shoppingCartIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1436.0" layoutY="-12.0" onMouseClicked="#switchToShoppingCart" onMouseEntered="#switchShoppingCartIconToHover" onMouseExited="#resetShoppingCartIcon" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="20.0">
+               <image>
+                  <Image url="@../../../UserInterfaceIcons/ShoppingCart.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="backIcon" fitHeight="60.0" fitWidth="60.0" layoutX="1204.0" layoutY="-6.0" onMouseClicked="#backToHomePage" onMouseEntered="#switchBackIconOnHover" onMouseExited="#resetBackIcon" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="20.0">
+               <image>
+                  <Image url="@../../../UserInterfaceIcons/BackIcon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+        <TextField fx:id="searchBar" layoutX="850.0" layoutY="205.0" prefHeight="54.0" prefWidth="858.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="200.0" />
+        <ListView fx:id="searchListView" layoutX="850.0" layoutY="296.0" prefHeight="539.0" prefWidth="858.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="280.0" />
+        <Button layoutX="508.0" layoutY="117.0" mnemonicParsing="false" onAction="#search" prefHeight="54.0" prefWidth="399.0" styleClass="searchButton" text="Search">
          <font>
             <Font name="Bodoni MT Black" size="23.0" />
          </font></Button>
-      <Button layoutX="14.0" layoutY="38.0" mnemonicParsing="false" onAction="#BackToHomePage" prefHeight="78.0" prefWidth="254.0" text="Back To HomePage">
-         <font>
-            <Font name="Bell MT" size="26.0" />
-         </font></Button>
-      <Label alignment="CENTER" layoutX="304.0" layoutY="14.0" prefHeight="150.0" prefWidth="1312.0" text="ByteBibilotheca">
-         <font>
-            <Font name="Rage Italic" size="70.0" />
-         </font>
-      </Label>
-      <ListView fx:id="authorList" layoutX="631.0" layoutY="296.0" prefHeight="200.0" prefWidth="200.0" />
-      <Label fx:id="authorName" layoutX="631.0" layoutY="220.0" prefHeight="54.0" prefWidth="118.0" text="Author">
+      <ListView fx:id="authorList" layoutX="936.0" layoutY="282.0" prefHeight="232.0" prefWidth="400.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="930.0" AnchorPane.rightAnchor="590.0" AnchorPane.topAnchor="280.0" />
+      <Label fx:id="authorName" alignment="CENTER" contentDisplay="CENTER" layoutX="932.0" layoutY="154.0" prefHeight="142.0" prefWidth="400.0" styleClass="heading2" text="All books written by the Author you selected" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="932.0" AnchorPane.rightAnchor="588.0">
          <font>
             <Font name="Baskerville Old Face" size="30.0" />
          </font>
       </Label>
-      <ListView fx:id="availableList" layoutX="52.0" layoutY="285.0" prefHeight="521.0" prefWidth="363.0" />
-      <Label fx:id="listLabel" layoutX="52.0" layoutY="212.0" prefHeight="54.0" prefWidth="363.0" text="all available books">
+      <ListView fx:id="availableList" layoutX="52.0" layoutY="285.0" prefHeight="835.0" prefWidth="520.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="1350.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="200.0" />
+      <Label fx:id="listLabel" layoutX="448.0" layoutY="210.0" styleClass="heading1" text="Check all available books here" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font name="Bodoni MT" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="120.0" styleClass="heading1" text="Search by Title or Author" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="120.0">
          <font>
             <Font name="Bodoni MT" size="30.0" />
          </font>
