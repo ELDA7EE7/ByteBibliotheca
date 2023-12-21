@@ -24,8 +24,7 @@ import java.util.ResourceBundle;
 import static com.example.libirary_.HomePageController.notifyWhenAvailableBook;
 
 import static UsersOfLibrary.Borrower.getCurrent_borrower;
-import static librarypackage.Library.books;
-import static librarypackage.Library.getSelectedBook;
+import static librarypackage.Library.*;
 
 public class BookDetailsController implements Initializable {
 
@@ -277,6 +276,23 @@ public class BookDetailsController implements Initializable {
                 }
             }
         }
+    }
+    @FXML
+    public void switchToAnotherBook(MouseEvent e) throws IOException {
+        ImageView clickedImageView =(ImageView) e.getSource();
+        String clickedImageURL= clickedImageView.getImage().getUrl();
+
+
+        for(Book book:books){
+            if(book.testCover().equals(clickedImageURL)){
+                setSelectedBook(book);
+            }
+        }
+       Parent root= FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
+       Stage stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
+       Scene scene= new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

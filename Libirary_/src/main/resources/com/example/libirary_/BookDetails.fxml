@@ -49,7 +49,7 @@
                <children>
                   <VBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <ImageView fx:id="book1Cover" fitHeight="218.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="book1Cover" fitHeight="218.0" fitWidth="163.0" onMouseClicked="#switchToAnotherBook" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../FourthWing.png" />
                            </image>
@@ -59,7 +59,7 @@
                   </VBox>
                   <VBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <ImageView fx:id="book2Cover" fitHeight="218.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="book2Cover" fitHeight="218.0" fitWidth="163.0" onMouseClicked="#switchToAnotherBook" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../FourthWing.png" />
                            </image>
@@ -69,7 +69,7 @@
                   </VBox>
                   <VBox alignment="CENTER" spacing="10.0">
                      <children>
-                        <ImageView fx:id="book3Cover" fitHeight="218.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="book3Cover" fitHeight="218.0" fitWidth="163.0" onMouseClicked="#switchToAnotherBook" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../FourthWing.png" />
                            </image>
