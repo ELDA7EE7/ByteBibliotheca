@@ -35,7 +35,6 @@ public class UserProfile implements UploadUserInformation {
         } catch (NullPointerException e) {
             System.out.println("Empty Order List");
         }
-
     }
 
     @Override

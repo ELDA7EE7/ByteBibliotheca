@@ -2,9 +2,10 @@ package userprofile;
 
 import librarypackage.Book;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Order {
+public class Order implements Serializable {
     private final int orderId;
     private static int orderCounter = 0;
     private final float price;
@@ -35,11 +36,12 @@ public class Order {
 
     @Override
     public String toString() {
-        return
-                "Order Id = " + orderId +
-                        "      price =" + price +
-                        "      quantity = " + quantity
-                ;
+        return "Order{" +
+                "orderId=" + orderId +
+                ", price=" + price +
+                ", orderDate=" + orderDate +
+                ", quantity=" + quantity +
+                '}';
     }
 
     public LocalDate getOrderDate() {

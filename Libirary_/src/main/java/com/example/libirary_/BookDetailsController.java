@@ -30,6 +30,15 @@ public class BookDetailsController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private final Image backIconDefault = UserInterfaceIcons.goBack;
+    private final Image backIconOnHover = UserInterfaceIcons.goBackOnHover;
+    private final Image backIconOnClick = UserInterfaceIcons.goBackOnClick;
+    private final Image profileIconDefault = UserInterfaceIcons.profile;
+    private final Image profileIconOnHover = UserInterfaceIcons.profileOnHover;
+    private final Image profileIconOnClick = UserInterfaceIcons.profileOnClick;
+    public Image shoppingCartIconDefault = UserInterfaceIcons.shoppingCart;
+    public Image shoppingCartIconOnHover = UserInterfaceIcons.shoppingCartOnHover;
+    public Image shoppingCartIconOnClick = UserInterfaceIcons.shoppingCartOnClick;
     @FXML
     public ImageView star_1,star_2,star_3,star_4,star_5,backIcon,book1Cover,book2Cover,book3Cover,profileIcon,shoppingCartIcon,bookImage;
     private Image star1 = UserInterfaceIcons.Star1,star2= UserInterfaceIcons.Star2,star3= UserInterfaceIcons.Star3,star4= UserInterfaceIcons.Star4,star5= UserInterfaceIcons.Star5;
@@ -43,6 +52,30 @@ public class BookDetailsController implements Initializable {
     private boolean resetStarBlooen=true,savedStars=false;
     int bookID;
 
+    @FXML
+    void switchBackIconOnHover(MouseEvent event) {
+        backIcon.setImage(backIconOnHover);
+    }
+    @FXML
+    void resetBackIcon(){
+        backIcon.setImage(backIconDefault);
+    }
+    @FXML
+    void switchProfileIconOnHover(MouseEvent event) {
+        profileIcon.setImage(profileIconOnHover);
+    }
+    @FXML
+    void resetProfileIcon(){
+        profileIcon.setImage(profileIconDefault);
+    }
+    @FXML
+    void switchShoppingCartIconToHover(){
+        shoppingCartIcon.setImage(shoppingCartIconOnHover);
+    }
+    @FXML
+    void resetShoppingCartIcon(){
+        shoppingCartIcon.setImage(shoppingCartIconDefault);
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image imagePath = new Image (getSelectedBook().getCoverPath());
@@ -57,6 +90,7 @@ public class BookDetailsController implements Initializable {
     }
     @FXML
     void switchToShoppingCart(MouseEvent e) throws IOException{
+        shoppingCartIcon.setImage(shoppingCartIconOnClick);
         root= FXMLLoader.load(getClass().getResource("ShoppingCart.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
@@ -66,6 +100,7 @@ public class BookDetailsController implements Initializable {
     }
     @FXML
     void switchToUserProfile(MouseEvent e) throws IOException {
+        profileIcon.setImage(profileIconOnClick);
         root= FXMLLoader.load(getClass().getResource("UserProfile.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
         scene= new Scene(root);
@@ -75,6 +110,7 @@ public class BookDetailsController implements Initializable {
     }
     @FXML
     void backToHomePage(MouseEvent event) throws IOException {
+        backIcon.setImage(backIconOnClick);
         root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
