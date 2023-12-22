@@ -1,14 +1,12 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://i.imgur.com/0iJkNCJ.png">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
-  <h3 align="center">ByteBibliotheca</h3>
+  ![Logo](https://github.com/ELDA7EE7/OOP-project-2.0/assets/114913488/9c0d4995-784c-43b8-9a5b-3f4abc74163f)
 
   <p align="center">
     Library Management System Project made for the OOP course at Faculty of Computer and Information Science, Ain Shams University.
+    <br />
     <br />
     <a href="https://github.com/ELDA7EE7/OOP-project-2.0"><strong>Explore the docs »</strong></a>
     <br />
