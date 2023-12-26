@@ -47,6 +47,9 @@ public class User extends Person implements Serializable {
        }
        return false;
     }
+    public void addOder(int id){
+        userOrders.add(id);
+    }
 
     @Override
     public String toString() {
