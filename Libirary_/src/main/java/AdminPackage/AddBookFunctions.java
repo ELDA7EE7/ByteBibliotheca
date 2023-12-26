@@ -85,7 +85,7 @@ public abstract class AddBookFunctions implements CommonFunctions {
                 showAlert("Rating must be between 0 and 5");
                 return;
             }
-            successLabel.setText("OK");
+            successLabel.setText("Book Added Successfully!");
             System.out.println("Ok");
 
             Book newBook = new Book(name, author, description, status, publishyear, rating, price, genre, coverPath, isAvailable, bookAmountAvailable, daysTillReturn);

@@ -1,0 +1,207 @@
+.text-field{
+    -fx-background-color: #232323;
+    -fx-text-fill: #e5e5e5;
+    -fx-font-family: Inter;
+    -fx-font-size: 30px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+    -fx-background-radius: 500px;
+}
+.button{
+    -fx-display: flex;
+    -fx-width: 324px;
+    -fx-cursor : hand;
+    -fx-background-color: #191919;
+    -fx-text-fill: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+    -fx-border-color: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+    -fx-border-radius: 500px;
+    -fx-font-family: Inter;
+    -fx-font-size: 18px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+    -fx-background-radius: 500px;
+}
+
+.button:hover{
+    -fx-display: flex;
+    -fx-width: 324px;
+    -fx-cursor : hand;
+    -fx-background-color: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+    -fx-text-fill: #191919;
+    -fx-font-family: Inter;
+    -fx-font-size: 18px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+    -fx-background-radius: 500px;
+}
+
+.button:pressed{
+    -fx-display: flex;
+    -fx-width: 324px;
+    -fx-cursor : hand;
+    -fx-background-color: #e5e5e5;
+    -fx-text-fill: #191919;
+    -fx-font-family: Inter;
+    -fx-font-size: 18px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+    -fx-background-radius: 500px;
+}
+
+.heading1{
+    -fx-font-family: Inter;
+    -fx-font-size: 70px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+    -fx-text-fill: #e5e5e5;
+}
+
+.heading2{
+    -fx-font-family: Inter;
+    -fx-font-size: 50px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+    -fx-text-fill: #e5e5e5;
+}
+
+.heading3{
+    -fx-font-family: Inter;
+    -fx-font-size: 25px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+    -fx-text-fill: #e5e5e5;
+}
+.heading4{
+    -fx-font-family: Inter;
+    -fx-font-size: 25px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+    -fx-text-fill: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+}
+.heading5{
+    -fx-font-family: Inter;
+    -fx-font-size: 15px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+    -fx-text-fill: green;
+}
+.heading6{
+    -fx-font-family: Inter;
+    -fx-font-size: 30px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+    -fx-text-fill: #e5e5e5;
+}
+.button1{
+    -fx-display: flex;
+    -fx-width: 324px;
+    -fx-cursor : hand;
+    -fx-background-color: #191919;
+    -fx-text-fill: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+    -fx-border-color: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+    -fx-border-radius: 500px;
+    -fx-font-family: Inter;
+    -fx-font-size: 30px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+    -fx-background-radius: 500px;
+}
+
+.button1:hover{
+    -fx-display: flex;
+    -fx-width: 324px;
+    -fx-cursor : hand;
+    -fx-background-color: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+    -fx-text-fill: #191919;
+    -fx-font-family: Inter;
+    -fx-font-size: 30px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+    -fx-background-radius: 500px;
+}
+
+.button1:pressed{
+    -fx-display: flex;
+    -fx-width: 324px;
+    -fx-cursor : hand;
+    -fx-background-color: #e5e5e5;
+    -fx-text-fill: #191919;
+    -fx-font-family: Inter;
+    -fx-font-size: 30px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+    -fx-background-radius: 500px;
+}
+.check-box {
+    -fx-font-family: Inter;
+    -fx-font-size: 20px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+    -fx-text-fill: #e5e5e5;
+    -fx-selected-color: linear-gradient(from 0% 10% to 100% 90%,#81c1d9,#aea2db,#65c0e0,#b8c1c0,#e9a5a5);
+}
+.text-area{
+    -fx-control-inner-background: #232323;
+    -fx-text-fill: #e5e5e5;
+    -fx-font-family: Inter;
+    -fx-font-size: 30px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+}
+.logOutButton{
+    -fx-display: flex;
+    -fx-width: 324px;
+    -fx-cursor : hand;
+    -fx-background-color: #191919;
+    -fx-text-fill: #a70000;
+    -fx-border-color: #a70000;
+    -fx-border-radius: 500px;
+    -fx-font-family: Inter;
+    -fx-font-size: 30px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+    -fx-background-radius: 500px;
+}
+.logOutButton:hover{
+    -fx-display: flex;
+    -fx-width: 324px;
+    -fx-cursor : hand;
+    -fx-background-color: #a70000;
+    -fx-text-fill: #191919;
+    -fx-font-family: Inter;
+    -fx-font-size: 30px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+    -fx-background-radius: 500px;
+}
+
+.logOutButton:pressed{
+    -fx-display: flex;
+    -fx-width: 324px;
+    -fx-cursor : hand;
+    -fx-background-color: #e5e5e5;
+    -fx-text-fill: #191919;
+    -fx-font-family: Inter;
+    -fx-font-size: 30px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+    -fx-background-radius: 500px;
+}

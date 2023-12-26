@@ -1,90 +1,198 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.UpdateBookInfoController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@AddBook.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.libirary_.UpdateBookInfoController">
    <children>
-      <TextField fx:id="indexsearchTextField" layoutX="144.0" layoutY="246.0" prefWidth="193.0" promptText="Book Title" />
-      <Button fx:id="searchButton" layoutX="204.0" layoutY="409.0" mnemonicParsing="false" onAction="#ViewBookToUpdate" stylesheets="@buttons.css" text="Show" />
-      <TextField fx:id="authorTextField" layoutX="1385.0" layoutY="200.0" prefWidth="193.0" />
-      <Label fx:id="update2" layoutX="1176.0" layoutY="200.0" text="Author :">
-         <font>
-            <Font name="Arial Black" size="13.0" />
-         </font></Label>
-      <TextField fx:id="priceTextField" layoutX="1385.0" layoutY="300.0" prefWidth="193.0" />
-      <TextField fx:id="titleTextField" layoutX="1385.0" layoutY="100.0" prefWidth="193.0" />
-      <TextField fx:id="genreTextField" layoutX="1385.0" layoutY="500.0" prefWidth="193.0" />
-      <TextField fx:id="publishYearTextField" layoutX="1385.0" layoutY="400.0" prefWidth="193.0" />
-      <Label fx:id="UpdateP" layoutX="1176.0" layoutY="300.0" text="Price :">
-         <font>
-            <Font name="Arial Black" size="13.0" />
-         </font></Label>
-      <Label fx:id="Update_Available" layoutX="1176.0" layoutY="700.0" text="Status :">
-         <font>
-            <Font name="Arial Black" size="13.0" />
-         </font></Label>
-      <Label fx:id="Update_Title" layoutX="1176.0" layoutY="100.0" text="Title :">
-         <font>
-            <Font name="Arial Black" size="13.0" />
-         </font></Label>
-      <Label fx:id="Update_PublishYear" layoutX="1176.0" layoutY="400.0" text="Publish Year :">
-         <font>
-            <Font name="Arial Black" size="13.0" />
-         </font></Label>
-      <Button fx:id="updateButton" layoutX="1370.0" layoutY="1034.0" mnemonicParsing="false" onAction="#UpdateBookInfo" stylesheets="@buttons.css" text="Update" />
-      <Label layoutX="1176.0" layoutY="500.0" text="Genre :">
-         <font>
-            <Font name="Arial Black" size="13.0" />
-         </font></Label>
-      <CheckBox fx:id="statusCheckBox" layoutX="1313.0" layoutY="700.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="92.0" text="In Stock">
-         <font>
-            <Font name="Arial Black" size="13.0" />
-         </font></CheckBox>
-      <TextField fx:id="searchAuthorTextField" layoutX="144.0" layoutY="313.0" prefWidth="193.0" promptText="Book Author" />
-      <Label fx:id="successLabel" layoutX="1517.0" layoutY="921.0" prefHeight="17.0" prefWidth="14.0">
-         <font>
-            <Font name="Arial Black" size="13.0" />
-         </font></Label>
-      <CheckBox fx:id="availableCheckBox" layoutX="1472.0" layoutY="700.0" mnemonicParsing="false" text="Available For Borrow">
-         <font>
-            <Font name="Arial Black" size="13.0" />
-         </font></CheckBox>
-      <TextField fx:id="daysTillReturnTextField" layoutX="1385.0" layoutY="600.0" prefWidth="193.0" />
-      <Label layoutX="1176.0" layoutY="600.0" text="Days till return :">
-         <font>
-            <Font name="Arial Black" size="13.0" />
-         </font></Label>
-      <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#Back" stylesheets="@buttons.css" text="Back" />
-      <Label layoutX="52.0" layoutY="91.0" text="What book do you want to update?">
-         <font>
-            <Font name="Arial Black" size="25.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="coverImageView" fitHeight="544.0" fitWidth="421.0" layoutX="665.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="Update_Available1" layoutX="1176.0" layoutY="800.0" text="Rating :">
-         <font>
-            <Font name="Arial Black" size="13.0" />
-         </font>
-      </Label>
-      <TextField fx:id="ratingTextField" layoutX="1385.0" layoutY="800.0" prefWidth="193.0" />
-      <Label fx:id="Update_Available11" layoutX="1176.0" layoutY="900.0" text="Book Amount Available :">
-         <font>
-            <Font name="Arial Black" size="13.0" />
-         </font>
-      </Label>
-      <TextField fx:id="amountAvailableTextField" layoutX="1385.0" layoutY="900.0" prefWidth="193.0" />
-      <Label fx:id="Update_Available111" layoutX="674.0" layoutY="803.0" text="Book Description :">
-         <font>
-            <Font name="Arial Black" size="13.0" />
-         </font>
-      </Label>
-      <TextArea fx:id="descriptionTextArea" layoutX="674.0" layoutY="831.0" prefHeight="200.0" prefWidth="392.0" wrapText="true" />
+      <BorderPane prefHeight="1080.0" prefWidth="1920.0">
+         <top>
+            <AnchorPane prefHeight="100.0" style="-fx-background-color: #191919;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="36.0" fitWidth="500.0" layoutX="71.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="51.0" AnchorPane.topAnchor="32.0">
+                     <image>
+                        <Image url="@../../../UserInterfaceIcons/Logoadmin.png" />
+                     </image>
+                  </ImageView>
+                  <Button mnemonicParsing="false" onAction="#Back" text="Back to Admin Home Page" AnchorPane.bottomAnchor="32.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="32.0" />
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #191919;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" spacing="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="20.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" spacing="70.0">
+                           <children>
+                              <VBox spacing="10.0">
+                                 <children>
+                                    <Label styleClass="heading6" text="Enter the details of the book to be updated:">
+                                       <font>
+                                          <Font name="Arial Black" size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER_LEFT" spacing="20.0">
+                                       <children>
+                                          <TextField fx:id="indexsearchTextField" prefWidth="193.0" promptText="Book Title" />
+                                          <TextField fx:id="searchAuthorTextField" prefHeight="56.0" prefWidth="210.0" promptText="Book Author" />
+                                          <Button fx:id="searchButton" mnemonicParsing="false" onAction="#ViewBookToUpdate" prefHeight="43.0" prefWidth="339.0" text="Show" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="CENTER" spacing="50.0">
+                                 <children>
+                                    <Label fx:id="Update_Title" prefWidth="350.0" styleClass="heading4" text="Title :">
+                                       <font>
+                                          <Font name="Arial Black" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="titleTextField" prefWidth="400.0" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="50.0">
+                                 <children>
+                                    <Label fx:id="update2" prefWidth="350.0" styleClass="heading4" text="Author :">
+                                       <font>
+                                          <Font name="Arial Black" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="authorTextField" prefWidth="400.0" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="50.0">
+                                 <children>
+                                    <Label prefWidth="350.0" styleClass="heading4" text="Genre :">
+                                       <font>
+                                          <Font name="Arial Black" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="genreTextField" prefWidth="400.0" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="50.0">
+                                 <children>
+                                    <Label fx:id="Update_PublishYear" prefWidth="350.0" styleClass="heading4" text="Publish Year :">
+                                       <font>
+                                          <Font name="Arial Black" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="publishYearTextField" prefWidth="400.0" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="50.0">
+                                 <children>
+                                    <Label fx:id="UpdateP" prefWidth="350.0" styleClass="heading4" text="Price :">
+                                       <font>
+                                          <Font name="Arial Black" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="priceTextField" prefWidth="400.0" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="50.0">
+                                 <children>
+                                    <Label prefWidth="350.0" styleClass="heading4" text="Days till return :">
+                                       <font>
+                                          <Font name="Arial Black" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="daysTillReturnTextField" prefWidth="400.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" spacing="70.0">
+                           <children>
+                              <HBox alignment="CENTER" spacing="50.0">
+                                 <children>
+                                    <Label fx:id="Update_Available" prefWidth="350.0" styleClass="heading4" text="Status :">
+                                       <font>
+                                          <Font name="Arial Black" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER" prefWidth="400.0" spacing="20.0">
+                                       <children>
+                                          <CheckBox fx:id="statusCheckBox" mnemonicParsing="false" text="In Stock">
+                                             <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <CheckBox fx:id="availableCheckBox" mnemonicParsing="false" text="Available for borrowing">
+                                             <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                             </font>
+                                          </CheckBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="50.0">
+                                 <children>
+                                    <Label fx:id="Update_Available1" prefWidth="350.0" styleClass="heading4" text="Rating :">
+                                       <font>
+                                          <Font name="Arial Black" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="ratingTextField" prefWidth="400.0" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="50.0">
+                                 <children>
+                                    <Label fx:id="Update_Available11" prefWidth="350.0" styleClass="heading4" text="Book Amount Available :">
+                                       <font>
+                                          <Font name="Arial Black" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="amountAvailableTextField" prefWidth="400.0" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="350.0" spacing="50.0">
+                                 <children>
+                                    <VBox prefWidth="450.0" spacing="20.0">
+                                       <children>
+                                          <Label fx:id="Update_Available111" prefWidth="350.0" styleClass="heading4" text="Book Description :">
+                                             <font>
+                                                <Font name="Arial Black" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="descriptionTextArea" prefHeight="328.0" prefWidth="400.0" wrapText="true" />
+                                       </children>
+                                    </VBox>
+                                    <ImageView fx:id="coverImageView" fitHeight="328.0" fitWidth="281.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets top="40.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Button fx:id="updateButton" mnemonicParsing="false" onAction="#UpdateBookInfo" prefHeight="85.0" prefWidth="819.0" styleClass="button1" text="Update Book" AnchorPane.bottomAnchor="65.0" AnchorPane.rightAnchor="50.0" />
+                  <Label fx:id="successLabel" styleClass="heading5" AnchorPane.bottomAnchor="160.0" AnchorPane.rightAnchor="370.0">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>
