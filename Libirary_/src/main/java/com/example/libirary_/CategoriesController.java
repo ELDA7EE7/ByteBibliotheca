@@ -64,11 +64,6 @@ public class CategoriesController {
     @FXML
     void resetShoppingCartIcon(){
         shoppingCartIcon.setImage(shoppingCartIconDefault);
-
-
-
-
-
     }
 
     @FXML
@@ -76,10 +71,11 @@ public class CategoriesController {
         profileIcon.setImage(profileIconOnClick);
         root= FXMLLoader.load(getClass().getResource("UserProfile.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setFullScreen(true);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
+        stage.setFullScreen(true);*/
     }
 
     @FXML
@@ -87,11 +83,11 @@ public class CategoriesController {
         shoppingCartIcon.setImage(shoppingCartIconOnClick);
         root= FXMLLoader.load(getClass().getResource("ShoppingCart.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setFullScreen(true);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
-
+        stage.setFullScreen(true);*/
     }
 
     @FXML
@@ -99,10 +95,11 @@ public class CategoriesController {
         backIcon.setImage(backIconOnClick);
         root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(true);
         stage.show();
+        stage.setFullScreen(true);*/
     }
 
     @FXML
@@ -118,9 +115,10 @@ public class CategoriesController {
         }
         root= FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
-
         stage.show();
+        stage.setFullScreen(true);*/
     }
 }

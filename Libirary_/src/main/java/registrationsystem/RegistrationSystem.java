@@ -36,36 +36,42 @@ public abstract class RegistrationSystem {
     public void switchToSignInAsUserScene(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("LogInAsUserScene.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
+        stage.setFullScreen(true);*/
     }
     @FXML
     public void switchToAdminHomePageScene(ActionEvent event) throws  IOException{
         Parent root = FXMLLoader.load(getClass().getResource("AdminHomePage.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(true);
         stage.show();
+        stage.setFullScreen(true);*/
     }
     @FXML
     public void switchToHomePageScene(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(true);
         stage.show();
+        stage.setFullScreen(true);*/
     }
 
     @FXML
     public void switchToCreateNewUserAccountScene(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
+        stage.setFullScreen(true);*/
     }
 
 

@@ -83,10 +83,11 @@ public class ShoppingCartController implements Initializable {
         backIcon.setImage(backIconOnClick);
         root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(true);
         stage.show();
+        stage.setFullScreen(true);*/
     }
 
     @FXML
@@ -94,10 +95,11 @@ public class ShoppingCartController implements Initializable {
         profileIcon.setImage(profileIconOnClick);
         root = FXMLLoader.load(getClass().getResource("UserProfile.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(true);
         stage.show();
+        stage.setFullScreen(true);*/
     }
 
     @FXML

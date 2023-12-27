@@ -67,28 +67,31 @@ public class UserProfileController extends UpdateUserData implements Initializab
         backIcon.setImage(backIconOnClick);
         root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(true);
         stage.show();
+        stage.setFullScreen(true);*/
     }
     @FXML
     void switchToShoppingCart(MouseEvent e) throws IOException{
         shoppingCartIcon.setImage(shoppingCartIconOnClick);
         root= FXMLLoader.load(getClass().getResource("ShoppingCart.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setFullScreen(true);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
+        stage.setFullScreen(true);*/
     }
     private void switchToLoginScene(ActionEvent event)throws IOException{
         root = FXMLLoader.load(getClass().getResource("LogInAsUserScene.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(true);
         stage.show();
+        stage.setFullScreen(true);*/
     }
     @FXML
     public void pressLogoutButton(ActionEvent event) throws IOException {

@@ -52,12 +52,11 @@ public class BookCategories  {
     public void BookDetails(MouseEvent e) throws IOException {
          root= FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
-
-
-
+        stage.setFullScreen(true);*/
     }
 
 /*

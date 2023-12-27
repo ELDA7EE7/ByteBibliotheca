@@ -43,10 +43,9 @@ public class SplashScreenController implements Initializable {
                     }
                    // Stage stage = new Stage();
                     stage = (Stage) (loadingImageView).getScene().getWindow();
-
                     Scene scene = new Scene(root);
-
                     stage.setScene(scene);
+                    stage.setFullScreen(true);
                     stage.show();
 
                     // Check if rootpane is not null before using it

@@ -97,30 +97,33 @@ public class BookDetailsController implements Initializable, CommonFunctions {
         shoppingCartIcon.setImage(shoppingCartIconOnClick);
         root= FXMLLoader.load(getClass().getResource("ShoppingCart.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setFullScreen(true);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
+        stage.setFullScreen(true);*/
     }
     @FXML
     void switchToUserProfile(MouseEvent e) throws IOException {
         profileIcon.setImage(profileIconOnClick);
         root= FXMLLoader.load(getClass().getResource("UserProfile.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setFullScreen(true);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
+        stage.setFullScreen(true);*/
     }
     @FXML
     void backToHomePage(MouseEvent event) throws IOException {
         backIcon.setImage(backIconOnClick);
         root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(true);
         stage.show();
+        stage.setFullScreen(true);*/
     }
     @FXML
     void switchStar1OnHover(){
@@ -250,14 +253,14 @@ public class BookDetailsController implements Initializable, CommonFunctions {
     {
         if(getSelectedBook().isAvailable())
         {
-            showAlert("This Book is Available");
+            showAlert("This Book is Available.");
             return;
         }
         for (int i=0;i<getCurrent_borrower().BorrowedBookID.size();i++)
         {
             if(getSelectedBook().getBookID()==getCurrent_borrower().BorrowedBookID.get(i))
             {
-                showAlert("You already borrowed the book");
+                showAlert("You already borrowed the book.");
                 return;
             }
         }
@@ -265,7 +268,7 @@ public class BookDetailsController implements Initializable, CommonFunctions {
         {
             if(getSelectedBook().getBookID()==Borrower.getCurrent_borrower().notifyWhenAvailableBook.get(i).getBookID())
             {
-                showAlert("This book is already in the wishlist");
+                showAlert("This book is already in the wishlist.");
                 return;
             }
         }
@@ -276,7 +279,7 @@ public class BookDetailsController implements Initializable, CommonFunctions {
     {
         if(getSelectedBook().isAvailable())
         {
-            showAlert("you don't the book");
+            showAlert("You don't own the book.");
             return;
         }
         for (int i=0;i<getCurrent_borrower().BorrowedBookID.size();i++)
@@ -291,7 +294,7 @@ public class BookDetailsController implements Initializable, CommonFunctions {
                 return;
             }
         }
-        showAlert("you are not the person who borrowed the book");
+        showAlert("You are not the person who borrowed the book");
     }
     public void showSimilarBooks(){
         int counter=0;
@@ -347,8 +350,10 @@ public class BookDetailsController implements Initializable, CommonFunctions {
         }
         Parent root= FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
         Stage stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        Scene scene= new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
+        stage.setFullScreen(true);*/
     }
 }

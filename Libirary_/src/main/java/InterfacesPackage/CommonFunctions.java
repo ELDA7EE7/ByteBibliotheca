@@ -40,10 +40,11 @@ public interface CommonFunctions {
     default void SwitchToNextScene(ActionEvent event,String nameOfNextScene) throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource(nameOfNextScene));
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(true);
         stage.show();
+        stage.setFullScreen(true);*/
     }
     default boolean checkName(String username){
         if(username==null) {

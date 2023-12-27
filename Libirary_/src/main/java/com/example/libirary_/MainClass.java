@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import librarypackage.Book;
 
 import java.io.*;
@@ -18,6 +19,7 @@ import java.util.List;
 
 import static UsersOfLibrary.User.incrementUsersCounter;
 import static librarypackage.Library.*;
+import static resourcesimports.UserInterfaceIcons.ProgramIcon;
 
 public class MainClass extends Application  {
     public static Trie namesTrie =new Trie(), emailsTrie =new Trie(),booksTrie =new Trie();
@@ -45,9 +47,10 @@ public class MainClass extends Application  {
 
         FXMLLoader fxmlLoader = new FXMLLoader(MainClass.class.getResource("SplashScreen.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Library");
+        stage.setTitle("ByteBibliotheca");
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.getIcons().add(ProgramIcon);
         stage.setScene(scene);
-        //stage.setFullScreen(true);
         stage.show();
         stage.setOnCloseRequest(event -> {
             event.consume();

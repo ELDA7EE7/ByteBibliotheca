@@ -22,6 +22,7 @@ public class UserInterfaceIcons {
     public static final Image Star3Selected = loadImage("/UserInterfaceIcons/Star_03.png");
     public static final Image Star4Selected = loadImage("/UserInterfaceIcons/Star_04.png");
     public static final Image Star5Selected = loadImage("/UserInterfaceIcons/Star_05.png");
+    public static final Image ProgramIcon = loadImage("/UserInterfaceIcons/Icon.png");
 
 
     private static Image loadImage(String path) {

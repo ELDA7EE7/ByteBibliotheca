@@ -60,10 +60,11 @@ public class HomePageController implements Initializable, CommonFunctions
     void switchToSearch(ActionEvent e) throws IOException{
         root= FXMLLoader.load(getClass().getResource("SearchScene.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setFullScreen(true);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
+        stage.setFullScreen(true);*/
     }
 
     @FXML
@@ -71,20 +72,22 @@ public class HomePageController implements Initializable, CommonFunctions
         profileIcon.setImage(profileIconOnClick);
         root= FXMLLoader.load(getClass().getResource("UserProfile.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setFullScreen(true);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
+        stage.setFullScreen(true);*/
     }
     @FXML
     void switchToShoppingCart(MouseEvent e) throws IOException{
         shoppingCartIcon.setImage(shoppingCartIconOnClick);
         root= FXMLLoader.load(getClass().getResource("ShoppingCart.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
-        stage.setFullScreen(true);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
+        stage.setFullScreen(true);*/
     }
 
     @FXML
@@ -100,19 +103,22 @@ public class HomePageController implements Initializable, CommonFunctions
         }
         root= FXMLLoader.load(getClass().getResource("BookDetails.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
         stage.show();
+        stage.setFullScreen(true);*/
     }
 
     @FXML
     public void switchToCategories(ActionEvent e) throws IOException {//Change Scene to Categories Page
         root= FXMLLoader.load(getClass().getResource("Categories.fxml"));
         stage=(Stage) ((Node) e.getSource()).getScene().getWindow();
-        scene= new Scene(root);
+        stage.getScene().setRoot(root);
+        /*scene= new Scene(root);
         stage.setScene(scene);
-        stage.setFullScreen(true);
         stage.show();
+        stage.setFullScreen(true);*/
     }
 
 
